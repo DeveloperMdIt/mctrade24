@@ -1,0 +1,43 @@
+/* Startseite */
+
+@use '../abstracts/functions' as *;
+@import 'blog-preview-item';
+
+.home-news-slider {
+    .home-news-slide__header {
+        margin-bottom: rem(56px);
+        font-weight: bold;
+    }
+
+    .slick-slide {
+        padding: 0 10px;
+    }
+
+    // .btn-primary {
+    //     margin-top: rem(50px);
+    // }
+    .blog-preview {
+        transition: box-shadow ease-in-out 0.15s;
+
+        &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .blog-preview__panel-strap {
+        padding: rem(35px) rem(20px) rem(30px);
+    }
+
+    .blog-preview__heading, .blog-preview__text {
+        margin-bottom: 3rem;
+    }
+
+    .blog-preview__image-link {
+        transition: all 0.3s ease-in-out !important;
+
+        &:hover {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}

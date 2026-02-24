@@ -1,0 +1,17 @@
+.opc-Container {
+  background-size: cover;
+  background-position: center;
+}
+.opc-Container .opc-container-pause {
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin: 7px;
+}
+.opc-Container .opc-container-pause:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/*# sourceMappingURL=Container.css.map */

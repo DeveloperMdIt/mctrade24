@@ -1,0 +1,56 @@
+.wl-form {
+    textarea {
+        height: 100%;
+        min-height: 6em;
+        resize: vertical;
+    }
+}
+
+.wl-remove {
+    font-size: 18px;
+    line-height: 1;
+    // padding: 0 4px;
+    margin: (-@padding-base-vertical - 2px) -@padding-base-horizontal 1em 1em;
+    background-color: transparent;
+}
+
+.wishlist-to-cart {
+    align-items: center;
+    justify-content: flex-end;
+    --modifier: calc(29rem - 100%);
+
+    [id="account"] & {
+        --modifier: calc(20rem - 100%);
+    }
+
+    .js-spinner {
+        text-align: right;
+    }
+}
+
+#wishlist table {
+    border: 0 !important;
+    tr {
+        td,
+        th {
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.wishlist__add-to-cart-col {
+    align-self: flex-end;
+}
+
+/* public wishlist background-color fix. Has dark background because it is disabled */
+/* input */
+[name="wishlist-url"][readonly] {
+    background-color: white;
+}
+
+/* a dark background color-theme causes the text of the addon to be dark on dark */
+[id="edit-wishlist-name"] .input-group-addon {
+    color: inherit;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Template isFullResponsive="true">
+    <Name>admorris Pro Child</Name>
+    <Author>admorris</Author>
+    <URL>https://admorris.pro</URL>
+    <Version>3.1.9</Version>
+    <ShopVersion>5.4.0</ShopVersion>
+    <Parent>admorris_pro</Parent>
+    <Preview>preview.png</Preview>
+    <Description>admorris pro child Template</Description>
+    <Settings>
+    </Settings>
+    <Minify>
+        <CSS Name="admorris.css">
+            <File Path="styles/dummy.css" />
+        </CSS>
+    </Minify>
+    <Boxes>
+        <Container Position="right" Available="1"></Container>
+    </Boxes>
+</Template>

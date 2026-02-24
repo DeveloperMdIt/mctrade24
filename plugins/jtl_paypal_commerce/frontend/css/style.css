@@ -1,0 +1,125 @@
+#ppc-loading-spinner-confirmation{
+    display:none;
+    float: left;
+    margin-top: 0.5rem;
+}
+@media (max-width:1300px){
+    #ppc-loading-spinner-confirmation{
+        margin-top: 0;
+    }
+}
+@media (max-width:768px){
+    #ppc-loading-spinner-confirmation{
+        margin-top: 0.5rem;
+    }
+}
+.opacity-half{
+    opacity: 0.5;
+}
+
+.ppc-checkout-payment-method .paypal-mark{
+    margin:0;
+    padding-left: 0;
+    border:none;
+}
+
+img.ppc-paypal-button-custom-img {
+    width: 63.13px;
+}
+
+button.btn.btn-ppc.ppc-paypal-button-custom {
+    border-radius: 4px;
+    margin-bottom: 13px;
+    font-size:15px;
+    font-weight: 500;
+}
+
+button.btn.btn-ppc.ppc-paypal-button-custom.white{
+    border: 1px solid #555;
+    background: #fff;
+}
+
+button.btn.btn-ppc.ppc-paypal-button-custom.blue{
+    background:#0070ba;
+    color:#fff;
+}
+
+button.btn.btn-ppc.ppc-paypal-button-custom.black{
+    background:#2C2E2F;
+    color:#fff;
+}
+
+button.btn.btn-ppc.ppc-paypal-button-custom.silver{
+    background:#eee;
+}
+
+button.btn.btn-ppc.ppc-paypal-button-custom.gold{
+    background:#ffc439;
+}
+
+button.btn.btn-ppc.ppc-paypal-button-custom.pill {
+    border-radius: 22px;
+}
+
+#ppc-miniCart-horizontal-container .ppc-standalone-buttons:first-of-type{
+    padding-right: 0;
+    padding-left:  0;
+}
+#ppc-miniCart-horizontal-container .ppc-standalone-buttons:last-of-type{
+    padding-left: 0.1rem;
+    padding-right: 0;
+}
+#ppc-cart-horizontal-container.ppc-ecs-horizontal-container .ppc-standalone-buttons:first-of-type{
+    padding-right:0.1rem;
+}
+#ppc-cart-horizontal-container.ppc-ecs-horizontal-container .ppc-standalone-buttons:last-of-type{
+    padding-left:0.1rem;
+}
+@media screen and (max-width: 767px) {
+    #ppc-miniCart-horizontal-container .ppc-standalone-buttons:last-of-type{
+        padding-left: initial;
+        padding-right: initial;
+    }
+}
+
+@media screen and (max-width: 1299px) {
+    #ppc-cart-horizontal-container .ppc-standalone-buttons:last-of-type,
+    #ppc-cart-horizontal-container .ppc-standalone-buttons:first-of-type
+    {
+        padding-left: initial;
+        padding-right: initial;
+    }
+    #ppc-cart-horizontal-container{
+        margin-left:0;
+        margin-right:0;
+    }
+
+    #ppc-cart-horizontal-container .ppc-standalone-buttons,
+    #ppc-orderProcess-horizontal-container .ppc-standalone-buttons
+    {
+        max-width: 100%!important;
+        flex: 0 0 100%!important;
+    }
+}
+
+.ppc-checkout-payment-method .funding-name {
+    padding:5px 0;
+}
+
+#ppc-cc-icon{
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#ppc-cc-icon .ppc-cc-icon{
+    max-width: 70px;
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+    padding-bottom: 0.4em;
+}
+
+#ppc-cc-icon .ppc-cc-icon_disabled{
+    filter: grayscale(1);
+    opacity: 0.5
+}

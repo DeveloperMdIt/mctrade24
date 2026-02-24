@@ -1,0 +1,22 @@
+.thrixty-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: gray;
+  font-size: 12px;
+  line-height: 1;
+  padding: 2px 3px 2px 4px;
+}
+#gallery_preview_wrapper li {
+  position: relative;
+}
+/*
+#main_canvas_1 {
+    width: 2200px !important;
+    max-width: 100vw !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+*/

@@ -1,0 +1,456 @@
+@use 'sass:math';
+@use '../vendor/utopia/utopia';
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow-y: scroll;
+    min-height: 100%;
+    font-size: math.div($font-size-base-px, 16px) * 1em;
+    /**
+    * Smooth scrolling on the whole document
+    */
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    @include utopia.generateTypeScale(
+        (
+            'minWidth': 320,
+            'maxWidth': 1240,
+            'minFontSize': $font-size-base-px-unitless - 2,
+            'maxFontSize': $font-size-base-px-unitless,
+            'minTypeScale': 1.2,
+            'maxTypeScale': 1.25,
+            'positiveSteps': 5,
+            'negativeSteps': 2,
+            'prefix': 'step-',
+        )
+    );
+
+    @include utopia.generateSpaceScale(
+        (
+            'minWidth': 320,
+            'maxWidth': 1240,
+            'minSize': $font-size-base-px-unitless - 2,
+            'maxSize': $font-size-base-px-unitless,
+            'positiveSteps': (
+                1.5,
+                2,
+                3,
+                4,
+                6,
+            ),
+            'negativeSteps': (
+                0.75,
+                0.5,
+                0.25,
+            ),
+            'customSizes': (
+                's-l',
+            ),
+            'prefix': 'space-',
+            'relativeTo': 'viewport-width',
+        )
+    );
+
+    --container-padding: #{$container-padding};
+
+    --adm-sticky-top-offset: calc(var(--adm-header-height) + 1.5rem);
+
+    --adm-border-radius-xs: #{adm-border-radius('xs')};
+    --adm-border-radius-sm: #{adm-border-radius('sm')};
+    --adm-border-radius-md: #{adm-border-radius('md')};
+    --adm-border-radius-lg: #{adm-border-radius('lg')};
+
+    --adm-admin-primary-color: #5362ed;
+    --adm-admin-primary-color-hover: #584ce4;
+    --adm-admin-primary-color-faded: #dde0fb;
+    --adm-admin-primary-gradient: linear-gradient(75deg, var(--adm-admin-primary-color) 0%, #6086e8 100%);
+}
+
+body {
+    background-color: $body-bg;
+    font-size: 1em;
+    overflow-x: clip; /* used to avoid scrollbars with .full-width-container */
+}
+
+:is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+    text-wrap: balance;
+}
+
+.debug-element {
+    outline: 2px solid rgba(rgb(255, 38, 0), 0.5);
+}
+
+.debug {
+    *,
+    *::before,
+    *::after {
+        outline: 2px solid rgba(lime, 0.5);
+    }
+}
+
+.debug-bg {
+    *,
+    *::before,
+    *::after {
+        background-color: hsl(0 100% 50% / 0.1);
+    }
+}
+
+::selection {
+    background: theme-color('primary');
+    /* WebKit/Blink Browsers */
+    color: white;
+}
+
+::-moz-selection {
+    background: theme-color('primary');
+    /* Gecko Browsers */
+    color: white;
+}
+
+// https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/
+
+/* Baseline for default links */
+a:not([class]) {
+    /* Relatively sized thickness and offset */
+    text-decoration-thickness: max(0.08em, 1px);
+    text-underline-offset: 0.15em;
+}
+
+/* Scroll margin allowance above anchor links */
+:target {
+    scroll-padding-block-start: 2rem;
+}
+
+/* Scroll margin allowance below focused elements 
+  to ensure they are clearly in view */
+:focus {
+    scroll-padding-block-end: 8vh;
+}
+
+a:hover:not(.btn),
+a:focus:not(.btn) {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.7;
+
+    // img {
+    //     opacity: 0.8;
+
+    // }
+}
+
+a:active {
+    opacity: 0.5;
+}
+
+// skiplinks
+.btn-skip-to {
+    position: absolute;
+    top: 0;
+
+    transform: scale(0);
+    margin: 1%;
+    z-index: $zindex-tooltip;
+    background: $white;
+    border: 3px solid $primary;
+    font-weight: $font-weight-base;
+    color: $body-color;
+    text-align: center;
+    vertical-align: middle;
+    padding: $btn-padding-y $btn-padding-x;
+    border-radius: $btn-border-radius;
+    font-weight: $font-weight-bolder;
+    text-decoration: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: transform 200ms;
+    }
+
+    &:focus-visible {
+        transform: scale(1);
+    }
+}
+
+button,
+.btn,
+.fa {
+    // &:focus,
+    &:active,
+    &:active {
+        // &:focus:active {
+        outline: none;
+        box-shadow: none;
+    }
+}
+/* Remove outline for non-keyboard :focus */
+/* https://github.com/WICG/focus-visible */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/*
+  strong focus indicator for keyboard focus.
+*/
+*:focus-visible:not(input):not(select):not(textarea) {
+    outline: 2px dotted theme-color('primary') !important;
+}
+
+.product-images *:focus-visible {
+    outline-offset: -2px;
+}
+
+[id] {
+    scroll-margin-top: calc(2rem + var(--adm-header-height));
+}
+
+html {
+    scroll-padding-top: calc(2rem + var(--adm-header-height));
+}
+
+p {
+    // max-inline-size: 60rem;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
+}
+
+.navbar {
+    border-radius: 0;
+    border: 0;
+}
+
+// Undo rounded corners in static and fixed navbars
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    border-radius: 0;
+}
+
+//align manufacturer mobile icon and text
+.navbar-manufacturers {
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+// .nav-horizontal {
+//     li {
+//         float: left;
+//     }
+//     li + li {
+//         margin-left: 10px;
+//     }
+// }
+// // Fix active state of dropdown items in collapsed mode
+// @media (max-width: $grid-float-breakpoint-max) {
+//     .navbar .navbar-nav .open .dropdown-menu > .active > a {
+//         &,
+//         &:hover,
+//         &:focus {
+//             color: #fff;
+//             //   @include gradient_vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
+//         }
+//     }
+// }
+
+// hide filter sidebar temporarily
+// #sidepanel_left {
+//     display: none;
+// }
+
+.main-content-wrapper {
+    padding-block: 50px;
+}
+
+.input-group-addon > label {
+    margin-bottom: 0;
+}
+
+// // fix strange bootstrap modal behaviour
+// .modal-open {
+//     padding-right: 0 !important;
+// }
+// fix missing clearfix causing too small modal header when no title is present
+.modal-header {
+    @include clearfix();
+}
+
+[id='maintenance-mode'] {
+    margin-bottom: 1px;
+    .navbar-text {
+        width: 100%;
+    }
+}
+
+.main-content {
+    p + p {
+        margin-block-start: 1lh;
+    }
+}
+
+.consent-manager-wrapper {
+    display: none;
+}
+
+[class*='opc-'] .btn {
+    white-space: normal;
+}
+
+// [required]:not([type='radio']),
+// .form-group.required :is(input:not([type='radio']), select, textarea),
+// .form-group.required .bootstrap-select .btn {
+//     background-image: url('../../images/asterisk.png');
+//     background-repeat: no-repeat;
+//     background-position: top right;
+//     background-size: 32px 32px;
+// }
+
+// Offset html anchors for fixed header
+// For modern browsers, just add the CSS3 :target selector to the page.
+// This will apply to all the anchors automatically.
+// ref: http://stackoverflow.com/a/21707103/6220029
+
+// :target {
+//   display: block;
+//   position: relative;
+//   top: var(--adm-header-height);
+//   visibility: hidden;
+// }
+
+// Moves OPC Button under header to avoid overlap
+#opc #opc-startmenu {
+    top: var(--adm-header-height) !important;
+    padding: 10px;
+}
+
+// Bootstrap Dropdown styles loading async
+
+// .dropdown-toggle {
+//     white-space: nowrap;
+
+//     // Generate the caret automatically
+//     @include caret();
+
+//     &::after {
+//         font-size: 1.6em;
+//         margin-bottom: -0.15em;
+//     }
+
+//     &[aria-expanded='true']::after {
+//         transform: rotate(180deg);
+//     }
+// }
+
+.dropdown-toggle,
+[data-toggle='collapse'] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.2em;
+    color: inherit;
+    white-space: initial;
+    cursor: pointer;
+
+    .icon-content:last-child {
+        margin-left: auto;
+    }
+
+    &[aria-expanded='true'] {
+        .icon-content--toggle {
+            transform: rotate(180deg);
+
+            &:has([href='#icon-caretRight']) {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+// hide lazy loaded style elements
+.dropdown-menu,
+.offcanvas-nav--menu,
+.modal {
+    display: none; // none by default, but block on "open" of the menu
+}
+
+*:has(> .jtl-spinner) {
+    position: relative;
+}
+
+.jtl-spinner {
+    position: absolute;
+    inset: 0;
+    z-index: calc($zindex-dropdown - 1);
+
+    width: 100%;
+
+    .icon-content {
+        position: sticky;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        top: calc(50% - 40px);
+        padding: 30px;
+        font-size: 80px;
+        color: #525252;
+    }
+}
+
+.bootstrap-select {
+    &.show > .dropdown-toggle.bs-placeholder,
+    & > .dropdown-toggle.bs-placeholder:hover,
+    & > .dropdown-toggle.bs-placeholder:focus {
+        background-color: $dropdown-link-hover-bg;
+    }
+}
+
+.yt-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .give-consent-preview {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 10%;
+        text-decoration: none;
+        background-size: cover;
+        background-position: center;
+
+        &:not(:hover) {
+            color: #fff;
+        }
+    }
+}
+
+#consent-manager:not(.active) {
+    display: none;
+}

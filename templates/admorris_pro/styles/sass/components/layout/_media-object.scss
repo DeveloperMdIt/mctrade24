@@ -1,0 +1,26 @@
+/// Media Object
+/// @source https://www.cssmakeovers.com/patterns/media-object/
+///
+
+@media (min-width: 20rem) {
+    /* :::: Typical media object :::: */
+    .media-object {
+        display: grid;
+        grid-column-gap: var(--media-object-gap, 20px);
+        grid-template-columns: auto 1fr;
+    }
+    .media-object__asset {
+        /* set span to (at a minimum) the max # of 
+        grid items to appear next to the img */
+        grid-column-start: 1;
+        grid-row: 1 / span 20;
+    }
+    /* :::: Flipped media object :::: */
+    .media-object--flipped {
+        grid-template-columns: 1fr auto;
+        grid-auto-flow: column;
+    }
+    .media-object--flipped .media__asset {
+        grid-column-start: 2;
+    }
+}

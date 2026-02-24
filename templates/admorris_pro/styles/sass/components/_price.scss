@@ -1,0 +1,16 @@
+.price {
+    font-size: 1.8462rem;
+    font-weight: bold;
+
+    &.price-sm {
+        font-size: 1.5385rem;
+    }
+
+    &.price-xs {
+        font-size: 1.2308rem;
+    }
+
+    .product-info & {
+        color: theme-color('primary');
+    }
+}

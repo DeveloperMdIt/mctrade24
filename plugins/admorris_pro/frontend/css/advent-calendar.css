@@ -1,0 +1,284 @@
+/**
+* This formula calculates a value between 28 and 45 based on luma value of brand-primary.
+* It is meant to darken or lighten extrem color such as #fff and #000, respectively, more 
+* than color in the middle of the luma espectrum
+* NOTE: It doesn work with alpha colors!!!
+*/
+/* kalam-700 - latin */
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Kalam Bold'), local('Kalam-Bold'), url('../fonts/kalam/kalam-v8-latin-700.woff2') format('woff2'), url('../fonts/kalam/kalam-v8-latin-700.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+.am-calendar-btn {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+.am-advent-calendar-wrapper {
+  position: relative;
+  z-index: 1090;
+}
+.am-advent-calendar-wrapper a:hover {
+  opacity: 1;
+}
+.am-advent-calendar {
+  background-color: #a02021;
+  position: fixed;
+  right: 0;
+  top: max(100px, 13vh);
+  width: 80%;
+  max-width: 325px;
+  max-height: 87vh;
+  border-radius: 10px 0 0 10px;
+  z-index: 500;
+  transition: transform 0.4s ease-in-out;
+  transform: translateX(100%);
+}
+.am-advent-calendar.transition-preload {
+  transition: none !important;
+}
+@media (max-height: 570px) and (orientation: landscape) {
+  .am-advent-calendar {
+    width: 60%;
+    max-width: 476px;
+  }
+}
+@media (min-width: 532px) and (min-height: 570px) {
+  .am-advent-calendar {
+    width: 325px;
+  }
+}
+.am-advent-calendar img {
+  max-width: 100%;
+  height: auto !important;
+}
+.am-advent-calendar--show {
+  transform: translateX(0);
+}
+.am-advent-calendar__grid {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.am-advent-calendar__toggle {
+  position: absolute;
+  width: 76px;
+  left: -76px;
+  top: 45px;
+}
+@media (min-width: 768px) {
+  .am-advent-calendar__toggle {
+    width: 101.33333333px;
+    left: -101.33333333px;
+  }
+}
+@media (min-width: 1200px) {
+  .am-advent-calendar__toggle {
+    width: 152px;
+    left: -152px;
+  }
+}
+@media (max-height: 570px) and (orientation: landscape) {
+  .am-advent-calendar__toggle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.am-advent-calendar__window {
+  display: grid;
+  grid-template-areas: 'stack';
+  aspect-ratio: 1;
+  perspective: 450px;
+  /* fix aspect ratio when images are not loaded yet */
+  width: 25%;
+}
+.am-advent-calendar__window > * {
+  grid-area: stack;
+}
+@media (max-height: 570px) and (orientation: landscape) {
+  .am-advent-calendar__window {
+    width: 16.66666%;
+  }
+}
+@media (min-width: 532px) and (min-height: 570px) {
+  .am-advent-calendar__window {
+    width: 76px;
+  }
+}
+.am-advent-calendar__window-img {
+  display: block;
+  position: relative;
+  transform-origin: 12.5%;
+  transform: rotateY(0deg);
+  transition: transform 0.5s ease-in-out;
+  backface-visibility: visible;
+}
+.am-advent-calendar__window-img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+.am-advent-calendar__window.is-open .am-advent-calendar__window-img {
+  transform: rotateY(-90deg);
+}
+img.am-advent-calendar__window-open-img {
+  z-index: -1;
+  margin: 14%;
+  max-width: 72%;
+}
+.am-snow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1020;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}
+.am-snow.snowing {
+  opacity: 1;
+}
+body.modal-open.calendar-is-open {
+  padding-right: 0 !important;
+}
+.am-advent-calendar-modal {
+  padding-right: 0 !important;
+  z-index: 1040;
+}
+@media (max-width: 767px) {
+  .am-advent-calendar-modal {
+    font-size: 12px;
+  }
+}
+.am-advent-calendar-modal__dialog {
+  background-color: #a02021;
+  border-radius: 10px;
+  width: 664px;
+  pointer-events: auto;
+  margin: 13vh auto;
+  max-width: 85%;
+}
+.am-advent-calendar-modal--top-header .am-advent-calendar-modal__dialog {
+  margin-top: 25vh;
+}
+.am-advent-calendar-modal__header {
+  position: relative;
+}
+.am-advent-calendar-modal__header img {
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  margin-top: -15.5%;
+  pointer-events: none;
+  max-width: 116%;
+  display: inline-block;
+}
+.am-advent-calendar-modal--top-header .am-advent-calendar-modal__header {
+  margin-bottom: -8%;
+}
+.am-advent-calendar-modal__close.close {
+  font-family: sans-serif;
+  background-color: white;
+  color: #a02021;
+  border-radius: 100px;
+  margin: 5px 5px;
+  opacity: 1;
+  width: 24px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+}
+.am-advent-calendar-modal__body {
+  color: white;
+  padding: 20px 40px 40px;
+  padding-bottom: 30px;
+}
+.am-advent-calendar-modal__body h1,
+.am-advent-calendar-modal__body h2,
+.am-advent-calendar-modal__body h3,
+.am-advent-calendar-modal__body h4,
+.am-advent-calendar-modal__body h5,
+.am-advent-calendar-modal__body h6 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  text-transform: none;
+  text-align: center;
+}
+.am-advent-calendar-modal__body p {
+  margin-bottom: 1em;
+}
+.am-advent-calendar-modal__body blockquote {
+  color: white;
+  text-align: left;
+  border-left: 2px solid white;
+}
+.am-advent-calendar-modal__body a,
+.am-advent-calendar-modal__body a:hover,
+.am-advent-calendar-modal__body a:active,
+.am-advent-calendar-modal__body a:visited {
+  color: white;
+  text-decoration: underline;
+  border: none;
+}
+.am-advent-calendar-modal__body .coupon {
+  font-size: 56px;
+  margin-bottom: 30px;
+  line-height: 1;
+  font-weight: bold;
+}
+.am-advent-calendar-modal__body img {
+  max-width: 100%;
+  height: auto !important;
+}
+.calendar-is-open .modal-backdrop {
+  display: none;
+}
+.am-advent-calendar-spinner-wrapper {
+  z-index: 991;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -10px;
+}
+.am-advent-calendar-spinner {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #554;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite;
+  /* Safari */
+  animation: am-advent-calendar-spinner-spin 1s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes am-advent-calendar-spinner-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes am-advent-calendar-spinner-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

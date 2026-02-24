@@ -1,0 +1,205 @@
+@use '../abstracts/functions' as *;
+@use 'sass:color';
+
+.footer {
+    --footer-boxes-side-padding: 10px;
+    font-size: rem(13px);
+    background-color: $footer-bg-color;
+    margin-bottom: 0;
+    color: $footer-text-color;
+
+    .box-linkgroup {
+        margin-bottom: 0;
+    }
+
+    a:not(.btn),
+    .btn-link {
+        color: $footer-link-color;
+    }
+
+    // footer box headline class from Nova
+    .product-filter-headline,
+    .productlist-filter-headline {
+        margin-bottom: 10px;
+        font-weight: normal;
+        color: $footer-headings-color;
+        font-size: rem(16px);
+    }
+
+    .btn-primary {
+        background-color: $footer-button-bg;
+        border-color: $footer-button-bg;
+        color: $footer-button-color;
+
+        // higher specificity for active state needed to override `&:not(:disabled):not(.disabled):active,` from bootstrap
+        &:not(:disabled):not(.disabled) {
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active &:active:focus {
+                color: $footer-button-color;
+                background-color: darken($footer-button-bg, 10%) !important;
+                border-color: $footer-button-bg;
+            }
+        }
+    }
+
+    .form-control,
+    .btn-primary {
+        &:not(:disabled):not(.disabled) {
+            &:active:focus,
+            &:focus {
+                @include box-shadow(
+                    $input-box-shadow,
+                    0 0 0 $btn-focus-width rgba(color.mix(color-yiq($footer-bg-color), $footer-button-bg, 15%), 0.5)
+                );
+                border-color: $footer-button-bg;
+            }
+        }
+    }
+
+    .nav-link:not(.btn) {
+        color: $footer-link-color;
+        padding-left: 0;
+    }
+
+    label {
+        color: $footer-text-color;
+    }
+}
+
+.footer-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    --stack-spacing: 3rem;
+}
+
+.footer-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    --row-gap: 3rem;
+    padding: 0 var(--footer-boxes-side-padding);
+}
+
+.footer-boxes--centered {
+    justify-content: center;
+}
+
+.newsletter-body {
+    flex-grow: 1.5;
+}
+
+.newsletter-form-control {
+    flex: 2;
+    flex-basis: 200px;
+
+    @include input-placeholder {
+        text-transform: uppercase;
+    }
+}
+
+@mixin newsletter-full-width-styles() {
+    > * {
+        margin: 0 calc(var(--footer-boxes-side-padding) * -1);
+        padding: 0 var(--footer-boxes-side-padding);
+        @include footer-item-top-border();
+    }
+}
+
+.footer-grid-newsletter-and-social {
+    @if $footer-newsletter-as-column == true {
+        @include media-breakpoint-down(md) {
+            @include newsletter-full-width-styles();
+        }
+    } @else {
+        width: 100% !important;
+        max-width: none !important;
+        flex: 1 1 auto !important;
+        @include newsletter-full-width-styles();
+    }
+}
+
+.newsletter-and-social {
+    align-items: center;
+    --min-width: 54rem;
+
+    .newsletter-heading {
+        color: $footer-headings-color;
+        margin-bottom: 1em;
+    }
+}
+
+*:has(> .newsletter-input-group) {
+    container-type: inline-size;
+}
+
+.newsletter-input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 0;
+
+    & > * {
+        width: 100%;
+    }
+
+    @container (min-width: 400px) {
+        & > * {
+            width: auto;
+
+            &:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &:last-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+}
+
+.newsletter-submit {
+    flex-grow: 1;
+}
+
+.footer-socialmedia {
+    text-align: center;
+    container: footer-socialmedia inline-size;
+}
+
+.footer-socialmedia__list {
+    --cluster-spacing: 5px;
+    --cluster-spacing: 0.6cqi;
+    font-size: 28px;
+    // margin: -5px;
+    // display: flex;
+    // flex-wrap: wrap;
+    justify-content: center;
+    min-width: 150px;
+    .btn-social {
+        &:hover {
+            color: theme-color('primary');
+            opacity: 1;
+        }
+    }
+}
+
+// .footnote-reference {
+//     color: inherit;
+// }
+
+.admorris-branding-logo {
+    margin: 5px 0;
+}
+
+.copyright-container {
+    color: inherit;
+    background: darken($footer-bg, 20%);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    a {
+        color: $link-color;
+    }
+}

@@ -1,0 +1,113 @@
+.input-placeholder(@ruleset) {
+    &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        @ruleset();
+    }
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        @ruleset();
+    }
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        @ruleset();
+    }
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        @ruleset();
+    }
+}
+
+// Pixels Proportional To Font Size
+.pptfs(@unit, @font-size: @font-size-base) {
+    @factor: (@unit / 13);
+    @result: round(@factor * @font-size);
+}
+
+.banner-title() {
+    z-index: 10;
+    margin: 0;
+
+    @media (min-width: @screen-lg) {
+        font-size: rem(54px) * @headings-size-ratio;
+    }
+}
+
+/* Scroll shadow mixin based on http://lea.verou.me/2012/04/background-attachment-local/ 
+ * https://gist.github.com/Yimiprod/ff4708570e9696b5675e2489112fc405
+ */
+
+@scroll-shadow-background: rgb(255, 255, 255);
+@scroll-shadow-color: rgb(0, 0, 0);
+@scroll-shadow-intensity: 0.15;
+@scroll-shadow-cover: 40px;
+@scroll-shadow-size: 14px;
+
+.scroll-shadow-vertical(@background-color: @scroll-shadow-background, @shadow-intensity: @scroll-shadow-intensity, @shadow-color: @scroll-shadow-color, @cover-size: @scroll-shadow-cover, @shadow-size: @scroll-shadow-size) {
+    background-image:
+        // Shadow covers
+        linear-gradient(@background-color 30%, rgba(@background-color, 0)),
+        linear-gradient(rgba(@background-color, 0), @background-color 70%),
+        // Shadows
+        radial-gradient(farthest-side at 50% 0, rgba(@shadow-color, @shadow-intensity), rgba(@shadow-color, 0)),
+        radial-gradient(farthest-side at 50% 100%, rgba(@shadow-color, @shadow-intensity), rgba(@shadow-color, 0));
+    background-repeat: no-repeat;
+    background-color: @background-color;
+    background-size:
+        100% @cover-size,
+        100% @cover-size,
+        100% @shadow-size,
+        100% @shadow-size;
+    background-position:
+        0 0,
+        0 100%,
+        0 0,
+        0 100%;
+
+    // Opera doesn't support this in the shorthand
+    background-attachment: local, local, scroll, scroll;
+}
+
+.scroll-shadow-horizontal(@background-color: @scroll-shadow-background, @shadow-intensity:  @scroll-shadow-intensity, @shadow-color: @scroll-shadow-color, @cover-size: @scroll-shadow-cover, @shadow-size: @scroll-shadow-size) {
+    background-image:
+        // Shadow covers
+        linear-gradient(90deg, @background-color 30%, rgba(@background-color, 0)),
+        linear-gradient(90deg, rgba(@background-color, 0), @background-color 70%),
+        // Shadows
+        radial-gradient(farthest-side at 0 50%, rgba(@shadow-color, @shadow-intensity), rgba(@shadow-color, 0)),
+        radial-gradient(farthest-side at 100% 50%, rgba(@shadow-color, @shadow-intensity), rgba(@shadow-color, 0));
+
+    background-repeat: no-repeat;
+    background-color: @background-color;
+    background-size:
+        @cover-size 100%,
+        @cover-size 100%,
+        @shadow-size 100%,
+        @shadow-size 100%;
+    background-position:
+        0 0,
+        100% 0,
+        0 0,
+        100% 0;
+
+    // Opera doesn't support this in the shorthand
+    background-attachment: local, local, scroll, scroll;
+}
+
+/**
+ * Fluid Type
+ * https://codepen.io/MadeByMike/pen/RWJyML
+ */
+
+.fluid-type(@property, @min-vw, @max-vw, @min-size, @max-size) {
+    @{property}: @min-size!important;
+
+    @media screen and (min-width: @min-vw) {
+        @{property}: calc(
+            @min-size ~" + " unit(@max-size - @min-size) ~" * ((100vw - " @min-vw ~") /" unit(@max-vw - @min-vw) ~")"
+        ) !important;
+    }
+
+    @media screen and (min-width: @max-vw) {
+        @{property}: @max-size!important;
+    }
+}

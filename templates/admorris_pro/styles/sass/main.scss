@@ -1,0 +1,36 @@
+/**
+ * admorris pro
+ * Bootstrap 4 verson
+ */
+
+@import 'abstracts/base-imports';
+
+// Bootstrap
+@import 'vendor/bootstrap/bootstrap';
+
+@import 'vendor/slick';
+@import 'vendor/spin';
+@import 'vendor/tabdrop';
+@import 'vendor/bootstrap-select/bootstrap-select';
+@import 'vendor/lazysizes';
+
+// include basic less files from EVO template
+@import 'base/base';
+
+@import 'abstracts/mixins';
+@import 'base/utility';
+
+// styles for jtl slider imported here instead of template.xml
+// @import "nivo-slider.scss";
+@import 'base/base-styles';
+
+@import 'components';
+
+@import 'layout';
+
+@import 'base/custom';
+
+// User Styles
+@import 'user-styles/user-styles';
+
+@import 'base/reduced-motion';

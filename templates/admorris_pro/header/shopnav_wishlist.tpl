@@ -1,0 +1,1 @@
+{*deprecated - file moved to layout/header_shop_nav_wish.tpl *}

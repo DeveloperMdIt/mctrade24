@@ -1,0 +1,217 @@
+@footer-newsletter-as-column: false;
+
+.footer {
+    --footer-boxes-side-padding: 10px;
+    font-size: rem(13px);
+    background-color: @footer-bg-color;
+    margin-bottom: 0;
+    margin-top: 50px;
+    color: @footer-text-color;
+
+    .box-linkgroup {
+        margin-bottom: 0;
+    }
+
+    a:not(.btn) {
+        color: @footer-link-color;
+    }
+
+    .panel,
+    .panel-heading {
+        border: 0;
+        padding: 0 /*  10px */;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .panel {
+        padding: 0 5px;
+    }
+    .panel-heading {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .panel a.btn-account {
+        color: inherit;
+    }
+
+    .btn-primary {
+        background-color: @footer-button-bg;
+        color: @footer-button-color;
+
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active {
+            background-color: darken(@footer-button-bg, 10%);
+        }
+    }
+
+    .nav-list a:not(.btn) {
+        color: @footer-link-color;
+        padding-left: 0;
+    }
+
+    .panel .panel-title,
+    .panel-title {
+        font-weight: normal;
+        color: @footer-headings-color;
+        font-size: rem(14px);
+    }
+    .panel a:hover {
+        color: @footer-link-color;
+        opacity: 0.8;
+        background-color: transparent !important;
+    }
+
+    label {
+        color: @footer-text-color;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .input-group {
+        @media (max-width: @screen-xs-max) {
+            .input-group-btn > .btn,
+            & {
+                display: block;
+                margin-top: 1em;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.footer-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    --stack-spacing: 3rem;
+}
+
+.newsletter-body {
+    flex-grow: 1.5;
+}
+
+.newsletter-form-control {
+    color: @footer-headings-color;
+    font-weight: bold;
+    border-width: 2px;
+    background-color: @footer-bg-color;
+
+    .input-placeholder({
+        text-transform: uppercase;
+        color: @footer-headings-color;
+    });
+}
+
+.newsletter-full-width-styles() {
+    > * {
+        margin: 0 calc(var(--footer-boxes-side-padding) * -1);
+        padding: 0 var(--footer-boxes-side-padding);
+        .footer-item-top-border();
+    }
+}
+
+.footer-grid-newsletter-and-social {
+    & when (@footer-newsletter-as-column = true) {
+        @media (max-width: @screen-md-max) {
+            .newsletter-full-width-styles();
+        }
+    }
+
+    & when (@footer-newsletter-as-column = false) {
+        width: 100% !important;
+        .newsletter-full-width-styles();
+    }
+}
+
+.newsletter-and-social {
+    align-items: center;
+    --min-width: 54rem;
+
+    .newsletter-heading {
+        color: @footer-headings-color;
+        margin-bottom: 1em;
+    }
+}
+
+.footer-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    --row-spacing: 3rem;
+    padding: 0 var(--footer-boxes-side-padding);
+}
+
+.footer-boxes--centered {
+    justify-content: center;
+}
+
+.newsletter-input-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5em 0;
+    > * {
+        margin: 0.5em 0;
+    }
+}
+.newsletter-form-control {
+    flex: 2;
+    flex-basis: 200px;
+}
+
+.newsletter-submit {
+    flex-grow: 1;
+}
+
+.footer-socialmedia {
+    text-align: center;
+}
+
+.footer-socialmedia__list {
+    font-size: 28px;
+    margin: -5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @supports (-ms-flow-from: thingy) {
+        /* Edge only */
+        justify-content: space-around;
+    }
+    min-width: 150px;
+    .btn-social {
+        margin: 5px;
+        // margin: 0;
+        &:hover {
+            color: @brand-primary;
+            opacity: 1;
+        }
+    }
+}
+
+.footnote-reference {
+    color: inherit;
+}
+
+#admorris_logo {
+    margin-bottom: 10px;
+}
+
+.copyright-container {
+    color: inherit;
+    background: darken(@footer-bg, 20%);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    a {
+        color: @link-color;
+    }
+}
+
+.footer-item-top-border() {
+    padding-top: 2rem;
+    padding-top: var(--stack-spacing);
+    border-top: 1px solid @footer-tone-10;
+}

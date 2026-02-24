@@ -1,0 +1,15 @@
+.headline_first_clerk {
+    font-size: 28px;
+}
+.headline_second_clerk {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.href_underline {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.headline_clerk_service {
+    font-size: 16px;
+    margin-bottom: 10px;
+}

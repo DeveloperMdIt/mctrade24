@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_EN\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "ShopVote - Integration"
+msgstr "ShopVote - Integration"
+
+msgid "API-Key"
+msgstr "API Key"
+
+msgid "API-Secret"
+msgstr "API Secret"
+
+msgid "Grafik-Code"
+msgstr "Graphic code"
+
+msgid "Bitte hier den Grafik-Code einfügen..."
+msgstr "Please insert the graphic code here..."
+
+msgid "Hinterlegen Sie in diesem Feld den Grafik-Code den Sie im Backend von ShopVote beziehen können"
+msgstr "In this field, enter the graphic code that you can obtain from the ShopVote backend"
+
+msgid "ShopVote-Produktbewertungen anzeigen"
+msgstr "Show ShopVote product reviews"
+
+msgid "Nein"
+msgstr "No"
+
+msgid "Ja"
+msgstr "Yes"
+
+msgid "Shopeigene Bewertungen ersetzen"
+msgstr "Replace store own ratings"
+
+msgid "Shopeigene Bewertungen und ShopVote Bewertungen anzeigen"
+msgstr "Show store reviews and ShopVote ratings"
+
+msgid "In eigenem Tab anzeigen"
+msgstr "Show in own tab"
+
+msgid "Die Bewertungen können mit den shopeigenen Bewertungen zusammengefasst werden oder die shopeigenen Bewertungen werden durch die ShopVote Bewertungen ersetzt"
+msgstr "The ratings can be combined with the store's own ratings or the store's own ratings are replaced by the ShopVote ratings"
+
+msgid "Der übermittelte Formular-Token war ungültig"
+msgstr "The submitted form token was invalid"
+
+msgid "Die Einstellungen wurden erfolgreich gespeichert"
+msgstr "The settings were saved successfully"
+
+msgid "Die Einstellungen konnten nicht gespeichert werden"
+msgstr "The settings could not be saved"
+
+msgid "Consentmanager-Integration"
+msgstr "Consent Manager Integration"
+
+msgid "Integration in den Consentmanager des JTL-Shop"
+msgstr "Integration into the Consent Manager of the JTL shop"
+
+msgid "Shop5-Consentmanager beachten?"
+msgstr "Respect Shop5 Consent Manager?"
+
+msgid "Soll eine Zustimmung über den JTL-Shop5-Consentmanager beachtet werden?"
+msgstr "Should an approval via the JTL Shop5 Consent Manager be observed?"

@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "embedResponsive"
+msgstr "Embed video responsively"
+
+msgid "source"
+msgstr "Platform"
+
+msgid "localVideo"
+msgstr "Locally stored video"
+
+msgid "youtubeNote"
+msgstr "In your data privacy notice, point out the following:<br/>- YouTube videos are embedded "
+"in your pages in the \"Extended data privacy mode\".- Opening the pages establishes a connection with "
+"YouTube and DoubleClick.- Clicking on the video can lead to further data processing that cannot be "
+"influenced by the website owner."
+
+msgid "videoID"
+msgstr "Video ID / Video URL"
+
+msgid "videoIDHelpYoutube"
+msgstr "The video ID can be found after the equals sign (?v=) of the YouTube URL, e.g."
+" https://www.youtube.com/watch?v=[video ID]."
+
+msgid "showControls"
+msgstr "Show control elements"
+
+msgid "showCaptions"
+msgstr "Show closed captions automatically"
+
+msgid "showTranscriptControls"
+msgstr "Enable customers to view the transcript"
+
+msgid "showTranscriptControlsDesc"
+msgstr "Choose whether your customers can view the transcripts of Vimeo videos."
+
+msgid "showSimilarVideos"
+msgstr "Show similar videos"
+
+msgid "playlist"
+msgstr "Video IDs for playlist"
+
+msgid "playlistHelp"
+msgstr "Enter the video IDs separated by commas; e.g. xITQHgJ3RRo,sNYv0JgrUlw."
+
+msgid "videoIDHelpVimeo"
+msgstr "The video ID can be found after the slash (/) of the Vimeo URL, e.g. https://vimeo.com/[video ID]."
+
+msgid "repeatVideo"
+msgstr "Repeat video once it has finished"
+
+msgid "videoCaptions"
+msgstr "Add closed captions"
+
+msgid "videoCaptionsDesc"
+msgstr "Upload the closed captions of the video as a VTT file here."
+
+msgid "videoTranscript"
+msgstr "Add transcript"
+
+msgid "videoTranscriptAsPopUp"
+msgstr "Show transcript in a separate window"
+
+msgid "muteVideo"
+msgstr "Mute video automatically"
+
+msgid "autoplayVideo"
+msgstr "Play video automatically"
+
+msgid "videoAutoplayDesc"
+msgstr "In many browsers, the video can only be played automatically if the video is muted. To do this, activate the"
+" check box \"Mute video automatically\"."
+
+msgid "showImage"
+msgstr "Show profile picture"
+
+msgid "showImageDesc"
+msgstr "Choose whether to show the profile picture of the Vimeo user. Vimeo users can decide whether their profile"
+" picture is to be displayed and may override your setting."
+
+msgid "showTitle"
+msgstr "Show video title"
+
+msgid "showTitleDesc"
+msgstr "Vimeo users can decide whether the video title is to be displayed and may override your setting."
+
+msgid "showAuthorInformation"
+msgstr "Show channel information"
+
+msgid "showAuthorInformationDesc"
+msgstr "Vimeo users can decide whether the channel information is to be displayed and may override your setting."
+
+msgid "videoURL"
+msgstr "Video URL"
+
+msgid "colorYtDesc"
+msgstr "Colour of control elements"
+
+msgid "showCaptionsYtDesc"
+msgstr "YouTube will only automatically show closed captions that have been manually created by users for the video."
+" Auto-generated closed captions will not be shown automatically."
+
+msgid "widthPx"
+msgstr "Width (px)"
+
+msgid "heightPx"
+msgstr "Height (px)"
+
+msgid "startSec"
+msgstr "Starts at second"
+
+msgid "endSec"
+msgstr "Ends at second"

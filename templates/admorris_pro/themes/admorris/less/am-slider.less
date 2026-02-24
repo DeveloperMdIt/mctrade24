@@ -1,0 +1,626 @@
+.header-wrapper--fullscreen,
+.header-wrapper--framed {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.keen-slider__wrapper.fullscreen-container {
+    flex-grow: 1;
+}
+
+.keen-slider__wrapper {
+    position: relative;
+    // height: 0;
+    overflow: hidden;
+
+    // scaled parallax wrapper
+    .keen-slider__rellax-wrapper--scaled {
+        height: 100%;
+        width: 100%;
+
+        // preserve content for aspect ratio
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .rellax--scaled {
+            height: 120%; // needed for scaling of parallax content -> if parallax is set srcset width will be manipulated by 20% to choose bigger image depending view port
+            top: -10%;
+        }
+
+        .rellax--scaled-preview {
+            position: relative;
+        }
+    }
+}
+
+.keen-slider {
+    position: absolute !important;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.keen-slider__slide--initial {
+    animation: none !important; // first slide on init -> no animation
+}
+
+.keen-slider__slide--custom {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    top: -9999px;
+    left: -9999px;
+
+    img,
+    div,
+    video {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.active {
+        display: block;
+        animation-name: var(--transitionName);
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        z-index: 3;
+        top: 0;
+        left: 0;
+    }
+
+    &.last-active-slide {
+        display: block;
+        z-index: 2;
+        top: 0;
+        left: 0;
+    }
+}
+
+.keen-slider__dots__wrapper {
+    position: absolute;
+    display: flex;
+    bottom: 15px;
+    right: 50%;
+    left: 50%;
+    justify-content: center;
+    z-index: 5;
+}
+
+.keen-slider__dots {
+    display: flex;
+    padding: 5px 0;
+    justify-content: center;
+}
+
+.keen-slider__dots--dot {
+    opacity: 0.5;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s ease-in;
+    position: relative;
+
+    &.dot--active,
+    &:hover {
+        opacity: 1;
+    }
+
+    svg {
+        position: absolute;
+    }
+}
+
+.keen-slider__arrows {
+    pointer-events: auto;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 50%; // - height of icon
+    align-items: center;
+    justify-content: space-between;
+    bottom: 50%;
+    padding-left: 1em;
+    padding-right: 1em;
+    &.overlay {
+        bottom: calc(50% - var(--adm-header-height));
+    }
+    z-index: 5;
+}
+
+.keen-slider__arrows {
+    pointer-events: none;
+    &--left,
+    &--right {
+        pointer-events: all;
+        opacity: 0.8;
+        cursor: pointer;
+        width: 70px;
+        height: 70px;
+        padding: 7.5px;
+        transition: opacity 0.2s ease-in;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &--left {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    .arrow--disabled {
+        opacity: 0.2;
+    }
+}
+
+.keen-slider__nav {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.keen-slider__nav.--hidden {
+    opacity: 0;
+}
+
+.keen-slider__nav.--hidden-on-mobile {
+    @media (max-width: @screen-xs-max) {
+        display: none;
+    }
+}
+
+//media queries
+
+@media (max-width: @screen-xs-max) {
+    .keen-slider__arrows {
+        padding-left: 0em;
+        padding-right: 0em;
+        &--left,
+        &--right {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+// Slider Tranisitions
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom-out {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom-in-right {
+    0% {
+        transform: scale(0);
+        left: 100%;
+    }
+    50% {
+        transform: scale(0.5);
+        left: 0%;
+    }
+    100% {
+        transform: scale(1);
+        left: 0%;
+    }
+}
+
+@keyframes zoom-out-right {
+    0% {
+        transform: scale(2);
+        left: 100%;
+    }
+    50% {
+        transform: scale(1.5);
+        left: 0%;
+    }
+    100% {
+        transform: scale(1);
+        left: 0%;
+    }
+}
+
+@keyframes zoom-in-left {
+    0% {
+        transform: scale(0);
+        left: -100%;
+    }
+    50% {
+        transform: scale(0.5);
+        left: 0%;
+    }
+    100% {
+        transform: scale(1);
+        left: 0%;
+    }
+}
+
+@keyframes zoom-out-left {
+    0% {
+        transform: scale(2);
+        left: -100%;
+    }
+    50% {
+        transform: scale(1.5);
+        left: 0%;
+    }
+    100% {
+        transform: scale(1);
+        left: 0%;
+    }
+}
+
+@keyframes fade-zoom-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-zoom-out {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes circle-in-hesitate {
+    0% {
+        clip-path: circle(0%);
+    }
+    40% {
+        clip-path: circle(40%);
+    }
+    100% {
+        clip-path: circle(125%);
+    }
+}
+
+[transition-style="in:circle:hesitate"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-hesitate both;
+}
+
+@keyframes circle-in-center {
+    from {
+        clip-path: circle(0%);
+    }
+    to {
+        clip-path: circle(125%);
+    }
+}
+
+[transition-style="in:circle:center"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-center both;
+}
+
+@keyframes circle-in-top-right {
+    from {
+        clip-path: circle(0%);
+    }
+    to {
+        clip-path: circle(150% at top right);
+    }
+}
+
+[transition-style="in:circle:top-right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right both;
+}
+
+@keyframes circle-in-top-left {
+    from {
+        clip-path: circle(0%);
+    }
+    to {
+        clip-path: circle(150% at top left);
+    }
+}
+
+[transition-style="in:circle:top-left"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-left both;
+}
+
+@keyframes circle-in-bottom-right {
+    from {
+        clip-path: circle(0%);
+    }
+    to {
+        clip-path: circle(150% at bottom right);
+    }
+}
+
+[transition-style="in:circle:bottom-right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-bottom-right both;
+}
+
+@keyframes circle-in-bottom-left {
+    from {
+        clip-path: circle(0%);
+    }
+    to {
+        clip-path: circle(150% at bottom left);
+    }
+}
+
+[transition-style="in:circle:bottom-left"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-bottom-left both;
+}
+
+@keyframes square-in-center {
+    from {
+        clip-path: inset(100% 100% 100% 100%);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:square:center"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-center both;
+}
+
+@keyframes square-in-hesitate {
+    0% {
+        clip-path: inset(100% 100% 100% 100%);
+    }
+    40% {
+        clip-path: inset(33% 33% 33% 33%);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:square:hesitate"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-hesitate both;
+}
+
+@keyframes square-in-top-right {
+    from {
+        clip-path: inset(100% 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:square:top-right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-top-right both;
+}
+
+@keyframes square-in-top-left {
+    from {
+        clip-path: inset(100% 0 0 100%);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:square:top-left"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-top-left both;
+}
+
+@keyframes square-in-bottom-right {
+    from {
+        clip-path: inset(0 100% 100% 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:square:bottom-right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-bottom-right both;
+}
+
+@keyframes square-in-bottom-left {
+    from {
+        clip-path: inset(0 0 100% 100%);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:square:bottom-left"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-bottom-left both;
+}
+
+@keyframes wipe-in-right {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:wipe:right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
+}
+
+@keyframes wipe-in-left {
+    from {
+        clip-path: inset(0 0 0 100%);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:wipe:left"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both;
+}
+
+@keyframes wipe-in-up {
+    from {
+        clip-path: inset(100% 0 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:wipe:up"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-up both;
+}
+
+@keyframes wipe-in-down {
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:wipe:down"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-down both;
+}
+
+@keyframes wipe-in-top-right {
+    from {
+        clip-path: polygon(-50% 50%, 50% 150%, 50% 150%, -50% 50%);
+    }
+    to {
+        clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+    }
+}
+
+[transition-style="in:wipe:top-right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-top-right both;
+}
+
+@keyframes wipe-in-top-right {
+    from {
+        clip-path: polygon(-50% 50%, 50% 150%, 50% 150%, -50% 50%);
+    }
+    to {
+        clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+    }
+}
+
+[transition-style="in:wipe:top-right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-top-right both;
+}
+
+@keyframes wipe-in-top-left {
+    from {
+        clip-path: polygon(150% 50%, 150% 50%, 50% 150%, 50% 150%);
+    }
+    to {
+        clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+    }
+}
+
+[transition-style="in:wipe:top-left"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-top-left both;
+}
+
+@keyframes wipe-in-bottom-right {
+    from {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 50%);
+    }
+    to {
+        clip-path: polygon(-50% 0%, 200% 0, 0 200%, 0 -50%);
+    }
+}
+
+[transition-style="in:wipe:bottom-right"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-bottom-right both;
+}
+
+@keyframes wipe-in-bottom-left {
+    from {
+        clip-path: polygon(50% -50%, 150% 50%, 150% 50%, 50% -50%);
+    }
+    to {
+        clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+    }
+}
+
+[transition-style="in:wipe:bottom-left"] {
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-bottom-left both;
+}
+
+@keyframes diamond-in-center {
+    from {
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    }
+    to {
+        clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+    }
+}
+
+[transition-style="in:diamond:center"] {
+    animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) diamond-in-center both;
+}
+
+@keyframes diamond-in-hesitate {
+    0% {
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    }
+    50% {
+        clip-path: polygon(45% 50%, 50% 25%, 55% 50%, 50% 75%);
+    }
+    100% {
+        clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+    }
+}
+
+[transition-style="in:diamond:hesitate"] {
+    animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) diamond-in-hesitate both;
+}
+
+@keyframes polygon-in-opposing-corners {
+    from {
+        clip-path: polygon(0 0, 50% 50%, 100% 100%, 50% 50%);
+    }
+    to {
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    }
+}
+
+[transition-style="in:polygon:opposing-corners"] {
+    animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) polygon-in-opposing-corners both;
+}

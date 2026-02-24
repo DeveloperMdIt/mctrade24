@@ -1,0 +1,207 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '../vendor/utopia/utopia';
+@use 'functions' as *;
+
+@mixin input-placeholder {
+    &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        @content;
+    }
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        @content;
+    }
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        @content;
+    }
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        @content;
+    }
+}
+
+// // Pixels Proportional To Font Size
+// @mixin pptfs($unit, $font-size: $font-size-base) {
+//     $factor: ($unit / 13);
+//     $result: math.round($factor * $font-size);
+// }
+
+@mixin banner-title() {
+    z-index: 10;
+    margin: 0;
+
+    @media (min-width: $screen-lg) {
+        font-size: rem(54px) * $headings-size-ratio;
+    }
+}
+
+@mixin adm-button-variant($background, $border, $variant: '') {
+    $theme-button-colors: map.merge(
+        (
+            'primary': $btn-primary-color,
+        ),
+        $theme-colors
+    ) !default;
+    @include button-variant($background, $border);
+    @if $variant != '' {
+        color: map.get($theme-button-colors, $variant);
+    }
+}
+
+/* Scroll shadow mixin based on http://lea.verou.me/2012/04/background-attachment-local/ 
+ * https://gist.github.com/Yimiprod/ff4708570e9696b5675e2489112fc405
+ */
+
+$scroll-shadow-background: rgb(255, 255, 255);
+$scroll-shadow-color: rgb(0, 0, 0);
+$scroll-shadow-intensity: 0.15;
+$scroll-shadow-cover: 40px;
+$scroll-shadow-size: 14px;
+
+@mixin scroll-shadow-vertical(
+    $background-color: $scroll-shadow-background,
+    $shadow-intensity: $scroll-shadow-intensity,
+    $shadow-color: $scroll-shadow-color,
+    $cover-size: $scroll-shadow-cover,
+    $shadow-size: $scroll-shadow-size
+) {
+    background-image: // Shadow covers
+        linear-gradient($background-color 30%, rgba($background-color, 0)),
+        linear-gradient(rgba($background-color, 0), $background-color 70%),
+        // Shadows
+        radial-gradient(farthest-side at 50% 0, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)),
+        radial-gradient(farthest-side at 50% 100%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0));
+    background-repeat: no-repeat;
+    background-color: $background-color;
+    background-size: 100% $cover-size, 100% $cover-size, 100% $shadow-size, 100% $shadow-size;
+    background-position: 0 0, 0 100%, 0 0, 0 100%;
+
+    // Opera doesn't support this in the shorthand
+    background-attachment: local, local, scroll, scroll;
+}
+
+@mixin scroll-shadow-horizontal(
+    $background-color: $scroll-shadow-background,
+    $shadow-intensity: $scroll-shadow-intensity,
+    $shadow-color: $scroll-shadow-color,
+    $cover-size: $scroll-shadow-cover,
+    $shadow-size: $scroll-shadow-size
+) {
+    background-image: // Shadow covers
+        linear-gradient(90deg, $background-color 30%, rgba($background-color, 0)),
+        linear-gradient(90deg, rgba($background-color, 0), $background-color 70%),
+        // Shadows
+        radial-gradient(farthest-side at 0 50%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)),
+        radial-gradient(farthest-side at 100% 50%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0));
+
+    background-repeat: no-repeat;
+    background-color: $background-color;
+    background-size: $cover-size 100%, $cover-size 100%, $shadow-size 100%, $shadow-size 100%;
+    background-position: 0 0, 100% 0, 0 0, 100% 0;
+
+    // Opera doesn't support this in the shorthand
+    background-attachment: local, local, scroll, scroll;
+}
+
+@mixin generate-jqcloud-classes($n, $i: 1) {
+    @for $i from 1 through $n {
+        .jqcloud-word.w#{$i} {
+            color: tint(theme-color('primary'), 77% - $i * 11%);
+            font-size: 100% + $searchcloud-font-size-scaling * ($i - 1);
+        }
+    }
+}
+
+@mixin admPro-container() {
+    margin-inline: auto;
+    padding-inline: var(--container-padding, 20px);
+    // width: auto;
+    box-sizing: content-box;
+}
+
+@mixin panel--minimal() {
+    box-shadow: none;
+    // margin: 3em 0 5em;
+    background-color: transparent;
+
+    .card-header,
+    .card-body {
+        padding: 0;
+    }
+
+    .card-title {
+        font-size: $font-size-lg;
+        font-weight: bold;
+        text-transform: uppercase;
+        // margin-bottom: .pptfs(50px)[@result]; //3em;
+        margin-bottom: $additional-info-spacing--mobile - 3;
+        @media (min-width: $screen-sm) {
+            margin-bottom: $additional-info-spacing--desktop - 3;
+        }
+    }
+}
+
+@mixin product-cell__title() {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: rem(13px);
+    font-weight: 500;
+    a {
+        color: $tone-base;
+        transition: color 0.3s;
+        &:hover,
+        &:active {
+            color: theme-color('primary');
+            opacity: 1;
+            text-decoration: none;
+        }
+    }
+}
+
+@mixin product-cell-price() {
+    color: $brand-tone50;
+    font-size: rem(16px);
+    font-weight: 400;
+}
+
+@mixin footer-item-top-border() {
+    padding-top: 2rem;
+    padding-top: var(--stack-spacing);
+    border-top: 1px solid $footer-tone-10;
+}
+
+/**
+ * Fluid Type
+ * Sass equivalent of the Less fluid-type mixin using utopia.calculateClamp
+ * added for backwards compatibility with the original fluid-type mixin
+ * used in Less.
+ * Better use the utopia mixin directly.
+* @param {string} $property - The CSS property to apply the fluid type to (e.g., font-size, line-height)
+* @param {number} $min-vw - The minimum viewport width (in pixels) for the fluid type to start
+* @param {number} $max-vw - The maximum viewport width (in pixels) for the fluid type to end
+* @param {number} $min-size - The minimum size (in pixels) for the fluid type to start
+* @param {number} $max-size - The maximum size (in pixels) for the fluid type to end
+* @example
+*   @include fluid-type(font-size, 1200px, 1920px, 16px, 18px);
+*   @include fluid-type(line-height, 1200px, 1920px, 1.5, 2);
+ */
+@mixin fluid-type($property, $min-vw, $max-vw, $min-size, $max-size) {
+    // Strip units for parameters
+    $min-vw-value: strip-unit($min-vw);
+    $max-vw-value: strip-unit($max-vw);
+    $min-size-value: strip-unit($min-size);
+    $max-size-value: strip-unit($max-size);
+
+    $property: utopia.calculateClamp(
+        (
+            'minWidth': $min-vw-value,
+            'maxWidth': $max-vw-value,
+            'minSize': $min-size-value,
+            'maxSize': $max-size-value,
+            'usePx': true,
+            'relativeTo': 'viewport-width',
+        )
+    );
+}

@@ -1,0 +1,13 @@
+<soapenv:Envelope
+        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:web="http://postfinder.dpag.de/webservice">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:getPackstationsFilialeDirektByAddress>
+            <address>
+                <zip>###ZIP###</zip>
+            </address>
+            <key></key>
+        </web:getPackstationsFilialeDirektByAddress>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,195 @@
+.nav-wizard {
+    border: none;
+    background-color: @body-bg;
+
+    > li {
+        &:not(:first-child):before {
+            border-left-color: @body-bg;
+        }
+
+        &:not(:last-child):after {
+            border-left-color: if(@brand-primary-bool, @brand-primary-dark, @brand-primary-light);
+        }
+
+        &.active {
+            a,
+            .nav-badge {
+                color: @nav-pills-active-link-color;
+
+                &:hover {
+                    background-color: @nav-pills-active-link-hover-bg; //primary
+                }
+            }
+
+            &:after {
+                border-left-color: @nav-pills-active-link-hover-bg; //primary
+            }
+        }
+
+        > a,
+        > a:hover,
+        > a:focus,
+        .nav-badge {
+            color: @btn-primary-color;
+            background-color: if(@brand-primary-bool, @brand-primary-dark, @brand-primary-light);
+            opacity: 1;
+        }
+    }
+}
+
+#checkout {
+    margin-bottom: 100px;
+
+    .form-group label {
+        font-weight: normal;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        margin-bottom: 1em;
+    }
+
+    // td.img-col {
+    //     max-width: 175px;
+    //     padding-left: 0;
+    // }
+
+    // td, th {
+    //     padding: 2em;
+    // }
+}
+
+[id="checkout-shipping-payment"] {
+    .radio {
+        input[type="radio"] {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+[id="checkout-shipping-payment"],
+[id="fieldset-payment"] {
+    .badge {
+        border-radius: 0;
+        background-color: @brand-primary;
+    }
+    .radio {
+        input[type="radio"] {
+            margin-left: -8px;
+        }
+        label {
+            position: relative;
+        }
+
+        .control-label {
+            margin: @grid-gutter-width;
+        }
+    }
+    // klarna_combined_payment input
+    .klarna_combined_payment {
+        .custom-control-input {
+            left: -20px;
+        }
+        .custom-control {
+            position: relative;
+        }
+    }
+}
+
+#panel-edit-coupon {
+    .form-control {
+        border-width: 0 0 1px;
+        box-shadow: none;
+        background-color: transparent;
+        color: @text-color;
+        padding-left: 0;
+    }
+
+    .btn {
+        border-width: 0;
+        color: @brand-primary;
+        background-color: transparent;
+        font-weight: bold;
+    }
+}
+
+// mit aktiver paywall einstellung vom paypal plugin werden die anderen Zahlungsarten anders ausgegeben als sonst
+[id="zahlung"] {
+    .radio input[type="radio"] {
+        margin-left: -23px;
+    }
+    input[name="Zahlungsart"]:not([class*="hidden"]) {
+        display: unset !important;
+    }
+}
+
+.klarna_combined_input {
+    display: none;
+}
+
+/* Paypal Checkout Plugin Fixes */
+
+.ppc-checkout-payment-method {
+    .custom-control {
+        padding: 20px;
+        padding-left: 40px;
+        position: relative;
+    }
+    .custom-control-input {
+        position: absolute;
+        margin-left: -8px;
+        top: 20px + (@font-size-base-px * @line-height-base - 16px) / 2;
+        left: 20px;
+    }
+}
+
+.custom-control-inline {
+    &:extend(.custom-border);
+    &:extend(.radio);
+}
+
+.custom-control-input {
+    &:extend(.custom);
+    &:extend(.radio-checkbox);
+}
+
+.custom-control-label {
+    &:extend(.control-label);
+}
+
+// cart button mobile bug because of missing float occuring in bootstrap 3
+#cart-ppc-paypal-standalone-button {
+    float: right;
+    width: 100%;
+}
+
+/* 
+Mollie Creditcard form fix
+
+control-labels from mollie's form labels have col-sm-2 classes on them
+with bootstrap 3 this causes problems because they are floated.
+*/
+
+#mollie-components .control-label {
+    float: none;
+}
+
+#complete-order-button {
+    white-space: normal;
+}
+
+#change-cart-button {
+    margin: 2px 0px;
+}
+
+.checkout-button-row {
+    margin-top: 1em;
+}
+
+.proceed {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}

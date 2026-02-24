@@ -1,0 +1,56 @@
+{
+  "type": "project",
+  "version": "1.0.3",
+  "name": "webstollen/ws5_easycredit",
+  "description": "JTL-Shop 5 Plugin Container",
+  "config": {
+    "optimize-autoloader": true,
+    "gitlab-domains": [
+      "gitlab.webstollen.de"
+    ],
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "require": {
+    "php": "7.4 - 8.1",
+    "webstollen/php-easycredit-sdk": "^2.0",
+    "webstollen/jtl5-core-plugin-library-v1_0_17": "1.0.17"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "^8.5",
+    "phpmetrics/phpmetrics": "^2.7",
+    "squizlabs/php_codesniffer": "3.*",
+    "friendsofphp/php-cs-fixer": "^2.16"
+  },
+  "authors": [
+    {
+      "email": "strathmeyer@webstollen.de",
+      "name": "Alexander Strathmeyer",
+      "homepage": "https://www.webstollen.de"
+    },
+    {
+      "email": "klamer@webstollen.de",
+      "name": "Florian Klamer",
+      "homepage": "https://www.webstollen.de"
+    },
+    {
+      "email": "morokane@webstollen.de",
+      "name": "Kabelo Morokane",
+      "homepage": "https://www.webstollen.de"
+    }
+  ],
+  "scripts": {
+    "analyze": "phpmetrics --report-html=report ./",
+    "test": "phpunit",
+    "sniff": "phpcs --standard=PSR12 --ignore=vendor/ ./lib",
+    "php-cs-fixer": "php-cs-fixer --config=./.php_cs"
+  },
+  "repositories": {
+    "202": {
+      "type": "composer",
+      "url": "https://gitlab.webstollen.de/api/v4/group/202/-/packages/composer/packages.json"
+    }
+  }
+}

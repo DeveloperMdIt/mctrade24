@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\Migrations; use JTL\Shop; use JTL\Plugin\Migration; use JTL\Update\IMigration; class Migration20250602010100 extends Migration implements IMigration { protected $description = "\101\x64\x64\x20\x63\x75\163\x74\x6f\x6d\x20\154\x61\156\147\x75\141\147\145\40\166\x61\162\x69\141\x62\x6c\145\x20\146\x6f\162\x20\x70\x61\171\x6d\x65\x6e\x74\x20\151\143\x6f\156\x73"; public function up() { $definedLanguageVariables = Shop::Lang()->gibSektionsWerte("\141\x72\151\141"); if (array_key_exists("\x70\x61\171\x6d\x65\x6e\x74\x69\143\x6f\x6e\x73", $definedLanguageVariables)) { goto fFU7m; } $this->setLocalization("\147\145\162", "\141\162\x69\141", "\x70\x61\171\155\145\x6e\x74\x69\x63\157\x6e\163", "\x5a\141\x68\x6c\x75\156\x67\x73\x6d\145\x74\150\x6f\x64\x65\x6e", false); $this->setLocalization("\145\x6e\x67", "\141\162\x69\141", "\x70\141\x79\155\145\x6e\164\151\x63\x6f\x6e\x73", "\x50\x61\x79\x6d\x65\156\x74\40\115\x65\x74\x68\x6f\144\163", false); fFU7m: } public function down() { $this->removeLocalization("\x70\x61\171\x6d\x65\x6e\164\x69\x63\x6f\156\163", "\x61\x72\x69\x61"); } }

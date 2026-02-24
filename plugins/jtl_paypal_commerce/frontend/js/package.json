@@ -1,0 +1,14 @@
+{
+  "name": "jtl_ppc",
+  "version": "0.9.0-beta.1",
+  "description": "jtl_paypal_commerce_js_wrapper",
+  "main": "index.js",
+  "dependencies": {
+    "@paypal/paypal-js": "5.0.1"
+  },
+  "scripts": {
+    "move": "cp node_modules/@paypal/paypal-js/dist/iife/paypal-js.min.js paypal.browser.min.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,2141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jtlshopplugin>
+  <Name>admorris PRO</Name>
+  <Description>Die All-In-One Lösung für den JTL-Shop</Description>
+  <Author>admorris</Author>
+  <URL>admorris.pro</URL>
+  <PluginID>admorris_pro</PluginID>
+  <XMLVersion>100</XMLVersion>
+  <ShopVersion>5.5.0</ShopVersion>
+  <Version>3.1.9</Version>
+  <CreateDate>2025-09-11</CreateDate>
+  <Icon>admorris.png</Icon>
+  <Install>
+    <Hooks>
+      <Hook id="37">hook_37.php</Hook>
+      <Hook id="38">hook_38.php</Hook>
+      <Hook id="39">hook_39.php</Hook>
+      <Hook id="52">hook_52.php</Hook>
+      <Hook id="99">lastinclude.php</Hook>
+      <Hook id="126">hook_126.php</Hook>
+      <Hook id="207">hook_207.php</Hook>
+    </Hooks>
+
+    <Adminmenu>
+      <Customlink sort="1">
+        <Name>Einstellungen</Name>
+        <Filename>backend.tpl</Filename>
+      </Customlink>
+      <Settingslink sort="2">
+        <Name>Tools</Name>
+        <Setting type="text" initialValue="Y" sort="1" conf="N">
+          <Name>Sonderangebot Countdown</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_special_offer_countdown_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="2" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_special_offer_countdown_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="3" conf="Y">
+          <Name>Anzeigeformat</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_special_offer_countdown_format</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="standard-clock-white" sort="4" conf="Y">
+          <Name>Style</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_special_offer_countdown_style</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="5" conf="Y">
+          <Name>Titel anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_special_offer_countdown_displaytitle</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="6" conf="N">
+          <Name>Push Benachrichtigungen</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_push_notification_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_push_notification_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="8" conf="Y">
+          <Name>Berechtigung nachfragen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_push_notification_prequest</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="9" conf="N">
+          <Name>Browser Tab Reminder</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_browser_tab_reminder_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="10" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_browser_tab_reminder_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="11" conf="Y">
+          <Name>Seitentitel hinzufügen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_browser_tab_reminder_add_title</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="12" conf="N">
+          <Name>admorris search</Name>
+          <Description />
+          <ValueName>admorris_pro_search_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="13" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_search_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="13" conf="Y">
+          <Name>Hersteller von der Smartsearch ausschließen</Name>
+          <Description/>
+          <ValueName>admorris_pro_search_disable_manufacturers</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="13" conf="Y">
+          <Name>Varitionskombinationen beachten?</Name>
+          <Description/>
+          <ValueName>admorris_pro_search_varkombi_handling</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="13" conf="Y">
+          <Name>Fixer Suchindex bzw. Domain</Name>
+          <Description/>
+          <ValueName>admorris_pro_search_main_domain</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="14" conf="N">
+          <Name>Rabatt Timer</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_discount_timer_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="15" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="15" conf="Y">
+          <Name>Ganzer Warenkorb</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_full_cart</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="62" conf="Y">
+          <Name>Steuersatz</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_tax</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="20" sort="16" conf="Y">
+          <Name>Countdown Zeit</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_time</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="17" conf="Y">
+          <Name>Countdown Rabatt</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_discount</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="20" sort="16" conf="Y">
+          <Name>Countdown Rabatt Mindestbestellwert</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_minimal_order_value</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="17" conf="Y">
+          <Name>Countdown Rabatt Artikel</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_article</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="-1" sort="17" conf="Y">
+          <Name>Countdown Rabatt Hersteller</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_manufacturer</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="-1" sort="17" conf="Y">
+          <Name>Countdown Rabatt Kategorie</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_category</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="-1" sort="17" conf="Y">
+          <Name>Countdown Rabatt Kundengruppe</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_customer_group</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="17" conf="Y">
+          <Name>Countdown Rabatt Lieferland</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_shipping_country</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="prozent" sort="18" conf="Y">
+          <Name>Countdown Rabatttyp</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_discounttyp</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Rabatt Kupon" sort="19" conf="Y">
+          <Name>Kupon Name</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_name</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="standard-clock-white" sort="19" conf="Y">
+          <Name>Style</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_timer_style</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="20" conf="N">
+          <Name>Live Chat</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_live_chat_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="21" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_chat_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="widget" sort="21" conf="Y">
+          <Name>Typ</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_chat_typ</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="22" conf="Y">
+          <Name>tawk.to Direct Chat Link Deutsch</Name>
+          <Description>z.B. https://tawk.to/chat/5b20da0007752b5xxxx/xxxxxx (Vewernden Sie Widget-Typ: Einbau)"</Description>
+          <ValueName>admorris_pro_marketing_live_chat_id_de</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="23" conf="Y">
+          <Name>tawk.to Direct Chat Link Englisch (für alle anderen Sprachen )
+          </Name>
+          <Description>z.B. https://tawk.to/chat/5b20da0007752b5xxxx/xxxxxx (Vewernden Sie Widget-Typ: Einbau)</Description>
+          <ValueName>admorris_pro_marketing_live_chat_id_en</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="24" conf="N">
+          <Name>Shopbewertung</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_trustmark_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="25" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_trustmark_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="26" conf="Y">
+          <Name>Shopvote ID</Name>
+          <Description>z.B. 12345</Description>
+          <ValueName>admorris_pro_marketing_trustmark_id</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="27" conf="Y">
+          <Name>Style</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_trustmark_shopvote_style</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="click" sort="27" conf="Y">
+          <Name>Flyout</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_trustmark_shopvote_flyout</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="25" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_trustmark_google_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="26" conf="Y">
+          <Name>Google Merchant ID</Name>
+          <Description>z.B. 12345</Description>
+          <ValueName>admorris_pro_marketing_trustmark_google_id</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="BOTTOM_RIGHT" sort="27" conf="Y">
+          <Name>Baddgeposition</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_trustmark_google_position</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="CENTER_DIALOG" sort="27" conf="Y">
+          <Name>Review Collector Position</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_trustmark_google_collector_position</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="10" sort="26" conf="Y">
+          <Name>Bewertungserinnerung nach x Tagen</Name>
+          <Description>z.B. 12345</Description>
+          <ValueName>admorris_pro_marketing_trustmark_google_delay</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="Y" sort="28" conf="N">
+          <Name>Lieferzeitcountdown</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_shipping_countdown_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="29" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_countdown_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="30" conf="Y">
+          <Name>Anzeigetyp</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_countdown_typ</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="30" conf="Y">
+          <Name>Countdown aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_countdown_countdown</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="31" conf="Y">
+          <Name>Anzeigen wenn der Versand nicht am selben Tag möglich ist?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_countdown_show_if_no_shipping_today</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="12:00" sort="32" conf="Y">
+          <Name>Versandschluss</Name>
+          <Description>z.B. 17:00 (17 Uhr)</Description>
+          <ValueName>admorris_pro_marketing_shipping_countdown_shipping_closing</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="33" conf="Y">
+          <Name>Versand am Samstag</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_countdown_shipping_saturday</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="34" conf="Y">
+          <Name>Zustellung am Samstag</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_countdown_delivery_saturday</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="35" conf="N">
+          <Name>Cookie Hinweis</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_cookie_notice_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="36" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_cookie_notice_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="/Datenschutz" sort="37" conf="Y">
+          <Name>Link zur Datenschutzerklärung</Name>
+          <Description> z.B. /Datenschutz</Description>
+          <ValueName>admorris_pro_marketing_cookie_notice_link</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="38" conf="Y">
+          <Name>Style</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_cookie_notice_style</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="bottom-right" sort="38" conf="Y">
+          <Name>Position</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_cookie_notice_position</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="36" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_cookie_notice_pro_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="39" conf="N">
+          <Name>Release Countdown</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_release_countdown_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="40" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_release_countdown_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="41" conf="Y">
+          <Name>Anzeigeformat</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_release_countdown_format</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="standard-clock-white" sort="42" conf="Y">
+          <Name>Style</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_release_countdown_style</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="43" conf="Y">
+          <Name>Titel anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_release_countdown_displaytitle</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="45" conf="N">
+          <Name>Whatsapp Chat</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_whatsapp_chat_headline</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="46" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_whatsapp_chat_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="49xxxxxx" sort="47" conf="Y">
+          <Name>Ihre Telefonnummer</Name>
+          <Description>z.B. 49123123123</Description>
+          <ValueName>admorris_pro_marketing_whatsapp_chat_number</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="48" conf="Y">
+          <Name>Branding</Name>
+          <Description/>
+          <ValueName>admorris_pro_branding</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="49" conf="Y">
+          <Name>JTL Branding</Name>
+          <Description/>
+          <ValueName>admorris_pro_jtl_branding</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="50" conf="Y">
+          <Name>Popup Manager</Name>
+          <Description/>
+          <ValueName>admorris_pro_popup_manager</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="51" conf="Y">
+          <Name>Salecountdown</Name>
+          <Description/>
+          <ValueName>admorris_pro_salecountdown</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="52" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="51" conf="Y">
+          <Name>Versandkosten berücksichtigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_shipping</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="52" conf="Y">
+          <Name>Verdienstfaktor</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_earn_factor</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="0.01" sort="53" conf="Y">
+          <Name>Erlösfaktor</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_return_factor</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="0" sort="54" conf="Y">
+          <Name>Ab welchem Guthaben darf der Kunde einlösen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_minimum</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="0" sort="55" conf="Y">
+          <Name>Wieviele Punkte darf der Kunde maximal einlösen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_maximum</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="0" sort="56" conf="Y">
+          <Name>Gutschreiben nach</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_credit_delay</ValueName>
+        </Setting>
+        <Setting type="number" initialValue="0" sort="56" conf="Y">
+          <Name>Gueltigkeitsdauer rollend</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_credit_validity_rolling</ValueName>
+        </Setting>
+        <Setting type="text " initialValue="2018-01-01 00:00:00" sort="56" conf="Y">
+          <Name>Gueltigkeitsdauer hard</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_credit_validity_hard</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="0" sort="57" conf="Y">
+          <Name>Einösbar bis</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_credit_delete</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="58" conf="Y">
+          <Name>Auf Produktdetailseie anzeigen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_show_productpage</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="59" conf="Y">
+          <Name>Im Warenkorb anzeigen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_show_cart</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="60" conf="Y">
+          <Name>Im Kundenkonto anzeigen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_show_account</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="61" conf="Y">
+          <Name>Im Bestellabschluss anzeigen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_show_checkout</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="62" conf="Y">
+          <Name>Steuersatz</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_tax</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="4" sort="63" conf="Y">
+          <Name>Möchten Sie die Bonuspunkte runden?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reward_points_round</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="N" sort="63" conf="Y">
+          <Name>Bonuspunktewert auf Produktdetailseite anzeigen?</Name>
+          <Description>Moechten Sie den Geldwert der Bonuspunkte auf der Produktdetailseite und im Checkout anzeigen?</Description>
+          <ValueName>admorris_pro_marketing_reward_points_show_value_on_productdetail</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="N" sort="63" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_stock_progress_bar_active</ValueName>
+        </Setting>
+
+        <Setting type="zahl" initialValue="20" sort="64" conf="Y">
+          <Name>Anzeigen unter Lagerbestand</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_stock_progress_bar_max_stock</ValueName>
+        </Setting>
+
+        <Setting type="zahl" initialValue="100" sort="65" conf="Y">
+          <Name>Skala</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_stock_progress_bar_scale</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="N" sort="66" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="67" conf="Y">
+          <Name>Anzeigemodus</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_modus</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="120" sort="68" conf="Y">
+          <Name>Bestellungen der letzten x Minuten</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_last_minutes</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="5" sort="69" conf="Y">
+          <Name>Anzahl</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_how_many</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="5" sort="70" conf="Y">
+          <Name>Verzoegerung</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_delay</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="5" sort="71" conf="Y">
+          <Name>Anzeigedauer</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_duration</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="3" sort="71" conf="Y">
+          <Name>Pausen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_interval</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="72" conf="Y">
+          <Name>Namen anzeigen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_show_name</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="73" conf="Y">
+          <Name>Orte anzeigen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_live_sale_notification_show_city</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="73" conf="Y">
+          <Name>Im Bestellvorgang nicht anzeigen?</Name>
+          <Description/>
+          <ValueName>marketing_live_sale_notification_not_show_in_checkout</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="75" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_cost_progress_bar_active</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="Y" sort="76" conf="Y">
+          <Name>Im Warenkorb anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_cost_progress_bar_cart</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="N" sort="77" conf="Y">
+          <Name>Im Mini-warenkorb anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_cost_progress_bar_mini_cart</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="78" conf="Y">
+          <Name>Beträge rechts und links anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_cost_progress_bar_descriptors</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="rgba(236, 105, 31, 1)" sort="79" conf="Y">
+          <Name>Im Mini-warenkorb anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_cost_progress_bar_color_under</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="rgba(125, 199, 66, 1)" sort="80" conf="Y">
+          <Name>Im Mini-warenkorb anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_shipping_cost_progress_bar_color_over</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="52" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reorder_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="5" sort="52" conf="Y">
+          <Name>Wiederbestellen Dropdown Artikel Anzahl</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reorder_dropdown_item_limit</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="7" sort="52" conf="Y">
+          <Name>Wiederbestellen Dropdown Bild Einstellung</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_reorder_dropdown_image</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="74" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_active</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="1" sort="69" conf="Y">
+          <Name>Anzeigen wenn mindestens x Verkäufe</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_min_sold</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="10" sort="69" conf="Y">
+          <Name>Zeitraum in Stunden</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_period</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="67" conf="Y">
+          <Name>Anzeigemodus</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_modus</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="0.5" sort="69" conf="Y">
+          <Name>Faktor zur Berechnung der Besuche fuer die Anzeige der Verkaufe</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_visit_multiplier</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue="1" sort="69" conf="Y">
+          <Name>Verzoegerung bei Anzeige der Besucher als Verkaefe in Minuten</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_visit_delay</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="fa-thumbs-o-up" sort="70" conf="Y">
+          <Name>Icon</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_icon</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="recent-sales-fade" sort="70" conf="Y">
+          <Name>Effekt</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_sales_animation</ValueName>
+        </Setting>
+        <Setting type="selectbox" initialValue="N" sort="89" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_enhanced_ecommerce_active</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="text" initialValue="" sort="90" conf="N">
+          <Name>Google Analytics ID</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_enhanced_ecommerce_analytics_id</ValueName>
+        </Setting>
+        <Setting type="selectbox" initialValue="Y" sort="91" conf="Y">
+          <Name>Anonymize IP</Name>
+          <Description />
+          <ValueName>admorris_pro_marketing_enhanced_ecommerce_anonymize_ip</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="N" sort="92" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_enhanced_ecommerce_cart</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="N" sort="93" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_enhanced_ecommerce_checkout</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="N" sort="94" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_enhanced_ecommerce_product</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="N" sort="85" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_eu_labels_active</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="Y" sort="86" conf="Y">
+          <Name>Auf der Detailseite anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_eu_labels_show_detail</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="Y" sort="86" conf="Y">
+          <Name>In der Produktliste anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_eu_labels_show_list</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="lb" sort="86" conf="Y">
+          <Name>Ausrichtung in der Liste</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_eu_labels_list_position</ValueName>
+          <SelectboxOptions>
+            <Option value="rt" sort="1">rechte obere Ecke</Option>
+            <Option value="lt" sort="2">linke obere Ecke</Option>
+            <Option value="rb" sort="2">rechte untere Ecke</Option>
+            <Option value="lb" sort="2">linke untere Ecke</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="N" sort="86" conf="Y">
+          <Name>In den Produktslidern anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_eu_labels_show_slider</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+
+        <Setting type="selectbox" initialValue="N" sort="75" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_active</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="zahl" initialValue="10" sort="76" conf="Y">
+          <Name>Zeitraum in Stunden</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_period</ValueName>
+        </Setting>
+        <Setting type="selectbox" initialValue="1" sort="77" conf="Y">
+          <Name>Anzeigemodus</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_modus</ValueName>
+          <SelectboxOptions>
+            <Option value="1" sort="1">Nur Liveaufrufe</Option>
+            <Option value="2" sort="2">Liveaufrufe + dynamische Demodaten</Option>
+            <Option value="3" sort="3">Nur dynamische Demodaten</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="zahl" initialValue="10" sort="78" conf="Y">
+          <Name>Maximale Demoaufrufe</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_demo_maximum</ValueName>
+        </Setting>
+        <Setting type="selectBox" initialValue="N" sort="79" conf="Y">
+          <Name>Begrenzte Stückzahlhinweis anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_show_stock</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="zahl" initialValue="10" sort="80" conf="Y">
+          <Name>Begrenzte Stückzahl anzeigen unter:</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_stock_maximum</ValueName>
+        </Setting>
+        <Setting type="selectBox" initialValue="N" sort="82" conf="Y">
+          <Name>Vater und Kindartikel zusammenzählen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_add_father</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+        <Setting type="selectbox" initialValue="recent-visits-fade" sort="83" conf="Y">
+          <Name>Effekt</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_recent_visits_animation</ValueName>
+          <SelectboxOptions>
+            <Option value="recent-visits-fade" sort="1">Blinken</Option>
+            <Option value="none" sort="2">Keine Animation</Option>
+          </SelectboxOptions>
+        </Setting>
+
+        <Setting type="selectbox" initialValue="N" sort="89" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_three_sixty_images_active</ValueName>
+          <SelectboxOptions>
+            <Option value="N" sort="1">Nein</Option>
+            <Option value="Y" sort="2">Ja</Option>
+          </SelectboxOptions>
+        </Setting>
+
+
+
+        <!-- Blog -->
+
+        <Setting type="text" initialValue="list" sort="0" conf="Y">
+          <Name>layout type</Name>
+          <ValueName>admorris_pro_blog_layout_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="default" sort="0" conf="Y">
+          <Name>Banner size</Name>
+          <ValueName>admorris_pro_blog_banner_type_details</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="default" sort="0" conf="Y">
+          <Name>Banner size</Name>
+          <ValueName>admorris_pro_blog_banner_type_overview</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="" sort="0" conf="Y">
+          <Name>Banner image</Name>
+          <ValueName>admorris_pro_blog_banner_image</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="l" sort="0" conf="Y">
+          <Name>overview container width</Name>
+          <ValueName>admorris_pro_blog_container_width_overview</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="l" sort="0" conf="Y">
+          <Name>details container width</Name>
+          <ValueName>admorris_pro_blog_container_width_details</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="0" conf="Y">
+          <Name>details container width</Name>
+          <ValueName>admorris_pro_blog_banner_overlay_details</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="0" conf="Y">
+          <Name>details container width</Name>
+          <ValueName>admorris_pro_blog_banner_overlay_overview</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="0" conf="Y">
+          <Name>Banner parallax setting</Name>
+          <ValueName>admorris_pro_blog_banner_parallax</ValueName>
+        </Setting>
+
+        <!-- Rabattanzeige / Discount Display -->
+
+        <Setting type="text" initialValue="N" sort="10" conf="Y">
+          <Name>Ersparnis Anzeige aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_discount_display_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="#DC1010" sort="0" conf="Y">
+          <Name>Hintergrundfarbe</Name>
+          <ValueName>admorris_pro_marketing_discount_display_background_color</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="#FFF" sort="0" conf="Y">
+          <Name>Textfarbe</Name>
+          <ValueName>admorris_pro_marketing_discount_display_text_color</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="false" sort="0" conf="Y">
+          <Name>Vom UVP berechnen</Name>
+          <ValueName>admorris_pro_marketing_discount_display_calc_from_uvp</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="no_text_percent" sort="0" conf="Y">
+          <Name>Anzeigeformat in der Listenansicht</Name>
+          <ValueName>admorris_pro_marketing_discount_display_productlist_format</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="no_text_percent" sort="0" conf="Y">
+          <Name>Anzeigeformat in der Detailansicht</Name>
+          <ValueName>admorris_pro_marketing_discount_display_productdetail_format</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="overlay" sort="0" conf="Y">
+          <Name>Listenansicht: Overlay-Label oder unterhalb vom Preis</Name>
+          <ValueName>admorris_pro_marketing_discount_display_list_insert_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="top_right" sort="0" conf="Y">
+          <Name>Label Positionierung in der Listenansicht</Name>
+          <ValueName>admorris_pro_marketing_discount_display_label_position</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="20" sort="0" conf="Y">
+          <Name>Label Abstand in der Listenansicht</Name>
+          <ValueName>admorris_pro_marketing_discount_display_label_vertical_position</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="show_price" sort="0" conf="Y">
+          <Name>Alten Preis anzeigen</Name>
+          <ValueName>admorris_pro_marketing_discount_display_show_old_price</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="strike_through_color" sort="0" conf="Y">
+          <Name>Alten Preis anzeigen</Name>
+          <ValueName>admorris_pro_marketing_discount_display_old_price_style</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="15px" sort="0" conf="Y">
+          <Name>Schriftgroesse Listenansicht</Name>
+          <ValueName>admorris_pro_marketing_discount_display_list_fontsize</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="1em" sort="0" conf="Y">
+          <Name>Schriftgroesse Listenansicht</Name>
+          <ValueName>admorris_pro_marketing_discount_display_details_fontsize</ValueName>
+        </Setting>
+
+        <!-- Snow -->
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_snow_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="1" sort="7" conf="Y">
+          <Name>Anzeigen auf</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_snow_page_settings</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="[&quot;&amp;#128293;&quot;]" sort="0" conf="Y">
+          <Name>Zeichen</Name>
+          <ValueName>admorris_pro_marketing_snow_character</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='#fff' sort="0" conf="Y">
+          <Name>Farbe1</Name>
+          <ValueName>admorris_pro_marketing_snow_color1</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='#fff' sort="0" conf="Y">
+          <Name>Farbe2</Name>
+          <ValueName>admorris_pro_marketing_snow_color2</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='#fff' sort="0" conf="Y">
+          <Name>Farbe3</Name>
+          <ValueName>admorris_pro_marketing_snow_color3</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='#fff' sort="0" conf="Y">
+          <Name>Farbe4</Name>
+          <ValueName>admorris_pro_marketing_snow_color4</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='#fff' sort="0" conf="Y">
+          <Name>Farbe5</Name>
+          <ValueName>admorris_pro_marketing_snow_color5</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='280' sort="0" conf="Y">
+          <Name>Hoehe</Name>
+          <ValueName>admorris_pro_marketing_snow_height</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='60' sort="0" conf="Y">
+          <Name>Frequenz</Name>
+          <ValueName>admorris_pro_marketing_snow_frequency</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='4000' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_speed</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='30' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_large</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='5' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_small</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='40' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_wind</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='20' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_wind_variance</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='90' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_rotation</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='180' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_rotation_variance</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='0' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_start_rotation</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='1' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_start_opacity</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='0' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_end_opacity</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='cubic-bezier(1,.3,.6,.74)' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_opacity_easing</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='Y' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_blur</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='hidden' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_overflow</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='99999' sort="0" conf="Y">
+          <Name>Geschwindigkeit</Name>
+          <ValueName>admorris_pro_marketing_snow_zIndex</ValueName>
+        </Setting>
+        <Setting type="zahl" initialValue='0' sort="0" conf="Y">
+          <Name>Dauer</Name>
+          <ValueName>admorris_pro_marketing_snow_duration</ValueName>
+        </Setting>
+
+        <!-- Mailchimp -->
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_mailchimp_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='' sort="0" conf="Y">
+          <Name>API Key</Name>
+          <ValueName>admorris_pro_marketing_mailchimp_api_key</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='' sort="0" conf="Y">
+          <Name>List ID</Name>
+          <ValueName>admorris_pro_marketing_mailchimp_list_id</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='' sort="0" conf="Y">
+          <Name>Tag</Name>
+          <ValueName>admorris_pro_marketing_mailchimp_tag</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='' sort="0" conf="Y">
+          <Name>Source</Name>
+          <ValueName>admorris_pro_marketing_mailchimp_source</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Neukunden automatisch anmelden</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_mailchimp_autosubscribe</ValueName>
+        </Setting>
+
+        <!-- Price Discrimination -->
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_price_discrimination_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue='source' sort="0" conf="Y">
+          <Name>Paramaeter</Name>
+          <ValueName>admorris_pro_marketing_price_discrimination_parameter</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Alle Artikel reduzieren?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_price_discrimination_discount_all</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="Y" sort="7" conf="Y">
+          <Name>Sonderpreisinfo anzeigen?</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_price_discrimination_show_info</ValueName>
+        </Setting>
+
+        <!-- Extra Product -->
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Aktivieren</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_extra_product_active</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="N" sort="7" conf="Y">
+          <Name>Produktbild anzeigen</Name>
+          <Description/>
+          <ValueName>admorris_pro_marketing_extra_product_image</ValueName>
+        </Setting>
+
+        <!-- Expert Settings -->
+
+        <Setting type="text" initialValue=".product-buy" sort="54" conf="Y">
+          <Name>CSS Selector Stock Progress Bar</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_stock_progress_bar_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator Stock Progress Bar</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_stock_progress_bar_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue=".basket_wrapper" sort="54" conf="Y">
+          <Name>CSS Selector Shipping Cost Progress Bar</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_shipping_cost_progress_bar_cart_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator Shipping Cost Progress Bar</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_shipping_cost_progress_bar_cart_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue=".product-info-inner div.delivery-status" sort="54" conf="Y">
+          <Name>CSS Selector shipping countdown</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_shipping_countdown_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator shipping countdown</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_shipping_countdown_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue=".account-head-data + .row" sort="54" conf="Y">
+          <Name>CSS Selector reward_points_show_account</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_account_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reward_points_show_account</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_account_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue=".basket-summary" sort="54" conf="Y">
+          <Name>CSS Selector reward_points_cart</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_cart_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reward_points_cart</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_cart_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="#order-confirm > .row" sort="54" conf="Y">
+          <Name>CSS Selector reward_points_checkout</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_checkout_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reward_points_checkout</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_checkout_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue=".product-offer" sort="54" conf="Y">
+          <Name>CSS Selector reward_points_show_productpage</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_productpage_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reward_points_show_productpage</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_productpage_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="#cart-checkout-btn" sort="54" conf="Y">
+          <Name>CSS Selector reward_points_show_cart</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_cart_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reward_points_show_cart</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_cart_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue=".checkout-button-row" sort="54" conf="Y">
+          <Name>CSS Selector reward_points_show_checkout</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_checkout_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reward_points_show_checkout</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reward_points_show_checkout_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="div.product-info-inner .price_wrapper" sort="54" conf="Y">
+          <Name>CSS Selector release_countdown</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_release_countdown_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="after" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator release_countdown</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_release_countdown_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="div.product-info-inner .price_wrapper" sort="54" conf="Y">
+          <Name>CSS Selector special_offer_countdown</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_special_offer_countdown_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="after" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator special_offer_countdown</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_special_offer_countdown_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="body" sort="54" conf="Y">
+          <Name>CSS Selector trustmark_google</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_trustmark_google_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator trustmark_google</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_trustmark_google_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="#shop-nav .cart-icon-dropdown" sort="54" conf="Y">
+          <Name>CSS Selector reorder</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reorder_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reorder</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reorder_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="#mainNavigation .nav-scrollbar-inner" sort="54" conf="Y">
+          <Name>CSS Selector reorder mobile</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reorder_mobile_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="prepend" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reorder mobile</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reorder_mobile_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="#account" sort="54" conf="Y">
+          <Name>CSS Selector reorder customer account</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reorder_show_account_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="after" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator reorder customer account</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_reorder_show_account_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="div.product-info-inner .product-headline" sort="54" conf="Y">
+          <Name>CSS Selector Verkaufszaehler</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_recent_sales_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="after" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator Verkaufszaehler</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_recent_sales_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="div.product-info-inner .product-headline" sort="54" conf="Y">
+          <Name>CSS Selector Aufrufzaehler</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_recent_visits_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="after" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator Aufrufzaehler</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_recent_visits_css_selector_type</ValueName>
+        </Setting>
+
+        <!-- Sale Countdown -->
+        <Setting type="text" initialValue="#jtl-nav-wrapper" sort="54" conf="Y">
+          <Name>CSS Selector Sale Countdown Vor</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_sale_countdown_prepend_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator Sale Countdown Vor</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_sale_countdown_prepend_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="#jtl-nav-wrapper" sort="54" conf="Y">
+          <Name>CSS Selector Sale Countdown Nach</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_sale_countdown_append_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="after" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator Sale Countdown Nach</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_sale_countdown_append_css_selector_type</ValueName>
+        </Setting>
+
+        <!-- Savings Display -->
+        <Setting type="text" initialValue="#result-wrapper_buy_form_#kArtikel#" sort="54" conf="Y">
+          <Name>CSS Selector: Artikelselector in der Liste</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_discount_display_list_item_css_selector</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="#result-wrapper_buy_form_#kArtikel# .image-wrapper" sort="54" conf="Y">
+          <Name>CSS Selector</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_discount_display_list_overlay_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_discount_display_list_overlay_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="#result-wrapper_buy_form_#kArtikel# .price_wrapper" sort="54" conf="Y">
+          <Name>CSS Selector innerhalb des Artikels in der Liste</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_discount_display_list_caption_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="prepend" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_discount_display_list_caption_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue=".product-info .price_wrapper" sort="54" conf="Y">
+          <Name>CSS Selector fuer die Detailansicht</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_discount_display_details_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="prepend" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_discount_display_details_css_selector_type</ValueName>
+        </Setting>
+        <!--Coupons Display -->
+        <Setting type="text" initialValue=".product-info .price_wrapper" sort="54" conf="Y">
+          <Name>CSS Selector fuer die Detailansicht</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_coupons_details_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_coupons_details_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue=".basket-well .next-actions" sort="54" conf="Y">
+          <Name>CSS Selector fuer die Warenkorb</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_coupons_cart_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="before" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_coupons_cart_css_selector_type</ValueName>
+        </Setting>
+        <Setting type="text" initialValue=".panel-wrap" sort="54" conf="Y">
+          <Name>CSS Selector fuer die Warenkorb</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_coupons_checkout_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_coupons_checkout_css_selector_type</ValueName>
+        </Setting>
+
+        <!-- Snow -->
+        <Setting type="text" initialValue="body" sort="54" conf="Y">
+          <Name>CSS Selector Snow</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_snow_css_selector</ValueName>
+        </Setting>
+
+        <!-- Price Discrimination -->
+        <Setting type="text" initialValue=".product-info .price_wrapper .price span" sort="54" conf="Y">
+          <Name>CSS Selector fuer Preisdiskriminierung</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_price_discrimination_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_price_discrimination_css_selector_type</ValueName>
+        </Setting>
+
+        <Setting type="text" initialValue="#result-wrapper_buy_form_#kArtikel# .price_wrapper .price" sort="54" conf="Y">
+          <Name>CSS Selector fuer Preisdiskriminierung Liste</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_price_discrimination_list_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator  Liste</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_price_discrimination_list_css_selector_type</ValueName>
+        </Setting>
+
+        <!-- Extra Product -->
+        <Setting type="text" initialValue=".price_wrapper .price-note" sort="54" conf="Y">
+          <Name>CSS Selector fuer Zusatzgebuehr</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_extra_Product_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="append" sort="54" conf="Y">
+          <Name>CSS Selector Modifikator  Extra Product</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_extra_Product_css_selector_type</ValueName>
+        </Setting>
+
+        <!-- EU Energy Labels -->
+        <Setting type="text" initialValue=".product-info-inner .price_wrapper .price" sort="89" conf="Y">
+          <Name>CSS Selector fuer EU Energy Labels auf der Detailseite</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_eu_labels_detail_css_selector</ValueName>
+        </Setting>
+        <Setting type="text" initialValue="after" sort="90" conf="Y">
+          <Name>CSS Selector Modifikator EU Energy Labels auf der Detailseite</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_eu_labels_detail_css_selector_type</ValueName>
+        </Setting>
+
+        <!-- 360° Images -->
+        <Setting type="text" initialValue="#gallery" sort="91" conf="Y">
+          <Name>CSS Selector fuer 360° Bilder</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_three_sixty_image_css_selector</ValueName>
+        </Setting>
+        <!-- <Setting type="text" initialValue="prepend" sort="92" conf="Y">
+          <Name>CSS Selector Modifikator fuer 360° Bilder</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_three_sixty_image_css_selector_type</ValueName>
+        </Setting> -->
+        <Setting type="text" initialValue="#gallery_preview_wrapper" sort="93" conf="Y">
+          <Name>CSS Selector fuer 360° Bilder</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_three_sixty_image_thumb_multiple_css_selector</ValueName>
+        </Setting>
+        <!-- <Setting type="text" initialValue="prepend" sort="94" conf="Y">
+          <Name>CSS Selector Modifikator fuer 360° Bilder Thumbnails, wenn der Artikel mehrere Bilder hat</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_three_sixty_image_thumb_multiple_css_selector_type</ValueName>
+        </Setting> -->
+        <Setting type="text" initialValue=".productdetails-gallery" sort="95" conf="Y">
+          <Name>CSS Selector fuer 360° Bilder</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_three_sixty_image_thumb_single_css_selector</ValueName>
+        </Setting>
+        <!-- <Setting type="text" initialValue="prepend" sort="96" conf="Y">
+          <Name>CSS Selector Modifikator fuer 360° Bilder Thumbnails, wenn der Artikel nur ein Bild hat</Name>
+          <Description/>
+          <ValueName>admorris_pro_expert_settings_three_sixty_image_thumb_single_css_selector_type</ValueName>
+        </Setting> -->
+
+      </Settingslink>
+
+    </Adminmenu>
+
+
+    <!-- Portlets -->
+
+    <Portlets>
+      <Portlet>
+        <Title>Kategorie Grid</Title>
+        <Class>ADMCategoryGrid</Class>
+        <Group>admorris Portlets</Group>
+        <Active>1</Active>
+      </Portlet>
+      <!-- <Portlet>
+        <Title>Container</Title>
+        <Class>ADMContainer</Class>
+        <Group>admorris Portlets</Group>
+        <Active>1</Active>
+      </Portlet> -->
+    </Portlets>
+
+
+    <PortletInputTypes>
+      <PortletInputType>
+        <Name>group-settings-title</Name>
+      </PortletInputType>
+      <PortletInputType>
+        <Name>section-title</Name>
+      </PortletInputType>
+    </PortletInputTypes>
+
+
+    <!-- Sprachvariablen -->
+
+    <Locales>
+      <Variable>
+        <Name>admorris_pro_special_offer_countdown_title</Name>
+        <Description><![CDATA[Sonderangebot-Countdowntitel]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Dieses Angebot gilt noch]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Hurry! This offer ends in]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Questa offerta &#225; ancora valida]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Cette offre est toujours valable]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_push_notification_prequest_titel</Name>
+        <Description><![CDATA[Berechtigungsanfrage f&uuml;r Pushnachrichten]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Wollen Sie tolle Aktionen per Pushnachricht erhalten? ]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[You want to receive coupon codes via push notification?]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Vuoi ottenere offerte tramit push message?]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Vous voulez recevoir des promotions par message push ?]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_push_notification_prequest_button_yes</Name>
+        <Description><![CDATA[Berechtigungsanfrage f&uuml;r Pushnachrichten Button ja]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[ja]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[yes]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[s&#237;]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[oui]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_push_notification_prequest_button_no</Name>
+        <Description><![CDATA[Berechtigungsanfrage fuer Pushnachrichten Button nein]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[nein]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[no]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[no]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[non]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_push_notification_prequest_blocked</Name>
+        <Description><![CDATA[Text falls Pushnotifications vom User blockiert wurden.]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Bitte folgen Sie folgenden Anweisungen um Benachrichtigungen zu aktivieren: ]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Please follow these inscrutions to activate push notifications:]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Si prega di seguire le istruzioni riportate di seguito per attivare le notifiche:]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Veuillez suivre les instructions ci-dessous pour activer les notifications : ]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_push_notification_prequest_blocked_click</Name>
+        <Description><![CDATA[Linktext f&uuml;r Pushnotification Anleitung.]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Klicken um Anleitung zu &ouml;ffnen!]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Click to open instruction!]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Clicca per aprire le istruzioni!]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Cliquez pour ouvrir les instructions !]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_browser_tab_reminder_text</Name>
+        <Description><![CDATA[Text f&uuml;r Browser Tab Reminder]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[&#10084; WIR VERMISSEN DICH! &#10084;]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[&#10084; WE MISS YOU &#10084;]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[&#10084; Ci manchi! &#10084;]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[&#10084;VOUS NOUS MANQUEZ!&#10084; ]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_timer_headline</Name>
+        <Description><![CDATA[Headline f&uuml;r Rabatt Timer PopUp]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Schnell bestellen und Rabatt sichern!]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Order fast and get a discount!]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Ordina rapidamente per assicurarti uno sconto!]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Commandez rapidement et profitez de votre réduction !]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_timer_subline</Name>
+        <Description><![CDATA[Subline f&uuml;r Rabatt Timer PopUp]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Dieser Kupon ist g&uuml;ltig bis der<br>Countdown abgelaufen ist.]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[This coupon code is valid until<br>the countdown runs out of time!]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Questo coupon &#232; valido<br>fino alla scadenza del conto alla rovescia.]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Ce coupon est valable jusqu'à l'expiration du compte à rebours.]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_timer_call_to_action_button</Name>
+        <Description><![CDATA[Buttontext f&uuml;r Rabatt Timer PopUp]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Jetzt Kupon einl&ouml;sen!]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Claim coupon now!]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Riscatta il coupon ora!]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Échangez votre coupon maintenant !]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_timer_cancel_button</Name>
+        <Description><![CDATA[Abbruchtext f&uuml;r Rabatt Timer PopUp]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Weiter ohne Rabatt Gutschein]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Continue without this coupon]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Continua senza coupon di sconto]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Continuer sans bon de réduction]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_timer_additional_info</Name>
+        <Description><![CDATA[Zusatztext der angezeigt wird, wenn der Rabatt Kupon nur f&uuml;r bestimmte Kategorien, Hersteller oder Artikel gilt]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Dieser Kuponcode ist nur f&uuml;r bestimmte Produkte in unserem Sortiment g&uuml;ltig.]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[This coupon code is only valid for certain products in our range.]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Questo coupon &egrave; valido solo per alcuni prodotti della nostra gamma.]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Ce code promo n'est valable que pour certains produits de notre gamme.]]></VariableLocalized>
+      </Variable>
+
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_order_within1</Name>
+        <Description><![CDATA[Versandtext 1. Teil f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Bestellen Sie innerhalb der n&auml;chsten]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Order within the next]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Ordina entro i prossimi]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Commande dans les prochains jours]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_seconds</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Sekunden]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[seconds]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[secondi]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[secondes]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_minutes</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Minuten]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[minutes]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[minuti]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[minutes]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_hours</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Stunden]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[hours]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[orario]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[heures]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_days</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Tage]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[days]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[giorni]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[jours]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_order_within_versanddatum</Name>
+        <Description><![CDATA[Versandtext 2. Teil f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[und wir versenden Ihre Bestellung]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[and we will ship your order]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[e spediamo il tuo ordine]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[et nous expédierons votre commande]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_order_within_lieferzeit</Name>
+        <Description><![CDATA[Versandtext 2. Teil f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[und Sie erhalten die Lieferung]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[and you will receive your order]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[e riceverá la spedizione]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[et vous recevez la livraison]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_today</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[noch heute]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[today]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[ancora oggi]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[aujourd'hui même]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_tomorrow</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[schon morgen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[tomorrow]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[gi&#225; domani]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[dès demain]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_between</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[zwischen dem]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[between]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[tra il]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[entre le]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_and</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[und]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[and]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[e]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[et]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_countdown_on</Name>
+        <Description><![CDATA[Versandtext f&uuml;r Lieferzeitcountdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[am]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[on]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[al]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[sur]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_cookie_notice_text</Name>
+        <Description><![CDATA[Text f&uuml;r Cookiehinweis]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Wir verwenden Cookies, um unsere Webseite f&uuml;r Sie m&ouml;glichst benutzerfreundlich zu gestalten. Wenn Sie fortfahren, nehmen wir an, dass Sie mit der Verwendung von Cookies auf dieser Webseite einverstanden sind.]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[This website uses cookies to ensure you get the best experience on our website. If you continue to use this site, we will assume you are happy to accept the cookies.]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Utilizziamo i cookie per rendere il nostro sito  facile da usare. Se continui, prendiamo in considerazione che accetti l&#39;utilizzo dei cookie su questo sito Web.]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Nous utilisons des cookies pour rendre notre site web aussi convivial que possible pour vous. Si vous continuez, nous supposerons que vous acceptez l'utilisation de cookies sur ce site web.]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_cookie_notice_privacy_notice_link</Name>
+        <Description><![CDATA[Linktext f&uuml;r Cookiehinweis]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Mehr erfahren]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Learn more]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[pi&#250; informazioni]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[En savoir plus]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_cookie_notice_button</Name>
+        <Description><![CDATA[Text f&uuml;r Cookiehinweisbutton]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Cookies zulassen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Allow cookies]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Consentire i cookie]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Autoriser les cookies]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_cookie_notice_disallow</Name>
+        <Description><![CDATA[Text f&uuml;r Cookiehinweisbutton]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Ablehnen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Decline]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Consentire i cookie]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[refuser]]></VariableLocalized>
+      </Variable>
+      <!-- Release Countdown -->
+      <Variable>
+        <Name>admorris_pro_release_countdown_title</Name>
+        <Description><![CDATA[Release-Countdowntitel]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Verf&uuml;gbar in]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Available in]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Disponibile in]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Disponible en]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_whatsapp_chat_text</Name>
+        <Description><![CDATA[Whatsapp Chat]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Shopanfrage:]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Shop request:]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[richiesta dell´online shop]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Enquête sur les magasins :]]></VariableLocalized>
+      </Variable>
+      <!-- Sale Countdown -->
+      <Variable>
+        <Name>admorris_pro_discount_percent</Name>
+        <Description><![CDATA[Steht vor der Rabatt Prozentangabe]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[BIS ZU]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[UP TO]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[FINO A]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[JUSQU´À]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_start_countdown</Name>
+        <Description><![CDATA[Steht vor dem Sale-Start Countdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[IN]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[IN]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[IN]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[DANS]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_end_countdown</Name>
+        <Description><![CDATA[Steht vor dem Sale-End Countdown]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[NOCH]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[TIME LEFT]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[ANCORA]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[ENCORE]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_countdown_days</Name>
+        <Description><![CDATA[Wenn im Sale-Start Countdown mehrere Tage angezeigt werden (Formatierung f&uuml;r Mehrzahl durch '%!D:')]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[TAG%!D:EN;]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[DAY%!D:S;]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[giorn%!D:o,i;]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[JOUR%!D:S]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_countdown_days_end</Name>
+        <Description><![CDATA[Wenn im Sale-Ende Countdown mehrere Tage angezeigt werden (Formatierung f&uuml;r Mehrzahl durch '%!D:')]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[TAG%!D:E;]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[DAY%!D:S;]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[giorn%!D:o,i;]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[JOUR%!D:S]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_sale_countdown_start</Name>
+        <Description><![CDATA[Steht im Pop-Up vor dem Countdown Start ]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Los geht&#x2019;s in]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[starts in]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[inizia in]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[C&rsquo;est parti&#x2019;s in]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_sale_countdown_end</Name>
+        <Description><![CDATA[Steht im Pop-Up vor dem Countdown Ende]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[endet in]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[ends in]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[termina in]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[se termine dans]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_name</Name>
+        <Description><![CDATA[Name der Bonuspunkte]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Bonuspunkte]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Reward Points]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[punti fedelt&#225;]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Points bonus]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_name_plus</Name>
+        <Description><![CDATA[Name der Bonuspunkte neben Bestell- und Kaufbuttons]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Bonuspunkte]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Reward Points]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[punti fedelt&#225;]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Points bonus]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_balance</Name>
+        <Description><![CDATA[Titel f&uuml;r Bonuspunkteguthaben]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Ihr aktuelles Bonuspunkteguthaben:]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Your current reward points balance:]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Il suo attuale punteggio fedelt&#225;:]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Votre solde de points de bonus actuel :]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_value</Name>
+        <Description><![CDATA[Bonuspunkte im Wert von]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[im Wert von]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[with a value of]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[nel valore di]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[d´une valeur de]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_pending</Name>
+        <Description><![CDATA[Ausstehende Bonuspunkte]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Noch ausstehend:]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Pending:]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Ancora in sospeso:]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Encore en suspens :]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_redeem_input_label</Name>
+        <Description><![CDATA[Aria-label text zum Einl&ouml;sen der Bonuspunkte]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Einzul&ouml;sende Bonuspunkte]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Reward points to redeem]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Punti fedelt&agrave; da riscattare]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Points bonus &agrave; racheter]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_button</Name>
+        <Description><![CDATA[Button zum Einl&ouml;sen der Bonuspunkte]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Einl&ouml;sen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Redeem]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[riscattare]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[racheter]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_redeem_all</Name>
+        <Description><![CDATA[Button um alle Bunuspunkte einzul&ouml;sen]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Alle einl&ouml;sen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Redeem all]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Riscattare tutto]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Racheter tout]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_product_reward</Name>
+        <Description><![CDATA[F&uuml;r dieses Produkt erhalten Sie]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[F&uuml;r dieses Produkt erhalten Sie]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[For this product you will receive]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[per questo articolo riceve]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Pour ce produit, vous obtenez]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_total_reward</Name>
+        <Description><![CDATA[F&uuml;r den Kauf erhalten Sie]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[F&uuml;r den Kauf erhalten Sie]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[For this purchase you will receive]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[per questo acquisto riceve]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Pour l&rsquo;achat, vous recevez]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reward_points_changed</Name>
+        <Description><![CDATA[Die &uuml;bermittelten Bonuspunkte wurden angepasst]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Die &uuml;bermittelten Bonuspunkte wurden angepasst]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[The transmitted bonus points were adjusted]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[I punti bonus trasmessi sono stati modificati]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Les points bonus transmis ont été adaptés]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_cost_progress_bar_title_under</Name>
+        <Description><![CDATA[Titel f&uuml;r Shipping Cost Progress Bar unter Freiwert]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Nur noch]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Only]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Ancora]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Encore]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_cost_progress_bar_title_over</Name>
+        <Description><![CDATA[Titel f&uuml;r Shipping Cost Progress Bar unter Freiwert]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Gratis Versand]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Free Shipping]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Spedizione gratuita]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Livraison gratuite]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_cost_progress_bar_text_under</Name>
+        <Description><![CDATA[Text f&uuml;r Shipping Cost Progress Bar unter Freiwert]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[und wir versenden kostenfrei nach]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[and we ship free of charge to]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[e spediamo gratuitamente per]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[et nous expédions gratuitement a]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_shipping_cost_progress_bar_text_over</Name>
+        <Description><![CDATA[Text f&uuml;r Shipping Cost Progress Bar unter Freiwert]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Ihre Bestellung ist versandkostenfrei nach]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Your order is without shipping costs to]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Il tuo ordine è senza spese di spedizione per]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Votre commande est sans frais d'expédition a]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_stock_progress_bar_titel_pre</Name>
+        <Description><![CDATA[Titel f&uuml;r Stock Progress Bar]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Nur noch]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Only]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Ancora]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Encore]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_stock_progress_bar_titel_sub</Name>
+        <Description><![CDATA[Titel f&uuml;r Stock Progress Bar]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[auf Lager!]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[left in stock!]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[in magazzino!]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Seulement]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_time_about</Name>
+        <Description><![CDATA[Live Sale Notifications Zeit: Vorderer Teil]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Vor etwa ]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[About ]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[prima di ca. ]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[À propos de ]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_time_ago</Name>
+        <Description><![CDATA[Live Sale Notifications Zeit: Hinterer Teil]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[&#8202;]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[ago]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[il y a]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_time_now</Name>
+        <Description><![CDATA[Live Sale Notifications Zeit: Minuten]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Gerade jetzt]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Just now]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[appena adesso]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Juste maintenant]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_time_minutes</Name>
+        <Description><![CDATA[Live Sale Notifications Zeit: Minuten]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[ Minuten]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[ minutes]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[ minuti]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Minutes]]></VariableLocalized>
+      </Variable>
+
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_time_hours</Name>
+        <Description><![CDATA[Live Sale Notifications Zeit: Stunden]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[ Stunden]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[ hours]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[ orario]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Heures]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_time_days</Name>
+        <Description><![CDATA[Live Sale Notifications Zeit: Tage]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Tagen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[days]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[giorni]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Jours]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_firstrow_someone</Name>
+        <Description><![CDATA[Live Sale Notifications Erste Reihe: Jemand]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Jemand]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Someone]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Qualcuno]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[quelqu&rsquo;un]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_firstrow_from</Name>
+        <Description><![CDATA[Live Sale Notifications Erste Reihe: Jemand]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[aus]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[from]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[da]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[à partir de]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_live_sale_notification_firstrow_bought</Name>
+        <Description><![CDATA[Live Sale Notifications Erste Reihe: kaufe gerade]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[kaufte gerade]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[just bought]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[sta comprando]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[vient d&rsquo;acheter]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reorder_heading</Name>
+        <Description><![CDATA[Wiederbestellen Account Heading]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Wiederbestellen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Order again]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[riordinare]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Recommander]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reorder_dropdown_label</Name>
+        <Description><![CDATA[Wiederbestellen Dropdown Label]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Wiederbestellen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Reorder]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[riordinare]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Recommander]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_reorder_all_articles</Name>
+        <Description><![CDATA[Wiederbestellen Dropdown Label]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Alle Artikel]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[all articles]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[tutti gli articoli]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[tous les articles]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_recent_sales_sold</Name>
+        <Description><![CDATA[Recent Sales: verkauft in den letzten]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[verkauft in den letzten]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[sold in last]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[venduto nell&#39;ultima]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[vendu dans la dernière]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_recent_sales_sold_one_hour</Name>
+        <Description><![CDATA[Recent Sales: verkauft in der letzten Stunde]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[verkauft in der letzten Stunde]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[sold in the last hour]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[venduto nell&#39;ultima ora]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[vendu dans la dernière heure]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_recent_sales_days</Name>
+        <Description><![CDATA[Recent Sales: Tage]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Tagen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[days]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[giorni]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Jours]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_recent_sales_hours</Name>
+        <Description><![CDATA[Recent Sales: Stunden]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Stunden]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[hours]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[orario]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Heures]]></VariableLocalized>
+      </Variable>
+      <!-- Recent Visits-->
+      <Variable>
+        <Name>admorris_pro_marketing_recent_visits_limited_stock</Name>
+        <Description><![CDATA[Recent Visits: begrenzte Stückzahl]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Begrenzte Stückzahl!]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Limited Stock!]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Quantità limitata!]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Quantité limitée!]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_recent_visits_watching</Name>
+        <Description><![CDATA[Recent Visits: Beobachten diesen Artikel]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[beobachten diesen Artikel]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[watch this article]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[guarda questo articolo]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[regarder cet article]]></VariableLocalized>
+      </Variable>
+
+      <!-- Discount Display -->
+      <Variable>
+        <Name>admorris_pro_marketing_discount_display_prefixed_text</Name>
+        <Description><![CDATA[Rabattanzeige: Dem Rabatt vorangestellter Text (standard: 'Sie sparen')]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Sie sparen]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[You save]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Si salva]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Vous économisez]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_display_postfixed_text</Name>
+        <Description><![CDATA[Rabattanzeige: Dem Rabatt hintenangestellter Text (standard: 'Rabatt')]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Rabatt]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[discount]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Sconto]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Remise]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_display_old_price</Name>
+        <Description><![CDATA[Rabattanzeige: Text vor altem Preis]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Statt:]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[previously]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[invece di]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Au lieu de :]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_discount_display_uvp</Name>
+        <Description><![CDATA[Rabattanzeige: Text vor altem Preis]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[UVP:]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[MSRP]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[SRP]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[EIA :]]></VariableLocalized>
+      </Variable>
+      <!-- Price Discrimination -->
+      <Variable>
+        <Name>admorris_pro_marketing_price_discrimination_text</Name>
+        <Description><![CDATA[Preisdiskriminerung: Infotext]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Das ist Ihr Spezialpreis. Ihr Rabatt wird Ihnen automatisch im Warenkorb abgezogen.]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[This is your special offer. Your discount will automatically be deducted from your shopping cart.]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Questo ? un prezzo speciale. Lo sconto verr? automaticamente detratto dal carrello.]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Ceci est votre prix spécial. Votre remise sera automatiquement déduite de votre panier.]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_price_discrimination_discount_text</Name>
+        <Description><![CDATA[Preisdiskriminerung: Rabatttitel im Warenkorb]]></Description>
+        <VariableLocalized iso="GER"><![CDATA[Rabatt]]></VariableLocalized>
+        <VariableLocalized iso="ENG"><![CDATA[Discount]]></VariableLocalized>
+        <VariableLocalized iso="ITA"><![CDATA[Sconto]]></VariableLocalized>
+        <VariableLocalized iso="FRE"><![CDATA[Remise]]></VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_sort_random</Name>
+        <Description>Sortierungsoption: Zufall</Description>
+        <VariableLocalized iso="GER">Zufall</VariableLocalized>
+        <VariableLocalized iso="ENG">Random</VariableLocalized>
+        <VariableLocalized iso="ITA">Casuale</VariableLocalized>
+        <VariableLocalized iso="FRE">Random</VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_energy_efficiency_class</Name>
+        <Description>Aria-label text für Energielabel</Description>
+        <VariableLocalized iso="GER">Energieeffizienzklasse</VariableLocalized>
+        <VariableLocalized iso="ENG">Energy efficiency class</VariableLocalized>
+        <VariableLocalized iso="ITA">Classe di efficienza energetica</VariableLocalized>
+        <VariableLocalized iso="FRE">Classe d'efficacité énergétique</VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_energy_data_sheet</Name>
+        <Description>Energielabel Datenblatt</Description>
+        <VariableLocalized iso="GER">Produktdatenblatt</VariableLocalized>
+        <VariableLocalized iso="ENG">Energy data sheet</VariableLocalized>
+        <VariableLocalized iso="ITA">Scheda informativa energetica</VariableLocalized>
+        <VariableLocalized iso="FRE">Fiche d'information énergétique</VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_marketing_energy_scale_sr_text</Name>
+        <Description>Screenreader text fr die Skala</Description>
+        <VariableLocalized iso="GER">Skala von %s bis %s</VariableLocalized>
+        <VariableLocalized iso="ENG">Scale from %s to %s</VariableLocalized>
+        <VariableLocalized iso="ITA">Scala da %s a %s</VariableLocalized>
+        <VariableLocalized iso="FRE">Échelle de %s à %s</VariableLocalized>
+      </Variable>
+      <Variable>
+        <Name>admorris_pro_close_popup</Name>
+        <Description>Aria-label text für Popup schließen Button</Description>
+        <VariableLocalized iso="GER">Popup schließen</VariableLocalized>
+        <VariableLocalized iso="ENG">Close popup</VariableLocalized>
+        <VariableLocalized iso="ITA">Chiudi popup</VariableLocalized>
+        <VariableLocalized iso="FRE">Fermer le popup</VariableLocalized>
+      </Variable>
+    </Locales>
+  </Install>
+</jtlshopplugin>

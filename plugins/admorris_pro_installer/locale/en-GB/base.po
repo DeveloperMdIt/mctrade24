@@ -1,0 +1,28 @@
+
+msgid "Installiert automatisch die richtige Version von admorris Pro für Ihren JTL-Shop"
+msgstr "Automatically installs the correct version of admorris Pro for your JTL shop."
+
+msgid "installer.extracted"
+msgstr "Files extracted"
+
+msgid "installer.installed"
+msgstr "Installation completes successfully. You are being redirected to the admorris Pro plugin."
+
+msgid "installer.already_present"
+msgstr "Admorris Pro already present. If you want to update, please go to the update section in the plugin UI."
+
+msgid "installer.license_not_ok"
+msgstr "License not ok"
+
+msgid "installer.license_invalid"
+msgstr "We could not find a valid license for this domain! Please contact support."
+
+msgid "installer.version_mismatch"
+msgstr "We could not find a suitable version for your shop version. Please contact support."
+
+msgid "installer.not_extracted"
+msgstr "Not extracted yet"
+
+msgid "installer.cannot_create_download_dir"
+msgstr "Cannot create download directory"
+

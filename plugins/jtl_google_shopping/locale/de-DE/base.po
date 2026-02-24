@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Exportformat Google Shopping"
+msgstr "Exportiert Artikel im format für Google Shopping."
+
+msgid "Additional Exports"
+msgstr "Weitere Exporte"
+
+msgid "Export Attributes"
+msgstr "Export-Attribute"
+
+msgid "Feature Mapping"
+msgstr "Merkmale mappen"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Default product state"
+msgstr "Standard Artikelzustand"
+
+msgid "State of product by default"
+msgstr "Standardmäßiger Zustand der Artikel."
+
+msgid "new"
+msgstr "Neu"
+
+msgid "used"
+msgstr "Gebraucht"
+
+msgid "refurbished"
+msgstr "Erneuert"
+
+msgid "Function attribute for Article state"
+msgstr "Funktionsattribut Artikelzustand"
+
+msgid "Name of function attribute in which the article state is specified if it is not the default state"
+msgstr "Name des Funktionsattributes in der der Artikelzustand angegeben ist wenn er vom Standard-Artikelzustand abweicht."
+
+msgid "Function attribute for Google category"
+msgstr "Funktionsattribut Google Kategorie"
+
+msgid "Name of function attribute in which the Google category is specified"
+msgstr "Name des Funktionsattributes in der die Google Kategorie angegeben ist."
+
+msgid "Shop name"
+msgstr "Shopname"
+
+msgid "Name of the shop"
+msgstr "Name des Shops."
+
+msgid "Shop description"
+msgstr "Shop-Beschreibung"
+
+msgid "Description of the shop"
+msgstr "Beschreibung des Shops."
+
+msgid "Max items"
+msgstr "Artikel pro Datei"
+
+msgid "Maximal count of articles per file"
+msgstr "Maximale Anzahl an Artikeln pro Datei. Dieser Wert kann nur in 2000er Schritten gewählt werden (2000, 4000, 6000, ..., 100000). Maximal dürfen 100000 Artikel pro Datei exportiert werden."
+
+msgid "Articles with base price"
+msgstr "Artikel mit Grundpreis"
+
+msgid "do nothing"
+msgstr "Nichts unternehmen"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "append base price to title"
+msgstr "Grundpreis an Titel anhängen"
+
+msgid "do not export product"
+msgstr "Artikel nicht exportieren"
+
+msgid "Export article ids of child articles as"
+msgstr "Artikelnummern der Kindartikel exportieren als"
+
+msgid "By which scheme article ids of child articles should be exported"
+msgstr "Nach welchem Schema sollen die Artikelnummern der Kindartikel exportiert werden? Wenn in der Wawi bei den Kindartikel keine eindeutigen Artikelnummern verwendet werden, sollte cArtNr_kArtikel gewählt werden."
+
+msgid "Remove tags?"
+msgstr "Tags entfernen?"
+
+msgid "Removes HTML tags from product data"
+msgstr "Entfernt HTML-Tags aus den Produktdaten"
+
+msgid "cArtNr only"
+msgstr "Nur cArtNr"
+
+msgid "cArtNr_kArtikel"
+msgstr "cArtNr_kArtikel"
+
+msgid "Standard text if no product description exists"
+msgstr "Standardtext, wenn zum Artikel keine Beschreibung existiert."
+
+msgid "Sorry, but there is no description for this product"
+msgstr "Leider steht zu diesem Artikel keine Beschreibung zur Verfügung."
+
+msgid "An error occurred while zipping the export file"
+msgstr "Es ist ein Fehler beim Zippen der Datei aufgetreten!"
+
+msgid "An error occurred while loading the export format"
+msgstr "Es ist ein Fehler beim Laden des Exportformats aufgetreten!"
+
+msgid "An error occurred while getting the file handle"
+msgstr "Es ist ein Fehler beim Holen des Dateizeigers aufgetreten!"
+
+msgid "An error occurred while loading the settings"
+msgstr "Es ist ein Fehler beim Laden der Einstellungen aufgetreten!"
+
+msgid "Product could not be exported because no parent product exists"
+msgstr "Google Shopping (Plugin): Artikel mit kArtikel: %d wurde nicht exportiert, da kein Vaterartikel vorhanden ist."
+
+msgid "Product could not be exported because no product exists for current settings"
+msgstr "Google Shopping (Plugin): Artikel mit kArtikel: %d wurde nicht exportiert, da er mit den aktuellen Einstellungen nicht sichtbar ist."
+
+msgid "Create review feed"
+msgstr "Rezensionsfeed erstellen"
+
+msgid "Create feed of product reviews"
+msgstr "Sollen Bewertungen in einen Rezensionsfeed exportiert werden?"

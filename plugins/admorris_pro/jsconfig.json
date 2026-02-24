@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "checkJs": false,
+    "baseUrl": "./src/js"
+  },
+  "include": ["src/js/**/*", "src/js/**/*.svg"],
+  "exclude": ["node_modules", "adminmenu/js/*"]
+}

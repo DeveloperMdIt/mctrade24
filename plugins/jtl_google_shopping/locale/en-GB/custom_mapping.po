@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Currently no optional mappings exists"
+msgstr "Currently no optional mappings exists."
+
+msgid "Create new mapping"
+msgstr "Create new mapping"
+
+msgid "please select"
+msgstr "please select"
+
+msgid "Merkmal"
+msgstr "Feature"
+
+msgid "Merkmalwert"
+msgstr "Feature value"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "To"
+msgstr "To"
+
+msgid "From"
+msgstr "From"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "deleted"
+msgstr "deleted"
+
+msgid "e.g."
+msgstr "e.g."
+
+msgid "very large"
+msgstr "very large"
+
+msgid "Clothing size"
+msgstr "Clothing size"
+
+msgid "groesse"
+msgstr "Size"
+
+msgid "farbe"
+msgstr "Color"
+
+msgid "altersgruppe"
+msgstr "Age group"
+
+msgid "geschlecht"
+msgstr "Gender"
+
+msgid "muster"
+msgstr "Model"
+
+msgid "material"
+msgstr "Material"
+
+msgid "Save new mapping"
+msgstr "Save new mapping"
+
+msgid "Empty fields can not be stored"
+msgstr "Empty fields can't be stored."
+
+msgid "Mapping would be successfully added"
+msgstr "Mapping would be successfully added."
+
+msgid "Mapping could not be added"
+msgstr "Mapping couldn't be added."
+
+msgid "Mapping with ID successfully ..."
+msgstr "Mapping with ID: %d would be successfully %s."
+
+msgid "Mapping with ID could not be ..."
+msgstr "Mapping with ID: %d couldn't be %s."
+
+msgid "Mappings"
+msgstr "Mappings"

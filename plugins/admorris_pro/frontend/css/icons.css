@@ -1,0 +1,47 @@
+/* [1]: svg elements need a width when a sprite with <use> elements is used */
+/* [2]: --size is set on the span wrapper as an inline style */
+.icon-content {
+  display: inline-block;
+}
+.icon-content svg {
+  display: block;
+  pointer-events: none;
+  fill: currentColor;
+  top: 0.125em;
+  width: 1em;
+  /* [1] */
+  height: 1em;
+  position: relative;
+}
+@supports (color: var(--size)) {
+  .icon-content svg {
+    --base-icon-size: 1em;
+    --dimension: calc(var(--base-icon-size) * var(--size, 1));
+    /* [2] */
+    top: calc(0.125em * var(--size, 1));
+    height: var(--dimension);
+    width: var(--dimension);
+    /* [1] */
+  }
+}
+.icon-content--small svg {
+  --base-icon-size: 0.75em;
+}
+.icon-content--large svg {
+  --base-icon-size: 1.25em;
+}
+.icon-content--bottom {
+  vertical-align: text-bottom;
+}
+.icon-content--bottom svg {
+  top: 0;
+}
+.icon-text--center,
+.icon-content--center {
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-text--center svg,
+.icon-content--center svg {
+  top: 0;
+}

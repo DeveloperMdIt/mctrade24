@@ -1,0 +1,16 @@
+.opc-Container {
+  background-size: cover;
+  background-position: center;
+
+  .opc-container-pause {
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: 7px;
+    &:hover {
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+}

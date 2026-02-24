@@ -1,0 +1,221 @@
+// Nav Wizard
+// -------------------------
+
+@use 'sass:map';
+@use '../vendor/utopia/utopia';
+
+$stepperClampWidths: (
+    'minWidth': 375,
+    'maxWidth': 570,
+    'relativeTo': 'viewport-width',
+);
+
+$stepperCalculateClampConf: map.merge(
+    $stepperClampWidths,
+    (
+        'minSize': 5,
+        'maxSize': 15,
+        'usePx': true,
+    )
+);
+
+$step-content-gap: utopia.calculateClamp($stepperCalculateClampConf);
+
+$padding: utopia.calculateClamp(
+    map.merge(
+        $stepperCalculateClampConf,
+        (
+            'minSize': 5,
+            'maxSize': 10,
+        )
+    )
+);
+
+$offset: utopia.calculateClamp(
+    map.merge(
+        $stepperCalculateClampConf,
+        (
+            'minSize': 15,
+            'maxSize': 25,
+        )
+    )
+);
+
+.stepper {
+    --step-gap: #{utopia.calculateClamp(
+            map.merge(
+                $stepperClampWidths,
+                (
+                    'minSize': 5,
+                    'maxSize': 13,
+                    'usePx': true,
+                )
+            )
+        )};
+
+    --offset: #{$offset};
+    --tip-offset: var(--offset);
+    --tail-offset: var(--offset);
+    --step-wizard-badge-size: 2.2em;
+
+    --background-color-active: #{$brand-primary-light};
+    --background-color-current: #{$brand-primary};
+    --background-color-disabled: #{$tone-10};
+    --text-color-active: #{$nav-pills-link-active-color};
+    --text-color-disabled: #{$text-color};
+
+    --bg: var(--background-color-disabled);
+    --text-color: var(--text-color-disabled);
+    --badge-size: var(--step-wizard-badge-size, 2em);
+
+    border-radius: $nav-pills-border-radius;
+    margin: 0 0 map.get($spacers, 6);
+    overflow: hidden;
+    position: relative;
+    color: var(--text-color);
+    gap: var(--step-gap);
+
+    font-size: #{utopia.calculateClamp(
+            map.merge(
+                $stepperClampWidths,
+                (
+                    'minSize': 10,
+                    'maxSize': 16,
+                    'usePx': false,
+                )
+            )
+        )};
+
+    .nav-item,
+    .nav-item a {
+        display: flex;
+        > * {
+            flex: 1;
+        }
+    }
+
+    .nav-item {
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        clip-path: polygon(
+            0 0,
+            calc(100%) 0,
+            calc(100% + var(--tip-offset)) 50%,
+            calc(100%) 100%,
+            0 100%,
+            var(--tail-offset) 50%
+        );
+
+        @media (width > breakpoint-min(lg)) {
+            flex: 1 0 0%;
+        }
+
+        &:first-child {
+            --tail-offset: 0%;
+        }
+
+        &:last-child {
+            --tip-offset: 0%;
+        }
+
+        &:not(:first-child) {
+            .step-content {
+                padding-left: calc(var(--tail-offset) + var(--step-gap));
+            }
+        }
+        &:not(:last-child) {
+            &:after {
+                width: var(--tip-offset);
+                height: 100%;
+                background-color: var(--bg);
+                position: absolute;
+                content: '';
+                top: 0;
+                right: calc(var(--tip-offset) * -1);
+                z-index: 4;
+            }
+        }
+
+        &.step-active {
+            --bg: var(--background-color-active);
+            --text-color: var(--text-color-active);
+        }
+
+        &.step-current {
+            --bg: var(--background-color-current);
+            --text-color: var(--text-color-active);
+        }
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+        opacity: 1;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    .step-content {
+        display: flex;
+        align-items: center;
+        gap: #{$step-content-gap};
+        padding: #{$padding};
+        background-color: var(--bg);
+        color: var(--text-color);
+
+        .badge {
+            border: solid 2px var(--text-color);
+            color: var(--text-color);
+            background-color: transparent;
+            font-size: 1em;
+            width: var(--badge-size);
+            height: var(--badge-size);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // padding: 0.3em 0.55em;
+        }
+    }
+}
+
+/* inc-steps */
+.checkout-steps {
+    margin-bottom: map-get($spacers, 6);
+    @include adm-border-radius('sm', 'global');
+
+    .badge-pill {
+        @include media-breakpoint-up(md) {
+            margin-left: auto;
+        }
+    }
+
+    .step-text {
+        // margin-left: map-get($spacers, 3);
+        margin-right: auto;
+        font-size: 1em;
+    }
+
+    .step-active:not(.step-current) {
+        .step-text {
+            margin-right: 0;
+        }
+    }
+
+    .step-check {
+        // margin-left: map-get($spacers, 1);
+        margin-right: auto;
+
+        // @include media-breakpoint-up(md) {
+        //     margin-left: map-get($spacers, 3);
+        // }
+    }
+}
+
+.d-inline-block--stepper {
+    @media (width > 61.56em) {
+        display: inline-block !important;
+    }
+}

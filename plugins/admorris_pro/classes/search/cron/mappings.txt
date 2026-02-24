@@ -1,0 +1,62 @@
+// Completion Suggester:
+
+PUT _template/template_1
+{
+  "index_patterns": ["1_*"],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+        "item" : {
+            "properties" : {
+                "suggest" : {
+                    "type" : "completion"
+                }
+            }
+        }
+    }
+}
+
+
+
+// Index Time Search
+// https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_time_search_as_you_type.html
+
+PUT _template/template_1
+{
+  "index_patterns": ["1_*"],
+  "settings": {
+    "number_of_shards": 1,
+    "analysis": {
+            "filter": {
+                "autocomplete_filter": { 
+                    "type":     "edge_ngram",
+                    "min_gram": 1,
+                    "max_gram": 20
+                }
+            },
+            "analyzer": {
+                "autocomplete": {
+                    "type":      "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "autocomplete_filter" 
+                    ]
+                }
+            }
+        }
+  },
+ "mappings": {
+        "item" : {
+            "properties" : {
+                "cName" : {
+                    "type" : "text",
+                    "analyzer":  "autocomplete",
+                    "search_analyzer": "standard"
+                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+!function(){var a={io:JSON.stringify({name:"admCron",params:[]})};$.ajax({type:"POST",dataType:"json",url:window.admorris_shopUrl+"/io",data:a})}();

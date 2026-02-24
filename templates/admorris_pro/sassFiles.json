@@ -1,0 +1,14 @@
+{
+    "main.scss": "styles.css",
+    "non-critical.scss": "non-critical.css",
+    "homepage.scss": "homepage.css",
+    "account.scss": "account.css",
+    "slider.scss": "slider.css",
+    "blog.scss": "blog.css",
+    "checkout.scss": "checkout.css",
+    "comparelist.scss": "comparelist.css",
+    "productdetails.scss": "productdetails.css",
+    "configuration.scss": "configuration.css",
+    "productlist.scss": "productlist.css",
+    "wishlist.scss": "wishlist.css"
+}

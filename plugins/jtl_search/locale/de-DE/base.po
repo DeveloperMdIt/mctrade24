@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Index status"
+msgstr "Index-Status"
+
+msgid "infoNoDataExport"
+msgstr "Für Ihren Onlineshop wurden auf dem Suchserver noch keine Daten indiziert. Bitte starten Sie den Export."
+
+msgid "infoIndexLanguageAvailable"
+msgstr "Suchindex für Sprache „%s“ ist verfügbar."
+
+msgid "infoIndexNoDataImported"
+msgstr "Für den Suchindex „%s“ wurden noch keine Daten importiert."
+
+msgid "yourShopID"
+msgstr "Ihre Onlineshop-ID: <strong>%s</strong>"
+
+msgid "refresh"
+msgstr "Aktualisieren"
+
+msgid "startExport"
+msgstr "Export starten"
+
+msgid "infoStartExport"
+msgstr "Wählen Sie zum Starten des Exports bitte die Schaltfläche „Export starten“."
+
+msgid "infoExportInQueue"
+msgstr "Es befindet sich bereits ein Export in der Warteschlange auf dem Server."
+
+msgid "errorCodeX"
+msgstr "Fehlercode %s: Bitte wenden Sie sich an den Support."
+
+msgid "lastUpdates"
+msgstr "Letzte Suchindex-Updates"
+
+msgid "updateMethod"
+msgstr "Update-Methode"
+
+msgid "timeNeeded"
+msgstr "benötigte Zeit"
+
+msgid "importTypeComplete"
+msgstr "Komplett"
+
+msgid "importTypeDelta"
+msgstr "Delta"
+
+msgid "infoNoImports"
+msgstr "Es wurden noch keine erfolgreichen Imports durchgeführt."
+
+msgid "exporting"
+msgstr "Exportformat wird exportiert…"
+
+msgid "errorExporting"
+msgstr "Es ist ein Fehler beim Export aufgetreten."
+
+msgid "successWriteExportInQueue"
+msgstr "Export wurde erfolgreich in die Importqueue des Servers geschrieben."
+
+msgid "error2AuthenticationFail"
+msgstr "<strong>Fehler 2:</strong> Authentifikation fehlgeschlagen.<br/>Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "error3TrialExpired"
+msgstr "<strong>Fehler 3:</strong> Testzeitraum abgelaufen oder Usershop nicht gefunden.<br/>Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "error4WriteInQueue"
+msgstr "<strong>Fehler 4:</strong> Auftrag konnte nicht in die Server-Queue gespeichert werden.<br/>Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "error5RequestIP"
+msgstr "<strong>Fehler 5:</strong> Requester IP konnte nicht validiert werden.<br/>Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "error7UnknownServer"
+msgstr "<strong>Fehler 7:</strong> Unbekannter Serverfehler.<br/>Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "error8LimitReached"
+msgstr "<strong>Fehler 8:</strong> Sie haben das maximale Limit an Komplettabgleichen pro Tag erreicht.<br/>Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "errorNoData"
+msgstr "Es wurden keine Daten exportiert. Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "errorUnknownServer"
+msgstr "<strong>Unbekannter Serverfehler.</strong><br/>Export wurde NICHT in die<br/> Importqueue des Servers geschrieben. Bitte kontaktieren Sie den Support."
+
+msgid "errorDuringExport"
+msgstr "Es ist ein Fehler beim Export aufgetreten."
+
+msgid "trialStarted"
+msgstr "Testperiode wurde erfolgreich gestartet."
+
+msgid "licenceKey"
+msgstr "Lizenzschlüssel"
+
+msgid "licenceKeyRequired"
+msgstr "Bitte geben Sie einen gültigen Lizenzschlüssel ein."
+
+msgid "licenceKeyMinCharCount"
+msgstr "Der Lizenzschlüssel muss aus mindestens 3 Zeichen bestehen."
+
+msgid "licenceKeyInvalid"
+msgstr "Ungültiger Lizenzschlüssel."
+
+msgid "licenceKeyProblem"
+msgstr "Sie haben entweder einen ungültigen Lizenzschlüssel eingetragen oder es gibt ein anderes Problem mit Ihrem Lizenzschlüssel."
+
+msgid "licenceKeyUnknownServerProblem"
+msgstr "Unerwartete Antwort vom Server. Es gibt ein Problem mit Ihrem Lizenzschlüssel."
+
+msgid "loggerLicenceUnknownError"
+msgstr "%s: Es ist ein unbekannter Fehler aufgetreten."
+
+msgid "loggerExportUnknownError"
+msgstr "%s: Es ist ein unbekannter Fehler beim Export aufgetreten. Unerwartete Antwort vom Verwaltungsserver."
+
+msgid "errorDateInvalid"
+msgstr "Bitte geben Sie ein gültiges Datum ein."
+
+msgid "errorDataZip"
+msgstr "Daten konnten nicht gezippt werden."
+
+msgid "successDataZip"
+msgstr "Daten wurden erfolgreich gezippt."
+
+msgid "errorStandardLanguage"
+msgstr "Standardsprache konnte nicht ausgewählt werden. Keine Standardsprache vorhanden. Bitte aktivieren Sie eine Standardsprache in JTL-Wawi."
+
+msgid "errorNoLanguage"
+msgstr "Standardsprache konnte nicht ausgewählt werden. Keine Sprachen vorhanden. Bitte aktivieren Sie die Sprachen in JTL-Wawi."
+
+msgid "errorLoadNoLanguage"
+msgstr "Sprachen konnten nicht geladen werden. Keine Sprachen vorhanden. Bitte aktivieren Sie die Sprachen in JTL-Wawi."
+
+msgid "errorLoadNoCustomerGroup"
+msgstr "Kundengruppen konnten nicht geladen werden. Keine Kundengruppen vorhanden. Bitte aktivieren Sie die Kundengruppen in JTL-Wawi."
+
+msgid "errorLoadNoItem"
+msgstr "Artikel konnte nicht geladen werden. Kein Datensatz zu kArtikel „%s“ vorhanden."
+
+msgid "loggerCronStarted"
+msgstr "%s: Cron gestartet (Limit = %s)."
+
+msgid "loggerExportMethodDelta"
+msgstr "%s Export-Methode: %s (Delta-Export)"
+
+msgid "loggerExportMethodPlanner"
+msgstr "%s Export-Methode: %s (Aufgabenplaner)"
+
+msgid "loggerNewQueue"
+msgstr "%s: Neue JTLSearchExportQueue erstellt."
+
+msgid "loggerExportDone"
+msgstr "%s: Export erfolgreich beendet, Job aus tjobqueue gelöscht."
+
+msgid "loggerErrorCronResult"
+msgstr "%s: Cron konnte nicht abgearbeitet werden. $res ist nicht vorhanden."
+
+msgid "loggerErrorExportWritePermissions"
+msgstr "%s: %s tmpSearchExport%s besitzt keine Schreibrechte."
+
+msgid "loggerErrorExportFileDirWritePermissions"
+msgstr "%s: %s besitzt keine Schreibrechte."
+
+msgid "loggerSuccessQueueCreated"
+msgstr "%s: Neue JTLSearchJobqueue wurde erfolgreich beendet."
+
+msgid "loggerErrorQueueCreate"
+msgstr "%s: Neue JTLSearchJobqueue konnte nicht erstellt werden (Exception „%s“)."
+
+msgid "loggerErrorMethodID"
+msgstr "%s: $nExportMethod muss eine Zahl größer als 0 sein ($nExportMethod = %s)."
+
+msgid "loggerErrorServerCommunication"
+msgstr "Kommunikation mit dem Server fehlgeschlagen."
+
+msgid "loggerErrorCreateCategoryObject"
+msgstr "CategoryData-Objekt konnte nicht erstellt werden."
+
+msgid "loggerErrorLoadCategory"
+msgstr "Kategorie konnte nicht geladen werden. Kein Datensatz zu kKategorie „%s“ vorhanden."
+
+msgid "searchErrorNoStandardLanguage"
+msgstr "Daten von JTL-Search konnten nicht exportiert werden. Keine Standardsprache für den Onlineshop vorhanden. Bitte aktivieren Sie eine Standardsprache in JTL-Wawi."
+
+msgid "searchErrorNoLanguages"
+msgstr "Daten von JTL-Search konnten nicht exportiert werden. Keine Sprachen für den Onlineshop vorhanden. Bitte aktivieren Sie die Sprachen in JTL-Wawi."
+
+msgid "loggerInvalidQueue"
+msgstr "Ungültige Exportqueue."
+
+msgid "loggerErrorCreateItem"
+msgstr "Item des Typs \"%s\" mit ID \"%s\" konnte nicht erstellt werden."
+
+msgid "loggerErrorZip"
+msgstr "Datei konnte nicht gezippt werden."
+
+msgid "loggerDebugResponse"
+msgstr "Antwort von Suchserver: %s"
+
+msgid "loggerErrorSendFile"
+msgstr "Datei konnte nicht in die Importqueue gesendet werden."
+
+msgid "loggerErrorExportItem"
+msgstr "Schwerer Exportfehler! $this->oProduct = %s"
+
+msgid "loggerErrorNoCategoryForItem"
+msgstr "Kategorie zu kArtikel „%s“ konnte nicht aus der Datenbank abgerufen werden."
+
+msgid "Art der Export-Updates"
+msgstr "Art der Export-Updates"
+
+msgid "Cronjob"
+msgstr "Cronjob"
+
+msgid "Delta-Export nach Wawi-Abgleich"
+msgstr "Delta-Export nach Wawi-Abgleich"
+
+msgid "Geblockte Suchbegriffe (mit Komma getrennt)"
+msgstr "Geblockte Suchbegriffe (mit Komma getrennt)"
+
+msgid "Max. Länge"
+msgstr "Max. Länge"
+
+msgid "Maximale Länge eines Suchbegriffs"
+msgstr "Maximale Länge eines Suchbegriffs"

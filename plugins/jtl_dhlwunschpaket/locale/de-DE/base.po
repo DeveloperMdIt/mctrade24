@@ -1,0 +1,213 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "Keine Auswahl"
+msgstr "Keine Auswahl"
+
+msgid "Nein"
+msgstr "Nein"
+
+msgid "Ja"
+msgstr "Ja"
+
+msgid "Einstellungen"
+msgstr "Einstellungen"
+
+msgid "Einstellungen für Anbieter DHL"
+msgstr "Einstellungen für Anbieter DHL"
+
+msgid "DHL-Services anbieten"
+msgstr "DHL-Services anbieten"
+
+msgid "Sollen die DHL-Services angeboten werden?"
+msgstr "Sollen die DHL-Services angeboten werden?"
+
+msgid "DHL-Kundennummer"
+msgstr "DHL-Kundennummer"
+
+msgid "Ihre DHL-Kundennummer"
+msgstr "Ihre DHL-Kundennummer"
+
+msgid "Versand an Packstation erlauben?"
+msgstr "Versand an Packstation erlauben?"
+
+msgid "Soll ein Versand an Packstationen möglich sein?"
+msgstr "Soll ein Versand an Packstationen möglich sein?"
+
+msgid "Für Packstation erlaubte Versandarten"
+msgstr "Für Packstation erlaubte Versandarten"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an eine Packstation zur Verfügung stehen?"
+msgstr "Welche Versandarten sollen bei einer Lieferung an eine Packstation zur Verfügung stehen?"
+
+msgid "Leider fehlgeschlagen"
+msgstr "Leider fehlgeschlagen"
+
+msgid "Versandarten exklusiv für Packstation"
+msgstr "Versandarten exklusiv für Packstation"
+
+msgid "Exklusive Versandarten werden bei Bestellungen an normale Lieferanschriften ausgeblendet"
+msgstr "Exklusive Versandarten werden bei Bestellungen an normale Lieferanschriften ausgeblendet"
+
+msgid "Versand an Postfilialen erlauben?"
+msgstr "Versand an Postfilialen erlauben?"
+
+msgid "Soll ein Versand an Postfilialen möglich sein?"
+msgstr "Soll ein Versand an Postfilialen möglich sein?"
+
+msgid "Für Postfiliale erlaubte Versandarten"
+msgstr "Für Postfiliale erlaubte Versandarten"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an eine Postfiliale zur Verfügung stehen?"
+msgstr "Welche Versandarten sollen bei einer Lieferung an eine Postfiliale zur Verfügung stehen?"
+
+msgid "Versandarten exklusiv für Postfiliale"
+msgstr "Versandarten exklusiv für Postfiliale"
+
+msgid "Suchfunktion für Packstationen / Postfilialen aktivieren"
+msgstr "Suchfunktion für Packstationen / Postfilialen aktivieren"
+
+msgid "Soll die Suchfunktion für Packstationen / Postfilialen aktiviert werden?"
+msgstr "Soll die Suchfunktion für Packstationen / Postfilialen aktiviert werden?"
+
+msgid "Versand an bevorzugten Nachbarn erlauben?"
+msgstr "Versand an bevorzugten Nachbarn erlauben?"
+
+msgid "Soll ein Versand an einen bevorzugten Nachbarn möglich sein?"
+msgstr "Soll ein Versand an einen bevorzugten Nachbarn möglich sein?"
+
+msgid "Für bevorzugten Nachbarn erlaubte Versandarten"
+msgstr "Für bevorzugten Nachbarn erlaubte Versandarten"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Nachbarn zur Verfügung stehen?"
+msgstr "Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Nachbarn zur Verfügung stehen?"
+
+msgid "Versandarten exklusiv für bevorzugten Nachbarn"
+msgstr "Versandarten exklusiv für bevorzugten Nachbarn"
+
+msgid "Einstellungen für bevorzugten Ort und Tag"
+msgstr "Einstellungen für bevorzugten Ablageort und Liefertag"
+
+msgid "Zustellung an bevorzugten Ort erlauben?"
+msgstr "Zustellung an bevorzugten Ablageort erlauben?"
+
+msgid "Soll eine Zustellung an einen bevorzugten Ort erlaubt werden?"
+msgstr "Soll eine Zustellung an einen bevorzugten Ablageort erlaubt werden?"
+
+msgid "Zustellung an bevorzugtem Tag erlauben?"
+msgstr "Zustellung an bevorzugtem Liefertag erlauben?"
+
+msgid "Soll eine Zustellung an einem bevorzugten Tag erlaubt werden?"
+msgstr "Soll eine Zustellung an einem bevorzugten Liefertag erlaubt werden?"
+
+msgid "Einstellungen für die Nutzung der DHL-Services"
+msgstr "Einstellungen für die Nutzung der DHL-Services"
+
+msgid "Erlaubte Versandarten für bevorzugten Ort und Tag"
+msgstr "Erlaubte Versandarten für bevorzugten Ablageort und Liefertag"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Ort zur Verfügung stehen?"
+msgstr "Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Ablageort zur Verfügung stehen?"
+
+msgid "Zusatzkosten für Zustellung an bevorzugtem Tag"
+msgstr "Zusatzkosten für Zustellung an bevorzugtem Liefertag"
+
+msgid "Zusatzkosten bei Zustellung an bevorzugtem Tag (Format: 4.60)"
+msgstr "Zusatzkosten bei Zustellung an bevorzugtem Liefertag (Format: 4.60)"
+
+msgid "Versandeinstellungen für DHL-Services"
+msgstr "Versandeinstellungen für DHL-Services"
+
+msgid "Versandeinstellungen zur Ermittlung von verfügbaren Tagen"
+msgstr "Versandeinstellungen zur Ermittlung von verfügbaren Liefertagen"
+
+msgid "Ausgeschlossene Versandtage"
+msgstr "Ausgeschlossene Versandtage"
+
+msgid "Tage an denen keine Ware versendet wird - verfügbare Werte: MO - Montag, DI - Dienstag, MI - Mittwoch, DO - Donnerstag, FR - Freitag, SA - Samstag, SO - Sonntag"
+msgstr "Tage an denen keine Ware versendet wird - verfügbare Werte: MO - Montag, DI - Dienstag, MI - Mittwoch, DO - Donnerstag, FR - Freitag, SA - Samstag, SO - Sonntag"
+
+msgid "Letzte Bestellzeit"
+msgstr "Letzte Bestellzeit"
+
+msgid "Nach dieser Uhrzeit erfolgt der Versand erst am nächsten verfügbaren Tag - Format der Zeit: 12:00 oder 14:00"
+msgstr "Nach dieser Uhrzeit erfolgt der Versand erst am nächsten verfügbaren Tag - Format der Zeit: 12:00 oder 14:00"
+
+msgid "Bearbeitungszeit (in Tagen)"
+msgstr "Bearbeitungszeit (in Tagen)"
+
+msgid "Die Anzahl der hier gesetzten Tage wird auf das mögliche Versanddatum hinzuaddiert"
+msgstr "Die Anzahl der hier gesetzten Tage wird auf das mögliche Versanddatum hinzuaddiert"
+
+msgid "Warenkorb-Lieferzeit für bevorzugten Tag beachten?"
+msgstr "Warenkorb-Lieferzeit für bevorzugten Liefertag beachten?"
+
+msgid "Soll die Warenkorb-Lieferzeit für die Berechnung des bevorzugten Tags beachtet werden (bitte nächste Einstellung beachten!)?"
+msgstr "Soll die Warenkorb-Lieferzeit für die Berechnung des bevorzugten Liefertags beachtet werden (bitte nächste Einstellung beachten!)?"
+
+msgid "Warenkorb-Lieferzeit nur beachten wenn größer als"
+msgstr "Warenkorb-Lieferzeit nur beachten wenn größer als"
+
+msgid "Die Lieferzeit wird nur für die Berechnung des bevorzugten Tags herangezogen wenn der Wert größer ist als hier hinterlegt"
+msgstr "Die Lieferzeit wird nur für die Berechnung des bevorzugten Liefertags herangezogen wenn der Wert größer ist als hier hinterlegt"
+
+msgid "JTL-Wawi-Einstellungen"
+msgstr "JTL-Wawi-Einstellungen"
+
+msgid "Einstellungen für JTL-Wawi"
+msgstr "Einstellungen für JTL-Wawi"
+
+msgid "Genutzte JTL-Wawi-Version"
+msgstr "Genutzte JTL-Wawi-Version"
+
+msgid "Welche JTL-Wawi-Version wird aktuell genutzt?"
+msgstr "Welche JTL-Wawi-Version wird aktuell genutzt?"
+
+msgid "Version kleiner 1.5.8.x"
+msgstr "Version kleiner 1.5.8.x"
+
+msgid "Version größer 1.5.8.x"
+msgstr "Version größer 1.5.8.x"
+
+msgid "Systemeinstellungen"
+msgstr "Systemeinstellungen"
+
+msgid "Einstellungsparameter für debug-Ausgabe"
+msgstr "Einstellungsparameter für debug-Ausgabe"
+
+msgid "debug-Ausgabe in Systemlog"
+msgstr "debug-Ausgabe in Systemlog"
+
+msgid "debug-Ausgabe in Systemlog schreiben?"
+msgstr "debug-Ausgabe in Systemlog schreiben?"
+
+msgid "DHL-Sandbox-Modus"
+msgstr "DHL-Sandbox-Modus"
+
+msgid "Handelt es sich um ein Testsystem und sollen Abfragen über die DHL-Sandbox durchgeführt werden?"
+msgstr "Handelt es sich um ein Testsystem und sollen Abfragen über die DHL-Sandbox durchgeführt werden?"
+
+msgid "DHL-Sandbox-Benutzername"
+msgstr "DHL-Sandbox-Benutzername"
+
+msgid "Ihr Benutzername für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)"
+msgstr "Ihr Benutzername für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)"
+
+msgid "DHL-Sandbox-Passwort"
+msgstr "DHL-Sandbox-Passwort"
+
+msgid "Ihr Passwort für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)"
+msgstr "Ihr Passwort für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)"
+
+msgid "Please enable option \"Prompt address 2\" in the shipping address options"
+msgstr "Bitte die Option \"Adresszusatz abfragen\" in den Einstellungen für Lieferadresse aktivieren"

@@ -1,0 +1,15 @@
+themes/admorris/less/base/*
+themes/admorris/scss/base/*
+js/global.js
+js/jtl.evo.js
+js/jtl.basket.js
+js/jtl.gallery.js
+js/jtl.gallery.min.js
+js/jtl.io.js
+js/jtl.article.js
+bootstrap-*.js
+jquery.*.js
+slick.js
+consent.js
+*.min.*
+styles/sass/vendor/*

@@ -1,0 +1,96 @@
+/* Override showing the banner too early before the custom styles are loaded 
+   An embedded style does add 'display: none' 
+*/
+.consent-manager-wrapper.consent-manager-wrapper--custom-styles {
+  display: block;
+}
+#consent-manager {
+  width: fit-content;
+  margin: var(--cookieNoticePro-bannerMargin);
+  top: var(--cookieNoticePro-bannerTop);
+  bottom: var(--cookieNoticePro-bannerBottom);
+}
+.consent-modal-content {
+  margin: var(--cookieNoticePro-modalMargin);
+}
+#consent-banner {
+  max-width: var(--cookieNoticePro-bannerMaxWidth);
+}
+#consent-manager #consent-banner,
+#consent-settings #consent-banner,
+#consent-manager .consent-modal-content,
+#consent-settings .consent-modal-content,
+#consent-manager .consent-more-description,
+#consent-settings .consent-more-description {
+  color: var(--cookieNoticePro-textColor);
+  background-color: var(--cookieNoticePro-backgroundColor);
+}
+#consent-manager .consent-btn-outline-primary,
+#consent-settings .consent-btn-outline-primary {
+  background-color: var(--cookieNoticePro-backgroundColor);
+  color: var(--cookieNoticePro-headlinesColor);
+  border-color: var(--cookieNoticePro-headlinesColor);
+}
+#consent-manager .consent-btn-outline-primary:hover,
+#consent-settings .consent-btn-outline-primary:hover {
+  color: var(--cookieNoticePro-backgroundColor);
+  background-color: var(--cookieNoticePro-headlinesColor);
+}
+#consent-manager .consent-btn-secondary,
+#consent-settings .consent-btn-secondary {
+  color: var(--cookieNoticePro-backgroundColor);
+  background-color: var(--cookieNoticePro-textColor);
+  border-color: var(--cookieNoticePro-textColor);
+}
+#consent-manager .consent-btn-secondary:hover,
+#consent-settings .consent-btn-secondary:hover {
+  filter: brightness(140%);
+}
+#consent-manager .consent-btn-tertiary,
+#consent-settings .consent-btn-tertiary {
+  background-color: var(--cookieNoticePro-buttonColor);
+  color: var(--cookieNoticePro-buttonTextColor);
+  border-color: var(--cookieNoticePro-buttonColor);
+}
+#consent-manager .consent-btn-tertiary:hover,
+#consent-settings .consent-btn-tertiary:hover {
+  background-color: var(--cookieNoticePro-backgroundColor);
+  color: var(--cookieNoticePro-buttonColor);
+  border-color: var(--cookieNoticePro-buttonColor);
+}
+#consent-manager .consent-banner-icon,
+#consent-settings .consent-banner-icon,
+#consent-manager .consent-modal-icon,
+#consent-settings .consent-modal-icon {
+  color: var(--cookieNoticePro-textColor);
+}
+#consent-manager .consent-switch .consent-input ~ .consent-label::before,
+#consent-settings .consent-switch .consent-input ~ .consent-label::before {
+  background-color: #c5c9c7;
+}
+#consent-manager .consent-switch .consent-input:checked ~ .consent-label::before,
+#consent-settings .consent-switch .consent-input:checked ~ .consent-label::before {
+  background-color: var(--cookieNoticePro-buttonColor);
+}
+#consent-manager .consent-switch .consent-label,
+#consent-settings .consent-switch .consent-label {
+  color: var(--cookieNoticePro-headlinesColor);
+}
+#consent-manager span,
+#consent-settings span {
+  color: var(--cookieNoticePro-headlinesColor);
+}
+#consent-manager p,
+#consent-settings p {
+  color: var(--cookieNoticePro-textColor);
+}
+#consent-manager a,
+#consent-settings a {
+  color: var(--cookieNoticePro-linkColor);
+}
+.consent-banner--center {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-width: 90%;
+}

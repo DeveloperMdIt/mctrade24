@@ -1,0 +1,169 @@
+/* [1]: svg elements need a width when a sprite with <use> elements is used */
+/* [2]: add a pixel because some icons like the heart tend to get slightly cut off */
+
+.icon-content {
+    --icon-size-multiplier: calc(#{$icon-size-multiplier} * var(--size, 1));
+    --icon-size-multiplier-squared: calc(var(--icon-size-multiplier) * var(--icon-size-multiplier));
+    --icon-centering-offset: calc(-0.25em + 0.25em / var(--icon-size-multiplier-squared));
+    --base-icon-size: 1em;
+    --dimension: calc(var(--base-icon-size) * var(--icon-size-multiplier));
+    display: inline-block;
+    // width: auto;
+
+    svg {
+        display: block;
+        pointer-events: none;
+        fill: currentColor;
+        //for more info: https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4
+        top: 0.125em;
+        width: 1em; /* [1] */
+        height: 1em;
+        @supports (color: var(--size)) {
+            top: calc(0.125em * var(--icon-size-multiplier));
+            height: var(--dimension);
+            width: calc(var(--dimension) + 1px); /* [1] [2] */
+        }
+        position: relative;
+    }
+
+    // svg > * {
+    //     display: block;
+    // }
+
+    &--small {
+        --base-icon-size: 0.75em;
+    }
+    // &--default svg {
+    //     height: 1em;
+    //     width: 1em;
+    //     @supports (color: var(--size)) {
+    //         height: calc(1em * calc($icon-size-multiplier * var(--size, 1)));
+    //     }
+    // }
+    &--large {
+        --base-icon-size: 1.25em;
+    }
+}
+
+.icon-content--bottom {
+    vertical-align: text-bottom;
+    svg {
+        top: 0;
+    }
+}
+
+.icon-text--center,
+.icon-content--center {
+    display: inline-block;
+    vertical-align: middle;
+    svg {
+        top: 0;
+    }
+}
+
+.icon-content--star {
+    margin-right: 3px;
+    svg {
+        fill: theme-color('primary');
+    }
+}
+
+.icon-content--productdetails {
+    padding-bottom: 1px;
+}
+
+// .icon-arrow--left {
+//     margin-left: 2px;
+// }
+
+// .icon-arrow--right {
+//     margin-right: 1px;
+// }
+
+.icon-animated--spin {
+    svg {
+        animation-name: spin;
+        animation-duration: 2000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+
+// Payment and shipping icons
+
+.pay-icons-wrapper {
+    @include footer-item-top-border();
+    text-align: center;
+
+    --cluster-spacing: 10px;
+
+    /* Payment fonts */
+    .pay-icons {
+        color: $footer-headings-color;
+        display: inline-flex;
+        min-width: 75%;
+        flex-wrap: wrap;
+        justify-content: space-around; // fallback for IE
+        justify-content: space-evenly;
+
+        @supports (-ms-flow-from: thingy) {
+            /* Edge only */
+            justify-content: space-around;
+        }
+    }
+}
+
+.pf.pay-icons__icon {
+    --icon-width: 8em;
+    --icon-height: 50px;
+    padding: 10px;
+    transition: 0.2s opacity;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // flex: 1;
+    flex-basis: var(--icon-width);
+    max-width: var(--icon-width);
+
+    fill: $shipping-payment-logos-footer-color;
+
+    & > svg {
+        height: var(--icon-height);
+        width: 100%;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+    @media (max-width: $screen-sm) {
+        --icon-width: 6em;
+        --icon-height: 30px;
+    }
+}
+
+#payment_icons_detail {
+    width: 100%;
+
+    .pay-icons__icon.pf {
+        --icon-width: 5em;
+        --icon-height: 30px;
+        margin: 0;
+
+        fill: $shipping-payment-logos-details-page-color;
+    }
+}
+
+.product-info-inner .pay-icons-wrapper {
+    width: 100%;
+    margin-top: 1em;
+    border: 0px;
+}

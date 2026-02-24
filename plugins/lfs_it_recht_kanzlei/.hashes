@@ -1,0 +1,15 @@
+info.xml###edf148cb57eb50c3fd948cfd082897c3
+Migrations/Migration20190407100000.php###28323c5f881f72c211e5fe8ee4e7d268
+.DS_Store###194577a7e20bdcc7afbb718f502c134c
+locale/de-DE/base.po###2c97174ffc22e33e1bf9845535835eeb
+locale/de-DE/base.mo###683d846b48bb3155ec84d7f235296281
+locale/en-EN/base.po###5c1fcf1c3f465504ab631f6d58902b05
+locale/en-EN/base.mo###529e5e7bef075fff33be792bda5294fa
+adminmenu/template/lfs_it_recht_kanzlei_einstellungen.tpl###10597edb5acaeb5b50857c574d84af3b
+adminmenu/template/lfs_it_recht_kanzlei_syncsettings.tpl###669f10a857e38d7850e1363d93426902
+adminmenu/template/lfs_it_recht_kanzlei_log.tpl###c80a6c2936b5f39460044bd27b2c31e0
+pdf-dokumente/.gitkeep###d41d8cd98f00b204e9800998ecf8427e
+pdf-dokumente/.gitignore###226263b5e34ab8242ea05ab8e049fd6f
+classes/ItrkConnector.php###17a3e6a8a3a76b4cd5470b38b4e5bae0
+Bootstrap.php###d659b9fda7dbd9190d067d55efa231ce
+README.md###89e311c165cc66144be1c4cbdcafaa97

@@ -1,0 +1,615 @@
+@product-cell-bg: @body-bg;
+@is-bg-black: boolean(luma(@product-cell-bg) < 10%);
+@product-cell-shadow-base: if(@is-bg-black, #333, black);
+@product-cell-shadow: fade(@product-cell-shadow-base, 12%);
+
+.product-cell-hover() {
+    /* :focus-within styles need to be separated or everything breaks
+        in browsers that don't support it */
+    position: absolute;
+    z-index: @zindex-menu - 1;
+    padding-left: 0;
+    padding-right: 0;
+    top: 0;
+    left: @grid-gutter-width / 2;
+    right: @grid-gutter-width / 2;
+    width: auto;
+    box-shadow: none;
+    // background-color: @detail-hover-bg;
+
+    &:after {
+        opacity: 1;
+    }
+
+    .expandable {
+        display: block;
+    }
+
+    .quickview.badge {
+        display: inline-block;
+        opacity: 0.8;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+}
+
+.gallery,
+.slick-slider {
+    .product-cell.hover-enabled {
+        background-color: @product-cell-bg;
+
+        @media (min-width: @screen-sm-min) {
+            position: relative;
+
+            /* smooth shadow:
+               using a pseudo element for smoother fading-in with opacity */
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                box-shadow: 0 1px 2px @product-cell-shadow, 0 2px 4px @product-cell-shadow,
+                    0 4px 8px @product-cell-shadow, 0 8px 16px @product-cell-shadow;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            /* &:hover, */
+            &.active {
+                .product-cell-hover();
+            }
+
+            &:focus-within {
+                .product-cell-hover();
+            }
+
+            &.active {
+                z-index: 20;
+            }
+        }
+
+        @media (min-width: @screen-sm) {
+            form {
+                margin-bottom: 0;
+            }
+
+            &:hover,
+            &.active {
+                background-color: @product-cell-bg;
+            }
+        }
+    }
+}
+
+.product-cell__body {
+    padding: 20px 5px;
+    @media (min-width: @screen-sm) {
+        padding: 20px;
+    }
+}
+
+.product-cell__title {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: rem(13px);
+    font-weight: 500;
+    a {
+        color: @tone-base;
+        transition: color 0.3s;
+        &:hover,
+        &:active {
+            color: @brand-primary;
+            opacity: 1;
+            text-decoration: none;
+        }
+    }
+}
+
+.product-cell-price() {
+    color: @tone-50;
+    font-size: rem(16px);
+    font-weight: 400;
+}
+
+.product-cell__price-wrapper {
+    .price {
+        .product-cell-price();
+    }
+}
+
+.product-cell__rating,
+.product-cell__price-wrapper {
+    margin-bottom: @base-spacing--half;
+}
+
+.product-cell__quantity,
+.product-cell__delivery-status {
+    margin-bottom: 1.5em;
+}
+
+.product-cell__shortdescription {
+    font-size: 0.85em;
+    margin-bottom: 1em;
+}
+
+.quantity-wrapper {
+    margin-bottom: 0;
+}
+
+.row.gallery .product-wrapper {
+    background-color: transparent;
+    margin-bottom: 23px;
+}
+.row.gallery .product-wrapper .product-cell {
+    background-color: @product-cell-bg;
+    height: 100%;
+}
+
+.thumbnail {
+    background-color: transparent;
+}
+
+.product-wrapper {
+    margin-bottom: 20px;
+}
+
+/* Buttons on the same height at the bottom of the product-cell
+ */
+.gallery[id="product-list"] .product-wrapper--hover-disabled {
+    display: flex;
+    /* fix IE11 bug: columns getting too large */
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: block;
+    }
+}
+
+.product-cell--gallery:not(.hover-enabled) {
+    &,
+    .product-cell__wrapper,
+    .product-cell__body,
+    .form-basket {
+        display: flex;
+        flex: 1 auto;
+        flex-direction: column;
+        // height: 100%;
+
+        /* fix IE11 bug with too much space under the image */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            display: block;
+        }
+    }
+
+    .product-cell__body {
+        width: 100%;
+        flex: 1 auto;
+    }
+
+    /* push button to the bottom of the cell, when hover-effect is not enabled */
+    .caption {
+        flex-grow: 1;
+    }
+}
+
+.quickview.badge,
+.list .product-cell .quickview.badge {
+    z-index: 10;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    color: #333;
+    text-transform: uppercase;
+    background-color: fade(white, 70%);
+    &:hover {
+        opacity: 0.8 !important;
+    }
+}
+
+@media (min-width: @screen-md) {
+    .gallery .product-cell.hover-enabled:hover .quickview.badge,
+    .gallery .product-cell.hover-enabled.active .quickview.badge {
+        opacity: 1;
+    }
+}
+
+/**
+ * List view
+ */
+.product-list-item {
+    border-bottom: 1px solid @tone-10;
+
+    @media (min-width: @screen-sm) {
+        padding-bottom: 20px;
+    }
+    .list & {
+        padding-bottom: 20px;
+    }
+
+    .price_wrapper,
+    .delivery-status {
+        text-align: right;
+    }
+    .basket-details {
+        margin-top: 23px;
+    }
+    .price_wrapper {
+        margin-bottom: 10px;
+        color: @brand-primary;
+    }
+}
+
+.product-list-item__row {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 575px) {
+        > * {
+            flex-basis: 100%;
+        }
+        .product-list-item__image-col {
+            margin-bottom: @base-spacing;
+            max-width: none;
+        }
+    }
+}
+
+.product-list-item__image-col {
+    max-width: 300px;
+}
+
+.product-list-item__quantity-wrapper {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.product-list-item__quantity-wrapper--flex {
+    @media (min-width: @screen-lg) {
+        justify-content: flex-end;
+        display: flex;
+    }
+}
+
+.product-list-item__basket-col {
+    margin-top: auto;
+}
+
+.product-list-item__title {
+    margin-top: 0;
+
+    @media (min-width: @screen-lg) {
+        font-size: rem(20px);
+    }
+    a {
+        color: @tone-base;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.product-list-item__actions-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-list-item__actions-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 2; /* Fixes a problem in Safari */
+    @media (min-width: @screen-lg) {
+        flex: 1 1 0%;
+    }
+
+    /* Column too high in IE 11 */
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: block;
+    }
+
+    .form-basket,
+    .product-list-item__actions-row {
+        flex: 1 1 0%;
+        display: flex;
+    }
+}
+
+// .product-actions--list {
+//     margin-top:
+// }
+
+.product-list-item__variations-col {
+    .variations {
+        margin-top: 0;
+        margin-bottom: 2em;
+
+        @media (max-width: @screen-xs-max) {
+            margin-top: 2em;
+        }
+
+        dl,
+        dd:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.product-list-item__product-detail-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 150px;
+}
+
+.product-list-item__info-col {
+    flex: 1 1 0%;
+    padding: 0 @grid-gutter-width / 2;
+    display: flex;
+}
+
+.product-list-item__info-row {
+    display: flex;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    @media (max-width: @screen-xs-max) {
+        > * {
+            flex-basis: 100%;
+        }
+
+        .attr-sku {
+            margin-top: 0;
+        }
+    }
+}
+
+.flex-wrap-column {
+    display: flex;
+    flex-direction: column;
+    // height: 100%;
+}
+
+.product-list-item {
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+        flex-grow: 1;
+    }
+
+    .attr-sku {
+        color: @tone-25;
+        text-transform: uppercase;
+        font-size: rem(11px);
+        font-weight: 700;
+        margin-top: auto;
+    }
+
+    .attr-group {
+        width: 100%;
+        .attr-label {
+            vertical-align: top;
+        }
+        .value {
+            vertical-align: bottom;
+        }
+    }
+
+    .attr-label {
+        width: 35%;
+    }
+}
+
+// .product-list-item__actions-col {
+//     .form-basket,
+//     .product-detail-cell,
+//     .product-list-item__actions-row {
+//         height: 100%;
+//     }
+
+// }
+
+.product-detail-cell {
+    // display: flex;
+    flex-grow: 1;
+}
+
+/** 
+ * Fit product image
+ * INFO: Important when variation images load that have a different size
+ * to avoid the rest of the product-cell content being pushed down.
+ * Can cause flickering jumping back and forth between hovered image and
+ * original one
+ */
+
+.img-fit-cover {
+    @supports (object-fit: cover) {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.no-js .image-content .lazy {
+    display: none;
+}
+
+.product-cell__add-to-basket-button {
+    white-space: normal;
+}
+
+.product-cell__image {
+    // z-index: 2;
+    background-color: @body-bg;
+    position: relative;
+
+    &.second-image {
+        // display: none;
+        opacity: 0;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: opacity 0.3s;
+    }
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    // override global link fading on hover
+    &&:hover {
+        opacity: 1;
+    }
+}
+
+.image-link-wrapper {
+    position: relative;
+}
+
+.image-wrapper--switch-image:hover {
+    // .first-image {
+    //     opacity: 0;
+    // }
+    .second-image {
+        opacity: 1;
+    }
+}
+
+.product-cell .purchase-info {
+    position: absolute;
+    transform: translateY(100%);
+    margin-bottom: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: fade(@alert-info-bg, 90%);
+
+    &.show {
+        animation: showInfo 4s;
+    }
+}
+
+.product-cell__purchase-info-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    height: 100%;
+    pointer-events: none;
+}
+
+@keyframes showInfo {
+    0% {
+        transform: translateY(100%);
+    }
+    15% {
+        transform: translateY(0%);
+    }
+    85% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.product-cell {
+    .product-cell__actions {
+        position: absolute;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 2;
+
+        @media (min-width: @screen-sm) {
+            opacity: 0;
+        }
+
+        & when (@wishlist-comparelist-button-position = top_right) {
+            top: @wishlist-comparelist-button-vertical-offset * 1px;
+            right: @wishlist-comparelist-button-horizontal-offset * 1px;
+        }
+
+        & when (@wishlist-comparelist-button-position = top_left) {
+            top: @wishlist-comparelist-button-vertical-offset * 1px;
+            left: @wishlist-comparelist-button-horizontal-offset * 1px;
+        }
+
+        & when (@wishlist-comparelist-button-position = bottom_right) {
+            bottom: @wishlist-comparelist-button-vertical-offset * 1px;
+            right: @wishlist-comparelist-button-horizontal-offset * 1px;
+        }
+
+        & when (@wishlist-comparelist-button-position = bottom_left) {
+            bottom: @wishlist-comparelist-button-vertical-offset * 1px;
+            left: @wishlist-comparelist-button-horizontal-offset * 1px;
+        }
+
+        .productlist-actions {
+            display: flex;
+            gap: 5px;
+
+            .wishlist,
+            .comparelist {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                color: @tone-50;
+                border-radius: 30px;
+                padding: 9px;
+                transition: all 0.2s;
+
+                svg {
+                    top: 0px;
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    color: @brand-primary;
+                    background-color: #e6e6e6;
+                    border-color: transparent;
+                }
+
+                &.on-list {
+                    animation: size 0.4s;
+                    background-color: @brand-primary;
+                    color: white;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+
+    &.active,
+    &:hover {
+        .product-cell__actions {
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes size {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/**
+ * Product cell in product slider
+ * Fix for opc product slider
+ */
+
+.bootstrap-select .dropdown-toggle {
+    white-space: nowrap;
+}

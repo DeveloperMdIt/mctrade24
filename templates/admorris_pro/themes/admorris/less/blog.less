@@ -1,0 +1,244 @@
+/* Startseite */
+.home-news-slider {
+    header {
+        margin-bottom: rem(56px);
+        font-weight: bold;
+    }
+
+    .slick-slide {
+        padding: 10px;
+    }
+
+    // .btn-primary {
+    //     margin-top: rem(50px);
+    // }
+    .blog-preview {
+        transition: box-shadow ease-in-out 0.15s;
+        &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .blog-preview__panel-strap {
+        padding: rem(35px) rem(20px) rem(30px);
+    }
+
+    .blog-preview__heading {
+        margin-bottom: 3rem;
+    }
+
+    .blog-preview__text {
+        margin-bottom: 3rem;
+    }
+}
+
+.blog-preview__panel-strap {
+    padding: rem(25) 0 0;
+}
+
+.blog-preview__heading {
+    margin-top: 0;
+}
+
+.blog-preview--vertical {
+}
+
+.blog-preview__data {
+    font-size: 0.875rem;
+    color: @tone-25;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.blog-comments__count {
+    font-weight: 700;
+}
+
+.blog {
+    .breadcrumb {
+        line-height: @line-height-computed;
+        margin: (@padding-base-vertical + 1) 0; // '+ 1' wegen border im .btn
+    }
+
+    .headline {
+        margin: rem(24px) 0;
+    }
+
+    .news-more-link {
+        margin-top: 1rem;
+        display: inline-block;
+    }
+
+    // @media (max-width: @screen-sm-max) {
+    //     img {
+    //         margin-bottom: 2rem;
+    //     }
+    // }
+}
+
+.blog-filter {
+    border-bottom: 1px solid @hr-border;
+    margin-bottom: rem(36px);
+
+    .form-control {
+        font-size: rem(14px);
+        font-weight: bold;
+    }
+}
+
+.blog-entry {
+    padding: 1rem 0;
+}
+
+.blog-date,
+.blog-comments {
+    font-size: @font-size-h5;
+    font-weight: normal;
+}
+
+.blog-comments {
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+
+    .fa {
+        font-size: @font-size-h4;
+        margin-left: rem(18px);
+        margin-right: rem(6px);
+    }
+}
+
+.blog-category {
+    margin-bottom: rem(60px);
+}
+
+.home-news-slider,
+.news,
+.blog {
+    h3,
+    h4 {
+        a,
+        a:hover {
+            color: @text-color;
+        }
+    }
+}
+
+.blog-preview__image-link,
+.blog-entry__image-link {
+    display: block;
+}
+
+/* image zoom */
+
+.blog-preview__image-link {
+    overflow: hidden;
+}
+
+.blog-preview__image {
+    margin: auto;
+    min-height: 1px;
+
+    transition: all 0.7s;
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    .blog &,
+    .slick-initialized & {
+        width: 100%;
+    }
+}
+
+/* TODO: output only if Blog is set to 'gallery' */
+
+.blog-overview__gallery-grid {
+    margin-top: 59px;
+    .make-row();
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(4);
+    }
+}
+
+/* Image Banner */
+.blog-banner {
+    color: white;
+    padding: 50px;
+    position: relative;
+    margin: 0;
+    position: relative;
+
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .blog-banner__title {
+        color: white;
+        text-align: center;
+    }
+
+    .blog-comments {
+        display: block;
+        color: white;
+        text-align: center;
+        margin-top: @base-spacing;
+        .fa {
+            margin-left: 0;
+        }
+    }
+}
+
+.blog-banner__title {
+    .blog-banner--overview & {
+        .banner-title();
+    }
+    .blog-banner--details & {
+        max-width: 700px;
+        margin-bottom: @base-spacing;
+    }
+    .blog-banner--overlay & {
+        margin-top: calc(var(--adm-header-height, 60px) / 2);
+    }
+}
+
+.blog-banner--narrow {
+    min-height: 350px;
+}
+
+.blog-banner__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-banner--fullscreen-with-overlay {
+    height: 100vh;
+}
+
+.blog-banner--fullscreen {
+    --header-height: var(--adm-header-height, 50px);
+    height: calc(100vh - var(--header-height));
+    transition: height 0.2s;
+}
+
+.blog-overview__item {
+    margin-bottom: @base-spacing * 2;
+    @media (min-width: @screen-sm) {
+        margin-bottom: @base-spacing * 3;
+    }
+}
+
+.blog-details {
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}

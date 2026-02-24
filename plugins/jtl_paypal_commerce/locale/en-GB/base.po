@@ -1,0 +1,1208 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "PayPal-Account"
+msgstr "PayPal account"
+
+msgid "Modus"
+msgstr "Mode"
+
+msgid "Zugangsdaten"
+msgstr "Access data"
+
+msgid "Verfügbar"
+msgstr "Available"
+
+msgid "Konfiguration"
+msgstr "Configuration"
+
+msgid "Payment method"
+msgstr "Payment method"
+
+msgid "JTL-Wawi Zahlartname"
+msgstr "JTL-Wawi payment name<br>(also for invoice)"
+
+msgid "JTL-Wawi Zahlartname Beschreibung"
+msgstr "Please create a payment method with this name in JTL-Wawi. The name can not be changed and will be used for sales orders and invoices. You can translate the name in the payment method settings in JTL-Wawi for use in non-German JTL-Wawi print templates."
+
+msgid "Mit Versandart"
+msgstr "With shipping method"
+
+msgid "Konfiguration mit Versandart fehlt"
+msgstr "The payment method is not assigned to any shipping method."
+
+msgid "Aktionen"
+msgstr "Actions"
+
+msgid "PayPal Checkout"
+msgstr "PayPal Checkout"
+
+msgid "Standardzahlarten"
+msgstr "Default payment methods"
+
+msgid "Rechnungskauf"
+msgstr "Pay upon invoice"
+
+msgid "Erweiterte Kartenzahlung"
+msgstr "Advanced Credit Card and Debit Card payments"
+
+msgid "PayPal Checkout: die gängigsten Zahlarten PayPal, Lastschrift, Kredit-/Debitkarte, mehr als zehn lokale Zahlarten und, sofern für Sie verfügbar, Rechnungskauf"
+msgstr "One integration, one account for all transactions, one platform and one contractor - that's PayPal Checkout. PayPal's brand recognition helps give customers the confidence to buy. PayPal Checkout complements what you already have, comes with PayPal, PayPal Pay Later, Payment Upon Invoice (if available to your company), Debit-and Creditcards, SEPA-Lastschrift and country-specific payment methods like Sofort. It's easy to add to your new or existing checkout solution. All these features do not come at an additional cost."
+
+msgid "Merchant ID"
+msgstr "Merchant ID"
+
+msgid "Geben Sie hier Ihre Händler-ID ein."
+msgstr "This is your merchant ID."
+
+msgid "Client ID"
+msgstr "Client ID"
+
+msgid "Geben Sie hier Ihre API-Client-ID ein."
+msgstr "This is your API client ID."
+
+msgid "Client Secret"
+msgstr "Client secret"
+
+msgid "Geben Sie hier Ihre API-Secret ein."
+msgstr "This is your API secret."
+
+msgid "Zahlung nach Bestellabschluss wird nicht unterstützt."
+msgstr "Payment after the order completion is not supported."
+
+msgid "Zahlung nach Bestellabschluss wird von %s nicht unterstützt. Bitte wählen Sie \"Ja\" für \"Zahlung vor Bestellabschluss\" aus."
+msgstr "%s does not support payment after order is completed. Please select \"Yes\" for \"Pay before order\"."
+
+msgid "Zahlung vor Bestellabschluß wird nicht unterstützt."
+msgstr "Payment before order is completed will not be supported."
+
+msgid "Zahlung vor Bestellabschluß wird von %s nicht unterstützt."
+msgstr "%s does not support payment before order is completed. Please select \"No\" for \"Pay before order\"."
+
+msgid "Rechnungskauf wird von Ihrem PayPal-Account nicht unterstützt."
+msgstr "Unfortunately, Pay upon invoice is not available at the moment."
+
+msgid "Kreditkartenzahlung wird von Ihrem PayPal-Account nicht unterstützt."
+msgstr "Unfortunately, advanced card payment is not available at the moment."
+
+msgid "Angabe von Telefonnummer und Geburtsdatum ist erforderlich."
+msgstr "Phone number and date of birth is required."
+
+msgid "Bitte bestätigen Sie die Rechtlichen Informationen."
+msgstr "Please confirm the legal information."
+
+msgid "Die Zahlungsart Rechnungskauf wird von Ihrem PayPal-Account nicht unterstützt"
+msgstr "You have not yet activated \"%s\" in your PayPal account.<br>"
+    "To activate the payment method, go to the \"Access data\" tab, disconnect your PayPal account and carry out the onboarding process again."
+
+msgid "Die Zahlungsart ACDC wird von Ihrem PayPal-Account nicht unterstützt"
+msgstr "You have not yet activated \"%s\" in your PayPal account.<br>"
+    "To activate the payment method, go to the \"Access data\" tab, disconnect your PayPal account and carry out the onboarding process again.<br>"
+    "With the standard credit card product, which does not require registration, you can also offer your customers payment by credit card."
+
+msgid "Für %s sind zusätzliche Angaben erforderlich"
+msgstr "%s In order to Pay upon invoice, date of birth and phone number are mandatory. "
+    "Please activate this fields - at least optionally - for the bill address."
+
+msgid "Vaulting ist für Ihren PayPal-Account nicht aktiviert. Führen Sie das Onboarding erneut durch!"
+msgstr "You have not yet activated \"Vaulting\" in your PayPal account.<br>"
+       "To activate Vaulting, go to the \"Access data\" tab, disconnect your PayPal account and carry out the onboarding process again."
+
+msgid "Vaulting ist für Ihren PayPal-Account nicht aktiviert!"
+msgstr "Vaulting is unfortunately not available at the moment."
+
+msgid "Bitte deaktivieren Sie die Standard-Kreditkartenzahlung"
+msgstr "Please deactivate \"Credit or debit card\" in the activated funding sources."
+
+msgid "Bitte deaktivieren Sie die Standard-Kreditkartenzahlung um die erweiterte Kreditkartenzahlung nutzen zu können."
+msgstr "You must disable default \"Credit or debit card\" payment in the activated funding sources to use advanced credit card payment."
+
+msgid "Sie müssen Ihren Shop für Apple Pay registrieren"
+msgstr "You must register your online shop for %s."
+
+msgid "Die Zahlungsart \"%s\" steht momentan nur eingeschränkt zur Verfügung"
+msgstr "Payment method \"%s\" is not fully usable at the moment. Please check your PayPal account for further required actions or information."
+
+msgid "Anmeldung nicht möglich"
+msgstr "Unable to log in"
+
+msgid "Anmeldung bei PayPal fehlgeschlagen."
+msgstr "Could not login to PayPal. Please carry out the onboarding again."
+
+msgid "Die Zahlungsmethode %s ist nicht verfügbar."
+msgstr "Payment method %s is not available."
+
+msgid "Bitte schließen Sie die Konfiguration ab."
+msgstr "Please complete the configuration."
+
+msgid "Zahlung erfolgt im Sandbox Modus."
+msgstr "Payment is carried out in the test mode (sandbox)."
+
+msgid "Onboarding Url Information"
+msgstr "Use the PayPal onboarding for the smooth and easy connection of JTL-Shop with your PayPal account. All required data (client credentials) will be automatically recorded. If you do not have a PayPal business account yet, you can also create it during the onboarding process."
+
+msgid "Onboarding erfolgreich"
+msgstr "Onboarding successful & saving PayPal access data"
+
+msgid "Das Onboarding war erfolgreich."
+msgstr "Your JTL-Shop is now connected to PayPal Checkout. In the 'Info' tab, you can see which payment methods are available.<br>"
+       "The Client ID and Client Secret are the access data to your PayPal app. Store the access data in a secure place, "
+       "as you will not be able to view it later. The access data are required if you need to reconnect your PayPal account "
+       "to JTL-Shop. Alternatively, you can perform the onboarding again and get new access data.<br><br>"
+       "<ul>"
+       "<li>Client-ID: <kbd class=\"text-nowrap\">%s</kbd></li>"
+       "<li>Client-Secret: <kbd class=\"text-nowrap\">%s</kbd></li>"
+       "</ul>"
+
+msgid "JTL-Shop jetzt mit PayPal verbinden"
+msgstr "Connect JTL-Shop and PayPal now"
+
+msgid "Zugangsdaten manuell hinterlegen"
+msgstr "Enter access data manually"
+
+msgid "Testmodus aktiv (Sandbox)"
+msgstr "Test mode active (sandbox)"
+
+msgid "Produktivmodus aktiv (Live)"
+msgstr "Production mode active (live)"
+
+msgid "Bitte warten, Ihre Daten werden importiert. Die Seite wird automatisch neu geladen."
+msgstr "Please wait. Your data is being imported. The page will reload automatically."
+
+msgid "Form"
+msgstr "Shape"
+
+msgid "Farbschema"
+msgstr "Colour scheme"
+
+msgid "schwarz"
+msgstr "black"
+
+msgid "blau"
+msgstr "blue"
+
+msgid "silber"
+msgstr "silver"
+
+msgid "gold"
+msgstr "gold"
+
+msgid "weiß"
+msgstr "white"
+
+msgid "abgerundet"
+msgstr "rounded"
+
+msgid "rechteckig (abgerundete Ecken)"
+msgstr "rectangular"
+
+msgid "paypal"
+msgstr "PayPal"
+
+msgid "p24"
+msgstr "Przelewy24"
+
+msgid "card"
+msgstr "Credit or debit card"
+
+msgid "credit"
+msgstr "PayPal Pay Later"
+
+msgid "credit_hint"
+msgstr "Different Pay Later options per country"
+
+msgid "paylater"
+msgstr "PayPal Später Bezahlen"
+
+msgid "paylater_hint"
+msgstr "Germany: PayPal Ratenzahlung and Pay in 30 days"
+
+msgid "venmo"
+msgstr "Venmo"
+
+msgid "sepa"
+msgstr "SEPA Direct Debit"
+
+msgid "bancontact"
+msgstr "Bancontact"
+
+msgid "eps"
+msgstr "eps"
+
+msgid "ideal"
+msgstr "iDEAL"
+
+msgid "mercadopago"
+msgstr "Mercado Pago"
+
+msgid "mybank"
+msgstr "MyBank"
+
+msgid "sofort"
+msgstr "SOFORT"
+
+msgid "satispay"
+msgstr "satispay"
+
+msgid "Neu registrieren"
+msgstr "Register again"
+
+msgid "Bearbeiten"
+msgstr "Edit"
+
+msgid "Einstellungen"
+msgstr "Settings"
+
+msgid "Versandinformationen"
+msgstr "Shipping information"
+
+msgid "Offene Bestellungen"
+msgstr "Pending orders"
+
+msgid "Einstellungen zurücksetzen"
+msgstr "Reset settings"
+
+msgid "Dokumentation"
+msgstr "Documentation"
+
+msgid "PayPal Account trennen"
+msgstr "Disconnect PayPal account"
+
+msgid "Geben Sie zum Zurücksetzen des PayPal-Kontos die aktuelle Zahlenfolge der Zweifaktor-Authentifizierung ein."
+msgstr "Open your authenticator app and enter the sequence of numbers displayed there to disconnect the PayPal account."
+
+msgid "Wenn Sie Ihren PayPal Account trennen, können Sie Dienste und Produkte von PayPal nicht mehr in Ihrem Shop nutzen. Fortfahren?"
+msgstr "<b>Note</b>: If you disconnect the PayPal account, PayPal's services and products will no longer be available in your online shop."
+
+msgid "Alternativ können Sie sich einen Rücksetz-Code per E-Mail schicken lassen."
+msgstr "If you do not have access to your authenticator app, you can request a verification code. The verification code is sent to the email address saved in the PayPal account."
+
+msgid "Rücksetz-Code per E-Mail"
+msgstr "Request verification code"
+
+msgid "Für den Account ist keine Zweifaktor-Authentifizierung konfiguriert. Sie können sich einen Rücksetz-Code per E-Mail schicken lassen."
+msgstr "No two-factor authentication set up for your JTL-Shop user. Please request a verification code to disconnect the PayPal account. The verification code is sent to the email address saved in the PayPal account."
+
+msgid "Geben Sie zum Zurücksetzen des PayPal-Kontos den Rücksetz-Code aus der EMail ein."
+msgstr "Enter the verification code you received by email."
+
+msgid "Keine E-Mail erhalten!? Hier können Sie sich einen neuen Rücksetz-Code per E-Mail schicken lassen."
+msgstr "Didn't receive an email? Check your spam folder or request a new verification code."
+
+msgid "Der angegebene Rücksetz-Code konnte nicht verifiziert werden!"
+msgstr "The verification code you entered is not correct."
+
+msgid "Der Rücksetz-Code ist abgelaufen oder ungültig."
+msgstr "The verification code you entered has expired or is invalid."
+
+msgid "Das PayPal-Konto wurde erfolgreich getrennt."
+msgstr "The PayPal account was successfully disconnected."
+
+msgid "Die primäre E-Mail-Adresse des verbundenen PayPal-Kontos kann nicht ermittelt werden."
+msgstr "Could not retrieve email address saved in PayPal account. Please try again later."
+
+msgid "Eine EMail mit dem Rücksetz-Code wurde an %s versendet."
+msgstr "An email with the verification code has been sent to %s."
+
+msgid "Trennen des Paypal-Kontos nicht möglich."
+msgstr "Could not disconnect the PayPal account."
+
+msgid "Ihr Rücksetz-Code"
+msgstr "Your verification code"
+
+msgid "Ihr Rücksetz-Code lautet: %s"
+msgstr "Your verification code is %s. The verification code is valid for *30 minutes*.\n"
+       "Enter the code in the JTL PayPal Checkout plug-in to disconnect the PayPal account.\n\n"
+       "Don't share this verification code with anyone.\n\n"
+       "Didn't try to disconnect the PayPal account?\n"
+       "Check the users in JTL-Shop and change the passwords if necessary."
+
+msgid "Es wurde ein Rücksetz-Code angefordert."
+msgstr "Verification code requested"
+
+msgid "Von %s wurde ein Rücksetz-Code für den PayPal-Account angefordert."
+msgstr "The JTL-Shop user *%s* has requested a verification code to disconnect the PayPal account in the JTL PayPal Checkout plug-in.\n\n"
+       "You did not authorise the user to disconnect the PayPal account from JTL-Shop?\n"
+       "Please check the back end of JTL-Shop to ensure the security of your JTL-Shop.\n\n"
+       "You are receiving this email because you are an admin in the back end of JTL-Shop."
+
+msgid "Der PayPal-Account wurde getrennt."
+msgstr "PayPal account disconnected from JTL-Shop"
+
+msgid "Von %s wurde der PayPal-Account erfolgreich vom Shop getrennt."
+msgstr "The user  *%s* has successfully disconnected the PayPal account from JTL-Shop in the JTL PayPal Checkout plug-in.\n\n"
+       "You did not authorise the user to disconnect the PayPal account from JTL-Shop?\n"
+       "Please check the back end of JTL-Shop to ensure the security of your online shop.\n\n"
+       "You are receiving this email because you are an admin in the back end of JTL-Shop."
+
+msgid "Vorschau"
+msgstr "Preview"
+
+msgid "Hier können Sie die Form der Zahlungsbuttons ändern"
+msgstr "Here you can change the shape of the payment buttons."
+
+msgid "Hier können Sie die Farbe der Zahlungsbuttons ändern"
+msgstr "Here you can change the colour of the payment buttons. Not all colours are available for all payment methods. If a colour is not available, the default colour will be used."
+
+msgid "Ihr PayPal Client Secret"
+msgstr "Your PayPal client secret. It will be filled automatically during onboarding."
+
+msgid "Ihre PayPal Client ID"
+msgstr "Your PayPal client ID. It will be filled automatically during onboarding."
+
+msgid "Ihre PayPal Merchant ID"
+msgstr "Your PayPal merchant ID. It will be filled automatically during onboarding."
+
+msgid "Email Adresse"
+msgstr "Email address"
+
+msgid "Ihre PayPal Account Email-Adresse"
+msgstr "The email address connected to your PayPal account"
+
+msgid "Hinweis: Sie müssen sich nach dem Onboarding (Seite lädt automatisch neu) erneut im Admin-Bereich einloggen!"
+msgstr "Please note: After the onboarding is complete (page reloads automatically), you will need to log in to the back end of JTL-Shop again."
+
+msgid "Speichern"
+msgstr "Save"
+
+msgid "Anmeldedaten zurücksetzen"
+msgstr "Reset login data"
+
+msgid "display"
+msgstr "Payment buttons"
+
+msgid "expressBuy"
+msgstr "Express Checkout"
+
+msgid "expressBuyDisplay"
+msgstr "Activation and display options for Express Checkout"
+
+msgid "expressBuyDisplay_description"
+msgstr "With the PayPal Checkout button on the item detail and shopping basket pages, you provide a shortcut that allows buyers to skip entering billing and shipping information minimising friction at the end of your sales funnel."
+
+msgid "vaultingDisplay"
+msgstr "Activation for Vaulting"
+
+msgid "vaultingDisplay_description"
+msgstr "PayPal Vaulting allows customers to securely save their payment information for future purchases in your online shop. If you enable PayPal Vaulting, customers can decide during the checkout process whether they want to save the payment information."
+
+msgid "Vaulting aktivieren"
+msgstr "Activate Vaulting"
+
+msgid "Hier können Sie Vaulting aktivieren"
+msgstr "Here you can enable Vaulting. Once it is activated, your customers can securely save their payment information for future purchases."
+
+msgid "ACDC"
+msgstr "Advanced Credit and Debit Card"
+
+msgid "ACDCDisplay"
+msgstr "Advanced Credit and Debit Card settings"
+
+msgid "3D Secure aktivieren"
+msgstr "Activate 3D Secure"
+
+msgid "3D Secure aktivieren (Empfohlen)"
+msgstr "During the checkout process, if the cardholder is enrolled in 3D Secure, the issuing bank will decide if an additional"
+       " authentication process is necessary. A successfull 3D Secure authentication can shift liability for fraudulent chargebacks"
+       " from you to the card issuer. <strong>The Strong Customer Authentication (SCA) regulation in Europe requires the use of 3D Secure"
+       " for card payments.</strong> 3DS is optional in other regions but you can still use it as a tool to reduce fraud."
+
+msgid "3D Secure SCA"
+msgstr "Check 3D Secure"
+
+msgid "3D Secure SCA Beschreibung"
+msgstr "Specify when the 3D Secure check should be run."
+
+msgid "ApplePay"
+msgstr "Apple Pay"
+
+msgid "ApplePayDisplay"
+msgstr "Enabling Apple Pay"
+
+msgid "ApplePayDisplay_description"
+msgstr "You need to register the domain of your online shop to make Apple Pay available as a payment method to your customers. You must make the respective settings manually in your PayPal seller account. To do this, proceed as follows:"
+       "<ol>"
+       "<li>Click on the link <a target=\"_blank\" href=\"https://%PAYPAL_DOMAIN%/businessmanage/account/payments\"><strong>Set up payment method</strong></a> or navigate to <strong>Account Settings > Payment methods</strong> in your PayPal seller account and click on <strong>Manage Apple Pay</strong>.</li>"
+       "<li>Click <strong>Add Domain</strong>. You can now register your domain.</li>"
+       "<li>In the field <strong>1. Add your website</strong> enter the domain of your shop (<strong>%SHOP_DOMAIN%</strong>) and click on the <strong>Register Domain</strong>. Your domain is now registered. Steps 2 and 3 are carried out automatically. You do not have to take any further action.</li>"
+       "</ol>"
+
+msgid "ApplePayDisplay_description_path"
+msgstr "You need to register the domain of your online shop to make Apple Pay available as a payment method to your customers. You must make the respective settings manually in your PayPal seller account. To do this, proceed as follows:"
+       "<ol>"
+       "<li>Click on the link <a target=\"_blank\" href=\"https://%PAYPAL_DOMAIN%/businessmanage/account/payments\"><strong>Set up payment method</strong></a> or navigate to <strong>Account Settings->Payment methods</strong> in your PayPal seller account and click on <strong>Manage Apple Pay</strong></li>"
+       "<li>Click <strong>Add Domain</strong>. You can now register your domain.</li>"
+       "<li>Enter the domain of your shop (<strong>%SHOP_DOMAIN%</strong>) into the field <strong>1. Add your website</strong>.</li>"
+       "<li>Then download the <a target=\"_blank\" href=\"%DAF_DOWNLOAD%\">domain association file</a>.</li>"
+       "<li>Host the domain association file at the specified address (<a target=\"_blank\" href=\"%DAF_URL%\"><strong>%DAF_URL%</strong></a>)."
+       "<p>Note: If you do not have FTP access, forward the domain association file to your host or service provider and have the file uploaded. After the file has been uploaded successfully, repeat steps 1 to 3 of these instructions.</p>"
+       "</li>"
+       "<li>Click on the <strong>Register Domain</strong> button. Your domain is now registered.</li>"
+       "</ol>"
+
+msgid "Domainn association file existiert nicht"
+msgstr "The domain association file required by Apple Pay cannot be automatically provided for your online shop. Please download the file via <a target=\"_blank\" href=\"%1$s\"><strong>this link</strong></a> and make it available in the root directory of your domain at <a target=\"_blank\" href=\"%2$s\"><strong>%2$s</strong></a>."
+
+msgid "Haben Sie die Registrierung durchgeführt"
+msgstr "Successful online shop domain registration?"
+
+msgid "Ihr Shop muss für Apple Pay registriert werden"
+msgstr "You need to register the domain of your online shop to make Apple Pay available as a payment method to your customers. You must make the respective settings manually in your PayPal seller account."
+
+msgid "Apple Pay benötigt für die Händlerverifizierung die Angabe eines Anzeigenamens"
+msgstr "If your online shop name contains umlauts, this can lead to errors when your customers pay via Apple Pay. In this case, please define a display name without umlauts and with max. 64 characters. Apple Pay requires the display name for merchant verification and the display name may also be visible to your customers."
+
+msgid "Anzeigename für die Händlerverifizierung"
+msgstr "Display name for merchant verification"
+
+msgid "Wenn benötigt (Empfohlen)"
+msgstr "When required (Recommended)"
+
+msgid "Immer"
+msgstr "Always"
+
+msgid "Ja (Empfohlen)"
+msgstr "Yes (Recommended)"
+
+msgid "Ihre Zahlung wird überprüft"
+msgstr "Your payment will be approved. Please wait a moment."
+
+msgid "Ihre Zahlung wurde genehmigt und die Bestellung wird jetzt erfasst"
+msgstr "Your payment has been authorised and the order will now be recorded. Please wait a moment."
+
+msgid "Ihre Zahlung wurde erfasst und die Bestellung wird jetzt abgeschlossen"
+msgstr "Your payment has been authorised and the order will now be completed. Please wait a moment."
+
+msgid "Expresskauf aktivieren"
+msgstr "Activate Express Checkout"
+
+msgid "Hier können Sie Expresskauf aktivieren"
+msgstr "Here you can enable the Express Checkout. Once it is activated, your customers can quickly and easily pay with PayPal in various areas of your online shop."
+
+msgid "Fehlende Adressdaten vervollständigen"
+msgstr "Complete missing address data"
+
+msgid "Hier legen Sie fest, wie fehlende Rechnungsadressdaten vervollständigt werden sollen"
+msgstr "Here you can specify how missing billing address data is to be filled out."
+
+msgid "Aus Lieferadresse ergänzen und zur Überprüfung anzeigen"
+msgstr "Use data from shipping address and request confirmation"
+
+msgid "Aus Lieferadresse ergänzen und fortfahren"
+msgstr "Use data from shipping address and continue"
+
+msgid "Komplette Lieferadresse als Rechnungsadresse verwenden"
+msgstr "Use data from shipping address as billing address"
+
+msgid "Fehlende Daten durch Kunden ergänzen lassen"
+msgstr "Ask customer to fill out missing information"
+
+msgid "Expresskauf im Warenkorb anzeigen"
+msgstr "Display in basket"
+
+msgid "Expresskauf im Mini-Warenkorb anzeigen"
+msgstr "Display in mini basket"
+
+msgid "Expresskauf in den Artikeldetails anzeigen"
+msgstr "Display on item detail page"
+
+msgid "Paymentmethod PayPalCommerce not found"
+msgstr "Could not load the payment method for PayPal Checkout."
+
+msgid "instalmentBanner"
+msgstr "Dynamic Messaging"
+
+msgid "instalmentBannerDisplay"
+msgstr "Activation and display options for PayPal Dynamic Messaging"
+
+msgid "instalmentBannerDisplay_description"
+msgstr "PayPal Pay Later dynamic messaging automatically presents the most relevant Pay Later option to your customers, e.g. in Germany 'PayPal Ratenzahlung' (instalments) or 'Bezahlung nach 30 Tagen' (pay in 30 days). As the merchant, you receive your money immediately without further costs. (54% of users are more likely to complete their purchase if a 'pay later' option is available. <span class=\"small\">source: PayPal merchant case study in 2020 with 180 merchants</span>)"
+
+msgid "general"
+msgstr "General"
+
+msgid "smartPaymentButtons"
+msgstr "Display options for smart payment buttons"
+
+msgid "paymentMethods"
+msgstr "Activated payment methods"
+
+msgid "paymentMethods_description"
+msgstr "PayPal Checkout complements what you already have, comes with PayPal, PayPal Pay Later, Payment Upon Invoice (if available to your company), Debit-and Creditcards, SEPA-Lastschrift and country-specific payment methods like Sofort. It's easy to add to your new or existing checkout solution. All these features do not come at an additional cost."
+
+msgid "PayPal Ratenzahlung Banner aktivieren"
+msgstr "Activate Dynamic Messaging"
+
+msgid "Anzeige auf der Artikeldetailseite"
+msgstr "Display on item detail page"
+
+msgid "Anzeige im Warenkorb"
+msgstr "Display in basket"
+
+msgid "Anzeige im Bestellvorgang"
+msgstr "Display in order process"
+
+msgid "Anzeige im Mini-Warenkorb"
+msgstr "Display in mini basket"
+
+msgid "PayPal Ratenzahlung"
+msgstr "PayPal Instalment"
+
+msgid "Webhook konnte nicht angelegt werden. (Siehe Systemlog für Details)"
+msgstr "Could not create webhook. (See system log for details)"
+
+msgid "Webhook erfolgreich erstellt."
+msgstr "Webhook created successfully."
+
+msgid "Webhook erfolgreich aktualisiert."
+msgstr "Webhook updated successfully."
+
+msgid "Webhook erfolgreich gelöscht."
+msgstr "Webhook deleted successfully."
+
+msgid "Webhook konnte nicht aktualisiert werden. (Siehe Systemlog für Details)"
+msgstr "Could not load webhook. (See system log for details)"
+
+msgid "Webhook konnte nicht gelöscht werden. (Siehe Systemlog für Details)"
+msgstr "Could not delete webhook. (See system log for details)"
+
+msgid "Webhook ist nicht vorhanden. Soll er erstellt werden?"
+msgstr "No webhook available. Do you want to create a webhook now?"
+
+msgid "Bitte führen Sie eine Neuregistrierung Ihrer Webhook-URL durch!"
+msgstr "Please reregister your webhook URL!"
+
+msgid "Der Cron-Job für den Sendungsstatus konnte nicht erstellt werden"
+msgstr "The cron job for sending the shipment state could not be created."
+
+msgid "Der Cron-Job für den Sendungsstatus konnte nicht gelöscht werden"
+msgstr "The cron job for sending the shipment state could not be deleted."
+
+msgid "plugin:jtl_paypal_commerce"
+msgstr "Submit shipment state to PayPal"
+
+msgid "Registriert"
+msgstr "Registered"
+
+msgid "Webhook Typ"
+msgstr "Webhook Type"
+
+msgid "consentManager"
+msgstr "Consent manager"
+
+msgid "Template Unterstützung"
+msgstr "Supported template"
+
+msgid "Individuell"
+msgstr "Custom"
+
+msgid "templateSupportDescription"
+msgstr "Indicate the template currently in use in the online shop. Select 'Custom' if you use your own template. If you use a template that is not based on NOVA, please contact the template creator for possible changes to the required selectors. The EVO template is not compatible with PayPal Checkout."
+
+msgid "Erweiterte Einstellungen"
+msgstr "Extended settings"
+
+msgid "Consent-Manager aktivieren"
+msgstr "Enable for Consent manager"
+
+msgid "consentManagerActivateDescription"
+msgstr "When using the Consent manager, a placeholder will be displayed in the online shop until the respective consent has been given by the visitor."
+
+msgid "Beschreibung der Kaufdetails"
+msgstr "Description of purchase details"
+
+msgid "longPurchaseDescriptionDescription"
+msgstr "In this setting, you specify how the purchase details are displayed that are sent to the customer and PayPal. This can either be a list of the ordered items' names or a neutral text that you can edit via the language variable 'jtl_paypal_commerce_purchase_description'."
+
+msgid "Auflistung der Artikelnamen"
+msgstr "List of items' names"
+
+msgid "Eigener Text über Sprachvariable"
+msgstr "Custom text via language variable"
+
+msgid "Versandinformationen übermitteln"
+msgstr "Sending shipping information"
+
+msgid "shipmenttrackingActivateDescription"
+msgstr "Enable this setting if you are having issues with delayed payouts and PayPal is requesting shipping information. Shipping information must be maintained in JTL-Wawi."
+
+msgid "Es wurden noch keine Carrier-Mappings angelegt"
+msgstr "No matches have been created yet."
+
+msgid "Zuordnung von Versandart und Versanddienstleister"
+msgstr "Matching shipping methods and payment providers"
+
+msgid "Versandart in JTL-Wawi"
+msgstr "Shipping method in JTL-Wawi"
+
+msgid "Versanddienstleister bei PayPal"
+msgstr "Shipping service provider at PayPal"
+
+msgid "Mapping bearbeiten"
+msgstr "Edit current match"
+
+msgid "Mapping anlegen"
+msgstr "Create new match"
+
+msgid "Carrier-Mapping gespeichert"
+msgstr "Match between shipping method and shipping service provider created successfully."
+
+msgid "Carrier-Mapping konnte nicht gespeichert werden"
+msgstr "Could not create match between shipping method and shipping service provider."
+
+msgid "Carrier-Mapping gelöscht"
+msgstr "Match between shipping method and shipping service provider deleted successfully.."
+
+msgid "Carrier-Mapping konnte nicht gelöscht werden"
+msgstr "Could not delete match between shipping method and shipping service provider."
+
+msgid "Soll das Carrier-Mapping gelöscht werden?"
+msgstr "Really delete match between shipping method and shipping service provider?"
+
+msgid "Neue Zuordnung"
+msgstr "Create new match"
+
+msgid "Deaktivieren"
+msgstr "Deaktivieren"
+
+msgid "Wollen Sie die Übermittlung der Versandinformationen deaktivieren?"
+msgstr "Do you want to disable sending shipping information?"
+
+msgid "Die Versandinformationen umfassen Tracking-ID, Versandart und Versanddatum"
+msgstr "The shipping information includes tracking ID, shipping method and shipping date. They are maintained in JTL-Wawi and are normally sent to PayPal every %s hours using a Cron job%s. For this process, it is required that you match your shipping methods in JTL-Wawi to the PayPal shipping service providers."
+
+msgid "layout"
+msgstr "Layout"
+
+msgid "layout_text"
+msgstr "Text with logo"
+
+msgid "layout_flex"
+msgstr "Responsive banner"
+
+msgid "logoType"
+msgstr "Logo type"
+
+msgid "logoType_primary"
+msgstr "Standard"
+
+msgid "logoType_alternative"
+msgstr "Monogram"
+
+msgid "logoType_inline"
+msgstr "Inline"
+
+msgid "logoType_none"
+msgstr "Text"
+
+msgid "layoutDescription"
+msgstr "Specify whether the PayPal Instalment advertisement is to be displayed as a responsive banner or as text. For this, customers must already have consented via the Consent manager to view the advertisement in the online shop. Alternatively, the setting \"Activate Consent manager\" must be set to \"No\"."
+
+msgid "logoTypeDescription"
+msgstr "With this setting, you can change the design of the PayPal logo for the layout \"Text with logo\"."
+
+msgid "textSizeDescription"
+msgstr "With this setting, you can change the font size for the layout \"Text with logo\"."
+
+msgid "layoutRatioDescription"
+msgstr "Specify in which format the PayPal Instalment banner is to be displayed."
+
+msgid "textSize"
+msgstr "Font size"
+
+msgid "textColor"
+msgstr "Font colour"
+
+msgid "textColor_black"
+msgstr "Black font, coloured logo"
+
+msgid "textColor_white"
+msgstr "White font, white logo"
+
+msgid "layoutType"
+msgstr "Banner design"
+
+msgid "layoutTypeDescription"
+msgstr "Layout"
+
+msgid "layoutType_white"
+msgstr "White background, blue font"
+
+msgid "layoutType_blue"
+msgstr "Blue background, white font"
+
+msgid "layoutType_black"
+msgstr "Black background, white font"
+
+msgid "layoutType_grey"
+msgstr "Light grey background, blue font"
+
+msgid "layoutRatio"
+msgstr "Aspect ratio"
+
+msgid "phpqSelector"
+msgstr "PHPQuery selector"
+
+msgid "phpqSelectorDescription"
+msgstr "The PHPQuery selector indicates the position at which the banner will be displayed. The selector follows the rules for CSS selectors."
+
+msgid "phpqMethod"
+msgstr "PHPQuery method"
+
+msgid "phpqMethodDescription"
+msgstr "The PHPQuery method describes how the banner is to be inserted according to the selector: After it, within it at the end (append), before or within at the start (prepend)."
+
+msgid "phpq_append"
+msgstr "append"
+
+msgid "phpq_after"
+msgstr "after"
+
+msgid "phpq_before"
+msgstr "before"
+
+msgid "phpq_prepend"
+msgstr "prepend"
+
+msgid "paymentMethodsPanel"
+msgstr "Activated payment methods"
+
+msgid "paymentMethodsPanelCountries"
+msgstr "Supported Countries"
+
+msgid "Aktiv"
+msgstr "Active"
+
+msgid "cards_fundingSource"
+msgstr "Card payment"
+
+msgid "credit_fundingSource"
+msgstr "Pay later"
+
+msgid "credit_fundingSource_hint"
+msgstr "The 'Pay Later' button allows you to point customers at PayPal’s flexible 'Pay Later' options, directly leading them to their individual options in their PayPal accounts. 54% of users are more likely to complete their purchase if a 'Pay Later' option is available (source: PayPal merchant case study in 2020 with 180 merchants)."
+
+msgid "bank_fundingSource"
+msgstr "Other"
+
+msgid "Ja"
+msgstr "Yes"
+
+msgid "Nein"
+msgstr "No"
+
+msgid "Wollen Sie die Einstellungen auf den Ausgangszustand zurücksetzen?"
+msgstr "Do you want to reset all settings to their default values?"
+
+msgid "Alle"
+msgstr "All"
+
+msgid "Keine"
+msgstr "None"
+
+msgid "Zustimmen"
+msgstr "Agree"
+
+msgid "Ablehnen"
+msgstr "Reject"
+
+msgid "anzeigen / verbergen"
+msgstr "show / hide"
+
+msgid "webhook_info"
+msgstr "The webhook is needed for the communication with PayPal. Normally, it is not necessary to change this setting.<br>Should there be issues with automatically setting the payment status for orders processed via the plugin, it might help to delete the webhook and create a new one."
+
+msgid "pendingOrders_info"
+msgstr "Here you can find all pending orders. Pending orders are orders that could not yet be sent to JTL-Wawi due to technical errors or pending verification by PayPal.<br>"
+       "If you see a green check mark or a red X in the \"Status\" column, the order was successful or rejected. In these cases, click on the \"Send with transaction ID\" button (<span class=\"fas fa-share\"></span>). The order is sent to JTL-Wawi as a paid order (green check mark) or unpaid order (red X) and with the transaction ID.<br>"
+       "If you see a grey or orange symbol in the \"Status\" column, the status can change to a green check mark or a red X for about 24 hours. If the status does not change, click the \"Send without transaction ID\" button (<span class=\"fal fa-share\"></span>). The pending order is sent to JTL-Wawi without a transaction ID and as an unpaid order."
+
+# Descriptions of language variables
+
+msgid "Rechtliche Informationen für den Rechnungskauf"
+msgstr "Legal information for Pay upon invoice"
+
+msgid "Zahlungsinformation für den Rechnungskauf"
+msgstr "Payment information for Pay upon invoice"
+
+msgid "Rechtliche Information zur Forderungsabtretung bei Rechnungskauf"
+msgstr "Legal information on the assignment of claims for Pay upon invoice"
+
+msgid "Meldung wenn eine Zahlung nicht abgeschlossen werden kann"
+msgstr "Notification if a payment cannot be completed"
+
+msgid "Zahlungsartname bei PayPal"
+msgstr "Payment method name for PayPal"
+
+msgid "Zahlungsartname bei Kredit- oder Debitkarte"
+msgstr "Payment method name for Credit- or Debitcard"
+
+msgid "Zahlungsartname bei PayPal Später Bezahlen"
+msgstr "Payment method name for Später Bezahlen"
+
+msgid "Zahlungsartname bei Pay Later"
+msgstr "Payment method name for Pay Later"
+
+msgid "Zahlungsartname bei Venmo"
+msgstr "Payment method name for Venmo"
+
+msgid "Zahlungsartname bei SEPA-Lastschrift"
+msgstr "Payment method name for SEPA-Lastschrift"
+
+msgid "Zahlungsartname bei Bancontact"
+msgstr "Payment method name for Bancontact"
+
+msgid "Zahlungsartname bei BLIK"
+msgstr "Payment method name for BLIK"
+
+msgid "Zahlungsartname bei eps"
+msgstr "Payment method name for eps"
+
+msgid "Zahlungsartname bei iDEAL"
+msgstr "Payment method name for iDEAL"
+
+msgid "Zahlungsartname bei Mercado Pago"
+msgstr "Payment method name for Mercado Pago"
+
+msgid "Zahlungsartname bei MyBank"
+msgstr "Payment method name for MyBank"
+
+msgid "Zahlungsartname bei Przelewy24"
+msgstr "Payment method name for Przelewy24"
+
+msgid "Zahlungsartname bei Sofort"
+msgstr "Payment method name for Sofort"
+
+msgid "Zahlungsartname bei Satispay"
+msgstr "Payment method name for Satispay"
+
+msgid "Ergänzung der Zahlungsbeschreibung, wenn nicht alle Artikel aufgeführt werden können"
+msgstr "Additional text to the payment description if not all items can be listed"
+
+msgid "Artikelunabhängige Zahlungsbeschreibung, wenn diese Option aktiviert wurde"
+msgstr "Item-independent payment description if this option has been activated"
+
+msgid "Dieser Text wird anstelle des Ratenzahlungs-Banners angezeigt, wenn noch kein Consent erteilt wurde"
+msgstr "This text will be displayed instead of the installment payment banner if consent has not yet been given"
+
+msgid "Hinweistext für den Express-Checkout und das Ratenzahlung-Banner im Consent-Manager"
+msgstr "Information text for the express checkout and the installment payment banner in the Consent Manager"
+
+msgid "Beschreibung für Express Checkout und das Ratenzahlung-Banner im Consent-Manager"
+msgstr "Description for Express Checkout and the installment payment banner in the Consent Manager"
+
+msgid "Platzhalter, wenn PayPal Komponenten geladen werden"
+msgstr "Placeholder when loading PayPal components"
+
+msgid "Expresskauf Button Beschriftung vor dem Klick (Consent-Manager aktiv)"
+msgstr "Express Checkout button label before consent is given"
+
+msgid "Expresskauf Button Beschriftung nach dem Klick"
+msgstr "Express Checkout button label if consent is given"
+
+msgid "Überschrift zu Rechtlichen Informationen für den Rechnungskauf"
+msgstr "Heading for legal information for Pay upon invoice"
+
+msgid "Titel der Meldung wenn beim Klick auf den Expresskauf-Button ein Warenkorb-Fehler auftritt"
+msgstr "Title of the message if a shopping cart error occurs"
+
+msgid "Meldung wenn beim Klick auf den Expresskauf-Button ein Warenkorb-Fehler auftritt"
+msgstr "Message if a shopping cart error occurs"
+
+msgid "Meldung wenn Rechnungsadressdaten vervollständigt werden müssen"
+msgstr "Notification if billing address data needs to be completed"
+
+msgid "Meldung wenn eine Zahlung abgelehnt wurde"
+msgstr "Notification when a payment has been declined"
+
+msgid "Tragen Sie hier Ihre Kundendiensthinweise ein"
+msgstr "Enter your customer service information here"
+
+msgid "Meldung für verzögerten Zahlungsstatus"
+msgstr "Delayed payment status message"
+
+msgid "Meldung für verzögerten Zahlungsstatus beim Ratenkauf"
+msgstr "Delayed payment status message for Pay upon invoice"
+
+msgid "Meldung wenn die 3DS-Prüfung fehlgeschlagen ist"
+msgstr "Message if the 3DS check failed"
+
+msgid "Meldung wenn eine Zahlungsart nicht zur Verfügung steht"
+msgstr "Message if a payment method is not available"
+
+msgid "Label für die Aktivierung von Vaulting"
+msgstr "Label for enabling vaulting"
+
+msgid "Tooltip für die Aktivierung von Vaulting"
+msgstr "Tooltip for enabling vaulting"
+
+msgid "Überschrift für den Zahlungsabschluss"
+msgstr "Heading for payment completion"
+
+msgid "Validierungsfehler für ungültige Eingaben bei der erweiterten Kartenzahlung"
+msgstr "Validation error for invalid entries in advanced card payment"
+
+msgid "Validierungsfehler für möglicherweise unvollständige Eingaben bei der erweiterten Kartenzahlung"
+msgstr "Validation error for possibly incomplete entries in advanced card payment"
+
+msgid "Überschrift zum Eingabeformular der Kreditkartendaten"
+msgstr "Heading to the credit card data entry form"
+
+msgid "Feld zur Eingabe der Kartennummer"
+msgstr "Field for entering the card number"
+
+msgid "Feld zur Eingabe des Ablaufdatums"
+msgstr "Field for entering the expiration date"
+
+msgid "Feld zur Eingabe der Sicherheitsnummer"
+msgstr "Field for entering the security number"
+
+msgid "Feld zur Eingabe des Karteninhabers"
+msgstr "Field to enter the cardholder"
+
+msgid "Auswahl zur Eingabe der Adresse des Karteninhabers"
+msgstr "Selection to enter the cardholder's address"
+
+msgid "Überschrift zur Adresse des Karteninhabers"
+msgstr "Heading to the cardholder's address"
+
+msgid "Überschrift für erneute Autorisierung bei PayPal"
+msgstr "PayPal reauthorization heading"
+
+msgid "Meldung für erneute Autorisierung bei PayPal"
+msgstr "PayPal reauthorization message"
+
+msgid "Meldung über ausstehende Zahlung"
+msgstr "Notification of pending payment"
+
+msgid "Beschreibung für den Zahlungsabschluss"
+msgstr "Description for completing payment"
+
+# End - Descriptions of language variables
+
+msgid "%s ist nur mit einer Rechnungsanschrift in Deutschland verfügbar"
+msgstr "%s is only available with an invoice address in Germany."
+
+msgid "%s ist nur in Euro möglich."
+msgstr "With the %s payment method, payments can only be made in euros. Please select a different payment method."
+
+msgid "Für %s ist die Angabe einer Telefonnummer erforderlich"
+msgstr "A telephon number is required for %s."
+
+msgid "Für %s ist die Angabe des Geburtsdatums erforderlich"
+msgstr "Your birt day is required for %s."
+
+msgid "%s ist nur für Privatkunden verfügbar"
+msgstr "%s is only available for private customers."
+
+msgid "Legen Sie hier fest, welche Zahlungsarten generell angezeigt werden sollen."
+msgstr "Specify which payment methods can generally be displayed. Whether a payment method is actually displayed in the online shop depends on its availability in the visitor's country."
+
+msgid "Alle von PayPal unterstützten Länder"
+msgstr "All <a href=\"https://www.paypal.com/us/webapps/mpp/country-worldwide\">PayPal-supported countries</a>"
+
+msgid "Australien"
+msgstr "Australia"
+
+msgid "Österreich"
+msgstr "Austria"
+
+msgid "Belgien"
+msgstr "Belgium"
+
+msgid "Brasilien"
+msgstr "Brazil"
+
+msgid "Frankreich"
+msgstr "France"
+
+msgid "Deutschland"
+msgstr "Germany"
+
+msgid "Italien"
+msgstr "Italy"
+
+msgid "Irland"
+msgstr "Ireland"
+
+msgid "Luxemburg"
+msgstr "Luxembourg"
+
+msgid "Niederlande"
+msgstr "Netherlands"
+
+msgid "Portugal"
+msgstr "Portugal"
+
+msgid "Polen"
+msgstr "Poland"
+
+msgid "Spanien"
+msgstr "Spain"
+
+msgid "Vereinigte Staaten"
+msgstr "United States"
+
+msgid "Großbritannien"
+msgstr "United Kingdom"
+
+# Carrier translation
+
+msgid "DEUTSCHE_DE"
+msgstr "Deutsche Post"
+
+msgid "DE_DHL_EXPRESS"
+msgstr "DHL Express"
+
+msgid "DHL_API"
+msgstr "DHL Packet"
+
+msgid "DE_DPD_DELISTRACK"
+msgstr "DPD Germany"
+
+msgid "GLS_DE"
+msgstr "General Logistics Systems (GLS)"
+
+msgid "HERMES_DE"
+msgstr "Hermes Germany"
+
+msgid "TNT_DE"
+msgstr "TNT Germany"
+
+msgid "UPS"
+msgstr "United Parcel Service"
+
+msgid "DPE_EXPRESS"
+msgstr "DPE Express"
+
+msgid "FEDEX"
+msgstr "Federal Express"
+
+msgid "OTHER"
+msgstr "Sonstige"
+
+# Issue translations
+
+msgid "PAYMENT_SOURCE_INFO_CANNOT_BE_VERIFIED"
+msgstr "The combination of your name and address could not be validated. Please correct your data and try again.<br>"
+    "You can find further information in the <a target=\"_blank\" href=\"https://www.ratepay.com/en/ratepay-data-privacy-statement/\">Ratepay Data Privacy Statement</a> "
+    "or you can contact Ratepay using this <a target=\"_blank\" href=\"https://www.ratepay.com/en/contact/\">contact form</a>."
+
+msgid "PAYMENT_SOURCE_DECLINED_BY_PROCESSOR"
+msgstr "It is not possible to use the selected payment method. This decision is based on automated data processing.<br>"
+    "You can find further information in the <a target=\"_blank\" href=\"https://www.ratepay.com/en/ratepay-data-privacy-statement/\">Ratepay Data Privacy Statement</a> "
+    "or you can contact Ratepay using this <a target=\"_blank\" href=\"https://www.ratepay.com/en/contact/\">contact form</a>."
+
+msgid "PAYMENT_SOURCE_CANNOT_BE_USED"
+msgstr "The selected payment method is currently not available."
+
+msgid "BILLING_ADDRESS_INVALID"
+msgstr "The entered billing address could not be verified by the payment provider. Please check your data and try again."
+
+msgid "SHIPPING_ADDRESS_INVALID"
+msgstr "The entered shipping address could not be verified by the payment provider. Please check your data and try again."
+
+# PayPal generated message-strings
+
+msgid "PayPal order can not be created"
+msgstr "The payment could not be requested from PayPal."
+
+msgid "The requested action could not be performed, semantically incorrect, or failed business validation."
+msgstr "The requested action could not be carried out, is semantically incorrect or cannot be validated."
+
+msgid "phone number is invalid"
+msgstr "The phone number has an invalid format. Please only use digits."
+
+msgid "PENDING on"
+msgstr "pending on"
+
+msgid "DECLINED on"
+msgstr "declined on"
+
+msgid "Zahlungsart"
+msgstr "Payment method"
+
+msgid "Bestell-Nr."
+msgstr "Order ID"
+
+msgid "Bestellung vom"
+msgstr "Ordered on"
+
+msgid "Kunde"
+msgstr "Customer"
+
+msgid "Transaktions-ID"
+msgstr "Transaction ID"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "STATE_COMPLETED"
+msgstr "The payment has been completed."
+
+msgid "STATE_PENDING"
+msgstr "The payment is still being reviewed by the payment provider."
+
+msgid "STATE_DECLINED"
+msgstr "The payment has been declined by the payment provider."
+
+msgid "STATE_APPROVED"
+msgstr "The payment has been carried out by the customer but could not be completed."
+
+msgid "STATE_CREATED"
+msgstr "The payment has not yet been authorized by the customer."
+
+msgid "STATE_PAYER_ACTION_REQUIRED"
+msgstr "The payment has not yet been authorized by the customer."
+
+msgid "STATE_ORDER_NOT_FOUND"
+msgstr "The payment state cannot be determined."
+
+msgid "Löscht die Zuordnung zur Zahlung und übernimmt die Bestellung in JTL-Wawi"
+msgstr "Send order to JTL-Wawi without transaction ID"
+
+msgid "Übernimmt Zahlungseingang und Bestellung in JTL-Wawi"
+msgstr "Send order to JTL-Wawi with transaction ID"
+
+msgid "Mit Transaktions-ID übernehmen"
+msgstr "Send with transaction ID"
+
+msgid "Ohne Transaktions-ID übernehmen"
+msgstr "Send without transaction ID"
+
+msgid "Sie haben offene Bestellungen."
+msgstr "You have pending orders."
+
+msgid "Zahlungsart nicht gefunden"
+msgstr "The payment method for the order was not found."
+
+msgid "Zahlung %s nicht vorhanden"
+msgstr "The payment with id %s does not exist (anymore)."
+
+msgid "Bestellung %s nicht gefunden"
+msgstr "The order %s does not exist (anymore)."
+
+msgid "Zahlung %s nicht abgeschlossen"
+msgstr "The payment with id %s is not in a completed state and cannot be applied."
+
+msgid "%d Zahlungen gelöscht"
+msgstr "%d pending payments have been deleted."
+
+msgid "Offene Zahlung gelöscht"
+msgstr "The pending payment has been deleted."
+
+msgid "Offene Zahlung konnte nicht gelöscht werden"
+msgstr "The pending payment could not be deleted."
+
+msgid "Offene Zahlung zugeordnet"
+msgstr "The payment has been applied to the order."
+
+msgid "Offene Zahlung konnte nicht zugeordnet werden"
+msgstr "The payment could not be applied to the order."
+
+msgid "%d Zahlungen zugeordnet"
+msgstr "$d payments where applied to the orders."
+
+msgid "Keine Zahlung ausgewählt"
+msgstr "No payment has been selected for the action."

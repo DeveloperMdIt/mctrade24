@@ -1,0 +1,60 @@
+/* exo-2-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Exo 2'), local('Exo2-Regular'),
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* exo-2-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Exo 2 Italic'), local('Exo2-Italic'),
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* exo-2-500 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Exo 2 Medium'), local('Exo2-Medium'),
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* exo-2-500italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Exo 2 Medium Italic'), local('Exo2-MediumItalic'),
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-500italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-500italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* exo-2-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Exo 2 Bold'), local('Exo2-Bold'),
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* exo-2-700italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Exo 2 Bold Italic'), local('Exo2-BoldItalic'),
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/exo_2/exo-2-v4-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

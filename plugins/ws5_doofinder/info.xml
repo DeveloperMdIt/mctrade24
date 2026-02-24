@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jtlshopplugin>
+    <Name>Doofinder</Name>
+    <Description>Plugin Doofinder Suche</Description>
+    <Author>webStollen GmbH</Author>
+    <URL>https://www.webstollen.de</URL>
+    <XMLVersion>102</XMLVersion>
+    <ShopVersion>5.2.0</ShopVersion>
+    <PluginID>ws5_doofinder</PluginID>
+    <CreateDate>2025-10-13</CreateDate>
+    <Version>1.8.1</Version>
+    <ExsID>14cba402-4eba-406d-af49-ee1e06b05381</ExsID>
+    <Install>
+        <FlushTags>
+            CACHING_GROUP_PLUGIN,
+            CACHING_GROUP_TEMPLATE,
+            CACHING_GROUP_OBJECT
+        </FlushTags>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Dashboard</Name>
+            </Customlink>
+            <Settingslink sort="900">
+                <Name>Einstellung</Name>
+                <Setting type="text" conf="Y" placeholder="API Key" sort="0" initialValue="">
+                    <Name>Doofinder API Key</Name>
+                    <ValueName>api_key</ValueName>
+                </Setting>
+                <Setting type="text" conf="Y" placeholder="User ID" sort="1" initialValue="">
+                    <Name>Doofinder User-ID</Name>
+                    <ValueName>user_id</ValueName>
+                </Setting>
+                <Setting type="selectbox" sort="5" conf="Y" initialValue="N">
+                    <Name>Doofinder Suche verwenden</Name>
+                    <ValueName>df_search</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" sort="6" conf="Y" initialValue="N">
+                    <Name>Native Suche verwenden</Name>
+                    <ValueName>df_search_native</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                    <Description>Shop Suche (Listensicht nach Enter) mit Doofinder Ergebnissen
+                        befüllen</Description>
+                </Setting>
+                <Setting type="selectbox" sort="10" conf="Y" initialValue="N">
+                    <Name>Custom Result Template verwenden</Name>
+                    <ValueName>custom_template</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" sort="11" conf="Y" initialValue="N">
+                    <Name>Custom CSS verwenden</Name>
+                    <ValueName>custom_css</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" sort="12" conf="Y" initialValue="N">
+                    <Name>Desktop Template verwenden</Name>
+                    <ValueName>desktop_tpl</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" sort="13" conf="Y" initialValue="N">
+                    <Name>Mobile Template verwenden</Name>
+                    <ValueName>mobile_tpl</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" sort="14" conf="Y" initialValue="Y">
+                    <Name>Layer Art</Name>
+                    <ValueName>live_layer_active</ValueName>
+                    <Description>Welche Layer Art soll verwendet werden?</Description>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="1">Live Layer (v9)</Option>
+                        <Option value="N" sort="2">Classic Layer (v7)</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" conf="Y" placeholder="" sort="20" initialValue="">
+                    <Name>Export Secret</Name>
+                    <ValueName>export_secret</ValueName>
+                    <Description>Passwort, mit der die URL Aufrufe für Export und Synchronisation
+                        geschützt werden können (optional). </Description>
+                </Setting>
+                <Setting type="text" conf="Y" placeholder="" sort="30" initialValue="">
+                    <Name>Merkmale/Attribute</Name>
+                    <ValueName>attributes</ValueName>
+                    <Description>Attribute/Merkmale welche an Doofinder übergeben werden sollen. Mit
+                        ; voneniander trennen (bspw.: design;erscheinungsjahr;...)</Description>
+                </Setting>
+                <Setting type="text" conf="Y" placeholder="" sort="31" initialValue="">
+                    <Name>Merkmale/Attribute als Zahl</Name>
+                    <ValueName>attributes_number</ValueName>
+                    <Description>Attribute/Merkmale welche als Zahl an Doofinder übergeben werden
+                        sollen. Diese können als Slider angezeigt werden. Mit ; voneniander trennen
+                        (bspw.: design;erscheinungsjahr;...)</Description>
+                </Setting>
+            </Settingslink>
+        </Adminmenu>
+        <ServicesRequiringConsent>
+            <Vendor>
+                <ID>ws5_doofinder_consent</ID>
+                <Company>DooFinder S.L.</Company>
+                <Localization iso="GER">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder conversion tracking</Purpose>
+                    <Description>Um Daten an Doofinder zu übermitteln, ist Ihre Zustimmung zur
+                        Datenweitergabe und Speicherung von Drittanbieter-Cookies des Anbieters
+                        Doofinder erforderlich. Dies erlaubt uns, unser Angebot sowie das
+                        Nutzererlebnis für Sie zu verbessern und interessanter auszugestalten.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="ENG">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="DUT">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="FRE">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="ITA">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="CZE">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="POL">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="SPA">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="SWE">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="HUN">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="RUM">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+                <Localization iso="HRV">
+                    <Name>Doofinder</Name>
+                    <Purpose>Doofinder Conversion-Tracking</Purpose>
+                    <Description>To send data to Doofinder, you need to consent to the transfer of
+                        data and storage of third-party cookies by Doofinder.. This allows us to
+                        improve your user experience and to make our website better and more
+                        interesting.
+                    </Description>
+                    <PrivacyPolicy>https://www.doofinder.com/de/privacy-policy</PrivacyPolicy>
+                </Localization>
+            </Vendor>
+        </ServicesRequiringConsent>
+    </Install>
+</jtlshopplugin>

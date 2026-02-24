@@ -1,0 +1,339 @@
+/**
+ * Utility Classes
+ */
+
+/* Text Color */
+
+@use 'sass:math';
+@use '../abstracts/functions' as *;
+
+.u-container-inline {
+    container-type: inline-size;
+}
+
+.color-white {
+    color: $tone-base;
+}
+
+.color-brand-primary {
+    color: theme-color('primary');
+}
+
+.color-black-fade-1 {
+    color: $brand-tone50;
+}
+
+.color-black-fade-2 {
+    color: $brand-tone25;
+}
+
+.color-black-fade-3 {
+    color: $tone-10;
+}
+
+.color-white {
+    color: $white;
+}
+
+.color-white-fade-1 {
+    color: $white-fade-1;
+}
+
+.color-white-fade-2 {
+    color: $white-fade-2;
+}
+
+.color-white-fade-3 {
+    color: $white-fade-3;
+}
+
+/* Background Colors */
+
+.bg-color-brand-primary {
+    background-color: theme-color('primary');
+}
+
+.button-color-bg {
+    color: $btn-primary-color;
+    background-color: $btn-primary-bg;
+}
+
+.bg-color-black-fade-1 {
+    background-color: $tone-50;
+}
+
+.bg-color-black-fade-2 {
+    background-color: $tone-25;
+}
+
+.bg-color-black-fade-3 {
+    background-color: $tone-10;
+}
+
+.bg-color-white {
+    background-color: $white;
+}
+
+.bg-color-white-fade-1 {
+    background-color: $white-fade-1;
+}
+
+.bg-color-white-fade-2 {
+    background-color: $white-fade-2;
+}
+
+.bg-color-white-fade-3 {
+    background-color: $white-fade-3;
+}
+
+.heading-font {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+}
+
+.small-text {
+    font-size: $font-size-sm;
+}
+
+.large-text {
+    font-size: $font-size-lg;
+}
+
+.dropdown-text {
+    color: $header-dropdown-text-color;
+}
+
+.dropdown-bg {
+    background-color: $header-dropdown-background-color;
+}
+
+.center-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.v-align-middle {
+    vertical-align: middle;
+}
+
+/* spacing */
+
+.large-v-margin {
+    margin: 2.5em 0;
+}
+
+.v-spacing {
+    margin: 25px 0;
+}
+
+.v-spacing--md {
+    margin: 30px 0;
+}
+
+.v-spacing--lg {
+    $spacing-lg: 60px;
+
+    margin-top: math.div($spacing-lg, 1.5);
+    margin-bottom: math.div($spacing-lg, 1.5);
+
+    @media (min-width: $screen-lg) {
+        margin-top: $spacing-lg;
+        margin-bottom: $spacing-lg;
+    }
+}
+
+.children-spacing {
+    & > * + * {
+        margin-top: 30px;
+        @media (min-width: $screen-sm) {
+            margin-top: 50px;
+        }
+    }
+}
+
+.margin-top {
+    margin-top: 33px;
+}
+
+.margin-bottom {
+    margin-bottom: 33px;
+}
+
+// .uppercase {
+//     text-transform: uppercase;
+// }
+
+// .centered {
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+.background-cover {
+    background-position: center center;
+    background-size: cover;
+}
+
+.last-no-mb {
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.button-reset {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none;
+}
+
+.links-underline a {
+    text-decoration: underline;
+}
+
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+.sticky-top {
+    top: calc(var(--adm-header-height-fixed, 0) + 20px);
+    z-index: 990;
+}
+
+/* Nova utility classes */
+
+.radio-w-100 {
+    .custom-control-inline {
+        display: block;
+        width: 100%;
+        padding-bottom: calc($spacer / 2);
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.ml-auto-util {
+    margin-left: auto;
+}
+
+.w-100-util {
+    width: 100%;
+}
+
+.font-weight-bold-util {
+    font-weight: $font-weight-bold;
+}
+
+.text-right-util {
+    text-align: right;
+}
+
+.text-left-util {
+    text-align: left;
+}
+
+.text-center-util {
+    text-align: center;
+}
+
+.text-muted-util {
+    color: $text-muted;
+}
+
+.align-items-center-util {
+    align-items: center;
+}
+
+.text-nowrap-util {
+    white-space: nowrap;
+}
+
+//backwards compatibility for html from wawi
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.icon-mr-2 {
+    margin-right: map-get($spacers, 2);
+}
+
+/* Nova sizing utitlity classes */
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix-jtl($breakpoint, $grid-breakpoints);
+
+        .#{$infix}min-w-sm {
+            min-width: rem(150px) !important;
+        }
+        .#{$infix}min-w {
+            min-width: rem(250px) !important;
+        }
+        .#{$infix}min-w-lg {
+            min-width: rem(350px) !important;
+        }
+        .#{$infix}min-w-100 {
+            min-width: 100% !important;
+        }
+
+        .#{$infix}max-w-sm {
+            max-width: rem(150px) !important;
+        }
+        .#{$infix}max-w-md {
+            max-width: rem(225px) !important;
+        }
+        .#{$infix}max-w {
+            max-width: rem(350px) !important;
+        }
+        .#{$infix}max-w-lg {
+            max-width: rem(650px) !important;
+        }
+
+        .#{$infix}min-h-sm {
+            min-height: rem(150px) !important;
+        }
+        .#{$infix}min-h {
+            min-height: rem(250px) !important;
+        }
+        .#{$infix}min-h-lg {
+            min-height: rem(350px) !important;
+        }
+        .#{$infix}min-h-100 {
+            min-height: 100% !important;
+        }
+
+        .#{$infix}max-h-sm {
+            max-height: rem(150px) !important;
+        }
+        .#{$infix}max-h {
+            max-height: rem(350px) !important;
+        }
+        .#{$infix}max-h-lg {
+            max-height: rem(650px) !important;
+        }
+    }
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+.btn-border-radius {
+    @include adm-border-radius('sm', 'buttons-inputs');
+}
+
+.text-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

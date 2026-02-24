@@ -1,0 +1,75 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:list';
+
+@use '../vendor/bootstrap/mixins/breakpoints' as bp;
+
+$baseFontSize: 13px !default;
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not math.is-unitless($number) {
+        @return math.div($number, ($number * 0 + 1));
+    }
+
+    @return $number;
+}
+
+@function rem($pxValue) {
+    @return math.div($pxValue, $baseFontSize) * 1rem;
+}
+
+@function fade($color, $amnt) {
+    @if $amnt > 1 {
+        $amnt: strip-unit($amnt) * 0.01; // convert to percentage if int
+    }
+    @return rgba($color, $amnt);
+}
+
+// Pixels Proportional To Font Size
+@function pptfs($pixel, $font-size: $baseFontSize) {
+    $factor: math.div(strip-unit($pixel), 13);
+    $factor: $factor * strip-unit($font-size);
+    @return round($factor) * 1px;
+}
+
+@function luma($color) {
+    // Adapted from: https://gist.github.com/voxpelli/6304812
+    $color: rgba($color, 1);
+    $rgba: color.channel($color, 'red', $space: rgb), color.channel($color, 'green', $space: rgb),
+        color.channel($color, 'blue', $space: rgb);
+    $rgba2: ();
+    @for $i from 1 through 3 {
+        $rgb: list.nth($rgba, $i);
+        $rgb: math.div($rgb, 255);
+        $rgb: if($rgb < 0.03928, math.div($rgb, 12.92), math.pow(math.div($rgb + 0.055, 1.055), 2.4));
+        $rgba2: append($rgba2, $rgb);
+    }
+    @return (0.2126 * list.nth($rgba2, 1) + 0.7152 * list.nth($rgba2, 2) + 0.0722 * list.nth($rgba2, 3)) * 100;
+}
+
+@function breakpoint-infix-jtl($name, $breakpoints: $grid-breakpoints) {
+    @return if(bp.breakpoint-min($name, $breakpoints) == null, '', #{$name}-);
+}
+
+@function theme-type($background-color, $text-color) {
+    $background-luma: luma($background-color);
+    $text-luma: luma($text-color);
+
+    @return if($background-luma < $text-luma, 'dark', 'light');
+}
+
+@function calculate-shadow-color($bg-color, $max-opacity: 1) {
+    $bg-luma: luma($bg-color);
+    $switch-to-light-shadow: 1.5;
+    // Calculate shadow color and opacity based on luma
+    /* prettier-ignore */
+    $shadow-color: if(
+        $bg-luma < $switch-to-light-shadow,
+        /* For dark backgrounds (luma < $switch-to-light-shadow), use gray shadow */ 
+        rgba(#a4a4a4, 0.1),
+        /* For light backgrounds, use black shadow with alpha being 1 at luma=1.6 and decreasing as luma increases */
+        rgba(0, 0, 0, math.max(0.1, math.min(10 - ($bg-luma - $switch-to-light-shadow) * 10, 1)))
+    );
+
+    @return $shadow-color;
+}

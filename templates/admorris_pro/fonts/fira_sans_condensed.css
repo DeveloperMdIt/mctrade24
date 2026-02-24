@@ -1,0 +1,60 @@
+/* fira-sans-condensed-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Fira Sans Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Fira Sans Condensed Regular'), local('FiraSansCondensed-Regular'),
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* fira-sans-condensed-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Fira Sans Condensed';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Fira Sans Condensed Italic'), local('FiraSansCondensed-Italic'),
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* fira-sans-condensed-500 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Fira Sans Condensed';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Fira Sans Condensed Medium'), local('FiraSansCondensed-Medium'),
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* fira-sans-condensed-500italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Fira Sans Condensed';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Fira Sans Condensed Medium Italic'), local('FiraSansCondensed-MediumItalic'),
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-500italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-500italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* fira-sans-condensed-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Fira Sans Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Fira Sans Condensed Bold'), local('FiraSansCondensed-Bold'),
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* fira-sans-condensed-700italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Fira Sans Condensed';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Fira Sans Condensed Bold Italic'), local('FiraSansCondensed-BoldItalic'),
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/fira_sans_condensed/fira-sans-condensed-v2-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "If you want to export more languages..."
+msgstr "If you want to export more languages, you must create multiple export files. You can do this by creating a new export format for each language."
+
+msgid "Export name"
+msgstr "Export name"
+
+msgid "File name"
+msgstr "File name"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "Customer group"
+msgstr "Customer group"
+
+msgid "Shipping country"
+msgstr "Shipping country (ISO)"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "created"
+msgstr "created"
+
+msgid "deleted"
+msgstr "deleted"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Deutsch"
+msgstr "German"
+
+msgid "Englisch"
+msgstr "English"
+
+msgid "Create new export format"
+msgstr "Create new export format"
+
+msgid "Create new review feed"
+msgstr "Create new review feed"
+
+msgid "Feed name"
+msgstr "Feed name"
+
+msgid "Field can not be empty"
+msgstr "Field \"%s\" can't be empty."
+
+msgid "File name must contain .zip extension"
+msgstr "File name must contain .zip extension"
+
+msgid "File name must contain .xml extension"
+msgstr "File name must contain .xml extension"
+
+msgid "Export format would be successfully..."
+msgstr "Export format would be successfully %s."
+
+msgid "Export format could not be..."
+msgstr "Export format could not be %s."
+
+msgid "Are you really sure to delete this export format"
+msgstr "Are you really sure to delete this export format?"
+
+msgid "Exportformats"
+msgstr "Export formats"

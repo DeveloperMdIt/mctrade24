@@ -1,0 +1,2 @@
+adminmenu/react-plugin-backend/build/assets/index-DqS4otaF.css
+adminmenu/react-plugin-backend/build/assets/index-Bit_9YVC.js

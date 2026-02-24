@@ -1,0 +1,37 @@
+/* https://every-layout.dev/layouts/sidebar/ */
+
+.sidebar-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sidebar-gap, 1rem);
+    --sidebar-min-content-size: 50%;
+    --sidebar-width: auto;
+
+    // &.sidebar-layout--right > :last-child,
+    // &:not(.sidebar-layout--right) > :first-child {
+    //     flex-basis: var(--sidebar-width);
+    //     flex-grow: 1;
+    // }
+
+    // &.sidebar-layout--right > :first-child,
+    // &:not(.sidebar-layout--right) > :last-child {
+    //     flex-basis: 0;
+    //     flex-grow: 999;
+    //     min-inline-size: var(--sidebar-min-content-size);
+    // }
+}
+
+.sidebar-layout--reverse {
+    flex-direction: row-reverse;
+}
+
+.sidebar-layout__sidebar {
+    flex-basis: var(--sidebar-width);
+    flex-grow: 1;
+}
+
+.sidebar-layout__main {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--sidebar-min-content-size);
+}

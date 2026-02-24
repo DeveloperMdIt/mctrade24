@@ -1,0 +1,1 @@
+<div class="coupon new-customer">{$admorris_pro_marketing_coupons_new_cusotmer_value} {$admorris_pro_marketing_coupons_new_cusotmer_name} </div>

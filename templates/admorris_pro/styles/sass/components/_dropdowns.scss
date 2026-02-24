@@ -1,0 +1,61 @@
+@use 'sass:map';
+.dropdown-body,
+.dropdown-footer {
+    padding: $dropdown-item-padding-x;
+
+    &:first-child {
+        border-top-left-radius: $dropdown-border-radius;
+        border-top-right-radius: $dropdown-border-radius;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: $dropdown-border-radius;
+        border-bottom-right-radius: $dropdown-border-radius;
+    }
+}
+
+.dropdown-item {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.dropdown-divider {
+    margin: 0;
+}
+
+.dropdown-header {
+    padding: map.get($spacers, 2) $dropdown-item-padding-x;
+}
+
+.dropdown-full-width {
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+
+.box,
+.productlist-filter-wrapper {
+    .dropdown-menu {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+}
+
+.modal-backdrop.zindex-dropdown {
+    z-index: $zindex-sticky;
+}
+
+.nav-item {
+    .table-responsive {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+#wishlist-dropdown-container .clickable-row:hover {
+    background-color: $tone-10;
+}
+
+#comparelist-dropdown-container .comparelist-dropdown-img {
+    @include adm-border-radius('xs', 'images');
+}

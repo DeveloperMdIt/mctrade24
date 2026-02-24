@@ -1,0 +1,763 @@
+@use 'sass:math';
+@use 'sass:list';
+
+// Apply borders based on position parameter and border properties
+@mixin apply-border($index, $side, $isLastChild: false) {
+    // Horizontal borders (top/bottom)
+    $border-position: map-get($header-row-border, 'position#{$index}');
+
+    @if $side ==
+        'top' and
+        (
+            $border-position ==
+                'top' or
+                $border-position ==
+                'topBottom' or
+                $border-position ==
+                'all' or
+                $border-position ==
+                'around' or
+                $border-position ==
+                'topBottomBetween'
+        )
+    {
+        border-top: var(--header-row-border);
+    }
+
+    @if $side ==
+        'bottom' and
+        (
+            $border-position ==
+                'bottom' or
+                $border-position ==
+                'topBottom' or
+                $border-position ==
+                'all' or
+                $border-position ==
+                'around' or
+                $border-position ==
+                'topBottomBetween'
+        )
+    {
+        border-bottom: var(--header-row-border);
+    }
+
+    // Vertical borders (left/right)
+    @if $side ==
+        'left' and
+        (
+            $border-position ==
+                'leftRight' or
+                $border-position ==
+                'all' or
+                $border-position ==
+                'around' or
+                $border-position ==
+                'leftRightBetween'
+        )
+    {
+        border-left: var(--header-row-border);
+    }
+
+    // Right border with conditional logic for the last child
+    @if $side == 'right' {
+        // Apply right border to last child only if position is appropriate
+        @if $isLastChild {
+            @if ($border-position == 'leftRight' or $border-position == 'all' or $border-position == 'around') {
+                border-right: var(--header-row-border);
+            }
+        }
+        // Apply right border to non-last child for 'between' positions or other appropriate positions
+        @else {
+            @if (
+                $border-position ==
+                    'all' or
+                    $border-position ==
+                    'between' or
+                    $border-position ==
+                    'leftRightBetween' or
+                    $border-position ==
+                    'topBottomBetween'
+            ) {
+                border-right: var(--header-row-border);
+            }
+        }
+    }
+}
+
+.header__nav-wrapper {
+    // always set z-index to fixed value because of fixed add to basket top bar
+    position: relative;
+    z-index: $zindex-fixed;
+}
+
+.header__mobile-nav {
+    @for $i from 1 through 3 {
+        .row-#{$i} {
+            --header-row-bg-color: #{list.nth($header-row-bg-color-mobile, $i)};
+            --header-row-text-color: #{list.nth($header-row-text-color-mobile, $i)};
+            --header-row-font-size: #{list.nth($header-row-font-size-mobile, $i)};
+            --header-row-text-transform: #{list.nth($header-row-text-transform-mobile, $i)};
+            --header-row-font-weight: #{list.nth($header-row-font-weight-mobile, $i)};
+            --header-row-padding-top: #{map-get($header-row-padding-mobile, 'top#{$i}')};
+            --header-row-padding-bottom: #{map-get($header-row-padding-mobile, 'bottom#{$i}')};
+            --header-row-padding-left: #{map-get($header-row-padding-mobile, 'left#{$i}')};
+            --header-row-padding-right: #{map-get($header-row-padding-mobile, 'right#{$i}')};
+            --header-row-margin-top: #{map-get($header-row-margin-mobile, 'top#{$i}')};
+            --header-row-margin-bottom: #{map-get($header-row-margin-mobile, 'bottom#{$i}')};
+
+            /* Border Radius */
+            --header-row-border-radius-top-left: #{map-get($header-row-border-radius-mobile, 'top-left#{$i}')};
+            --header-row-border-radius-top-right: #{map-get($header-row-border-radius-mobile, 'top-right#{$i}')};
+            --header-row-border-radius-bottom-left: #{map-get($header-row-border-radius-mobile, 'bottom-left#{$i}')};
+            --header-row-border-radius-bottom-right: #{map-get($header-row-border-radius-mobile, 'bottom-right#{$i}')};
+
+            /* Border */
+            --header-row-border: #{map-get($header-row-border-mobile, 'style#{$i}')}
+                #{map-get($header-row-border-mobile, 'width#{$i}')}
+                #{map-get($header-row-border-mobile, 'color#{$i}')};
+        }
+    }
+
+    .header__nav-wrapper.sticky & {
+        @for $i from 1 through 3 {
+            .row-#{$i} {
+                --header-row-bg-color: #{list.nth($header-row-sticky-bg-mobile, $i)};
+                --header-row-text-color: #{list.nth($header-row-sticky-color-mobile, $i)};
+
+                /* hide non-sticky rows */
+                @if list.nth($header-row-sticky-mobile, $i) == false {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .header-wrapper--overlay & {
+        @for $i from 1 through 3 {
+            .row-#{$i} {
+                --header-row-bg-color: #{list.nth($header-row-bg-color-overlay-mobile, $i)};
+                --header-row-text-color: #{list.nth($header-row-text-color-overlay-mobile, $i)};
+            }
+        }
+    }
+}
+
+.header__desktop-nav {
+    @for $i from 1 through 3 {
+        .row-#{$i} {
+            --header-row-bg-color: #{list.nth($header-row-bg-color, $i)};
+            --header-row-text-color: #{list.nth($header-row-text-color, $i)};
+            --header-row-font-size: #{list.nth($header-row-font-size, $i)};
+            --header-row-text-transform: #{list.nth($header-row-text-transform, $i)};
+            --header-row-font-weight: #{list.nth($header-row-font-weight, $i)};
+            --header-row-padding-top: #{map-get($header-row-padding, 'top#{$i}')};
+            --header-row-padding-bottom: #{map-get($header-row-padding, 'bottom#{$i}')};
+            --header-row-padding-left: #{map-get($header-row-padding, 'left#{$i}')};
+            --header-row-padding-right: #{map-get($header-row-padding, 'right#{$i}')};
+            --header-row-margin-top: #{map-get($header-row-margin, 'top#{$i}')};
+            --header-row-margin-bottom: #{map-get($header-row-margin, 'bottom#{$i}')};
+
+            /* Border Radius */
+            --header-row-border-radius-top-left: #{map-get($header-row-border-radius, 'top-left#{$i}')};
+            --header-row-border-radius-top-right: #{map-get($header-row-border-radius, 'top-right#{$i}')};
+            --header-row-border-radius-bottom-left: #{map-get($header-row-border-radius, 'bottom-left#{$i}')};
+            --header-row-border-radius-bottom-right: #{map-get($header-row-border-radius, 'bottom-right#{$i}')};
+
+            /* Border */
+            --header-row-border: #{map-get($header-row-border, 'style#{$i}')}
+                #{map-get($header-row-border, 'width#{$i}')}
+                #{map-get($header-row-border, 'color#{$i}')};
+        }
+    }
+
+    .header__nav-wrapper.sticky & {
+        @for $i from 1 through 3 {
+            .row-#{$i} {
+                --header-row-bg-color: #{list.nth($header-row-sticky-bg, $i)};
+                --header-row-text-color: #{list.nth($header-row-sticky-color, $i)};
+
+                /* hide non-sticky rows */
+                @if list.nth($header-row-sticky, $i) == false {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .header-wrapper--overlay & {
+        @for $i from 1 through 3 {
+            .row-#{$i} {
+                --header-row-bg-color: #{list.nth($header-row-bg-color-overlay, $i)};
+                --header-row-text-color: #{list.nth($header-row-text-color-overlay, $i)};
+            }
+        }
+    }
+}
+
+.header-row {
+    position: relative;
+    color: var(--header-row-text-color);
+    font-size: var(--header-row-font-size);
+    text-transform: var(--header-row-text-transform);
+    font-weight: var(--header-row-font-weight);
+
+    /* hide non-sticky rows */
+    // .header__nav-wrapper.sticky .header__mobile-nav & {
+    //     @for $i from 1 through 3 {
+    //         @if list.nth($header-row-sticky-mobile, $i) == false {
+    //             &.row-#{$i} {
+    //                 display: none;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // .header__nav-wrapper.sticky .header__desktop-nav & {
+    //     @for $i from 1 through 3 {
+    //         @if list.nth($header-row-sticky, $i) == false {
+    //             &.row-#{$i} {
+    //                 display: none;
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.header__nav-wrapper:not(.boxed-header) {
+    @for $i from 1 through 3 {
+        .row-#{$i} {
+            background-color: var(--header-row-bg-color);
+            margin-top: var(--header-row-margin-top);
+            margin-bottom: var(--header-row-margin-bottom);
+            border-radius: var(--header-row-border-radius-top-left)
+                var(--header-row-border-radius-top-right)
+                var(--header-row-border-radius-bottom-right)
+                var(--header-row-border-radius-bottom-left);
+
+            @include apply-border(#{$i}, 'top');
+            @include apply-border(#{$i}, 'bottom');
+
+            &:has(.header-search--dropdown.is-open) {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .header-row__col {
+                padding-top: var(--header-row-padding-top);
+                padding-bottom: var(--header-row-padding-bottom);
+
+                /* Apply vertical borders using mixin */
+                &:first-child {
+                    @include apply-border(#{$i}, 'left');
+                }
+
+                &:not(:has(~ .header-row__col)) {
+                    @include apply-border(#{$i}, 'right', true);
+                }
+
+                &:has(~ .header-row__col) {
+                    @include apply-border(#{$i}, 'right');
+                }
+            }
+        }
+    }
+}
+
+.header__nav-wrapper.boxed-header {
+    @for $i from 1 through 3 {
+        .row-#{$i} {
+            .header-row__col {
+                position: relative;
+                background-color: var(--header-row-bg-color);
+                padding-top: var(--header-row-padding-top);
+                padding-bottom: var(--header-row-padding-bottom);
+                margin-top: var(--header-row-margin-top);
+                margin-bottom: var(--header-row-margin-bottom);
+
+                /* Apply border-radius to boxed-header */
+                &:first-child,
+                &:first-child::before {
+                    border-top-left-radius: var(--header-row-border-radius-top-left);
+                    border-bottom-left-radius: var(--header-row-border-radius-bottom-left);
+                }
+
+                &:not(:has(~ .header-row__col)),
+                &:not(:has(~ .header-row__col))::before {
+                    border-top-right-radius: var(--header-row-border-radius-top-right);
+                    border-bottom-right-radius: var(--header-row-border-radius-bottom-right);
+                }
+
+                @include apply-border(#{$i}, 'top');
+                @include apply-border(#{$i}, 'bottom');
+
+                &:first-child {
+                    @include apply-border(#{$i}, 'left');
+                }
+
+                &:not(:has(~ .header-row__col)) {
+                    @include apply-border(#{$i}, 'right', true);
+                }
+
+                &:has(~ .header-row__col) {
+                    @include apply-border(#{$i}, 'right');
+                }
+
+                $border-position: map-get($header-row-border, 'position#{$i}');
+
+                @if not(
+                    $border-position ==
+                        'all' or
+                        $border-position ==
+                        'between' or
+                        $border-position ==
+                        'leftRightBetween' or
+                        $border-position ==
+                        'topBottomBetween'
+                )
+                {
+                    padding-left: calc(var(--header-row-padding-left) / 2);
+                    padding-right: calc(var(--header-row-padding-right) / 2);
+                } @else {
+                    padding-left: var(--header-row-padding-left);
+                    padding-right: var(--header-row-padding-right);
+                }
+
+                &:first-child {
+                    padding-left: var(--header-row-padding-left);
+                }
+
+                &:not(:has(~ .header-row__col)) {
+                    padding-right: var(--header-row-padding-right);
+                }
+            }
+
+            &:has(.header-search--dropdown.is-open) .header-row__col {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+
+    .header__container {
+        position: relative;
+    }
+
+    .search__dropdown-background {
+        width: calc(100% - (var(--container-padding, 20px) * 2));
+        margin-inline: var(--container-padding, 20px);
+    }
+}
+
+/**
+ * Sticky Navbar
+ */
+
+.header__nav-wrapper.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+    animation-name: header-animation;
+    animation-duration: 0.3s;
+
+    &:not(.boxed-header),
+    &.boxed-header .header-row__col::before {
+        box-shadow: 0 0 10px $tone-10;
+    }
+
+    &.boxed-header .header-row__col::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    // hide all elements except the header rows when sticky
+    // if the user adds items to the header with elements they must be hidden when the header is sticky
+    & > *:not(.header__desktop-nav, .header__mobile-nav, .offcanvas-nav),
+    & > .header__desktop-nav > *:not(#header-container),
+    & #header-container > *:not(.header-row-wrapper),
+    & .header-row-wrapper > *:not(.header-row),
+    & .header-row > *:not(.header__container, .search__dropdown-background) {
+        display: none;
+    }
+}
+
+@keyframes header-animation {
+    0% {
+        top: calc(-1 * var(--adm-header-height-fixed));
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@function addPxUnit($width) {
+    @if is-number($width) and math.unit($width) != 'px' {
+        @return $width * 1px;
+    } @else {
+        @return $width;
+    }
+}
+
+/* For SVGs width needs to be set on the <img> because it gets zero width inside a flexbox otherwise if no width attribute is set in the svg */
+.header__logo--svg .header__logo-img {
+    transition:
+        width 0.3s ease-out,
+        max-width 0.3s ease-out;
+    max-width: 100%;
+    width: var(--logo-width);
+}
+
+.header__logo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    transition: max-width 0.3s ease-out;
+    max-width: var(--logo-width);
+
+    .header__desktop-nav & {
+        --logo-width: #{addPxUnit($logo-width-desktop)};
+    }
+
+    .header__mobile-nav & {
+        --logo-width: #{addPxUnit($logo-width-mobile)};
+    }
+
+    .header__nav-wrapper.sticky .header__desktop-nav & {
+        --logo-width: #{addPxUnit($logo-width-sticky)};
+    }
+
+    .header__nav-wrapper.sticky .header__mobile-nav & {
+        --logo-width: #{addPxUnit($logo-width-sticky-mobile)};
+    }
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    transition: box-shadow 0.2s;
+    transition-timing-function: ease-in;
+
+    @include admPro-container();
+}
+
+.header-row__col {
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 1 auto;
+    align-items: center;
+    // gap: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .header-row.top-aligned & {
+        align-items: flex-start;
+    }
+}
+
+// classes added via phpQuery in Bootstrap::addFirstAndLastHeaderColClasses()
+// :last-child doesn't always work because of search dropdown element
+.header-row__col--first {
+    padding-left: 0;
+}
+
+.header-row__col--last {
+    padding-right: 0;
+}
+
+.header-row__col--1 {
+    justify-content: flex-start;
+    align-content: flex-start;
+    // padding-right: 10px;
+}
+
+.header-row__col--2 {
+    justify-content: center;
+}
+
+.header-row__col--3 {
+    justify-content: flex-end;
+}
+
+/** The center-col modiefier is used when the center column and at least one
+ *  of the side-columns contains items
+ */
+
+.header-row--center-col {
+    .header-row__col--1 {
+        flex: 1 1 0;
+    }
+
+    .header-row__col--2 {
+        flex: 0 1 auto;
+    }
+
+    .header-row__col--3 {
+        flex: 1 1 0;
+    }
+}
+
+.header-row__element {
+    display: flex;
+    align-items: center;
+    & + & {
+        margin-left: 20px;
+    }
+}
+
+.header-row__element--mobile {
+    & + & {
+        margin-left: 0;
+    }
+}
+
+.header-row__element--megamenu,
+.header-row__element--shopnav {
+    & + & {
+        margin-left: 0;
+    }
+}
+
+/**
+ * Text alignment to the container edges
+ */
+
+// no padding-right for the last item
+.header-row__col--last .header-row__element:last-child {
+    // .nav > li:last-child > a,
+    /* &.header-row__element--mobile  */
+    .shopnav__link,
+    // .btn-social:last-child,
+    .search__toggle, 
+    .search__submit {
+        padding-right: 0;
+    }
+
+    .megamenu {
+        margin-right: -$navbar-nav-link-padding-x;
+    }
+
+    .header__offcanvas-toggle {
+        margin-right: -$navbar-toggler-padding-x;
+    }
+}
+// no padding-left for the first item
+.header-row__col--first .header-row__element:first-child {
+    // .nav > li:first-child > a,
+    .shopnav__link,
+    .btn-social:first-child,
+    .search__toggle {
+        padding-left: 0;
+    }
+
+    .megamenu {
+        margin-left: -$navbar-nav-link-padding-x;
+    }
+
+    .header__offcanvas-toggle {
+        margin-left: -$navbar-toggler-padding-x;
+    }
+}
+
+// .header-wrapper--fullscreen,
+// .header-wrapper--framed {
+//     height: 100vh;
+
+// }
+
+.header-wrapper--overlay {
+    .header {
+        position: absolute;
+        // width: 100%;
+        left: 0;
+        right: 0;
+        z-index: $header-z-index;
+        background-color: transparent; // use variable instead
+    }
+}
+
+.header-wrapper--framed .header {
+    left: 20px;
+    right: 20px;
+    top: 20px;
+}
+
+.header-wrapper--framed {
+    // padding: 20px;
+
+    .header {
+        left: 20px;
+        right: 20px;
+    }
+
+    // &.header-wrapper--overlay {
+    //     height: calc(unquote("100vh - 2 * 20px"));
+    // }
+}
+
+:is(.header__desktop-nav, .header__mobile-nav) {
+    /* exclude offcanvas */
+
+    /**
+    * Nav Link Color
+    */
+
+    :is(.nav-link, .shopnav__link) {
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+
+        &,
+        &:hover,
+        &:active,
+        &:visited {
+            color: var(--header-row-text-color);
+            background-color: transparent;
+            text-transform: var(--header-row-text-transform);
+            font-size: var(--header-row-font-size);
+        }
+    }
+
+    .header-wrapper--overlay &:not(.sticky) {
+        background-color: rgba(255, 255, 255, 0); // ? why not use transparent
+    }
+}
+
+// .header__desktop-nav,
+// .header__mobile-nav {
+//     /* exclude offcanvas */
+
+//     .header-shop-nav > li > a,
+//     .header-row__element--shopnav .shopnav__link {
+//         &,
+//         &:hover,
+//         &:active,
+//         &:visited,
+//         &:focus {
+//             color: var(--header-row-text-color);
+
+//             .header-wrapper--overlay & {
+//                 background-color: transparent;
+//                 color: var(--header-row-text-color-overlay);
+//             }
+//         }
+//     }
+// }
+
+.header__desktop-nav {
+    .dropdown-menu {
+        border: $dropdown-border-width solid $dropdown-border-color;
+    }
+}
+
+/**
+ * Mobile Navigation
+ */
+
+.header__mobile-nav {
+    /* INFO: using visibility: hidden instead of display: none because of of problems with svg icons and id references in those that caused them to disappear when the header is hidden */
+    visibility: hidden;
+    // content-visibility: hidden;
+    height: 0;
+
+    // padding: 10px 0;
+    @media (min-width: $screen-xs) {
+        font-size: $mobile-nav-icon-size;
+    }
+}
+
+/* switching between desktop and mobile header */
+@media (max-width: $mobile-nav-breakpoint) {
+    .header__mobile-nav {
+        visibility: visible;
+        // content-visibility: visible;
+
+        height: auto;
+    }
+
+    .header__desktop-nav {
+        visibility: hidden;
+        // content-visibility: hidden;
+
+        height: 0;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    // .shopnav__badge {
+    //     vertical-align: unset;
+    // }
+}
+
+.mobile-navbar__wrapper {
+    z-index: $zindex-fixed;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.mobile-navbar__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/**
+ * Centered Logo Design Preset
+ * adjustment for split menu to align to the logo side
+ */
+
+.header.centered-logo .header__desktop-nav {
+    .header__container--2 {
+        // display: grid;
+        // grid-template-columns: 1fr auto 1fr;
+
+        .header-row__col--1 .megamenu .navbar-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .header-row__col--1 .header-row__megamenu {
+            margin-left: auto;
+            margin-right: $split-menu-spacing;
+        }
+
+        .header-row__col--3 {
+            justify-content: space-between;
+
+            .header-row__megamenu {
+                margin-right: auto;
+                margin-left: $split-menu-spacing;
+            }
+        }
+    }
+}
+
+.shopnav__badge,
+.btn .shopnav__badge {
+    color: inherit;
+    font-size: 70%;
+    background-color: color-mix(in oklab, var(--header-row-bg-color) 70%, var(--header-row-text-color));
+    margin-top: -1.5em;
+    margin-left: -0.4em;
+}
+
+.shopping-cart-label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cart-dropdown-button {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}

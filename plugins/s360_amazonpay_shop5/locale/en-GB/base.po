@@ -1,0 +1,1377 @@
+msgid "lpaInfoDescription"
+msgstr "Plugin for Amazon Pay in JTL-Shop 5"
+
+msgid "lpaTabOrders"
+msgstr "Overview"
+
+msgid "lpaTabAccount"
+msgstr "Setup"
+
+msgid "lpaTabConfig"
+msgstr "Settings"
+
+msgid "lpaTabVoiceCommerce"
+msgstr "Voice Commerce"
+
+msgid "lpaError"
+msgstr "Error:"
+
+msgid "lpaWarning"
+msgstr "Warning:"
+
+msgid "lpaHint"
+msgstr "Hint:"
+
+msgid "lpaSuccess"
+msgstr "Success:"
+
+msgid "checkSuccess"
+msgstr "Check successful!"
+
+msgid "checkFail"
+msgstr "Check failed!"
+
+msgid "technicalError"
+msgstr "Error: A technical error occured. Please check you web browser log (F12 -> Console) and/or the shop log."
+
+msgid "pleaseWait"
+msgstr "Please wait..."
+
+msgid "keyGenSuccess"
+msgstr "Key pair generated successfully. Please send your public key to Amazon Pay in order zu receive a public key id."
+
+msgid "keyGenFailure"
+msgstr "Key pair generation failed!"
+
+msgid "internalCommentOptional"
+msgstr "Internal comment (optional)"
+
+msgid "noCancelOperation"
+msgstr "No, back"
+
+msgid "searchFailedTitle"
+msgstr "Search unsuccessful"
+
+msgid "searchFailedNoOrderFound"
+msgstr "No orders found for \"%parameter\"."
+
+msgid "cancelChargePermissionTitle"
+msgstr "Cancel Charge Permission?"
+
+msgid "cancelChargePermissionDescription"
+msgstr "Do you want to cancel the charge permission <u>%chargePermissionId</u>?<br/>All related charges will be cancelled, as well, and no further payment capture will be possible.<br/><br/>Attention: Performing this action on charge permissions related to recurring orders will automatically cancel the subscription, as well."
+
+msgid "cancelChargePermissionConfirm"
+msgstr "Yes, cancel charge permission"
+
+msgid "closeChargePermissionTitle"
+msgstr "Close Charge Permission?"
+
+msgid "closeChargePermissionDescription"
+msgstr "Do you want to close the charge permission <u>%chargePermissionId</u>?<br/>No new charges can be created against closed charge permissions.<br/>Existing charges can still be captured.<br/><br/>Attention: Performing this action on charge permissions related to recurring orders will automatically cancel the subscription, as well."
+
+msgid "closeChargePermissionConfirm"
+msgstr "Yes, close charge permission"
+
+msgid "cancelChargeTitle"
+msgstr "Cancel Charge?"
+
+msgid "cancelChargeDescription"
+msgstr "Do you want to cancel the charge <u>%chargeId</u>?<br/>Canceled charges can not be captured!"
+
+msgid "cancelChargeConfirm"
+msgstr "Yes, cancel charge"
+
+msgid "createChargeTitle"
+msgstr "Create Charge?"
+
+msgid "createChargeDescription"
+msgstr "Do you want to create a new charge for the charge permission <u>%chargePermissionId</u> in the amount of %amount?<br/>Depending on the current configuration the charge might be captured immediately."
+
+msgid "createChargeConfirm"
+msgstr "Yes, create charge"
+
+msgid "captureChargeTitle"
+msgstr "Capture Payment?"
+
+msgid "captureChargeDescription"
+msgstr "Do you want to capture a payment in the amount of %amount for the charge <u>%chargeId</u>?"
+
+msgid "captureChargeConfirm"
+msgstr "Yes, capture payment"
+
+msgid "createRefundTitle"
+msgstr "Refund payment?"
+
+msgid "createRefundDescription"
+msgstr "Do you want to refund %amount for the charge <u>%chargeId</u>?"
+
+msgid "createRefundConfirm"
+msgstr "Yes, refund amount"
+
+msgid "accountPanelRegisterTitle"
+msgstr "0a. Register with Amazon Pay / Automatic Configuration"
+
+msgid "accountPanelRegisterDesc"
+msgstr "If you do not have an Amazon Pay account yet, click on <b>Register Amazon Pay Account / Automatic Configuration</b> and follow the instructions.<br/>Note, that automatic configuration is only available as long as you did not manually provide private key.<br/>Please reload this tab after configuration on the Amazon Pay page to see the changes.<br/><br/>After successful automatic configuration, you can skip the following steps and continue with <b>Check Your Account Data</b>."
+
+msgid "accountPanelRegisterCTA"
+msgstr "Register Amazon Pay Account / Automatic Configuration"
+
+msgid "accountPanelCheckRegistrationTitle"
+msgstr "0b. Check If Your Amazon Pay Account Was Verified"
+
+msgid "accountPanelCheckRegistrationDesc"
+msgstr "<li>After entering all required information, Amazon Pay will verify your account.</li><li>Regularly check your emails. If Amazon Pay should require any additional information to continue with the verification, you will received a notification email.</li><li>Notifications can also be accessed from your seller central account. To view your notifications in the seller central, click on <b>Performance</b> and then on <b>Performance Notifications</b>.</li>"
+
+msgid "accountPanelKeysTitle"
+msgstr "2. Private/Public Key Pair"
+
+msgid "accountPanelKeysCurrentPublicKey"
+msgstr "Your current public key:"
+
+msgid "accountPanelKeysNoPublicKey"
+msgstr "You have not created/saved a public key."
+
+msgid "accountPanelKeysDescManual"
+msgstr "In order to communicate with the Amazon Pay API, you need a private key pair and a public key ID. Here you can manually enter the private key which you generated in the Seller Central.<br/>The private key will be saved by the plugin but it will <b>not</b> display it back to you for security reasons.<br/>You find the corresponding public key <b>ID</b> for your private key in the Seller Central, too. Enter it in the following step!"
+
+msgid "accountPanelKeysDescGenerate"
+msgstr "In order to communicate with the Amazon Pay API, you need a private key pair and a public key ID. Here you can generate a private/public key pair.<br/>The private key will be saved by the plugin but it will <b>not</b> display it back to you for security reasons.<br/>You have to enter the public key in your Seller Central to acquire a corresponding public key <b>ID</b>. Enter that ID in the following step!"
+
+msgid "accountPanelKeysCreateWarning"
+msgstr "<b>ATTENTION:</b> As soon as you create a new key pair, you will also have to enter a new public key id. Else, the plugin will not be able to communicate with Amazon Pay."
+
+msgid "accountPanelKeysCreateCTA"
+msgstr "Create new key pair"
+
+msgid "accountPanelKeysTabCreateTitle"
+msgstr "Automatic Generation"
+
+msgid "accountPanelKeysTabSaveTitle"
+msgstr "Manual Input"
+
+msgid "accountPanelKeysSaveCTA"
+msgstr "Save private key"
+
+msgid "accountPanelKeysLabelPublicKey"
+msgstr "<b>Public Key</b> (incl. BEGIN/END PUBLIC KEY-rows)"
+
+msgid "accountPanelKeysLabelPrivateKey"
+msgstr "<b>Private Key</b> (incl. BEGIN/END RSA PRIVATE KEY-rows)"
+
+msgid "accountPanelKeysPrivateKeyExists"
+msgstr "Private key <b>exists</b> (manually entered)."
+
+msgid "accountPanelKeysPrivateKeyGenerated"
+msgstr "Private Key <b>exists</b> (automatically generated)."
+
+msgid "accountPanelKeysPrivateKeyMissing"
+msgstr "Private key <b>is missing</b>."
+
+msgid "accountPanelPublicKeyIdTitle"
+msgstr "3. Enter Your Public Key ID"
+
+msgid "accountPanelPublicKeyIdLabel"
+msgstr "Your public key ID"
+
+msgid "accountPanelPublicKeyIdCTA"
+msgstr "Save public key ID"
+
+msgid "accountPanelPublicKeyIdRequestHint"
+msgstr "If you do not yet know your public key ID, you can find it in your Seller Central or retrieve it via the automatic key exchange when registrering with Amazon Pay."
+
+msgid "accountPanelImportDataTitle"
+msgstr "1. Import your seller central configuration"
+
+msgid "accountPanelWatchIntroVideo"
+msgstr "Watch the introduction video here."
+
+msgid "accountPanelWatchVideo"
+msgstr "Watch the video."
+
+msgid "accountPanelImportDataStep1"
+msgstr "<a href=\"https://sellercentral-europe.amazon.com\" target=\"s360amazonpay\">Login to your seller central account in a new browser window/tab</a>"
+
+msgid "accountPanelImportDataStep2"
+msgstr "Make sure you are in the <b>Amazon Pay</b> view (Production View or Sandbox View). You can confirm or change the current view in the dropdown on the upper right in the Amazon Pay seller central."
+
+msgid "accountPanelImportDataStep3"
+msgstr "Click on <b>Integration</b> and select <b>MWS Access Key</b>."
+
+msgid "accountPanelImportDataStep4"
+msgstr "Click on <b>Copy your keys</b> in the upper right corner to show your keys."
+
+msgid "accountPanelImportDataStep5"
+msgstr "If you do not see a \"Client-ID\" in the pop-up, go to \"Integration\" -&gt; \"Integration Central\" and click on <b>Create new client ID/store ID</b>, at the bottom. Then repeat the above steps."
+
+msgid "accountPanelImportDataStep6"
+msgstr "Select the displayed text <i>including the braces</i> from the pop up window and copy it to the clip board. (Ctrl+C or right click -> copy)"
+
+msgid "accountPanelImportDataStep7"
+msgstr "Paste the copied text into the following field: (Ctrl+V or right click -> paste)"
+
+msgid "accountPanelImportDataStep8"
+msgstr "Click on <b>Import data</b>."
+
+msgid "accountPanelImportDataStep9"
+msgstr "Your account data is then automatically saved and should be displayed in the following fields.<br/>If necessary, adjust your region."
+
+msgid "accountPanelImportDataImportCTA"
+msgstr "Import data"
+
+msgid "accountPanelImportDataManualHint"
+msgstr "If you changed these settings manually, remember to <b>save</b> once more, to permanently save your settings."
+
+msgid "accountPanelImportDataManualRegionLabel"
+msgstr "Region"
+
+msgid "accountPanelImportDataManualMerchantIdLabel"
+msgstr "Merchant ID"
+
+msgid "accountPanelImportDataManualClientIdLabel"
+msgstr "Client ID"
+
+msgid "accountPanelCheckDataTitle"
+msgstr "4. Check Your Account Data"
+
+msgid "accountPanelCheckDataCTA"
+msgstr "Check account data now"
+
+msgid "accountPanelIpnTitle"
+msgstr "5. Add Your IPN / Merchant URL to Your Seller Central Account"
+
+msgid "accountPanelIpnLabel"
+msgstr "Your IPN/Merchant URL:"
+
+msgid "accountPanelCopyToClipboard"
+msgstr "Copy to clipboard"
+
+msgid "accountPanelIpnStep1"
+msgstr "Copy your IPN/Merchant URL to the clipboard: <a href=\"#\" class=\"s360-copy-to-clipboard\" data-target=\"#s360-ipn-url-ro\">click here</a>"
+
+msgid "accountPanelIpnStep2"
+msgstr "<a href=\"https://sellercentral-europe.amazon.com\" target=\"s360amazonpay\">Login to your seller central account in a new browser window/tab</a>"
+
+msgid "accountPanelIpnStep3"
+msgstr "Make sure you are in the <b>Amazon Pay</b> view (Production View or Sandbox View). You can confirm or change the current view in the dropdown on the upper right in the Amazon Pay seller central."
+
+msgid "accountPanelIpnStep4"
+msgstr "Go to <i>Settings -&gt; Integration settings</i>"
+
+msgid "accountPanelIpnStep5"
+msgstr "Click on <b>Edit</b> to insert the copied URL into the <b>Merchant URL</b> field."
+
+msgid "accountPanelIpnStep6"
+msgstr "Switch to Production View (or vice versa to Sandbox View) and repeat the last step."
+
+msgid "accountPanelIpnStep7a"
+msgstr "Check if your Merchant URL is reachable: "
+
+msgid "accountPanelIpnStep7b"
+msgstr "<br/>You should see the message \"IPN is reachable\"."
+
+msgid "accountPanelJsOriginTitle"
+msgstr "6. Add your \"Allowed JavaScript Origin\" to Your Seller Central Account"
+
+msgid "accountPanelJsOriginLabel"
+msgstr "Your \"Allowed JavaScript Origin\":"
+
+msgid "accountPanelJsOriginStep1"
+msgstr "Copy this URL to your clipboard: <a href=\"#\" class=\"s360-copy-to-clipboard\" data-target=\"#s360-js-origin-url-ro\">click here</a>"
+
+msgid "accountPanelJsOriginStep2"
+msgstr "<a href=\"https://sellercentral-europe.amazon.com\" target=\"s360amazonpay\">Login to your seller central account in a new browser window/tab</a>"
+
+msgid "accountPanelJsOriginStep3"
+msgstr "Go to <i>Integration > Integration Central > Manage client ID/store ID(s)</i>."
+
+msgid "accountPanelJsOriginStep4"
+msgstr "Click <b>View client ID/store ID(s)</b>."
+
+msgid "accountPanelJsOriginStep5"
+msgstr "Click <b>edit</b> on the right."
+
+msgid "accountPanelJsOriginStep6"
+msgstr "Add the copied URL to the <i>Allowed JavaScript Origins</i> and save your changes."
+
+msgid "accountPanelKeysManualStep1"
+msgstr "<a href=\"https://sellercentral-europe.amazon.com\" target=\"s360amazonpay\">Login to your seller central account in a new browser window/tab</a>"
+
+msgid "accountPanelKeysManualStep2"
+msgstr "Make sure you are in the <b>Amazon Pay</b> view (Production View or Sandbox View). You can confirm or change the current view in the dropdown on the upper right in the Amazon Pay seller central."
+
+msgid "accountPanelKeysManualStep3"
+msgstr "Click on <b>Integration</b> and select <b>Integration Central</b>."
+
+msgid "accountPanelKeysManualStep4"
+msgstr "In the box <b>Choose your eCommerce solution provider, or choose to self-develop your integration</b> select <b>JTL Shop</b>, in the box <b>Version</b> select <b>Amazon Pay Checkout v2</b> and click on <b>Get instructions</b>."
+
+msgid "accountPanelKeysManualStep5"
+msgstr "Click on <b>Create keys</b>."
+
+msgid "accountPanelKeysManualStep6"
+msgstr "Select <b>Generate API credentials</b> and enter any name for the key."
+
+msgid "accountPanelKeysManualStep7"
+msgstr "Click on <b>Create keys</b>."
+
+msgid "accountPanelKeysManualStep8"
+msgstr "Your browser will download a .pem file. The content of that file is your private key. Copy and paste it completely into the following field."
+
+msgid "accountPanelKeysGenerateStep1"
+msgstr "Click on <b>Create new key pair</b>. You will be shown a Public Key. Copy that key."
+
+msgid "accountPanelKeysGenerateStep2"
+msgstr "<a href=\"https://sellercentral-europe.amazon.com\" target=\"s360amazonpay\">Login to your seller central account in a new browser window/tab</a>"
+
+msgid "accountPanelKeysGenerateStep3"
+msgstr "Make sure you are in the <b>Amazon Pay</b> view (Production View or Sandbox View). You can confirm or change the current view in the dropdown on the upper right in the Amazon Pay seller central."
+
+msgid "accountPanelKeysGenerateStep4"
+msgstr "Click on <b>Integration</b> and select <b>Integration Central</b>."
+
+msgid "accountPanelKeysGenerateStep5"
+msgstr "In the box <b>Choose your eCommerce solution provider, or choose to self-develop your integration</b> select <b>JTL Shop</b> and click on <b>Get instructions</b>."
+
+msgid "accountPanelKeysGenerateStep6"
+msgstr "Click on <b>Create keys</b>"
+
+msgid "accountPanelKeysGenerateStep7"
+msgstr "Select <b>Use an existing public key to create API credentials</b> and enter any name for the key."
+
+msgid "accountPanelKeysGenerateStep8"
+msgstr "Paste the copied public key into the field."
+
+msgid "accountPanelKeysGenerateStep9"
+msgstr "Click on <b>Create keys</b>."
+
+msgid "accountPanelPublicKeyIdStep1"
+msgstr "<a href=\"https://sellercentral-europe.amazon.com\" target=\"s360amazonpay\">Login to your seller central account in a new browser window/tab</a>"
+
+msgid "accountPanelPublicKeyIdStep2"
+msgstr "Make sure you are in the <b>Amazon Pay</b> view (Production View or Sandbox View). You can confirm or change the current view in the dropdown on the upper right in the Amazon Pay seller central."
+
+msgid "accountPanelPublicKeyIdStep3"
+msgstr "Click on <b>Integration</b> and select <b>Integration Central</b>."
+
+msgid "accountPanelPublicKeyIdStep4"
+msgstr "At the bottom of the page you find your <b>Existing API keys</b>. Copy the public key ID and paste it into the field below."
+
+msgid "lpaClickHere"
+msgstr "Click here"
+
+msgid "lpaFooterDocumentationHint"
+msgstr "The documentation for the plugin can be found <a href=\"https://redirect.solution360.de/?r=lpadocsjtl5\" target=\"_blank\">here</a>."
+
+msgid "lpaVoiceCommerceInfoTitle"
+msgstr "NEW: Free Alexa Skill for Amazon Pay Merchants"
+
+msgid "lpaVoiceCommerceInfoContent"
+msgstr "<p>Starting now, innovative Amazon Pay merchants can use a free Alexa skill: the JTL-Plugin \"VoiceCommerce\" connects your JTL shop in a carefully curated way with Alexa and provides useful, voice-controlled functions like wish lists, delivery notification, price alerts and sales.</p><p>The Alexa skill can be installed and launched from your JTL-Shop without any further Alexa knowledge: <a href=\"https://redirect.solution360.de/?r=voicecommerce\" target=\"_blank\">Check out the plugin!</a></p><p>Should you already have installed the plugin, switch to its own plugin settings to configure the module.</p>"
+
+msgid "lpaSelfCheckTitle"
+msgstr "Extension Status"
+
+msgid "lpaCheckSandboxActive"
+msgstr "<i class=\"fas fa-info-circle\"></i> Sandbox enabled"
+
+msgid "lpaCheckSandboxNotActive"
+msgstr "<i class=\"fas fa-check-circle\"></i> Production enabled"
+
+msgid "lpaCheckUpdateAvailable"
+msgstr "<i class=\"fas fa-info-circle\"></i> Extension update available in Extension Store"
+
+msgid "lpaCheckUpdateNotAvailable"
+msgstr "<i class=\"fas fa-check-circle\"></i> Extension up-to-date"
+
+msgid "lpaCheckStatusUnknown"
+msgstr "<i class=\"fas fa-question-circle\"></i> unknown"
+
+msgid "lpaCheckAccountStatusUnknown"
+msgstr "<i class=\"fas fa-question-circle\"></i> Account status unknown"
+
+msgid "lpaCheckSSLNotActive"
+msgstr "<i class=\"fas fa-times-circle\"></i> No SSL"
+
+msgid "lpaCheckSSLActive"
+msgstr "<i class=\"fas fa-check-circle\"></i> SSL"
+
+msgid "lpaCheckNoButtonsActive"
+msgstr "None of the button types is active. There will be no buttons visible in the storefront."
+
+msgid "lpaCheckHiddenButtonsInactive"
+msgstr "<i class=\"fas fa-check-circle\"></i> Buttons visible"
+
+msgid "lpaCheckHiddenButtonsActive"
+msgstr "<i class=\"fas fa-info-circle\"></i> \"Hidden Button Mode\" active"
+
+msgid "lpaCheckPaymentMethodDuringCheckout"
+msgstr "<i class=\"fas fa-check-circle\"></i> Payment method configuration"
+
+msgid "lpaCheckPaymentMethodNotDuringCheckout"
+msgstr "<i class=\"fas fa-times-circle\"></i> Payment method is set to <b>after</b> order creation"
+
+msgid "lpaCheckShippingMethodAssigned"
+msgstr "<i class=\"fas fa-check-circle\"></i> Shipping method assigned"
+
+msgid "lpaCheckNoShippingMethodAssigned"
+msgstr "<i class=\"fas fa-times-circle\"></i> No shipping method assigned"
+
+msgid "lpaCheckValidCurrency"
+msgstr "<i class=\"fas fa-check-circle\"></i> Valid Currency"
+
+msgid "lpaCheckNoValidCurrency"
+msgstr "<i class=\"fas fa-times-circle\"></i> No valid currency found"
+
+msgid "lpaCheckAccountSettingsIncomplete"
+msgstr "<i class=\"fas fa-info-circle\"></i> Account configuration incomplete"
+
+msgid "lpaCheckNoCronForSubscription"
+msgstr "<i class=\"fas fa-times-circle\"></i> Subscriptions enabled, but cronjob off"
+
+msgid "lpaCheckNoFrontendLinkForKey"
+msgstr "The is no frontend link URL set for frontend link: "
+
+msgid "lpaCheckShopVersionTooLow"
+msgstr "The shop version you are running is too low. This can lead to problems with the plugin. Please use at least shop version 5.0.0."
+
+msgid "lpaCheckMissingRegion"
+msgstr "No region is configured yet."
+
+msgid "lpaCheckMissingPublicKey"
+msgstr "No public key is configured yet."
+
+msgid "lpaCheckMissingPrivateKey"
+msgstr "No private key is configured yet."
+
+msgid "lpaCheckMissingPublicKeyId"
+msgstr "No public key ID is configured yet."
+
+msgid "lpaCheckMissingMerchantId"
+msgstr "No merchant ID is configured yet."
+
+msgid "lpaCheckMissingClientId"
+msgstr "No client ID is configured yet."
+
+msgid "lpaCheckAccountSettingsHint"
+msgstr "<br/>You can change these settings in the setup tab."
+
+msgid "lpaGeneral"
+msgstr "General"
+
+msgid "lpaResetSettings"
+msgstr "Reset settings"
+
+msgid "lpaEnvironmentLabel"
+msgstr "Environment"
+
+msgid "lpaEnvironmentSandbox"
+msgstr "Sandbox"
+
+msgid "lpaEnvironmentProduction"
+msgstr "Production"
+
+msgid "lpaEnvironmentHint"
+msgstr "Switches between sandbox mode and production mode.<br/>In sandbox mode, <u>no</u> real payments will happen.<br/>In sandbox mode, you can only buy with test accounts which you can create and manage in your seller central account."
+
+msgid "lpaHiddenButtonModeLabel"
+msgstr "Hidden Button Mode"
+
+msgid "lpaActive"
+msgstr "active"
+
+msgid "lpaHide"
+msgstr "hide"
+
+msgid "lpaHiddenButtonModeHint"
+msgstr "Switches the hidden button mode on/off. When hidden button mode is active, the plugin works normally, but it does not display any buttons.<br/>In order to display buttons, you need to add the parameter ?lpa-show-buttons to the URL where you want to see them."
+
+msgid "lpaCaptureModeLabel"
+msgstr "Capture Mode"
+
+msgid "lpaCaptureModeHint"
+msgstr "Controls when the actual capture of payments happens.<br/>Immediate capture means that the payment is captured as soon as it is authorized.<br/>Note that Amazon Pay allows only one capture per charge. This means, that even when capturing <i>on first (partial) delivery</i>, the total amount will always be captured."
+
+msgid "lpaCaptureModeImmediate"
+msgstr "Immediate"
+
+msgid "lpaCaptureModeOnCompleteDelivery"
+msgstr "On complete shipping"
+
+msgid "lpaCaptureModeOnPartialDelivery"
+msgstr "On first (partial) shipping"
+
+msgid "lpaTemplateModeLabel"
+msgstr "Template Type"
+
+msgid "lpaTemplateModeHint"
+msgstr "Here you can select the template type of your shop template, if necessary. Select \"Evo\" if your shop template is the Evo template or based on the Evo template."
+
+msgid "lpaTemplateModeNova"
+msgstr "Nova"
+
+msgid "lpaTemplateModeEvo"
+msgstr "Evo"
+
+msgid "lpaCheckout"
+msgstr "Checkout (Amazon Pay)"
+
+msgid "lpaCheckoutHint"
+msgstr "These settings only apply to the Amazon Pay checkout that is seen when the customer clicks on one of the pay buttons."
+
+msgid "lpaAllow"
+msgstr "allow"
+
+msgid "lpaAllowPackstationLabel"
+msgstr "Packstation addresses"
+
+msgid "lpaAllowPackstationHint"
+msgstr "Switches on/off if Packstation addresses are allowed as delivery addresses."
+
+msgid "lpaAllowPoBoxLabel"
+msgstr "P.O. box addresses"
+
+msgid "lpaAllowPoBoxHint"
+msgstr "Switches on/off if P.O. box addresses are allowed as delivery addresses."
+
+msgid "lpaAccountCreationLabel"
+msgstr "Account Creation"
+
+msgid "lpaAccountCreationAlways"
+msgstr "yes, always"
+
+msgid "lpaAccountCreationOptional"
+msgstr "optional, customer decides"
+
+msgid "lpaAccountCreationNever"
+msgstr "no, never"
+
+msgid "lpaAccountCreationHint"
+msgstr "Controls, if a new shop account is created for unknown customers.<br/>Note that, in general, it is not possible to order as guest with an email address that is already associated with a registered customer. In this case the order will always be associated with the registered customer account."
+
+msgid "lpaShowCommentFieldLabel"
+msgstr "Display Comment Field"
+
+msgid "lpaShowCommentFieldHint"
+msgstr "If you activate this option, the commentary input field will be displayed immediately within Amazon Pay Checkout. Else, a button is displayed, that the user has to click to add a comment.<br/>Hint: Studies have shown that fewer visible input fields are better for the conversion rate."
+
+msgid "lpaPayButtons"
+msgstr "Amazon Pay Frontend"
+
+msgid "lpaPayButtonsGeneral"
+msgstr "Basket / General"
+
+msgid "lpaPayButtonsDetail"
+msgstr "Detail page (express checkout)"
+
+msgid "lpaPayButtonsCategory"
+msgstr "Category page (express checkout)"
+
+msgid "lpaPayButtonsActivateLabel"
+msgstr "Activate button"
+
+msgid "lpaLoginButtonActivateLabel"
+msgstr "Activate"
+
+msgid "lpaPayButtonsCssColumnsLabel"
+msgstr "CSS Classes"
+
+msgid "lpaPayButtonsCssColumnsHint"
+msgstr "Here you can edit the Bootstrap CSS classes for the button wrapper."
+
+msgid "lpaPayButtonsHeightLabel"
+msgstr "Button height (px)"
+
+msgid "lpaPayButtonsHeightHint"
+msgstr "Valid values are in the range between 45 and 190."
+
+msgid "lpaPayButtonsColorLabel"
+msgstr "Button Color"
+
+msgid "lpaPayButtonsColorHint"
+msgstr "Select one of the given color schemes."
+
+msgid "lpaButtonColorGold"
+msgstr "Gold"
+
+msgid "lpaButtonColorDarkGray"
+msgstr "Dark Gray"
+
+msgid "lpaButtonColorLightGray"
+msgstr "Light Gray"
+
+msgid "lpaPqSelector"
+msgstr "PHPQuery selector"
+
+msgid "lpaPqMethod"
+msgstr "PHPQuery method"
+
+msgid "lpaPqMethodPrepend"
+msgstr "Prepend"
+
+msgid "lpaPqMethodAppend"
+msgstr "Append"
+
+msgid "lpaPqMethodBefore"
+msgstr "Before"
+
+msgid "lpaPqMethodAfter"
+msgstr "After"
+
+msgid "lpaPqMethodReplaceWith"
+msgstr "ReplaceWith"
+
+msgid "lpaButtonPreview"
+msgstr "Button preview"
+
+msgid "lpaButtonPreviewNotAvailable"
+msgstr "Button preview is not available until you have set up your merchant account data."
+
+msgid "lpaTemplateDefaults"
+msgstr "Template defaults"
+
+msgid "lpaTemplateDefaultsHint"
+msgstr "Click on a button to set the recommended default values for PHPQuery for the respective template.<br/>This also changes the login button settings!<br/>These values are only recommendations - please check if the buttons are placed correctly in your storefront."
+
+msgid "lpaExpertSettings"
+msgstr "Expert Settings"
+
+msgid "lpaAuthorizationModeLabel"
+msgstr "Authorization Mode"
+
+msgid "lpaAuthorizationModeOmni"
+msgstr "optimized"
+
+msgid "lpaAuthorizationModeSync"
+msgstr "synchronous"
+
+msgid "lpaAuthorizationModeHint"
+msgstr "Controls how authorization of payments is done.<br/>Optimized authorization will probably lead to slightly more accepted orders than synchronous authorization.<br/>However, with synchronous authorization there can never be orders in the shop that are still pending authorization and which might require additional steps by the customer before they can be transmit to the JTL-Wawi."
+
+msgid "lpaUseAmazonBillingAddressLabel"
+msgstr "Use Amazon Pay Billing Address"
+
+msgid "lpaUseAmazonBillingAddressHint"
+msgstr "Switches on/off whether the billing address provided by Amazon Pay should be used for orders. If this option is switched off, the billing address associated with the shop account will be used."
+
+msgid "lpaLoginRequiredFieldsOnlyLabel"
+msgstr "Only show required fields on account creation."
+
+msgid "lpaLoginRequiredFieldsOnlyHint"
+msgstr "Controls if only the required fields according to your registration configuration should be displayed. Else, all active fields are displayed, even if they are just optional."
+
+msgid "lpaCheckAccountMergeLabel"
+msgstr "Password Check for Account Merge"
+
+msgid "lpaCheckAccountMergeHint"
+msgstr "Switches on/off if customers that are not logged in but already known by email will be asked for the shop password before matching them.<br/>If you disable this option, it is possible to log in to existing shop accounts without knowing the shop password (the Amazon Pay password suffices).<br/>This option is not relevant if the customer is already logged in, created his account with the plugin or was previously logged in to the shop such that the plugin could verify their access."
+
+msgid "lpaCheckAccountCredentialsInvalid"
+msgstr "<i class=\"fas fa-times-circle\"></i> Credentials (Private Key or Public Key ID) invalid"
+
+msgid "lpaCheckAccountCredentialsValid"
+msgstr "<i class=\"fas fa-check-circle\"></i> Credentials validated"
+
+msgid "lpaCheckAccountStatusInvalid"
+msgstr "<i class=\"fas fa-check-circle\"></i> Account status invalid"
+
+msgid "lpaCheckAccountStatusValid"
+msgstr "<i class=\"fas fa-times-circle\"></i> Account status validated"
+
+msgid "lpaCheckAccountGenericError"
+msgstr "A generic error occured while trying to check your account status."
+
+msgid "lpaCronModeLabel"
+msgstr "Cron Mode"
+
+msgid "lpaCronModeOff"
+msgstr "off"
+
+msgid "lpaCronModeSync"
+msgstr "Wawi Sync"
+
+msgid "lpaCronModeTask"
+msgstr "Task Planner"
+
+msgid "lpaCronModeHint"
+msgstr "Controls when the cron job of the plugin is run (or if it is active, at all). The cron job tries to proactively refresh incomplete payments against Amazon Pay instead of relying on IPN messages alone. It also handles the creation of subscription orders.<br/>When <i>Wawi Sync</i> is selected, the cron job will run at the end of a wawi synchronization.<br/>When <i>Task Planner</i> is selected, the cron job will run together with other tasks (e.g. exports) when cron_inc.php is called. Note, that in order for this option to work, the option <i>\"Aufgabenplaner-Blindgrafik aktivieren?\"</i> in the settings of the current template has to be active or the cron job must be triggered externally.<br/>The cron job runs at most once per hour."
+
+msgid "lpaHidePaymentMethodLabel"
+msgstr "Hide in Payment Method Selection"
+
+msgid "lpaShowPaymentMethodLabel"
+msgstr "Show in Payment Method Selection"
+
+msgid "lpaHidePaymentMethodHint"
+msgstr "Switches on/off whether Amazon Pay will be hidden from the regular payment method selection in the regular checkout.<br/>If Amazon Pay is not hidden, it is displayed together with the regular payment methods. If it is selected and the customer clicks on continue, he will be redirected to the Amazon Pay when he clicks the Pay button."
+
+msgid "lpaShowPaymentMethodHint"
+msgstr "Switches on/off whether Amazon Pay will be shown in the regular payment method selection in the regular checkout.<br/>If Amazon Pay is shown, it is displayed together with the regular payment methods. If it is selected and the customer clicks on continue, he will be redirected to the Amazon Pay when he clicks the Pay button."
+
+msgid "lpaAddIncomingPaymentsLabel"
+msgstr "Add Incoming Payments"
+
+msgid "lpaAddIncomingPaymentsHint"
+msgstr "Controls whether the plugin sets incoming payments automatically for JTL-Wawi.<br/>You should only ever deactivate this option if you set your incoming payments in JTL-Wawi in a different way (e.g. manually or via the payment synchronisation module.)."
+
+msgid "lpaDeliveryNotificationsEnabledLabel"
+msgstr "Alexa Delivery Notifications"
+
+msgid "lpaDeliveryNotificationsEnabledHint"
+msgstr "Controls whether notifications are sent to the Amazon account of a customer when an order is being delivered."
+
+msgid "lpaMultiCurrencyEnabledLabel"
+msgstr "Multi-Currency Support"
+
+msgid "lpaMultiCurrencyEnabledHint"
+msgstr "Controls whether the customer can use a currency other than your Amazon Pay ledger currency for checkout, if that other currency is enabled in the shop and supported by Amazon Pay.<br/>Otherwise, the customer will be redirected to your ledger currency when entering the Amazon Pay checkout.<br/>Currencies supported by Amazon Pay are AUD, GBP, DKK, EUR, HKD, JPY, NZD, NOK, ZAR, SEK, CHF and USD.<br/>Please note that this feature is only available for merchants in the regions EU and UK."
+
+msgid "lpaOrders"
+msgstr "Orders"
+
+msgid "lpaSearchOrderPlaceholder"
+msgstr "Order ID / Amazon Reference ID"
+
+msgid "lpaSearchCTA"
+msgstr "Search"
+
+msgid "lpaOrderNumber"
+msgstr "Order number"
+
+msgid "lpaOrderStatusShop"
+msgstr "Shop Status"
+
+msgid "lpaChargePermissionId"
+msgstr "Charge Permission ID"
+
+msgid "lpaChargePermissionStatus"
+msgstr "Charge Permission Status"
+
+msgid "lpaAmount"
+msgstr "Amount (authorized)"
+
+msgid "lpaExpirationDate"
+msgstr "Expiration Date"
+
+msgid "lpaAction"
+msgstr "Action"
+
+msgid "lpaCloseWindow"
+msgstr "Close window"
+
+msgid "lpaOrderStatusCancelled"
+msgstr "Cancelled"
+
+msgid "lpaOrderStatusOpen"
+msgstr "Open"
+
+msgid "lpaOrderStatusInProgress"
+msgstr "Being processed"
+
+msgid "lpaOrderStatusPaid"
+msgstr "Paid"
+
+msgid "lpaOrderStatusShipped"
+msgstr "Shipped"
+
+msgid "lpaOrderStatusShippedPartially"
+msgstr "Partially shipped"
+
+msgid "lpaOrderRefreshCTA"
+msgstr "Refresh order"
+
+msgid "lpaOrderDetailsCTA"
+msgstr "Show details"
+
+msgid "lpaDetailsFor"
+msgstr "Details for"
+
+msgid "lpaCreateChargeCTA"
+msgstr "Create charge"
+
+msgid "lpaCancelChargePermissionCTA"
+msgstr "Cancel charge permission"
+
+msgid "lpaCloseChargePermissionCTA"
+msgstr "Close charge permission"
+
+msgid "lpaCharges"
+msgstr "Charges:"
+
+msgid "lpaChargeId"
+msgstr "ID"
+
+msgid "lpaChargeStatus"
+msgstr "Status"
+
+msgid "lpaAmountCaptured"
+msgstr "Amount (captured)"
+
+msgid "lpaAmountRefunded"
+msgstr "Amount (refunded)"
+
+msgid "lpaCaptureChargeCTA"
+msgstr "Capture"
+
+msgid "lpaCancelChargeCTA"
+msgstr "Cancel charge"
+
+msgid "lpaNoActionPossible"
+msgstr "no action possible"
+
+msgid "lpaCreateRefundCTA"
+msgstr "Refund"
+
+msgid "lpaRefundsFor"
+msgstr "Refunds for"
+
+msgid "lpaNone"
+msgstr "none"
+
+msgid "lpaRefundId"
+msgstr "ID"
+
+msgid "lpaRefundStatus"
+msgstr "Status"
+
+msgid "lpaPublicKeyIdSubject"
+msgstr "Public-Key ID Request for Merchant ID: %merchantid"
+
+msgid "lpaPublicKeyIdBody"
+msgstr "Dear Sir or Madam,%0D%0A%0D%0Aplease send me the public key ID for the following public key:%0D%0A%0D%0A%publickey%0D%0A%0D%0ABest regards.%0D%0A%0D%0A(Merchant ID: %merchantid)%0D%0A"
+
+msgid "lpaConfigErrorJsonMissing"
+msgstr "Please paste the copied access data into the text area."
+
+msgid "lpaConfigErrorJsonInvalid"
+msgstr "The given data was no valid JSON format. Please verify that you copied the data correctly."
+
+msgid "lpaConfigSuccessGeneric"
+msgstr "The given data has been saved."
+
+msgid "lpaConfigErrorMissingOrInvalidPrivateKey"
+msgstr "Private key is missing or does not contain header/footer lines. Nothing was saved."
+
+msgid "lpaConfigErrorMissingOrInvalidPublicKey"
+msgstr "Public key is missing or does not contain header/footer lines. Nothing was saved."
+
+msgid "lpaConfigSuccessKeys"
+msgstr "The given keys were saved. Please note that the plugin will not display the private key back to you for security reasons. Furthermore, please verify that your public key ID is correct (i.e. that it is the public key ID belonging to the given public key."
+
+msgid "lpaConfigSuccessPublicKeyId"
+msgstr "The given public key ID has been saved."
+
+msgid "lpaLoginButtonTitle"
+msgstr "Login with Amazon"
+
+msgid "lpaAlwaysAddReferenceToCommentLabel"
+msgstr "Append reference ID to order comment"
+
+msgid "lpaAlwaysAddReferenceToCommentHint"
+msgstr "If you enable this option, the reference ID (charge permission ID) will always be appended to the order comment, similar to the old plugin."
+
+msgid "lpaChargePermissionStatusFilter"
+msgstr "ChargePermission-Status Filter"
+
+msgid "lpaChargePermissionStatusFilterAll"
+msgstr "all"
+
+msgid "lpaChargePermissionStatusReasonFilter"
+msgstr "ChargePermission-Status Reason Filter"
+
+msgid "lpaChargePermissionStatusReasonFilterAll"
+msgstr "all"
+
+msgid "lpaTabSubscriptionOverview"
+msgstr "Subscription: Overview"
+
+msgid "lpaTabSubscriptionConfig"
+msgstr "Subscription: Settings"
+
+msgid "lpaSubscriptionSettings"
+msgstr "Subscription: Settings"
+
+msgid "lpaSubscriptionModeLabel"
+msgstr "Subscriptions Mode"
+
+msgid "lpaSubscriptionModeInactive"
+msgstr "Inactive"
+
+msgid "lpaSubscriptionModeExistingOnly"
+msgstr "Handle Existing Subscriptions Only"
+
+msgid "lpaSubscriptionModeActive"
+msgstr "Active"
+
+msgid "lpaSubscriptionDisplayDetailLabel"
+msgstr "Subscriptions on Detail Page"
+
+msgid "lpaSubscriptionDisplayCartLabel"
+msgstr "Subscriptions on Cart Page"
+
+msgid "lpaSubscriptionGlobalActiveLabel"
+msgstr "Global Interval Definition"
+
+msgid "lpaSubscriptionGlobalIntervalLabel"
+msgstr "Global Intervals"
+
+msgid "lpaSubscriptionFunctionalAttributeIntervalLabel"
+msgstr "Product Funktional Attribute for Intervals"
+
+msgid "lpaSubscriptionOrderAttributeFlagLabel"
+msgstr "Order Attribute Subscription Type"
+
+msgid "lpaSubscriptionOrderAttributeIntervalLabel"
+msgstr "Order Attribute Subscription Interval"
+
+msgid "lpaSubscriptionReminderMailLeadTimeDaysLabel"
+msgstr "Lead Time (in Days) for Reminder Mails"
+
+msgid "lpaSubscriptionNormalizeOrderTimeLabel"
+msgstr "Normalize Order Time"
+
+msgid "lpaSubscriptionNormalizeOrderTimeToLabel"
+msgstr "Normalize Order Time To"
+
+msgid "lpaSubscriptionModeHint"
+msgstr "Controls if subscriptions are enabled, only existing subscriptions should be handled or if they are disabled altogether."
+
+msgid "lpaSubscriptionDisplayDetailHint"
+msgstr "Controls if subscriptions can be selected on the product detail page.<br/>The functionality will not be available if any other products are in the cart already."
+
+msgid "lpaSubscriptionDisplayCartHint"
+msgstr "Controls if subscriptions can be selected on the cart page.<br/>The functionality will not be available if a product on sale or free gift product is in the cart, if coupons or store credit was used, if the total limit for the monthly recurring charge is exceeded or if the products in the cart do not share at least one common subscription interval."
+
+msgid "lpaSubscriptionGlobalActiveHint"
+msgstr "Controls if all products should be buyable via subscription.<br/>This will use the global intervals unless a product defines intervals of its own by using the functional attribute."
+
+msgid "lpaSubscriptionGlobalIntervalHint"
+msgstr "Global intervals to use if subscription is enabled for all products.<br/>Format: 3d,2w,1m = Intervals <b>every 3 days</b>, <b>every 2 weeks</b>, <b>every 1 months</b>.<br/>Note: Regarding intervals, 4 weeks are not the same as 1 month!"
+
+msgid "lpaSubscriptionFunctionalAttributeIntervalHint"
+msgstr "Functional attribute on products that controls which intervals are available for this product."
+
+msgid "lpaSubscriptionOrderAttributeFlagHint"
+msgstr "Order attribute that will be set on subscription orders.<br/>This attribute carries the information if this is a subscription order and which type it is, i.e. initial or recurring. For recurring orders this attribute contains the shop order number of the original order."
+
+msgid "lpaSubscriptionOrderAttributeIntervalHint"
+msgstr "Order attribute that will be set on subscription orders.<br/>This attribute carries the information which interval was selected for this order."
+
+msgid "lpaSubscriptionReminderMailLeadTimeDaysHint"
+msgstr "Lead time in days for reminder mails to be sent to customers before a new recurring order is created. 0 = disabled."
+
+msgid "lpaSubscriptionNormalizeOrderTimeHint"
+msgstr "Controls if for <b>recurring</b> orders the time of day should be normalized, such that all recurring orders will be created at the same time of day."
+
+msgid "lpaSubscriptionNormalizeOrderTimeToHint"
+msgstr "Time of day when <b>recurring</b> orders should be created. Only functional if <b>Normalize Order Time</b> is active."
+
+msgid "lpaSubscriptions"
+msgstr "Subscriptions Overview"
+
+msgid "lpaSubscriptionId"
+msgstr "ID"
+
+msgid "lpaCustomerEmail"
+msgstr "E-Mail (Customer)"
+
+msgid "lpaInitialOrderNumber"
+msgstr "Initial Order"
+
+msgid "lpaSubscriptionInterval"
+msgstr "Interval"
+
+msgid "lpaSubscriptionStatus"
+msgstr "Subscription Status"
+
+msgid "lpaSubscriptionNext"
+msgstr "Next Order"
+
+msgid "lpaSubscriptionCancel"
+msgstr "Cancel Subscription"
+
+msgid "lpaSubscriptionPause"
+msgstr "Pause Subscription"
+
+msgid "lpaSubscriptionResume"
+msgstr "Resume Subscription"
+
+msgid "lpaSubscriptionDetailsCTA"
+msgstr "Show Details"
+
+msgid "lpaSubscriptionChargeId"
+msgstr "Charge ID"
+
+msgid "lpaSubscriptionChargeStatus"
+msgstr "Charge Status"
+
+msgid "lpaSubscriptionOrderInitial"
+msgstr "initial"
+
+msgid "lpaSubscriptionOrderRecurring"
+msgstr "recurring"
+
+msgid "lpaSubscriptionCreateOrder"
+msgstr "Create Order Now"
+
+msgid "cancelSubscriptionTitle"
+msgstr "Cancel Subscription?"
+
+msgid "cancelSubscriptionDescription"
+msgstr "Do you want to cancel the subscription with ID <u>%subscriptionId</u> for the initial order <u>%orderNumber</u>?<br/>No further recurring orders will be created!"
+
+msgid "cancelSubscriptionConfirm"
+msgstr "Yes, cancel subscription"
+
+msgid "createOrderForSubscriptionTitle"
+msgstr "Create a new order now?"
+
+msgid "createOrderForSubscriptionDescription"
+msgstr "Do you want to create a new order for the subscription with ID <u>%subscriptionId</u> now?<br/>The next automatically recurring order will be timed such that it occurs from the current time plus the chosen interval."
+
+msgid "createOrderForSubscriptionConfirm"
+msgstr "Yes, create order now"
+
+msgid "lpaSubscriptionMaxAmountPrefix"
+msgstr "max."
+
+msgid "lpaSubscriptionMaxAmountPostfix"
+msgstr "/ month"
+
+
+msgid "pauseSubscriptionTitle"
+msgstr "Pause subscription?"
+
+msgid "pauseSubscriptionDescription"
+msgstr "Do you want to pause the subscription with ID <u>%subscriptionId</u>?<br/>For paused subscriptions no recurring orders are created!"
+
+msgid "pauseSubscriptionConfirm"
+msgstr "Yes, pause subscription"
+
+msgid "resumeSubscriptionTitle"
+msgstr "Resume subscription?"
+
+msgid "resumeSubscriptionDescription"
+msgstr "Do you want to resume the subscription with ID <u>%subscriptionId</u>?<br/>Recurring orders will be created again for this subscription!"
+
+msgid "resumeSubscriptionConfirm"
+msgstr "Yes, resume subscription"
+
+msgid "resumeSubscriptionCreateNow"
+msgstr "Create next order now."
+
+msgid "lpaSubscriptionNotificationMailAddressLabel"
+msgstr "Internal Notification Address"
+
+msgid "lpaSubscriptionNotificationMailAddressHint"
+msgstr "Internal information regarding subscriptions is sent to this mail address. Leave empty to use shop master mail address."
+
+msgid "lpaSubscriptionCustomerAccountPqSelectorLabel"
+msgstr "PQ-Selector Customer Account Hint"
+
+msgid "lpaSubscriptionCustomerAccountPqSelectorHint"
+msgstr "At this selector the hint and link to subscriptions is added in the customer account."
+
+msgid "lpaSubscriptionCustomerAccountPqMethodLabel"
+msgstr "PQ-Method Customer Account Hint"
+
+msgid "lpaSubscriptionCustomerAccountPqMethodHint"
+msgstr "With this method the hint and link to subscriptions is added in the customer account."
+
+msgid "changeHiddenButtonModeTitle"
+msgstr "Deactivate Hidden Button Mode?"
+
+msgid "changeHiddenButtonModeDescription"
+msgstr "You activated production mode, but the mode for hidden buttons is still active.<br/><br/>Do you want to deactivate the hidden button mode and show buttons in the storefront?<br/>(Will be applied after saving the settings.)"
+
+msgid "changeHiddenButtonModeCancel"
+msgstr "No"
+
+msgid "changeHiddenButtonModeConfirm"
+msgstr "Yes"
+
+msgid "lpaSelfCheckLoading"
+msgstr "Plugin status is being checked"
+
+msgid "lpaSelfCheckFailed"
+msgstr "Plugin status check failed - check your browser log and shop log for error messages."
+
+msgid "lpaLangVar_login_not_allowed"
+msgstr "The hint for the customer when they are not allowed to login with Amazon."
+
+msgid "lpaLangVar_return_error_generic"
+msgstr "The hint for the customer when something went wrong on returning with Login with Amazon"
+
+msgid "lpaLangVar_return_error_no_checkout"
+msgstr "The hint for the customer when a checkout is entered without active checkout session."
+
+msgid "lpaLangVar_error_generic"
+msgstr "The hint to be displayed on a generic error."
+
+msgid "lpaLangVar_error_checkout_generic"
+msgstr "The hint to display when a generic error occured while selecting shipping methods or using store credit."
+
+msgid "lpaLangVar_error_not_logged_in"
+msgstr "The hint to display when the customer is not logged in with Amazon but should be."
+
+msgid "lpaLangVar_error_missing_orid"
+msgstr "Error message on missing Order Reference ID."
+
+msgid "lpaLangVar_soft_decline"
+msgstr "Error message that the customer should change their payment method (in Amazon Pay)."
+
+msgid "lpaLangVar_account_merge_required"
+msgstr "Hint to display if an account merge is necessary."
+
+msgid "lpaLangVar_account_merge_successful"
+msgstr "Hint to display if an account merge was successful."
+
+msgid "lpaLangVar_account_create_address_selection_title"
+msgstr "Title above the address selection when a new account is created with Amazon Pay."
+
+msgid "lpaLangVar_address_selection_error"
+msgstr "Generic error message when there is a problem with the address selection."
+
+msgid "lpaLangVar_packstation_not_allowed"
+msgstr "Hint to display when a Packstation address is not allowed to be used."
+
+msgid "lpaLangVar_please_wait"
+msgstr "Please wait text."
+
+msgid "lpaLangVar_create_description"
+msgstr "Information text above the account creation form when an account is automatically created."
+
+msgid "lpaLangVar_create_description_optional"
+msgstr "Information text above the account creation form when an account is optionally created."
+
+msgid "lpaLangVar_create_description_guest"
+msgstr "Information text above the account creation form when an account creation is disabled."
+
+msgid "lpaLangVar_create_description_billing_override"
+msgstr "Information text above the account creation form when an account is automatically created and the billing address from Amazon is used."
+
+msgid "lpaLangVar_create_description_optional_billing_override"
+msgstr "Information text above the account creation form when an account is optionally created and the billing address from Amazon is used."
+
+msgid "lpaLangVar_create_description_guest_billing_override"
+msgstr "Information text above the account creation form when an account creation is disabled and the billing address from Amazon is used."
+
+msgid "lpaLangVar_general_billing_override"
+msgstr "Hint that the billing address from Amazon will be used for the order."
+
+msgid "lpaLangVar_checkout_currency_changed"
+msgstr "Hint that the currency has been switched during checkout."
+
+msgid "lpaLangVar_checkout_address_changed"
+msgstr "Hint that the delivery address was changed unexpectedly and no order was places."
+
+msgid "lpaLangVar_checkout_immediate_capture_title"
+msgstr "Text for the checkbox to confirm that the capture will happen immediately on placing the order."
+
+msgid "lpaLangVar_checkout_error_acknowledge_immediate_capture"
+msgstr "Error message to display when the customer does not confirm immediate capture."
+
+msgid "lpaLangVar_check_order_hint"
+msgstr "Hint for the customer that they can check the order before posting it in the next step."
+
+msgid "lpaLangVar_cancel_checkout"
+msgstr "Text for the link that the user can use to cancel the Amazon Pay checkout."
+
+msgid "lpaLangVar_hard_decline"
+msgstr "Error text when a user can not pay with Amazon Pay because he was declined."
+
+msgid "lpaLangVar_checkout_cart_changed_redirect"
+msgstr "Error message during the order when the cart has changed during processing."
+
+msgid "lpaLangVar_fail_safe_confirmation"
+msgstr "Error/hint to display when there was an error during the payment processing but the order has been created."
+
+msgid "lpaLangVar_billing_override_hint"
+msgstr "Hint that the billing address from Amazon will be used for the order."
+
+msgid "lpaLangVar_async_auth_hint"
+msgstr "Hint text on the Thank You page that tells the customer about a pending asynchronous authorization."
+
+msgid "lpaLangVar_behavioral_overlay_title"
+msgstr "Title of the behavioral overlay."
+
+msgid "lpaLangVar_behavioral_overlay_text"
+msgstr "Text in the behavioral overlay."
+
+msgid "lpaLangVar_no_shipping_method"
+msgstr "Hint when no shipping method is available."
+
+msgid "lpaLangVar_no_shipping_address"
+msgstr "Hint when the mapping of the shipping address was not possible."
+
+msgid "lpaLangVar_select_shipping_method"
+msgstr "Text to display instead of the payment widget when no shipping method was selected."
+
+msgid "lpaLangVar_change_amazonpay_paymethod"
+msgstr "Text to display at the link for changing the payment method in the Amazon Pay checkout."
+
+msgid "lpaLangVar_change_amazonpay_deliveryaddress"
+msgstr "Text to display at the link for changing the shipping address in the Amazon Pay checkout."
+
+msgid "lpaLangVar_payment_not_successful"
+msgstr "Message to display when the payment could not be executed successfully on Amazon Pay side."
+
+msgid "lpaLangVar_merchant_info_failed_recharge_on_expired"
+msgstr "Message to sent to the merchant when an expired charge could not be renewed."
+
+msgid "lpaLangVar_merchant_info_amazon_canceled_charge"
+msgstr "Message to sent to the merchant when Amazon cancels a charge."
+
+msgid "lpaLangVar_merchant_info_failed_capture"
+msgstr "Message to sent to the merchant when a capture on a charge could not be executed."
+
+msgid "lpaLangVar_closure_reason_storno"
+msgstr "Message to communicate to Amazon Pay when cancelling an order."
+
+msgid "lpaLangVar_apb_redirect_loader_icon"
+msgstr "Icon class for the loader icon to use when redirecting to Amazon Pay from the standard checkout."
+
+msgid "lpaLangVar_apb_redirect_text"
+msgstr "Text to display to the customer right before redirecting them to Amazon Pay from the standard checkout."
+
+msgid "lpaLangVar_apb_redirect_link_label"
+msgstr "Text to display for the link to Amazon Pay before redirecting them to Amazon Pay from the standard checkout."
+
+msgid "lpaLangVar_error_redirect"
+msgstr "Error message when redirecting the customer to Amazon Pay failed."
+
+msgid "lpaLangVar_subscription_customer_canceled"
+msgstr "Success message when a subscription was canceled."
+
+msgid "lpaLangVar_subscription_customer_cancel_failed"
+msgstr "Error message when a subscription could not be canceled."
+
+msgid "lpaLangVar_subscription_interval_select_label_title"
+msgstr "Title above the interval selection."
+
+msgid "lpaLangVar_subscription_interval_select_label_text"
+msgstr "Text above the interval selection."
+
+msgid "lpaLangVar_subscription_interval_display_none"
+msgstr "Selection for no interval / single order."
+
+msgid "lpaLangVar_subscription_interval_display_singular_d"
+msgstr "Interval selection day (when unit = 1)"
+
+msgid "lpaLangVar_subscription_interval_display_singular_w"
+msgstr "Interval selection week (when unit = 1)"
+
+msgid "lpaLangVar_subscription_interval_display_singular_m"
+msgstr "Interval selection month (when unit = 1)"
+
+msgid "lpaLangVar_subscription_interval_display_singular_y"
+msgstr "Interval selection year (when unit = 1)"
+
+msgid "lpaLangVar_subscription_interval_display_plural_d"
+msgstr "Interval selection days (when unit greater than 1)"
+
+msgid "lpaLangVar_subscription_interval_display_plural_w"
+msgstr "Interval selection weeks (when unit greater than 1)"
+
+msgid "lpaLangVar_subscription_interval_display_plural_m"
+msgstr "Interval selection months (when unit greater than 1)"
+
+msgid "lpaLangVar_subscription_interval_display_plural_y"
+msgstr "Interval selection years (when unit greater than 1)"
+
+msgid "lpaLangVar_subscription_error_redirect"
+msgstr "Error message when the customer tries to perform an Amazon Pay checkout with an invalid subscription interval."
+
+msgid "lpaLangVar_subscription_checkout_hint"
+msgstr "Hint text to display during checkout when a subscription is used."
+
+msgid "lpaLangVar_subscription_created_hint"
+msgstr "Hint text on the Thank You page when a subscription was successfully created."
+
+msgid "lpaLangVar_subscription_failed_hint"
+msgstr "DHint text on the Thank You page when the subscription could not be created."
+
+msgid "lpaLangVar_subscription_customer_subscriptions_available"
+msgstr "Hint text to display to the customer in the account view when subscriptions are available."
+
+msgid "lpaLangVar_subscription_customer_subscriptions_available_link"
+msgstr "Link label to display to the customer in the account view when subscriptions are available."
+
+msgid "lpaLangVar_subscription_customer_no_subscriptions"
+msgstr "Hint text for the customer when no subscriptions are available to display in the subscription overview."
+
+msgid "lpaLangVar_subscription_customer_confirm_cancel"
+msgstr "Text to display to the customer in their subscription overview: Confirmation of Cancellation."
+
+msgid "lpaLangVar_subscription_customer_charge_permission_id"
+msgstr "Text to display to the customer in their subscription overview: Column Charge-Permission-ID."
+
+msgid "lpaLangVar_subscription_customer_interval"
+msgstr "Text to display to the customer in their subscription overview: Column Interval."
+
+msgid "lpaLangVar_subscription_customer_orders"
+msgstr "Text to display to the customer in their subscription overview: Column Orders."
+
+msgid "lpaLangVar_subscription_customer_status"
+msgstr "Text to display to the customer in their subscription overview: Column Status."
+
+msgid "lpaLangVar_subscription_customer_next_order_time"
+msgstr "Text to display to the customer in their subscription overview: Column Next Timestamp."
+
+msgid "lpaLangVar_subscription_customer_action"
+msgstr "Text to display to the customer in their subscription overview: Column Actions."
+
+msgid "lpaLangVar_subscription_customer_status_canceled"
+msgstr "Text to display to the customer in their subscription overview: Status cancelled."
+
+msgid "lpaLangVar_subscription_customer_status_active"
+msgstr "Text to display to the customer in their subscription overview: Status active."
+
+msgid "lpaLangVar_subscription_customer_status_paused"
+msgstr "Text to display to the customer in their subscription overview: Status pause / pending review."
+
+msgid "lpaLangVar_subscription_customer_status_unknown"
+msgstr "Text to display to the customer in their subscription overview: Status unknown."
+
+msgid "lpaLangVar_subscription_customer_action_cancel"
+msgstr "Text to display to the customer in their subscription overview: Action Cancel."
+
+msgid "lpaLangVar_subscription_customer_order_recurring"
+msgstr "Text to display to the customer in their subscription overview: Hint for recurring order."
+
+msgid "lpaLangVar_subscription_customer_order_initial"
+msgstr "Text to display to the customer in their subscription overview: Hint for initial order."
+
+msgid "lpaLangVar_subscription_customer_description"
+msgstr "Text to display to the customer in their subscription overview: Intro text."
+
+msgid "lpaLangVar_subscription_customer_subscriptions_disabled"
+msgstr "Text to display to the customer in their subscription overview: Hint text when subscriptions are disabled."
+
+msgid "lpaSubscriptionDiscountModeLabel"
+msgstr "Subscription Discount Mode"
+
+msgid "lpaSubscriptionDiscountModeHint"
+msgstr "Controls whether the subscription discount mode is active and how it is applied. The subscription discount is a reduction on the payment method price depending on the configured discount rate. The discount rate can be set globally or individually for each product via functional attribute."
+
+msgid "lpaSubscriptionDiscountModeInactive"
+msgstr "inactive"
+
+msgid "lpaSubscriptionDiscountModeGlobal"
+msgstr "global"
+
+msgid "lpaSubscriptionDiscountModeAttribute"
+msgstr "functional attribute only"
+
+msgid "lpaSubscriptionDiscountGlobalLabel"
+msgstr "Global Discount Rate (in Percentage)"
+
+msgid "lpaSubscriptionDiscountGlobalHint"
+msgstr "In subscription discount mode \"global\" this controls the applied discount (in percentage)."
+
+msgid "lpaSubscriptionDiscountAttributeLabel"
+msgstr "Product Functional Attribute for Discount Rate"
+
+msgid "lpaSubscriptionDiscountAttributeHint"
+msgstr "Controls how the product function attribute for the discount rate must be called in JTL-Wawi. The functional attribut also overrides discounts in global subscription discount mode."

@@ -1,0 +1,18 @@
+.cluster {
+    --cluster-spacing: 1rem;
+    overflow: hidden;
+}
+
+.cluster > * {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: -0.5rem;
+    margin: calc(var(--cluster-spacing) / 2 * -1);
+}
+
+.cluster > * > * {
+    margin: 0.5rem;
+    margin: calc(var(--cluster-spacing) / 2);
+}

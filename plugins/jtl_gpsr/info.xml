@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<jtlshopplugin>
+    <Name>JTL GPSR - Angaben zur Produktsicherheit</Name>
+    <Description>Ergänzende Angaben zum Hersteller und verantwortlichen Personen.</Description>
+    <Author>JTL-Software-GmbH</Author>
+    <URL>https://www.jtl-software.de</URL>
+    <XMLVersion>100</XMLVersion>
+    <ShopVersion>5.0.7</ShopVersion>
+    <Version>1.0.4</Version>
+    <CreateDate>2024-08-06</CreateDate>
+    <PluginID>jtl_gpsr</PluginID>
+    <ExsID>f3ab9339-d4e3-4bbc-b914-4efac253f595</ExsID>
+    <Install>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Info</Name>
+            </Customlink>
+            <Settingslink sort="2">
+                <Name>Settings</Name>
+                <Setting type="Text" initialValue="" sort="1" conf="N" >
+                    <Name>Artikeldetailseite</Name>
+                    <Description />
+                    <ValueName>Spacer1</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="on" sort="3" conf="Y" >
+                    <Name>Auf der Artikeldetailseite anzeigen</Name>
+                    <Description>Sollen die Informationen auf der Artikeldetailseite angezeigt werden?</Description>
+                    <ValueName>gpsr_productdetails_show</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="productdetails/attributes.tpl" sort="5" conf="Y" >
+                    <Name>Templatedatei</Name>
+                    <Description>Geben Sie hier die Templatedatei an.</Description>
+                    <ValueName>gpsr_templatefile_productdetails</ValueName>
+                    <OptionsSource>
+                        <File>GPSRTemplatefileSrcDetail.php</File>
+                    </OptionsSource>
+                </Setting>
+                <Setting type="selectbox" initialValue="productdetails-attributes" sort="6" conf="Y" >
+                    <Name>Templateblock</Name>
+                    <Description>Geben Sie hier den Templateblock an.</Description>
+                    <ValueName>gpsr_templateblock_productdetails</ValueName>
+                    <OptionsSource>
+                        <File>GPSRTemplateblockSrcDetail.php</File>
+                    </OptionsSource>
+                </Setting>
+                <Setting type="selectbox" initialValue="prepend" sort="7" conf="Y">
+                    <Name>Anzeigeposition im Block</Name>
+                    <Description>Geben Sie hier die Anzeigeposition an.</Description>
+                    <ValueName>gpsr_templateposition_productdetails</ValueName>
+                    <SelectboxOptions>
+                        <Option value="prepend" sort="2">Am Anfang</Option>
+                        <Option value="append" sort="1">Am Ende</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="Text" initialValue="" sort="10" conf="N" >
+                    <Name>Artikelliste</Name>
+                    <Description />
+                    <ValueName>Spacer2</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="" sort="11" conf="Y" >
+                    <Name>Auf der Artikelliste anzeigen</Name>
+                    <Description>Sollen die Informationen auf der Artikelliste angezeigt werden?</Description>
+                    <ValueName>gpsr_productlist_show</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="productlist/item_list.tpl" sort="15" conf="Y" >
+                    <Name>Templatedatei</Name>
+                    <Description>Geben Sie hier die Templatedatei für die Liste an.</Description>
+                    <ValueName>gpsr_templatefile_productlist</ValueName>
+                    <OptionsSource>
+                        <File>GPSRTemplatefileSrcList.php</File>
+                    </OptionsSource>
+                </Setting>
+                <Setting type="selectbox" initialValue="productlist-item-list-buy-form" sort="16" conf="Y" >
+                    <Name>Templateblock</Name>
+                    <Description>Geben Sie hier den Templateblock für die Liste an.</Description>
+                    <ValueName>gpsr_templateblock_productlist</ValueName>
+                    <OptionsSource>
+                        <File>GPSRTemplateblockSrcList.php</File>
+                    </OptionsSource>
+                </Setting>
+                <Setting type="selectbox" initialValue="prepend" sort="17" conf="Y">
+                    <Name>Anzeigeposition im Block</Name>
+                    <Description>Geben Sie hier die Anzeigeposition an.</Description>
+                    <ValueName>gpsr_templateposition_productlist</ValueName>
+                    <SelectboxOptions>
+                        <Option value="prepend" sort="2">Am Anfang</Option>
+                        <Option value="append" sort="1">Am Ende</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="none" initialValue="" sort="50" conf="Y">
+                    <Name>Darstellung des Herstelllers</Name>
+                    <Description>Geben Sie hier die Darstellung der Herstellerangaben in Smarty-Syntax an.</Description>
+                    <ValueName>gpsr_template_manufacturer</ValueName>
+                </Setting>
+                <Setting type="none" initialValue="" sort="55" conf="Y">
+                    <Name>Darstellung der verantwortlichen Person</Name>
+                    <Description>Geben Sie hier die Darstellung der verantwortlichen Person in Smarty-Syntax an.</Description>
+                    <ValueName>gpsr_template_responsibleperson</ValueName>
+                </Setting>
+            </Settingslink>
+            <Customlink sort="3">
+                <Name>Darstellung</Name>
+            </Customlink>
+        </Adminmenu>
+        <Locales>
+            <Variable>
+                <Name>jtl_gpsr_ManufacturerLabel</Name>
+                <Description>Label für die Anzeige der Herstellerinformationen</Description>
+                <VariableLocalized iso="GER">Herstellerinformationen</VariableLocalized>
+                <VariableLocalized iso="ENG">Manufacturer information</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_gpsr_RespPersonLabel</Name>
+                <Description>Label für die Anzeige der verantwortlichen Person</Description>
+                <VariableLocalized iso="GER">verantwortliche Person</VariableLocalized>
+                <VariableLocalized iso="ENG">Responsible person</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_gpsr_SafetyInformationHeading</Name>
+                <Description>Überschrift im Template</Description>
+                <VariableLocalized iso="GER">Angaben zur Produktsicherheit</VariableLocalized>
+                <VariableLocalized iso="ENG">Product safety information</VariableLocalized>
+            </Variable>
+        </Locales>
+    </Install>
+</jtlshopplugin>

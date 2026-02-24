@@ -1,0 +1,40 @@
+/* istok-web-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Istok Web Regular'), local('IstokWeb-Regular'),
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* istok-web-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Istok Web';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Istok Web Italic'), local('IstokWeb-Italic'),
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* istok-web-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Istok Web Bold'), local('IstokWeb-Bold'),
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* istok-web-700italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Istok Web';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Istok Web Bold Italic'), local('IstokWeb-BoldItalic'),
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/istok_web/istok-web-v11-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

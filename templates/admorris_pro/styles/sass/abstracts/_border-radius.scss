@@ -1,0 +1,63 @@
+/* Border radius */
+
+@use 'sass:string';
+
+$border-radius-factor-sm: 1 !default;
+$border-radius-factor-md: 2 !default;
+$border-radius-factor-lg: 2.5 !default;
+
+$border-radius-factors: (
+    global: 0,
+    global-custom: 1,
+    buttons-inputs: global,
+    buttons-inputs-custom: 1,
+    images: global,
+    images-custom: 1,
+    panels: global,
+    panels-custom: 1,
+    images-product-details: global,
+    images-product-details-custom: 1,
+    images-product-list: global,
+    images-product-list-custom: 1,
+    images-product-slider: global,
+    images-product-slider-custom: 1,
+) !default;
+
+$border-radius-base: (
+    'xs': 2px,
+    'sm': 4px,
+    'md': 8px,
+    'lg': 12px,
+) !default;
+
+@mixin adm-border-radius($size: 'sm', $group: global, $border: 0px) {
+    border-radius: adm-border-radius($size, $group, $border);
+}
+
+@function adm-border-radius($size: 'sm', $group: global, $border: 0px) {
+    $factor-value: map-get($border-radius-factors, $group);
+
+    @if $factor-value == 'global' {
+        @if string.index($group, 'images-product') == 1 {
+            $factor-value: map-get($border-radius-factors, 'images');
+
+            @if $factor-value == 'global' {
+                $factor-value: map-get($border-radius-factors, 'global');
+            }
+            @if $factor-value == 'custom' {
+                $factor-value: map-get($border-radius-factors, 'images-custom');
+            }
+        } @else {
+            $factor-value: map-get($border-radius-factors, 'global');
+        }
+
+        @if $factor-value == 'custom' {
+            $factor-value: map-get($border-radius-factors, 'global-custom');
+        }
+    }
+    @if $factor-value == 'custom' {
+        $factor-value: map-get($border-radius-factors, '#{$group}-custom');
+    }
+
+    @return (map-get($border-radius-base, $size) * $factor-value) - $border;
+}

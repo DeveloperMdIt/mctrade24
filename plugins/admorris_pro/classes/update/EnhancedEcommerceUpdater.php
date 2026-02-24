@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\update; use Plugin\admorris_pro\ConsentManagerIntegration; use Plugin\admorris_pro\Models\EnhancedEcommerceTrackingModel; use Plugin\admorris_pro\update\AbstractUpdater; class EnhancedEcommerceUpdater extends AbstractUpdater { protected string $searchValue = "\x6d\141\162\x6b\x65\164\151\x6e\147\137\x65\156\x68\x61\156\143\145\144\137\145\x63\157\x6d\155\x65\162\143\x65\x5f"; protected string $model = EnhancedEcommerceTrackingModel::class; protected ?string $wasActive = "\x61\143\x74\151\166\145"; protected ?string $needsToBeActive = "\141\156\x61\154\x79\x74\151\x63\x73\x5f\x61\x63\164\151\x76\145"; public function renameConsentId() : void { $consent = $this->db->select("\164\x63\x6f\x6e\163\x65\x6e\164", "\x69\x74\x65\x6d\111\x44", "\x61\144\x6d\x6f\162\x72\151\x73\x2d\x65\x6e\150\x61\156\143\145\144\55\x65\x63\x6f\155\x6d\x65\162\143\x65"); if (!empty($consent)) { goto lpKza; } return; lpKza: $consent->itemID = "\141\x64\x6d\157\x72\x72\x69\x73\55\x61\x6e\141\x6c\x79\x74\x69\x63\x73"; $this->db->upsert("\164\x63\157\156\x73\x65\156\x74", $consent); ConsentManagerIntegration::bumpConsentVersion(); } }

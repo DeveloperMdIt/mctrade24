@@ -1,0 +1,120 @@
+/* Custom increase and reduce buttons for add-to-basket input */
+
+#quantity-grp {
+    // width: 100%;
+
+    @media (max-width: 991px) {
+        display: block;
+
+        .js-spinner {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .add-to-basket {
+            display: block;
+            width: 100%;
+        }
+
+        .actions-sm {
+            float: right;
+
+            .product-actions {
+                margin: 0;
+
+                button {
+                    padding: 1.1em 0.6em;
+                }
+            }
+        }
+    }
+}
+
+.js-spinner {
+    // margin: 1rem 0 2rem;
+    white-space: nowrap;
+    user-select: none; // avoid highlighting when multiple clicking
+
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    ::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    &-input > input[type='number'] {
+        &,
+        &.form-control {
+            font-size: 1.385rem;
+            color: $tone-base;
+            background-color: transparent;
+            width: 1px;
+            min-width: 50px;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+            text-align: center;
+            -moz-appearance: textfield;
+            height: 1.5em;
+        }
+    }
+
+    &-button {
+        position: relative;
+        border: 1px solid $tone-50;
+        height: $plus-n-minus-button-size;
+        width: $plus-n-minus-button-size;
+        border-radius: 50%;
+        opacity: 0.5;
+        background-color: transparent;
+        // cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:after,
+        &[data-spinner-button='up']:before {
+            content: ' ';
+            border-top: 1px solid $tone-base;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            transform: translate(-50%);
+        }
+
+        &[data-spinner-button='up']:before {
+            transform: translate(-50%) rotate(90deg);
+        }
+    }
+}
+
+.js-spinner__unit-addon {
+    font-size: pptfs(11px);
+    font-weight: normal;
+    color: $brand-tone50;
+    text-align: center;
+    margin: 0 auto;
+
+    .form-control {
+        height: pptfs(26px);
+    }
+}
+
+// .basket-action-wrapper .quantity-input {
+//     margin-right: 27px;
+// }
+
+.quantity-input--list {
+    text-align: right;
+    margin-right: 0;
+    margin-bottom: 10px;
+    @media (min-width: $screen-lg) {
+        margin-right: 27px;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\mailchimp\cron; class MailchimpCronItemDTO { public function __construct(public readonly int $itemId, public readonly string $itemType, public readonly int $itemModified, public readonly int $itemDelete, public readonly int $cronStatus = 0, public readonly string $cronStatusTime = '') { } public static function forExport(int $itemId, string $itemType) : self { return new self(itemId: $itemId, itemType: $itemType, itemModified: time(), itemDelete: 0); } public static function forDelete(int $itemId, string $itemType) : self { return new self(itemId: $itemId, itemType: $itemType, itemModified: time(), itemDelete: 1); } public function toStdClass() : \stdClass { $obj = new \stdClass(); $obj->itemId = $this->itemId; $obj->itemType = $this->itemType; $obj->itemModified = $this->itemModified; $obj->itemDelete = $this->itemDelete; $obj->cronStatus = $this->cronStatus; $obj->cronStatusTime = $this->cronStatusTime; return $obj; } }

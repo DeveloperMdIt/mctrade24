@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jtlshopplugin>
+    <Name>JTL DHL-Wunschzustellung</Name>
+    <Description><![CDATA[
+Implementiert die Empfängerservices von DHL (Packstation, Postfiliale, bevorzugter Liefertag, bevorzugter Ablageort,
+bevorzugter Nachbar) und kann die Versand-/Zahlungsarten hierfür einschränken
+    ]]></Description>
+    <Author>JTL-Software-GmbH</Author>
+    <URL>https://www.jtl-software.de</URL>
+    <XMLVersion>102</XMLVersion>
+    <PluginID>jtl_dhlwunschpaket</PluginID>
+    <ShopVersion>5.5.0</ShopVersion>
+    <Version>2.3.0</Version>
+    <CreateDate>2022-11-24</CreateDate>
+    <ExsID>5ad601de-2bb4-4ffd-9c9d-5de4e6146782</ExsID>
+    <Install>
+        <Adminmenu>
+            <Settingslink sort="1">
+                <Name>Einstellungen</Name>
+                <Setting type="text" initialValue="Y" sort="1" conf="N">
+                    <Name>Einstellungen für Anbieter DHL</Name>
+                    <Description></Description>
+                    <ValueName>ps_la_headline</ValueName>
+                </Setting>
+                <!-- Einstellungsparameter für DHL-Services -->
+                <Setting type="selectbox" initialValue="1" sort="2" conf="Y">
+                    <Name>DHL-Services anbieten</Name>
+                    <Description>Sollen die DHL-Services angeboten werden?</Description>
+                    <ValueName>jtl_pack_dhl_service</ValueName>
+                    <SelectboxOptions>
+                        <Option value="0" sort="1">Nein</Option>
+                        <Option value="1" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="0" sort="2" conf="Y">
+                    <Name>DHL-Kundennummer</Name>
+                    <Description>Ihre DHL-Kundennummer</Description>
+                    <ValueName>jtl_pack_dhl_ekp</ValueName>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="Y" sort="3" conf="Y">
+                    <Name>Versand an Packstation erlauben?</Name>
+                    <Description>Soll ein Versand an Packstationen möglich sein?</Description>
+                    <ValueName>jtl_pack_packstation_active</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="-1" sort="4" conf="Y" multiple="Y">
+                    <Name>Für Packstation erlaubte Versandarten</Name>
+                    <Description>Welche Versandarten sollen bei einer Lieferung an eine Packstation zur Verfügung stehen?
+                    </Description>
+                    <ValueName>jtl_pack_shippingmethods_packstation</ValueName>
+                    <OptionsSource>
+                        <File>jtl_pack_shippingmethods_selectbox.php</File>
+                    </OptionsSource>
+                    <SelectboxOptions>
+                        <Option value="0" sort="1">Leider fehlgeschlagen</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="5" conf="Y">
+                    <Name>Versandarten exklusiv für Packstation</Name>
+                    <Description>Exklusive Versandarten werden bei Bestellungen an normale Lieferanschriften ausgeblendet
+                    </Description>
+                    <ValueName>jtl_pack_shippingmethods_packstation_exclusive</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="Y" sort="10" conf="Y">
+                    <Name>Versand an Postfilialen erlauben?</Name>
+                    <Description>Soll ein Versand an Postfilialen möglich sein?</Description>
+                    <ValueName>jtl_pack_postfiliale_active</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="-1" sort="11" conf="Y" multiple="Y">
+                    <Name>Für Postfiliale erlaubte Versandarten</Name>
+                    <Description>Welche Versandarten sollen bei einer Lieferung an eine Postfiliale zur Verfügung stehen?
+                    </Description>
+                    <ValueName>jtl_pack_shippingmethods_filiale</ValueName>
+                    <OptionsSource>
+                        <File>jtl_pack_shippingmethods_selectbox.php</File>
+                    </OptionsSource>
+                    <SelectboxOptions>
+                        <Option value="0" sort="1">Leider fehlgeschlagen</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="12" conf="Y">
+                    <Name>Versandarten exklusiv für Postfiliale</Name>
+                    <Description>Exklusive Versandarten werden bei Bestellungen an normale Lieferanschriften ausgeblendet
+                    </Description>
+                    <ValueName>jtl_pack_shippingmethods_filiale_exclusive</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="1" sort="15" conf="Y">
+                    <Name>Suchfunktion für Packstationen / Postfilialen aktivieren</Name>
+                    <Description>Soll die Suchfunktion für Packstationen / Postfilialen aktiviert werden?
+                    </Description>
+                    <ValueName>jtl_pack_search_enabled</ValueName>
+                    <SelectboxOptions>
+                        <Option value="0" sort="1">Nein</Option>
+                        <Option value="1" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="Y" sort="20" conf="Y">
+                    <Name>Versand an bevorzugten Nachbarn erlauben?</Name>
+                    <Description>Soll ein Versand an einen bevorzugten Nachbarn möglich sein?</Description>
+                    <ValueName>jtl_pack_wunschnachbar_active</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="-1" sort="21" conf="Y" multiple="Y">
+                    <Name>Für bevorzugten Nachbarn erlaubte Versandarten</Name>
+                    <Description>Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Nachbarn zur Verfügung stehen?
+                    </Description>
+                    <ValueName>jtl_pack_shippingmethods_neighbour</ValueName>
+                    <OptionsSource>
+                        <File>jtl_pack_shippingmethods_selectbox.php</File>
+                    </OptionsSource>
+                    <SelectboxOptions>
+                        <Option value="0" sort="1">Leider fehlgeschlagen</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="22" conf="Y">
+                    <Name>Versandarten exklusiv für bevorzugten Nachbarn</Name>
+                    <Description>Exklusive Versandarten werden bei Bestellungen an normale Lieferanschriften ausgeblendet
+                    </Description>
+                    <ValueName>jtl_pack_shippingmethods_neighbour_exclusive</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+
+                <Setting type="text" initialValue="0" sort="30" conf="N">
+                    <Name>Einstellungen für bevorzugten Ort und Tag</Name>
+                    <Description>Einstellungen für bevorzugten Ort und Tag</Description>
+                    <ValueName>jtl_pack_wowzwt_settings</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="Y" sort="31" conf="Y">
+                    <Name>Zustellung an bevorzugten Ort erlauben?</Name>
+                    <Description>Soll eine Zustellung an einen bevorzugten Ort erlaubt werden?</Description>
+                    <ValueName>jtl_pack_wunschort_active</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="Y" sort="32" conf="Y">
+                    <Name>Zustellung an bevorzugtem Tag erlauben?</Name>
+                    <Description>Soll eine Zustellung an einem bevorzugten Tag erlaubt werden?</Description>
+                    <ValueName>jtl_pack_wunschtag_active</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="text" initialValue="0" sort="40" conf="N">
+                    <Name>Einstellungen für DHL-Services</Name>
+                    <Description>Einstellungen für die Nutzung der DHL-Services</Description>
+                    <ValueName>jtl_pack_wp_settings</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="-1" sort="41" conf="Y" multiple="Y">
+                    <Name>Erlaubte Versandarten für bevorzugten Ort und Tag</Name>
+                    <Description>Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Ort zur Verfügung stehen?
+                    </Description>
+                    <ValueName>jtl_pack_shippingmethods_services</ValueName>
+                    <OptionsSource>
+                        <File>jtl_pack_shippingmethods_selectbox.php</File>
+                    </OptionsSource>
+                    <SelectboxOptions>
+                        <Option value="0" sort="1">Leider fehlgeschlagen</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="4.6" sort="42" conf="Y">
+                    <Name>Zusatzkosten für Zustellung an bevorzugtem Tag</Name>
+                    <Description>Zusatzkosten bei Zustellung an bevorzugtem Tag (Format: 4.60)</Description>
+                    <ValueName>jtl_pack_wunschtag_costs</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="0" sort="50" conf="N">
+                    <Name>Versandeinstellungen für DHL-Services</Name>
+                    <Description>Versandeinstellungen zur Ermittlung von verfügbaren Tagen</Description>
+                    <ValueName>jtl_pack_vs_settings</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="SA,SO" sort="51" conf="Y">
+                    <Name>Ausgeschlossene Versandtage</Name>
+                    <Description>Tage an denen keine Ware versendet wird - verfügbare Werte: MO - Montag, DI - Dienstag, MI - Mittwoch, DO - Donnerstag, FR - Freitag, SA - Samstag, SO - Sonntag
+                    </Description>
+                    <ValueName>jtl_pack_keineversandtage</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="12:00" sort="52" conf="Y">
+                    <Name>Letzte Bestellzeit</Name>
+                    <Description>Nach dieser Uhrzeit erfolgt der Versand erst am nächsten verfügbaren Tag - Format der Zeit: 12:00 oder 14:00
+                    </Description>
+                    <ValueName>jtl_pack_cutofftime</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="0" sort="53" conf="Y">
+                    <Name>Bearbeitungszeit (in Tagen)</Name>
+                    <Description>Die Anzahl der hier gesetzten Tage wird auf das mögliche Versanddatum hinzuaddiert
+                    </Description>
+                    <ValueName>jtl_pack_workingtime</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="54" conf="Y">
+                    <Name>Warenkorb-Lieferzeit für bevorzugten Tag beachten?</Name>
+                    <Description>Soll die Warenkorb-Lieferzeit für die Berechnung des bevorzugten Tags beachtet werden (bitte nächste Einstellung beachten!)?
+                    </Description>
+                    <ValueName>jtl_pack_checkdeliverydays</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="0">Nein</Option>
+                        <Option value="Y" sort="1">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="10" sort="55" conf="Y">
+                    <Name>Warenkorb-Lieferzeit nur beachten wenn größer als</Name>
+                    <Description>Die Lieferzeit wird nur für die Berechnung des bevorzugten Tags herangezogen wenn der Wert größer ist als hier hinterlegt
+                    </Description>
+                    <ValueName>jtl_pack_deliverydaylimit</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="0" sort="60" conf="N">
+                    <Name>JTL-Wawi-Einstellungen</Name>
+                    <Description>Einstellungen für JTL-Wawi</Description>
+                    <ValueName>jtl_pack_wawi_settings</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="15x" sort="61" conf="Y">
+                    <Name>Genutzte JTL-Wawi-Version</Name>
+                    <Description>Welche JTL-Wawi-Version wird aktuell genutzt?</Description>
+                    <ValueName>jtl_pack_wawiversion</ValueName>
+                    <SelectboxOptions>
+                        <Option value="14x" sort="0">Version kleiner 1.5.8.x</Option>
+                        <Option value="15x" sort="1">Version größer 1.5.8.x</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="text" initialValue="Y" sort="900" conf="N">
+                    <Name>Systemeinstellungen</Name>
+                    <Description>Einstellungsparameter für debug-Ausgabe</Description>
+                    <ValueName>jtl_pack_headline6</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="0" sort="901" conf="Y">
+                    <Name>debug-Ausgabe in Systemlog</Name>
+                    <Description>debug-Ausgabe in Systemlog schreiben?</Description>
+                    <ValueName>jtl_pack_debug_syslog</ValueName>
+                    <SelectboxOptions>
+                        <Option value="0" sort="1">Aus</Option>
+                        <Option value="1" sort="2">An</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="N" sort="1001" conf="Y">
+                    <Name>DHL-Sandbox-Modus</Name>
+                    <Description>Handelt es sich um ein Testsystem und sollen Abfragen über die DHL-Sandbox durchgeführt werden?
+                    </Description>
+                    <ValueName>jtl_pack_sandbox</ValueName>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="0">Ja</Option>
+                        <Option value="N" sort="1">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="" sort="1002" conf="Y">
+                    <Name>DHL-Sandbox-Benutzername</Name>
+                    <Description>Ihr Benutzername für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)
+                    </Description>
+                    <ValueName>jtl_pack_sandboxuser</ValueName>
+                </Setting>
+                <Setting type="password" initialValue="" sort="1003" conf="Y">
+                    <Name>DHL-Sandbox-Passwort</Name>
+                    <Description>Ihr Passwort für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)
+                    </Description>
+                    <ValueName>jtl_pack_sandboxpassword</ValueName>
+                </Setting>
+            </Settingslink>
+        </Adminmenu>
+
+        <Locales>
+            <!-- Sprachvariablen für DHL-Services -->
+            <Variable>
+                <Name>ps_la_dhl_label</Name>
+                <Description>Auswahltext bei Lieferanschrift Packstation</Description>
+                <VariableLocalized iso="GER">Lieferung an DHL-Packstation</VariableLocalized>
+                <VariableLocalized iso="ENG">Delivery to DHL-Packstation</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>ps_la_dhl_label2</Name>
+                <Description>Auswahltext bei Lieferanschrift Postfiliale</Description>
+                <VariableLocalized iso="GER">Lieferung an Postfiliale Direkt</VariableLocalized>
+                <VariableLocalized iso="ENG">Delivery to Postoffice Direct</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>ps_la_dhl_label3</Name>
+                <Description>Auswahltext bei Lieferung an bevorzugten Nachbarn</Description>
+                <VariableLocalized iso="GER">Lieferung an bevorzugten Nachbarn</VariableLocalized>
+                <VariableLocalized iso="ENG">Delivery to preferred neighbour</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>ps_la_dhl_postnr</Name>
+                <Description>Überschrift für Postnummer</Description>
+                <VariableLocalized iso="GER">Ihre Post-Nummer</VariableLocalized>
+                <VariableLocalized iso="ENG">Your Post-Number</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>ps_la_dhl_packnr</Name>
+                <Description>Überschrift für Packstationnummer</Description>
+                <VariableLocalized iso="GER">Ihre Packstation-Nummer</VariableLocalized>
+                <VariableLocalized iso="ENG">Your Packstation-Number</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>ps_la_dhl_filinr</Name>
+                <Description>Überschrift für Postfilialnummer</Description>
+                <VariableLocalized iso="GER">Ihre Postfilial-Nummer</VariableLocalized>
+                <VariableLocalized iso="ENG">Your Poststation-Number</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>ps_la_dhl_labelservices</Name>
+                <Description>Überschrift für Label</Description>
+                <VariableLocalized iso="GER">DHL-Empfängerservices (nur innerhalb D)</VariableLocalized>
+                <VariableLocalized iso="ENG">DHL-Services (only in D)</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>ps_la_dhl_linkservices</Name>
+                <Description>Verlinkung zu DHL-Services</Description>
+                <VariableLocalized iso="GER">Für weitere Informationen zu den DHL-Empfängerservices und zur Anmeldung
+                    klicken Sie bitte hier:
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">For more information about DHL-Services and to login click here:
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_searchbtn</Name>
+                <Description>Beschriftung des Such-Buttons</Description>
+                <VariableLocalized iso="GER">Packstation / Postfiliale suchen</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_wunschnachbar</Name>
+                <Description>Beschriftung Zustellung an bevorzugten Nachbarn</Description>
+                <VariableLocalized iso="GER">Zustellung an bevorzugten Nachbarn</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_wunschtag</Name>
+                <Description>Beschriftung Zustellung an bevorzugtem Liefertag</Description>
+                <VariableLocalized iso="GER">Zustellung an bevorzugtem Liefertag</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_wunschtag_value</Name>
+                <Description>Beschriftung "bevorzugter Liefertag"-Feld</Description>
+                <VariableLocalized iso="GER">Bevorzugter Liefertag</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_no_wunschtag_value</Name>
+                <Description>Beschriftung "kein bevorzugter Liefertag"-Feld</Description>
+                <VariableLocalized iso="GER">Kein bevorzugter Liefertag</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_wunschort</Name>
+                <Description>Beschriftung Zustellung an bevorzugten Ablageort</Description>
+                <VariableLocalized iso="GER">Zustellung an bevorzugten Ablageort</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_wunschort_value</Name>
+                <Description>Beschriftung "Bevorzugtem Ablageort"-Feld</Description>
+                <VariableLocalized iso="GER">z.B. Carport, Garage, etc.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_dhl_label</Name>
+                <Description>Auswahltext bei Lieferanschrift Packstation</Description>
+                <VariableLocalized iso="GER">Lieferung an DHL-Packstation</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_dhl_label2</Name>
+                <Description>Auswahltext bei Lieferanschrift Postfiliale</Description>
+                <VariableLocalized iso="GER">Lieferung an Postfiliale Direkt</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_dhl_label3</Name>
+                <Description>Lieferung an bevorzugten Nachbarn</Description>
+                <VariableLocalized iso="GER">Zustellung an bevorzugten Nachbarn</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_dhl_wunschtag_hinweis</Name>
+                <Description>Hinweis zu Zusatzkosten bei Buchung der Zustellung an bevorzugtem Tag</Description>
+                <VariableLocalized iso="GER">Für diesen Service fallen zusätzliche Versandkosten in Höhe von
+                    ###VERSANDKOSTEN_WUNSCHTAG### inkl. MwSt. an. *
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_loading_advice</Name>
+                <Description>Hinweis zum Ladezeitpunkt der verfürgbaren Paketoptionen</Description>
+                <VariableLocalized iso="GER">Die verfügbaren Service-Optionen werden nach Eingabe der Adresse
+                    ermittelt.
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_error_header</Name>
+                <Description>Überschrift für Fehlerhinweis</Description>
+                <VariableLocalized iso="GER">Es ist ein Fehler aufgetreten!</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_error_text</Name>
+                <Description>Fehlerhinweistext</Description>
+                <VariableLocalized iso="GER">Es konnten entweder keine verfügbaren Services für die von Ihnen angegebene
+                    Adresse ermittelt werden oder die Schnittstelle der DHL-Services ist aktuell nicht verfügbar!
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_search_header</Name>
+                <Description>Überschrift für das Such-Overlay</Description>
+                <VariableLocalized iso="GER">Postfilialen- / Packstations-Suche</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_search_info</Name>
+                <Description>Hinweis zu gefundenen Suchergebnissen</Description>
+                <VariableLocalized iso="GER">Es wurden %s %s gefunden</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_search_noresult</Name>
+                <Description>Hinweis das es keine Suchergebnisse gibt</Description>
+                <VariableLocalized iso="GER">Es wurden leider keine Postfilialen oder Packstationen gefunden!
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_search_usedata</Name>
+                <Description>Beschriftung für Datenübernahme-Button</Description>
+                <VariableLocalized iso="GER">Eintrag nutzen</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_address</Name>
+                <Description>Beschriftung für Tabellenspalte Adresse</Description>
+                <VariableLocalized iso="GER">Adresse</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_distance</Name>
+                <Description>Beschriftung für Tabellenspalte Entfernung</Description>
+                <VariableLocalized iso="GER">Entfernung</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_posname</Name>
+                <Description>Bezeichnung der Warenkorb-Position für DHL-Service-Gebühren</Description>
+                <VariableLocalized iso="GER">DHL-Service-Gebühren</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_packstation</Name>
+                <Description>Bezeichnung der Packstation</Description>
+                <VariableLocalized iso="GER">Packstation(en)</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_postfiliale</Name>
+                <Description>Bezeichnung der Postfilialen</Description>
+                <VariableLocalized iso="GER">Postfiliale(n)</VariableLocalized>
+            </Variable>
+
+            <Variable>
+                <Name>jtl_pack_noservicecosts</Name>
+                <Description>Hinweis auf kostenlose Bereitstellung der DHL-Service</Description>
+                <VariableLocalized iso="GER">Für die Nutzung der DHL-Services fallen keine weiteren Kosten
+                    an.
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_dhlpaketshop</Name>
+                <Description>Kennzeichnung von DHL-Paketshops</Description>
+                <VariableLocalized iso="GER">DHL-Paketshop</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_postbank</Name>
+                <Description>Kennzeichnung von Postbank-Filialen</Description>
+                <VariableLocalized iso="GER">Postbank-Filiale</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_postoffice</Name>
+                <Description>Kennzeichnung DHL-Filialen</Description>
+                <VariableLocalized iso="GER">DHL-Filiale</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_pos_name</Name>
+                <Description>Bezeichnung für Warenkob-Position der Kosten für eine Zustellung am bevorzugten Tag</Description>
+                <VariableLocalized iso="GER">Gebühren für Zustellung an bevorzugtem Tag</VariableLocalized>
+                <VariableLocalized iso="ENG">Fees for desired day delivery</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_result_advice</Name>
+                <Description>Hinweis auf Herkunft der Suchergebnisse</Description>
+                <VariableLocalized iso="GER">Wir können leider keine Vollständigkeit der von DHL gelieferten
+                    Suchergebnisse garantieren. Gerne können Sie die Daten ihrer Postfiliale/Station manuell eingeben
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">Unfortunately, we cannot guarantee the completeness of the search results
+                    provided by DHL. You are welcome to enter the data of your desired branch/station manually
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_invalid_delivery_date</Name>
+                <Description>Hinweis auf Herkunft der Suchergebnisse</Description>
+                <VariableLocalized iso="GER">Das gewünschte Lieferdatum ist nicht verfügbar! Bitte wählen Sie ein
+                    anderes bevorzugtes Lieferdatum!
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">The requested delivery date is not available! Please choose another desired
+                    delivery date!
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_pack_invalid_delivery_method</Name>
+                <Description>Fehlermeldung bei ungültiger Versandart</Description>
+                <VariableLocalized iso="GER">Die gewählte Versandart %s ist ungültig! Bitte wählen Sie eine andere Versandart aus!
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">The requested shipping method is not available! Please choose another shipping method!
+                </VariableLocalized>
+            </Variable>
+        </Locales>
+        <CSS>
+            <file>
+                <name>jtl_pack.css</name>
+                <priority>5</priority>
+            </file>
+        </CSS>
+        <JS>
+            <file>
+                <name>jtl_pack.js</name>
+                <priority>5</priority>
+                <position>body</position>
+            </file>
+        </JS>
+    </Install>
+</jtlshopplugin>

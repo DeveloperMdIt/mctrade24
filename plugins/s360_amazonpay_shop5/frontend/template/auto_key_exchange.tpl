@@ -1,0 +1,1 @@
+{* This should never be rendered - the page returns JSON only or an HTTP error. *}

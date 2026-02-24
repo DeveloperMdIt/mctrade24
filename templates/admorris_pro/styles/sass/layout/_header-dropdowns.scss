@@ -1,0 +1,455 @@
+/**
+ * Dropdown Menus
+ */
+
+// .megamenu {
+//     .dropdown-menu {
+//         opacity: 0;
+//         visibility: hidden;
+//     }
+
+//     .dropdown.open .dropdown-menu {
+//         opacity: 1;
+//         display: block;
+//         visibility: visible;
+//     }
+// }
+
+.header__nav-wrapper .dropdown-menu {
+    color: $header-dropdown-text-color;
+    background-color: $header-dropdown-background-color;
+    text-transform: none;
+    font-weight: initial;
+
+    .dropdown-item,
+    legend,
+    table,
+    .text-muted-util {
+        color: $header-dropdown-text-color;
+    }
+}
+
+.header-wrapper .dropdown-menu {
+    .dropdown-item,
+    .dropdown-link {
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            background-color: rgba(#999, 50%);
+        }
+    }
+}
+
+[id='header-container'] {
+    // Base Style for dropdown and megamenu
+    .dropdown-menu {
+        border-radius: $dropdown-border-radius;
+        box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            1px -1px 6px -4px rgba(0, 0, 0, 0.1);
+        transform-origin: top var(--transform-origin-X, left);
+
+        animation-composition: add;
+    }
+    .dropdown-menu-right {
+        transform-origin: top right;
+    }
+
+    .dropdown-menu--full-width {
+        width: calc(100vw - (100vw - 100%));
+        border-radius: 0;
+        left: 0 !important;
+        transform: unset !important;
+        top: unset !important;
+    }
+
+    .navbar-nav > .dropdown:has(.dropdown-menu--full-width) {
+        position: unset;
+    }
+}
+
+// .dropdown-animation-standard {
+//     backface-visibility: hidden;
+
+//     .dropdown-menu-right {
+//         transform-origin: top right;
+//     }
+// }
+
+// .dropdown-position-center {
+//     left: 50%;
+//     transform: translateX(-50%);
+//     --translateX: -50%;
+//     --transform-origin-X: center;
+// }
+
+.dropdown {
+    --transform-origin-X: left;
+}
+
+.dropdown-position-right {
+    // right: 0;
+    --transform-origin-X: right;
+}
+
+.dropdown-position-left {
+    // left: 0;
+    --transform-origin-X: left;
+}
+
+@supports (animation-composition: add) {
+    .animation-fade {
+        opacity: 0; // Set initial opacity explicitly
+        animation: menuFade 300ms forwards; // Shorter duration and ensure it maintains final state
+    }
+
+    .animation-fadeIn {
+        opacity: 0;
+        animation:
+            menuFade 250ms forwards,
+            menuFadeIn 250ms forwards;
+    }
+    .animation-rotate {
+        transform-origin: top center;
+        // transform-style: preserve-3d;
+        // perspective: 1800px;
+        opacity: 0;
+        animation:
+            am-fade-in 250ms forwards,
+            menuRotate 400ms;
+    }
+    .animation-scale {
+        opacity: 0;
+        animation:
+            menuFade 350ms forwards,
+            menuScale 200ms;
+    }
+
+    .animation-standard {
+        animation: 0.3s cubic-bezier(0.45, 0.47, 0.41, 0.92) am-scale-in;
+        /* disable transition set by evo template, because is is causing a bug in Safari in combination with the animation */
+        transition: none !important;
+
+        > * {
+            animation: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) am-fade-in;
+        }
+    }
+}
+
+// keyframes animations for menu
+@keyframes menuFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menuFadeIn {
+    from {
+        transform: translateY(10px) translateX(var(--translateX, 0));
+    }
+    to {
+        transform: translateY(0) translateX(var(--translateX, 0));
+    }
+}
+
+@keyframes menuRotate {
+    from {
+        transform: perspective(1000px) rotateX(-75deg) translateX(var(--translateX, 0));
+    }
+    to {
+        transform: perspective(1000px) rotateX(0) translateX(var(--translateX, 0));
+    }
+}
+
+@keyframes menuScale {
+    from {
+        transform: scale(1.15) translateX(var(--translateX, 0));
+    }
+    to {
+        transform: scale(1) translateX(var(--translateX, 0));
+    }
+}
+
+/* $header-dropdown-animation is set to am-scale-in in variables.scss by default */
+
+@keyframes am-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.1); /* problem in webkit with large menu occured when 0 war used to scale from */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes am-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/**
+ * login dropdown
+ */
+
+[id='login-dropdown'] {
+    padding: 32px;
+    padding-bottom: 10px;
+    min-width: 327px;
+
+    .form-control {
+        border: 0;
+        border-bottom: 1px solid $tone-10;
+        box-shadow: none;
+        &:focus {
+            border-bottom: 1px solid $primary;
+        }
+    }
+
+    .password-forgotten-link {
+        margin-block: 1rem;
+        color: rgba($header-dropdown-text-color, 60%);
+    }
+
+    > .btn-link {
+        color: rgba($header-dropdown-text-color, 60%);
+    }
+}
+
+.header__desktop-nav .account-dropdown {
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+
+    .dropdown-divider {
+        margin: 0;
+    }
+}
+
+.login-dropdown {
+    .btn-link {
+        &:active,
+        &:focus,
+        &:hover {
+            text-decoration: none;
+            background-color: $tone-10;
+        }
+    }
+}
+
+.cart-dropdown {
+    min-width: 410px;
+
+    overflow-x: auto;
+
+    .free-gift-hint {
+        padding: 16px 32px;
+    }
+    .cart-menu--dropdown & {
+        max-height: 70vh;
+
+        @supports (max-height: calc(100vh - var(--some-var))) {
+            max-height: calc(100vh - var(--adm-header-height, 100px) - 20px);
+        }
+    }
+
+    .dropdown-cart-items {
+        margin: $base-spacing 0;
+
+        word-break: break-word;
+
+        .item-name {
+            max-width: 200px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        .item-price,
+        .item-quantity {
+            text-align: right;
+            vertical-align: middle;
+        }
+    }
+
+    /* coupon button */
+    .mini-basket-coupon__button:where(:not(:hover):not(:focus):not(:active)) {
+        color: $header-dropdown-text-color;
+        border-color: rgba($header-dropdown-text-color, 80%);
+    }
+
+    a:not(.btn) {
+        &,
+        &:active,
+        &:visited {
+            color: $header-dropdown-text-color;
+        }
+        &:hover {
+            color: rgba($header-dropdown-text-color, 80%);
+        }
+    }
+
+    .btn-link {
+        color: inherit;
+    }
+}
+
+/* Cart Sidebar */
+.cart-menu--sidebar {
+    .cart-dropdown {
+        position: fixed;
+        z-index: 10001;
+        top: 0;
+        left: 100%;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(0);
+        transition: 0.5s transform ease-in-out;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: $body-bg;
+        color: $text-color;
+        visibility: hidden;
+
+        .header-row__col--1 & {
+            left: auto;
+            right: 100%;
+        }
+
+        .cart-dropdown__wrapper {
+            max-height: 100%;
+
+            &--items {
+                height: 100%;
+                /* fade top and bottom */
+                $shadow-color: fadein($text-color, 100%);
+                @include scroll-shadow-vertical($body-bg, 0.15, $text-color);
+            }
+        }
+    }
+
+    &.show {
+        &::before {
+            content: ' ';
+            display: block;
+            position: fixed;
+            z-index: 10000;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-color: $tone-50;
+        }
+
+        .cart-dropdown {
+            transform: translateX(-100%);
+            visibility: visible;
+
+            .header-row__col--1 & {
+                transform: translateX(100%);
+            }
+        }
+
+        html:has(&) {
+            overflow: hidden;
+        }
+    }
+
+    .cart-siderbar-close-button {
+        border-radius: 0;
+    }
+}
+
+.cart-dropdown__wrapper {
+    padding: 0 32px;
+}
+
+.cart-dropdown__wrapper--items {
+    $height: calc($table-cell-padding * 2 + $dropdown-font-size * 2);
+    $addOnce: $base-spacing * 2 + 2rem;
+
+    min-height: calc($height + $addOnce);
+
+    &:has(.dropdown-cart-items tr:nth-child(2)) {
+        min-height: calc($height * 2 + $addOnce);
+    }
+    &:has(.dropdown-cart-items tr:nth-child(3)) {
+        min-height: calc($height * 3 + $addOnce);
+    }
+    &:has(.dropdown-cart-items tr:nth-child(4)) {
+        min-height: calc($height * 4 + $addOnce);
+    }
+
+    /* fade top and bottom */
+    $shadow-color: fadein($header-dropdown-text-color, 100%);
+    @include scroll-shadow-vertical($header-dropdown-background-color, 0.15, $header-dropdown-text-color);
+    $bottom-spacing: $base-spacing * 13;
+
+    @supports (max-height: calc(100vh - var(--some-var))) {
+        max-height: calc(100vh - var(--adm-header-height, 50px) - 10px - var(--adm-cart-dropdown-bottom-height, 50px));
+        overflow-y: auto;
+        position: relative;
+    }
+}
+
+.cart-dropdown__shipping-info {
+    // margin: 10px 0 0;
+    background-color: $tone-10;
+    color: $brand-tone50;
+    font-size: 13px;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-dropdown .text-muted,
+.cart-dropdown__shipping-info {
+    color: $header-dropdown-text-color;
+}
+
+.dropdown-cart-items {
+    tbody > tr:first-child td {
+        border-top: 0;
+    }
+}
+
+.dropdown-cart-items__image {
+    width: 100px - 16px;
+    height: auto;
+    @include adm-border-radius('xs', 'images');
+}
+
+.dropdown-cart-items__image-cell.dropdown-cart-items__image-cell {
+    padding-left: 0;
+}
+
+.dropdown-cart-items__image-cell {
+    box-sizing: content-box;
+    width: 84px;
+}
+
+.dropdown-cart-items__image-cell--small {
+    width: 48px;
+}
+
+.dropdown-cart-items__item-name.dropdown-cart-items__item-name {
+    // higher specificity than bootstrap style with vertical-align: top needed
+    vertical-align: middle;
+}
+
+.cart-dropdown__empty-note {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}

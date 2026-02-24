@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use '../vendor/utopia/utopia';
+@use '../abstracts/functions' as *;
+
+.admPro-container {
+    @include admPro-container();
+}
+
+// Produclist row width template option
+.container--xs {
+    max-width: map.get($map: $container-sizes, $key: xs);
+}
+.container--s {
+    max-width: map.get($map: $container-sizes, $key: s);
+}
+.container--m {
+    //    max-width: 1150px;
+    max-width: map.get($map: $container-sizes, $key: m);
+}
+.container--l {
+    max-width: map.get($map: $container-sizes, $key: l);
+}
+
+.container--max-width,
+.container--xl {
+    max-width: map.get($map: $container-sizes, $key: xl);
+}
+
+.container--fullwidth {
+    max-width: map.get($map: $container-sizes, $key: fullwidth);
+}

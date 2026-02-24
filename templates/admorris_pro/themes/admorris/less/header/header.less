@@ -1,0 +1,794 @@
+@logo-width-desktop: 100px;
+@logo-width-mobile: 100px;
+@logo-width-sticky: 100px;
+@logo-width-sticky-mobile: 100px;
+
+.header__mobile-nav {
+    .header__nav-wrapper.sticky & {
+        .row-1 {
+            --header-row-bg-color: @header-row-sticky-bg-mobile1;
+            --header-row-text-color: @header-row-sticky-color-mobile1;
+        }
+
+        .row-2 {
+            --header-row-bg-color: @header-row-sticky-bg-mobile2;
+            --header-row-text-color: @header-row-sticky-color-mobile2;
+        }
+
+        .row-3 {
+            --header-row-bg-color: @header-row-sticky-bg-mobile3;
+            --header-row-text-color: @header-row-sticky-color-mobile3;
+        }
+    }
+
+    .row-1 {
+        --header-row-bg-color: @header-row-bg-color-mobile1;
+        --header-row-text-color: @header-row-text-color-mobile1;
+        --header-row-font-size: @header-row-font-size-mobile1;
+        --header-row-bg-color-overlay: @header-row-bg-color-overlay-mobile1;
+        --header-row-text-color-overlay: @header-row-text-color-overlay-mobile1;
+        --header-row-text-transform: @header-row-text-transform-mobile1;
+        --header-row-font-weight: @header-row-font-weight-mobile1;
+        --header-row-padding-top: @header-row-padding-top-mobile1;
+        --header-row-padding-bottom: @header-row-padding-bottom-mobile1;
+    }
+
+    .row-2 {
+        --header-row-bg-color: @header-row-bg-color-mobile2;
+        --header-row-text-color: @header-row-text-color-mobile2;
+        --header-row-font-size: @header-row-font-size-mobile2;
+        --header-row-bg-color-overlay: @header-row-bg-color-overlay-mobile2;
+        --header-row-text-color-overlay: @header-row-text-color-overlay-mobile2;
+        --header-row-text-transform: @header-row-text-transform-mobile2;
+        --header-row-font-weight: @header-row-font-weight-mobile2;
+        --header-row-padding-top: @header-row-padding-top-mobile2;
+        --header-row-padding-bottom: @header-row-padding-bottom-mobile2;
+    }
+
+    .row-3 {
+        --header-row-bg-color: @header-row-bg-color-mobile3;
+        --header-row-text-color: @header-row-text-color-mobile3;
+        --header-row-font-size: @header-row-font-size-mobile3;
+        --header-row-bg-color-overlay: @header-row-bg-color-overlay-mobile3;
+        --header-row-text-color-overlay: @header-row-text-color-overlay-mobile3;
+        --header-row-text-transform: @header-row-text-transform-mobile3;
+        --header-row-font-weight: @header-row-font-weight-mobile3;
+        --header-row-padding-top: @header-row-padding-top-mobile3;
+        --header-row-padding-bottom: @header-row-padding-bottom-mobile3;
+    }
+}
+
+.header__desktop-nav {
+    .header__nav-wrapper.sticky & {
+        .row-1 {
+            --header-row-bg-color: @header-row-sticky-bg1;
+            --header-row-text-color: @header-row-sticky-color1;
+        }
+
+        .row-2 {
+            --header-row-bg-color: @header-row-sticky-bg2;
+            --header-row-text-color: @header-row-sticky-color2;
+        }
+
+        .row-3 {
+            --header-row-bg-color: @header-row-sticky-bg3;
+            --header-row-text-color: @header-row-sticky-color3;
+        }
+    }
+
+    .row-1 {
+        --header-row-bg-color: @header-row-bg-color1;
+        --header-row-text-color: @header-row-text-color1;
+        --header-row-font-size: @header-row-font-size1;
+        --header-row-bg-color-overlay: @header-row-bg-color-overlay1;
+        --header-row-text-color-overlay: @header-row-text-color-overlay1;
+        --header-row-text-transform: @header-row-text-transform1;
+        --header-row-font-weight: @header-row-font-weight1;
+        --header-row-padding-top: @header-row-padding-top1;
+        --header-row-padding-bottom: @header-row-padding-bottom1;
+    }
+
+    .row-2 {
+        --header-row-bg-color: @header-row-bg-color2;
+        --header-row-text-color: @header-row-text-color2;
+        --header-row-font-size: @header-row-font-size2;
+        --header-row-bg-color-overlay: @header-row-bg-color-overlay2;
+        --header-row-text-color-overlay: @header-row-text-color-overlay2;
+        --header-row-text-transform: @header-row-text-transform2;
+        --header-row-font-weight: @header-row-font-weight2;
+        --header-row-padding-top: @header-row-padding-top2;
+        --header-row-padding-bottom: @header-row-padding-bottom2;
+    }
+
+    .row-3 {
+        --header-row-bg-color: @header-row-bg-color3;
+        --header-row-text-color: @header-row-text-color3;
+        --header-row-font-size: @header-row-font-size3;
+        --header-row-bg-color-overlay: @header-row-bg-color-overlay3;
+        --header-row-text-color-overlay: @header-row-text-color-overlay3;
+        --header-row-text-transform: @header-row-text-transform3;
+        --header-row-font-weight: @header-row-font-weight3;
+        --header-row-padding-top: @header-row-padding-top3;
+        --header-row-padding-bottom: @header-row-padding-bottom3;
+    }
+}
+
+.header-row {
+    position: relative;
+    background-color: var(--header-row-bg-color);
+    color: var(--header-row-text-color);
+    font-size: var(--header-row-font-size);
+    text-transform: var(--header-row-text-transform);
+    font-weight: var(--header-row-font-weight);
+    padding-top: var(--header-row-padding-top);
+    padding-bottom: var(--header-row-padding-bottom);
+
+    .header__nav-wrapper.sticky .header__mobile-nav & {
+        &.row-1 when (@header-row-sticky-mobile1 = false) {
+            display: none;
+        }
+
+        &.row-2 when (@header-row-sticky-mobile2 = false) {
+            display: none;
+        }
+
+        &.row-3 when (@header-row-sticky-mobile3 = false) {
+            display: none;
+        }
+    }
+
+    .header__nav-wrapper.sticky .header__desktop-nav & {
+        &.row-1 when (@header-row-sticky1 = false) {
+            display: none;
+        }
+
+        &.row-2 when (@header-row-sticky2 = false) {
+            display: none;
+        }
+
+        &.row-3 when (@header-row-sticky3 = false) {
+            display: none;
+        }
+    }
+
+    .header-wrapper--overlay & {
+        transition:
+            background-color 0.15s,
+            color 0.15s;
+        transition-timing-function: ease-in, ease-in;
+        background-color: var(--header-row-bg-color-overlay);
+        color: var(--header-row-text-color-overlay);
+    }
+
+    .header-wrapper--overlay .header__nav-wrapper.sticky & {
+        background-color: var(--header-row-bg-color);
+        color: var(--header-row-text-color);
+    }
+}
+
+/**
+ * Sticky Navbar
+ */
+
+.header__nav-wrapper.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: @zindex-navbar;
+    box-shadow: 0 0 10px @tone-10;
+    animation-name: header-animation;
+    animation-duration: 0.3s;
+
+    // hide all elements except the header rows when sticky
+    & > *:not(.header__desktop-nav, .header__mobile-nav, .offcanvas-nav),
+    & > .header__desktop-nav > *:not(#header-container),
+    & #header-container > *:not(.header-row-wrapper),
+    & .header-row-wrapper > *:not(.header-row),
+    & .header-row > *:not(.header__container, .search__dropdown-background) {
+        display: none;
+    }
+}
+
+@keyframes header-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    transition: box-shadow 0.2s;
+    transition-timing-function: ease-in;
+
+    margin: 0 auto;
+
+    .container-padding();
+}
+
+.addPxUnit(@width) when (isnumber(@width)) {
+    @result: @width * 1px;
+}
+
+.addPxUnit(@width) when (default()) {
+    @result: @width;
+}
+
+/* For SVGs width needs to be set on the <img> because it gets zero width inside a flexbox otherwise if no width attribute is set in the svg */
+.header__logo--svg .header__logo-img {
+    transition:
+        width 0.3s ease-out,
+        max-width 0.3s ease-out;
+    max-width: 100%;
+    .header__desktop-nav & {
+        width: .addPxUnit(@logo-width-desktop) [ @result];
+    }
+
+    .header__mobile-nav & {
+        width: .addPxUnit(@logo-width-mobile) [ @result];
+    }
+
+    .affix & {
+        width: .addPxUnit(@logo-width-sticky) [ @result];
+    }
+
+    .header__mobile-nav .affix & {
+        width: .addPxUnit(@logo-width-sticky-mobile) [ @result];
+    }
+}
+
+.header__logo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    .header__desktop-nav & {
+        max-width: .addPxUnit(@logo-width-desktop) [ @result];
+    }
+
+    .header__mobile-nav & {
+        max-width: .addPxUnit(@logo-width-mobile) [ @result];
+    }
+
+    .header__nav-wrapper.sticky .header__desktop-nav & {
+        max-width: .addPxUnit(@logo-width-sticky) [ @result];
+    }
+
+    .header__nav-wrapper.sticky .header__mobile-nav & {
+        max-width: .addPxUnit(@logo-width-sticky-mobile) [ @result];
+    }
+}
+
+.header-row__col {
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 1 auto;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+    }
+
+    .header-row.top-aligned & {
+        align-items: flex-start;
+    }
+}
+
+.header-row__col--1 {
+    justify-content: flex-start;
+    align-content: flex-start;
+    // padding-right: 10px;
+}
+
+.header-row__col--2 {
+    justify-content: center;
+}
+
+.header-row__col--3 {
+    justify-content: flex-end;
+}
+
+/** The center-col modiefier is used when the center column and at least one
+ *  of the side-columns contains items
+ */
+
+.header-row--center-col {
+    .header-row__col--1 {
+        flex: 1 1 0;
+    }
+
+    .header-row__col--2 {
+        flex: 0 1 auto;
+    }
+
+    .header-row__col--3 {
+        flex: 1 1 0;
+    }
+}
+
+.header-row__element {
+    display: flex;
+    align-items: center;
+    & + & {
+        margin-left: 20px;
+    }
+}
+
+.header-row__element--mobile {
+    & + & {
+        margin-left: 0;
+    }
+}
+
+.header-row__element--megamenu,
+.header-row__element--shopnav {
+    & + & {
+        margin-left: 0;
+    }
+}
+
+/**
+ * Text alignment to the container edges
+ */
+
+// no padding-right for the last item
+.header-row__col--3 .header-row__element:last-child {
+    & > ul > li:last-child > a,
+    &.header-row__element--mobile .shopnav__link,
+    // .btn-social:last-child,
+    .search__toggle, 
+    .search__submit {
+        padding-right: 0;
+    }
+
+    .megamenu {
+        margin-right: -1.07em;
+    }
+
+    .header__offcanvas-toggle {
+        margin-right: -10px;
+    }
+}
+// no padding-left for the first item
+.header-row__col--1 .header-row__element:first-child {
+    & > ul > li:first-child > a,
+    &.header-row__element--mobile .shopnav__link,
+    .btn-social:first-child,
+    .search__toggle {
+        padding-left: 0;
+    }
+
+    .megamenu {
+        margin-left: -1.07em;
+    }
+
+    .header__offcanvas-toggle {
+        margin-left: -10px;
+    }
+}
+
+// .header-wrapper--fullscreen,
+// .header-wrapper--framed {
+//     height: 100vh;
+
+// }
+
+.header-wrapper--overlay {
+    .header {
+        position: absolute;
+        // width: 100%;
+        left: 0;
+        right: 0;
+        z-index: @header-z-index;
+        background-color: transparent; // use variable instead
+    }
+}
+
+.header-wrapper--framed .header {
+    left: 20px;
+    right: 20px;
+    top: 20px;
+}
+
+.header-wrapper--framed {
+    // padding: 20px;
+
+    .header {
+        left: 20px;
+        right: 20px;
+    }
+
+    // &.header-wrapper--overlay {
+    //     height: calc(~"100vh - 2 * 20px");
+    // }
+}
+
+.header__nav-wrapper/* , .mobile-navbar__wrapper */ {
+    // background-color: @navbar-bg;
+    ul > li > a {
+        &,
+        &:link,
+        &:hover,
+        &:visited {
+            color: inherit;
+        }
+    }
+
+    .header-wrapper--overlay &:not(.sticky) {
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+/**
+ * Nav Link Color
+ */
+
+.megamenu .navbar-nav > li > a,
+.mobile-navbar__shopnav-list > li > a,
+.offcanvas-toggle,
+.search__toggle,
+.shopnav__link {
+    &,
+    &:hover,
+    &:active,
+    &:visited {
+        color: inherit;
+
+        background-color: transparent;
+    }
+
+    .header-wrapper--overlay & {
+        &,
+        &:hover,
+        &:active,
+        &:visited {
+            color: @header-navbar-slider-overlay-link-color;
+        }
+    }
+
+    .sticky & {
+        &,
+        &:hover,
+        &:active,
+        &:visited {
+            color: inherit;
+        }
+    }
+}
+
+.header__desktop-nav,
+.header__mobile-nav {
+    /* exclude offcanvas */
+
+    .header-shop-nav > li > a,
+    .header-row__element--shopnav .shopnav__link {
+        &,
+        &:hover,
+        &:active,
+        &:visited,
+        &:focus {
+            color: inherit;
+
+            .header-wrapper--overlay & {
+                background-color: transparent;
+                color: inherit;
+            }
+        }
+    }
+
+    .sticky & {
+        .header-shop-nav > li > a,
+        .header-row__element--shopnav .shopnav__link {
+            &,
+            &:hover,
+            &:active,
+            &:visited,
+            &:focus {
+                color: var(--header-row-text-color);
+            }
+        }
+    }
+}
+
+.header__desktop-nav {
+    .dropdown-menu {
+        border: @dropdown-border-style;
+    }
+}
+
+/*
+ * Mobile Navigation
+ */
+
+.header__mobile-nav {
+    /* INFO: using visibility: hidden instead of display: none because of of problems with svg icons and id references in those that caused them to disappear when the header is hidden */
+    visibility: hidden;
+    // content-visibility: hidden;
+    height: 0;
+
+    // padding: 10px 0;
+    @media (min-width: @screen-xs) {
+        font-size: @mobile-nav-icon-size;
+    }
+}
+
+/* switching between desktop and mobile header */
+@media (max-width: @mobile-nav-breakpoint) {
+    .header__mobile-nav {
+        visibility: visible;
+        // content-visibility: visible;
+
+        height: auto;
+    }
+
+    .header__desktop-nav {
+        visibility: hidden;
+        // content-visibility: hidden;
+
+        height: 0;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    // .shopnav__badge {
+    //     vertical-align: unset;
+    // }
+}
+
+.mobile-navbar__wrapper {
+    z-index: @zindex-navbar;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.mobile-navbar__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/**
+ * Centered Logo Design Preset
+ * adjustment for split menu to align to the logo side
+ */
+
+.header.centered-logo .header__desktop-nav {
+    .header__container--2 {
+        // display: grid;
+        // grid-template-columns: 1fr auto 1fr;
+
+        .header-row__col--1 .megamenu .navbar-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .header-row__col--1 .header-row__megamenu {
+            margin-left: auto;
+            margin-right: @split-menu-spacing;
+        }
+
+        .header-row__col--3 {
+            justify-content: space-between;
+
+            .header-row__megamenu {
+                margin-right: auto;
+                margin-left: @split-menu-spacing;
+            }
+        }
+    }
+}
+
+/**
+ * Dropdown Menus
+ */
+
+.header__nav-wrapper .dropdown-menu {
+    color: @header-dropdown-text-color;
+    background-color: @header-dropdown-background-color;
+    text-transform: none;
+    font-weight: initial;
+}
+
+.shopnav__badge {
+    color: inherit;
+    font-size: inherit;
+    background-color: fadeout(gray, 50%);
+    margin-left: 1px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.shopping-cart-label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cart-dropdown-button {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.header-wrapper .dropdown-menu > li > a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        background-color: fade(#999, 50%);
+    }
+}
+
+[id="header-container"] {
+    // Base Style for dropdown and megamenu
+    .dropdown-menu {
+        border-radius: 4px;
+        box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            1px -1px 6px -4px rgba(0, 0, 0, 0.1);
+        transform-origin: top var(--transform-origin-Y);
+        // overflow: visible;
+
+        // default after -> center => TODO: add ::after element to .dropdown-toggle
+        // &::after
+        // {
+        //     content: '';
+        //     width: 0;
+        //     height: 0;
+        //     border-top: 8px solid transparent;
+        //     border-bottom: 8px solid transparent;
+        //     border-right: 8px solid #fff;
+        //     position: absolute;
+        //     top: -12px;
+        //     left: 50%;
+        //     transform: rotate(90deg);
+        // }
+    }
+    &.dropdown-menu-right {
+        transform-origin: top right;
+    }
+
+    // .open & {
+    //     animation: 0.3s cubic-bezier(0.45, 0.47, 0.41, 0.92) @header-dropdown-animation;
+    //     /* disable transition set by evo template, because is is causing a bug in Safari in combination with the animation */
+    //     transition: none !important;
+
+    //     > * {
+    //         animation: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) am-fade-in;
+    //     }
+    // }
+    .dropdown-position-center {
+        left: 50%;
+        transform: translateX(-50%);
+        --translateX: -50%;
+        --transform-origin-Y: center;
+    }
+
+    .dropdown-position-right {
+        right: 0;
+        --transform-origin-Y: right;
+    }
+
+    .dropdown-position-left {
+        left: 0;
+        --transform-origin-Y: left;
+    }
+}
+
+.dropdown-animation-standard {
+    backface-visibility: hidden;
+
+    .dropdown-menu-right {
+        transform-origin: top right;
+    }
+
+    .dropdown-menu {
+        animation: 0.3s cubic-bezier(0.45, 0.47, 0.41, 0.92) am-scale-in;
+        /* disable transition set by evo template, because is is causing a bug in Safari in combination with the animation */
+        transition: none !important;
+
+        > * {
+            animation: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) am-fade-in;
+        }
+    }
+}
+
+.dropdown-menu {
+    .dropdown-animation-fade & {
+        opacity: 1;
+        animation: menuFade 250ms;
+    }
+
+    .dropdown-animation-fade-in & {
+        opacity: 1;
+        animation:
+            menuFade 250ms,
+            menuFadeIn 250ms;
+    }
+    .dropdown-animation-rotate & {
+        transform-origin: top center;
+        // transform-style: preserve-3d;
+        // perspective: 1800px;
+        animation:
+            am-fade-in 250ms,
+            menuRotate 400ms;
+    }
+    .dropdown-animation-scale & {
+        animation:
+            menuFade 350ms,
+            menuScale 200ms;
+    }
+
+    --translateX: 0;
+
+    // keyframes animations for menu
+    @keyframes menuFade {
+        from {
+            opacity: 0.6;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes menuFadeIn {
+        from {
+            transform: translateY(10px) translateX(var(--translateX));
+        }
+        to {
+            transform: translateY(0) translateX(var(--translateX));
+        }
+    }
+
+    @keyframes menuRotate {
+        from {
+            transform: perspective(1000px) rotateX(-75deg) translateX(var(--translateX));
+        }
+        to {
+            transform: perspective(1000px) rotateX(0) translateX(var(--translateX));
+        }
+    }
+
+    @keyframes menuScale {
+        from {
+            transform: scale(1.15) translateX(var(--translateX));
+        }
+        to {
+            transform: scale(1) translateX(var(--translateX));
+        }
+    }
+
+    /* @header-dropdown-animation is set to am-scale-in in variables.less by default */
+
+    @keyframes am-scale-in {
+        from {
+            opacity: 0;
+            transform: scale(0.1); /* problem in webkit with large menu occured when 0 war used to scale from */
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes am-fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

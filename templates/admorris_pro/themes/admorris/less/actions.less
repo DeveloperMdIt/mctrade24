@@ -1,0 +1,98 @@
+/* Action Buttons */
+
+.product-actions--details,
+.product-actions--list {
+    min-width: 102px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // width: 50%;
+    // margin-top: 3.5em;
+    text-align: left;
+    // justify-content: space-between;
+
+    margin-right: -@padding-base-horizontal;
+    margin-left: -@padding-base-horizontal;
+
+    @media (min-width: @screen-sm) {
+        width: 100%;
+        width: calc(~"100% + " @padding-base-horizontal * 2);
+    }
+
+    // @media (max-width: 991px){
+    //     & {
+    //         table-layout: fixed;
+    //     }
+    // }
+
+    // > label {
+    //     display: table-cell;
+
+    //     @media (min-width: 992px){
+    //         &:first-child {
+    //             text-align: left;
+    //         }
+    //     }
+    // }
+}
+
+.product-actions--details {
+    order: -2;
+
+    @media (min-width: @screen-sm) {
+        margin-top: 2em;
+        order: 2;
+    }
+}
+
+.product-actions--list {
+    text-align: right;
+    margin-top: 28px - @padding-base-vertical--px;
+    margin-bottom: -@padding-base-vertical--px;
+    z-index: 999;
+}
+
+.product-actions__button {
+    border-color: transparent;
+    background-color: transparent;
+    text-transform: none;
+    color: @tone-50;
+
+    // font-size: .pptfs(13px)[@result];
+    // padding-left: 0;
+    // padding-right: 0;
+    .fa {
+        font-size: 1.3em;
+        vertical-align: middle;
+        &:before {
+            margin-top: rem(-1px);
+            display: block;
+        }
+    }
+
+    &:hover {
+        color: @brand-primary;
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    // &:last-child {
+    //     margin-right: -@padding-base-horizontal;
+    // }
+
+    // &:first-child {
+    //     margin-left: -@padding-base-horizontal;
+    // }
+}
+
+.product-actions__label {
+    font-weight: 400;
+    @media (max-width: @screen-xs-max) {
+        .sr-only();
+    }
+    // @media (min-width: @screen-lg) {
+    //     position: static;
+    //     width: auto;
+    //     height: auto;
+    //     clip: auto;
+    // }
+}

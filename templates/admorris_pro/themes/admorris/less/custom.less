@@ -1,0 +1,396 @@
+table {
+    background-color: @table-bg;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(249, 249, 249, 0.1);
+}
+
+label {
+    > .radio-checkbox + .control-label {
+        color: @text-color;
+    }
+
+    > .description {
+        margin-left: 15px;
+    }
+}
+
+.checkbox label > .radio-checkbox + .control-label {
+    margin-left: 0;
+}
+
+#main-wrapper {
+    background-color: transparent !important;
+}
+
+@media (max-width: 767px) {
+    .no-gutter-xs > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+// image Lazy-load
+
+img {
+    opacity: 1;
+}
+
+img[src="gfx/keinBild.gif"] {
+    width: 100%;
+    .comparelist & {
+        width: auto;
+    }
+}
+
+/**
+*   Nach dem Load von Variationen bleibt der 
+*   data-src-Attribut auf dem img-Tag.
+*   Bitte anders setzen
+
+img[data-src] {
+    opacity: 0; 
+}
+
+*/
+
+/* simple panel */
+
+.panel--minimal {
+    box-shadow: none;
+    // margin: 3em 0 5em;
+    background-color: transparent;
+
+    .panel-heading,
+    .panel-body {
+        padding: 0;
+    }
+
+    .panel-title {
+        font-size: @font-size-large;
+        font-weight: bold;
+        text-transform: uppercase;
+        // margin-bottom: .pptfs(50px)[@result]; //3em;
+        margin-bottom: @additional-info-spacing--mobile - 3;
+        @media (min-width: @screen-sm) {
+            margin-bottom: @additional-info-spacing--desktop - 3;
+        }
+    }
+}
+
+// transparent header
+
+.main-wrapper [id="evo-nav-wrapper"].transparent-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    background-color: transparent;
+
+    .category-nav {
+        background-color: transparent;
+    }
+
+    [id="evo-main-nav"] {
+        background-color: transparent;
+        background-image: none;
+        box-shadow: none;
+    }
+}
+
+// .btn {
+//     border-radius: @btn-border-radius;
+// }
+
+.btn[name="inWarenkorb"],
+.product-cell__add-to-basket-button {
+    padding: 0.822em 0.822em;
+}
+
+.carousel-inner {
+    width: auto;
+
+    @media (max-width: 991px) {
+        & {
+            height: auto !important;
+        }
+    }
+}
+
+/* Buttons */
+
+// .btn-primary {
+//     min-height: 45px;
+// }
+
+.add-to-basket {
+    & > .btn {
+        width: 100%;
+    }
+
+    // & > .btn.disabled {
+    //     .btn--disabled-dashed();
+    // }
+}
+
+.btn--disabled-dashed {
+    // needs higher specificity than .btn.disabled
+    &.btn {
+        color: @gray-base;
+        background-color: @body-bg;
+        opacity: 1;
+        // border-image-source: url("img/dash.png");
+        // border-image-slice: 1;
+        // border-image-repeat: round;
+        border: 2px dashed currentColor;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+#plugin-placeholder-article,
+#plugin-placeholder-basket {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    font-size: rem(11px);
+    color: @tone-25;
+    text-transform: uppercase;
+    font-weight: 700;
+    a,
+    a:hover,
+    a:visited,
+    a:active {
+        color: @tone-25;
+    }
+
+    // > li {
+    //     // white-space: nowrap;
+    //     display: inline-block;
+    // }
+
+    & > li:after {
+        padding: 0 0.17em 0 0.1819em;
+    }
+}
+
+/* Custom [+} Icon 
+ * used in bundles
+ */
+
+.ci-plus {
+    display: inline-block;
+    position: relative;
+    height: @plus-n-minus-button-size;
+    width: @plus-n-minus-button-size;
+    opacity: 0.5;
+
+    &:after,
+    &:before {
+        content: " ";
+        border-top: 1px solid @text-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%);
+    }
+
+    &:before {
+        -webkit-transform: translate(-50%) rotate(90deg);
+        transform: translate(-50%) rotate(90deg);
+    }
+}
+
+/**
+ * 5-column grid class
+ */
+.col-lg-1\/5 {
+    @media (min-width: @screen-lg) {
+        width: 20%;
+    }
+}
+.col-xl-1\/5 {
+    @media (min-width: 1680px) {
+        width: 20%;
+    }
+}
+
+.table-vertical-borders {
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border-left: 1px solid @table-border-color;
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+/**
+* Custom elements
+* used in checkout
+*/
+
+.custom,
+.custom-control-input /* this class is needed for klarna payment plugin */ {
+    /* Without 'input' because it binds too strong! */
+    [type="radio"]& {
+        -webkit-appearance: none;
+        border: 2px solid @tone-50; //#808080;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        position: relative;
+        outline: none;
+        top: (@font-size-base-px * @line-height-base - 16px) / 2;
+        &:focus {
+            // border-color: @brand-primary;
+            box-shadow: 0 0 1px 3px @brand-primary;
+            outline: none;
+        }
+    }
+
+    [type="radio"]&:after {
+        content: "";
+        height: 50%;
+        width: 50%;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    [type="radio"]&:checked:after {
+        background-color: @tone-50; //#808080;
+    }
+}
+
+.custom-border {
+    border: 1px solid @tone-25; //#E5E5E5;
+}
+
+.custom-padding {
+    padding: 2em;
+}
+
+// pushed success popup
+.bg-info {
+    background-color: @tone-25;
+}
+
+.pushed-success {
+    margin-bottom: 2rem;
+    .panel-body {
+        padding: 1.5rem;
+    }
+}
+
+[id="pushed-success"] .product-cell .caption {
+    margin-top: 9px;
+}
+
+.pushed-success-slider {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 18px;
+
+    // .product-wrapper {
+    //     display: none;
+    // }
+
+    // &.slick-initialized .product-wrapper {
+    //     display: block;
+    // }
+}
+
+.pushed-success__button-group {
+    --modifier: calc(29rem - 100%);
+}
+
+input.city_input {
+    background-color: @input-bg !important;
+}
+
+// fitVid.js helper classes
+
+.fitVid {
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+}
+
+.fitVid--large {
+    max-width: 760px;
+}
+
+.fitVid--medium {
+    max-width: 560px;
+}
+
+.fitVid--small {
+    max-width: 420px;
+}
+
+// fix stupid fix from base.less
+.btn .fa.visible-xs {
+    line-height: inherit !important;
+}
+
+.flex-button-group {
+    display: flex;
+
+    input[type="text"] {
+        flex: 1 1 auto;
+    }
+}
+
+.flex-button-group--wrap {
+    @media (max-width: @screen-xs-max) {
+        flex-wrap: wrap;
+
+        input[type="text"] {
+            width: 100%;
+        }
+
+        > * + * {
+            margin-top: 1em;
+        }
+    }
+}
+
+//
+[id="new_customer"] #vcard-upload {
+    right: 0;
+}
+
+/* Paypal Express Button */
+
+a.paypalexpress.paypalexpress {
+    float: right;
+    margin-top: 20px;
+}
+.product-info-inner .basket-action-wrapper button.submit.btn.btn-primary {
+    line-height: 21px;
+}
+
+.list-group-item {
+    color: @list-group-link-color;
+}

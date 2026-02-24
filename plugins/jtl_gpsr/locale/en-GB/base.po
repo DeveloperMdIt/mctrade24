@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "JTL GPSR - Angaben zur Produktsicherheit"
+msgstr "JTL GPSR - Product safety information"
+
+msgid "Ergänzende Angaben zum Hersteller und verantwortlichen Personen."
+msgstr "Additional information on the manufacturer and responsible persons"
+
+msgid "Beschreibung der Angaben zur Produktsicherheit"
+msgstr "With this plug-in, you can display additional manufacturer contact information for items as well as optional"
+       " data on a responsible person. You manage this information via function attributes in JTL-Wawi. For more"
+       " information on setting up the plug-in, please visit our <a href=\"https://jtl-url.de/w4ouy\">JTL-Guide</a><br>"
+       " For further mandatory information, please use the standard functions of JTL-Wawi and JTL-Shop such as"
+       " images, media files (e.g. for PDF data sheet downloads), item attributes and item description texts."
+
+msgid "Darstellung"
+msgstr "View"
+
+msgid "Artikeldetailseite"
+msgstr "Item detail page"
+
+msgid "Auf der Artikeldetailseite anzeigen"
+msgstr "Display on item detail page"
+
+msgid "Artikelliste"
+msgstr "Item list"
+
+msgid "Auf der Artikelliste anzeigen"
+msgstr "Display on item list"
+
+msgid "Templatedatei"
+msgstr "Template file"
+
+msgid "Templateblock"
+msgstr "Template block"
+
+msgid "Anzeigeposition im Block"
+msgstr "Display position in the block"
+
+msgid "Sollen die Informationen auf der Artikeldetailseite angezeigt werden?"
+msgstr "Specify whether to display the information on the item detail page."
+
+msgid "Geben Sie hier die Templatedatei an."
+msgstr "Specify the template file to which the product safety information is to be added on the item detail page.<br>"
+       " If you are using the NOVA template, enter „productdetails/attributes.tpl“.<br>"
+       " If you are using a customised template and do not know the name of the exact template file, please check"
+       " with the manufacturer of your template."
+
+msgid "Geben Sie hier den Templateblock an."
+msgstr "Specify the block within the template file to which you want to add the product safety information on the"
+       " item detail page.<br>"
+       " If you are using the NOVA template, enter „productdetails-attributes“.<br>"
+       " If you are using a customised template and do not know the name of the exact block, please check with"
+       " the manufacturer of your template."
+
+msgid "Sollen die Informationen auf der Artikelliste angezeigt werden?"
+msgstr "Specify whether to display the information on the item list."
+
+msgid "Geben Sie hier die Templatedatei für die Liste an."
+msgstr "Specify the template file to which you want to add the product safety information on the item list.<br>"
+       " If you are using the NOVA template, specify „productlist/item_list.tpl“.<br>"
+       " If you are using a customised template and do not know the name of the exact template file, please check"
+       " with the manufacturer of your template."
+
+msgid "Geben Sie hier den Templateblock für die Liste an."
+msgstr "Specify the block within the template file to which you want to add the product safety information on the"
+       " item list.<br>"
+       " If you are using the NOVA template, specify „productlist-item-list-buy-form“.<br>"
+       " If you are using a customised template and do not know the name of the exact block, check with the"
+       " manufacturer of your template."
+
+msgid "Geben Sie hier die Anzeigeposition an."
+msgstr "Specify whether the product safety information should be inserted at the start or at the end of the block."
+
+msgid "Am Ende"
+msgstr "At the end"
+
+msgid "Am Anfang"
+msgstr "At the start"
+
+msgid "Darstellung des Herstelllers"
+msgstr "Display of the manufacturer"
+
+msgid "Geben Sie hier die Darstellung der Herstellerangaben in Smarty-Syntax an."
+msgstr "In Smarty syntax, specify how the manufacturer information is to be displayed."
+
+msgid "Darstellung der verantwortlichen Person"
+msgstr "Display of the responsible person"
+
+msgid "Geben Sie hier die Darstellung der verantwortlichen Person in Smarty-Syntax an."
+msgstr "In Smarty syntax, specify how the responsible person is to be displayed."
+
+msgid "Label für die Anzeige der Herstellerinformationen"
+msgstr "Label for the display of the manufacturer information"
+
+msgid "Label für die Anzeige der verantwortlichen Person"
+msgstr "Label for the display of the responsible person"
+
+msgid "Überschrift im Template"
+msgstr "Heading in the template"
+
+msgid "Templateverzeichnis existiert nicht"
+msgstr "Template directory does not exist or is not readable."
+
+msgid "Templatedatei existiert nicht"
+msgstr "Template file does not exist or is not readable."
+
+msgid "Wollen Sie alle Einstellungen auf Standardwerte zurücksetzen?"
+msgstr "Do you want to reset all settings to default values?"
+
+msgid "Wollen Sie die Darstellung der Herstellerinformationen zurücksetzen?"
+msgstr "Would you like to reset the display of the manufacturer information?"

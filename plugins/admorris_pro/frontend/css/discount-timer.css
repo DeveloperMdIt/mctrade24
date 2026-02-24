@@ -1,0 +1,226 @@
+#discount_timer_modal {
+  display: none;
+  position: fixed;
+  z-index: 1040;
+}
+.admorris-discount-timer-container {
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+}
+.admorris-discount-timer-container ~ .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #000;
+  bottom: 0;
+  z-index: 998;
+  /* necessary for snackys */
+}
+.admorris-discount-timer-container ~ .modal-backdrop.fade {
+  opacity: 0;
+}
+.admorris-discount-timer-container ~ .modal-backdrop.fade.in {
+  opacity: 0.5;
+}
+#discount_timer_modal .modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0;
+  text-align: center;
+  color: #000;
+  border-radius: 10px;
+}
+#discount_timer_modal .modal-dialog {
+  margin: 10vh auto;
+  /* padding-left: 17px; */
+  width: 100%;
+  max-width: 550px;
+  min-height: 650px;
+  position: relative;
+}
+#discount_timer_modal .modal-header {
+  padding: 15px;
+  border-bottom: 0;
+}
+#discount_timer_modal_content h2.modal-title {
+  color: #000;
+}
+/* #discount_timer_modal h2{
+    font-size: 4.6rem;
+} */
+@media screen and (max-width: 700px) {
+  #discount_timer_modal .modal-couponbox {
+    font-size: 25px !important;
+    margin-top: 40px !important;
+  }
+  #discount_timer_modal h2 {
+    font-size: 2.4rem;
+    line-height: 1.1;
+  }
+  #discount_timer_modal .modal-dialog {
+    margin: 0 !important;
+    padding: 10px;
+  }
+  #discount_timer_modal .modal-dialog .modal-content {
+    border-radius: 0;
+  }
+  #discount_timer_modal .modal-subline {
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 575px) {
+  #discount_timer_modal .modal-dialog {
+    padding: 0px;
+    height: 100vh;
+    min-height: unset;
+  }
+  #discount_timer_modal .modal-dialog .modal-content {
+    width: 100%;
+    margin: 0px;
+    max-width: unset;
+    height: 100vh;
+    max-height: unset;
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 0;
+  }
+  #discount_timer_modal .modal-dialog .modal-content .modal-header {
+    display: none;
+  }
+  #discount_timer_modal .modal-dialog .modal-content .modal-body {
+    padding: 30px;
+  }
+}
+#discount_timer_modal .discount_timer_countdown_input {
+  border: none;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+#discount_timer_modal .btn {
+  /* text-transform: none;  */
+  white-space: inherit;
+  font-size: 16px;
+  padding: 10px;
+}
+.modal-cancel-button {
+  color: rgba(0, 0, 0, 0.3);
+}
+.modal-cancel-button:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+#discount_timer_modal .modal-body {
+  padding: 30px 70px 30px 70px;
+  max-height: unset;
+  z-index: 100;
+}
+#discount_timer_modal .modal-subline {
+  font-size: 16px;
+  margin-bottom: 45px;
+  margin-top: 10px;
+}
+#discount_timer_modal .modal-couponbox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 62px;
+  margin: 85px auto 30px auto;
+  overflow: hidden;
+  border: 3px solid rgba(0, 0, 0, 0.05);
+  border-style: dashed;
+  box-sizing: border-box;
+  font-size: 30px;
+  font-weight: 700;
+}
+.modal-couponbox-inner {
+  flex-basis: 60%;
+  width: 60%;
+  padding: 4px;
+  font-size: 3vh;
+}
+.modal-couponbox-inner-left {
+  border-left: 3px dashed rgba(0, 0, 0, 0.05);
+  padding: 4px;
+  flex-basis: 40%;
+  width: 40%;
+  font-size: 3vh;
+}
+/* Widget */
+#discount_timer_widget {
+  width: 210px;
+  height: 55px;
+  position: fixed;
+  right: 10vw;
+  bottom: 20px;
+  background-color: #fff;
+  border-radius: var(--adm-border-radius-sm, 0);
+  -webkit-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 3.8s forwards;
+  color: #000;
+  z-index: 1000;
+}
+#discount_timer_widget .widget-couponbox {
+  display: table;
+  width: 202px;
+  height: 48px;
+  margin: 4px;
+  border: 3px solid rgba(0, 0, 0, 0.05);
+  border-style: dashed;
+  border-radius: var(--adm-border-radius-sm, 0);
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  padding: 3px;
+}
+.widget-couponbox-inner {
+  display: table-cell;
+  padding: 3px;
+}
+.widget-couponbox-inner-left {
+  border-left: 3px dashed rgba(0, 0, 0, 0.05);
+  display: table-cell;
+  padding: 3px;
+}
+#discount_timer_widget .discount_timer_countdown_widget_input {
+  border: none;
+  /* max-width: 160px; */
+  overflow: hidden;
+  text-align: center;
+  background: none;
+  color: black;
+}
+#discount_timer_modal .modal-cancel-button {
+  border-radius: 0;
+  width: 100%;
+  line-height: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin-left: 0;
+}
+#discount_timer_modal .modal-cancel-button::before {
+  content: '';
+}
+#discount_timer_modal .modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

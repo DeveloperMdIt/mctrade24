@@ -1,0 +1,87 @@
+.scroll-to-top when (@scroll-to-top-active = true) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 1x; // MS Edge requires a nominal dimension
+
+    & when not (@scroll-to-top-type = unstyled) {
+        &__button,
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__button {
+        position: fixed;
+        bottom: 20px;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.2s ease;
+        z-index: 10000;
+
+        & when (@scroll-to-top-position = right) {
+            right: 20px;
+
+            & when (@chat-is-active = true) and (@scroll-to-top-offset = false) {
+                bottom: 100px;
+            }
+        }
+
+        & when (@scroll-to-top-position = left) {
+            left: 20px;
+        }
+
+        & when not (@scroll-to-top-type = unstyled) {
+            background-color: @scroll-to-top-color;
+            color: @scroll-to-top-text-color;
+            padding: 10px;
+
+            .scroll-to-top__text {
+                font-size: 18px;
+                line-height: 1;
+            }
+
+            .scroll-to-top__icon {
+                font-size: 40px;
+                margin-top: -0.1em;
+                &::before {
+                    line-height: 0;
+                }
+            }
+        }
+
+        & when (@scroll-to-top-type = rounded) {
+            border-radius: 500px;
+        }
+
+        & when (@scroll-to-top-type = square) {
+            border-radius: 5px;
+        }
+
+        & when (@scroll-to-top-button-content = icon) {
+            min-width: 60px;
+            height: 60px;
+        }
+
+        & when (@scroll-to-top-button-content = text) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        & when not (@scroll-to-top-offset = false) {
+            bottom: @scroll-to-top-offset * 1px;
+        }
+    }
+
+    &.scroll-to-top--is-intersecting .scroll-to-top__button {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__icon.icon-content svg {
+        --dimension: calc(1em * var(--size, 1));
+    }
+}

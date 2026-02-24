@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\lib; use JTL\Shop; class AdmorrisLib { private static $pluginId = null; public static function getPluginId() { if (!is_null(self::$pluginId)) { goto vY0UF; } $plugin = Shop::get("\157\x70\x6c\165\147\151\x6e\137\x61\x64\x6d\157\x72\x72\151\163\137\160\x72\x6f"); if (!empty($plugin)) { goto VSljP; } $plugin = Shop::Container()->getDB()->select("\164\160\x6c\x75\147\x69\x6e", "\x63\x50\x6c\x75\147\151\156\x49\104", "\141\x64\155\x6f\162\162\151\163\x5f\x70\x72\x6f"); self::$pluginId = (int) $plugin->kPlugin; goto jrv8h; VSljP: self::$pluginId = $plugin->getId(); jrv8h: vY0UF: return self::$pluginId; } public static function isIosDevice() { return preg_match("\57\x28\x70\150\157\x6e\145\51\57\151", $_SERVER["\x48\124\124\x50\137\125\x53\x45\122\x5f\x41\x47\105\x4e\x54"]); } public static function getTaxClasses() { return Shop::Container()->getDB()->selectAll("\x74\163\164\x65\165\x65\x72\x6b\x6c\141\x73\163\145", [], []); } public static function getCustomerGroups() { return Shop::Container()->getDB()->selectAll("\164\153\165\x6e\144\145\156\147\x72\x75\x70\160\x65", [], []); } }

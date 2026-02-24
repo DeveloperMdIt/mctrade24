@@ -1,0 +1,20 @@
+/* dancing-script-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Dancing Script';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Dancing Script Regular'), local('DancingScript-Regular'),
+         url('./templates/admorris_pro/fonts/dancing_script/dancing-script-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/dancing_script/dancing-script-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* dancing-script-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Dancing Script';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Dancing Script Bold'), local('DancingScript-Bold'),
+         url('./templates/admorris_pro/fonts/dancing_script/dancing-script-v9-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/dancing_script/dancing-script-v9-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

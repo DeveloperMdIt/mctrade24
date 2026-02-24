@@ -1,0 +1,30 @@
+/* khand-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Khand';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Khand Regular'), local('Khand-Regular'),
+         url('./templates/admorris_pro/fonts/khand/khand-v6-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/khand/khand-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* khand-500 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Khand';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Khand Medium'), local('Khand-Medium'),
+         url('./templates/admorris_pro/fonts/khand/khand-v6-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/khand/khand-v6-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* khand-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Khand';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Khand Bold'), local('Khand-Bold'),
+         url('./templates/admorris_pro/fonts/khand/khand-v6-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/khand/khand-v6-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

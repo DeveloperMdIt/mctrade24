@@ -1,0 +1,58 @@
+//fix für PDF ansicht
+.media {
+    display: block;
+}
+
+
+.recent-visits-stock{
+    color:#AF3B26 !important;
+    font-size: 16px !important;
+}
+
+.flip-clock-divider{
+    &.days{
+        display: none;
+    }
+    &.hours{
+        .top, .bottom{
+            display: none;
+        }
+    }
+}
+
+.special_offer_countdown_clock_wrapper{
+    .title{
+        font-style: normal !important;
+        font-size: 16px !important;
+    }
+    .shadow{
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.05) !important;
+    }
+}
+
+/* überall (mobil + desktop) */
+#paypal-buttton-productDetails-container {
+  padding-top: 28px !important;
+}
+
+/* falls das Theme bei ≥992px per Media-Query überschreibt, doppelt absichern */
+@media (min-width: 992px) {
+  #paypal-buttton-productDetails-container {
+    padding-top: 28px !important;
+    display: flex;                 /* nötig, damit flex-direction wirkt */
+    flex-direction: column-reverse;
+  }
+}
+
+/* weiterer Block */
+#plugin-placeholder-article {
+  padding-top: 28px !important;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: stretch;
+  gap: 10px;
+}
+/* <- KEINE zusätzliche } mehr am Ende */

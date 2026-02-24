@@ -1,0 +1,232 @@
+/**
+ * Search
+ */
+
+.header-search {
+    display: flex;
+    align-items: center;
+    // padding-top: 3px;
+    // padding-bottom: 3px;
+    font-size: @header-search-font-size;
+
+    .header__mobile-nav & {
+        font-size: @mobile-header-icon-size;
+        flex-grow: 1;
+    }
+
+    &.header-search--dropdown {
+        position: relative;
+        height: 100%;
+    }
+
+    .offcanvas-nav & {
+        width: 100%;
+    }
+}
+
+.header-row__element--mobile.search {
+    // TODO: nur wenn nicht dropdown ausgewaehlt ist flex-grow setzen
+    // weil links vom icon dropdown modus zu viel Platz bleibt
+    flex-grow: 1;
+
+    &,
+    & .header-search {
+        justify-content: inherit;
+    }
+}
+
+.search__toggle {
+    background-color: transparent;
+    border: 0;
+    height: 100%;
+    padding: 10px @navbar-padding-horizontal 10px @navbar-padding-horizontal;
+    // display: flex;
+    // align-items: center;
+
+    // optical correction
+    // .fa {
+    //     margin-top: 1px;
+    // }
+
+    &:link {
+        text-decoration: none;
+    }
+}
+
+[id="mobile-search"].header-search--inline {
+    width: 100%;
+}
+
+.search__form {
+    min-width: 350px;
+    font-size: @header-search-font-size;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid currentColor;
+    pointer-events: none;
+
+    // color: @tone-50;
+
+    [id="mobile-search"] & {
+        font-size: @mobile-header-icon-size;
+        width: 100%;
+        // max-width: 550px;
+    }
+
+    [id="mobile-search"].header-search--inline & {
+        min-width: auto !important;
+    }
+
+    .header-search--dropdown & {
+        position: absolute;
+        display: none;
+        transform: initial;
+        transform: translateY(0);
+        right: 0;
+        opacity: 0;
+        transition: transform 0.45s ease-in, opacity 0.2s ease-in;
+        // transition-delay: .1s;
+        top: 50%;
+        z-index: 900;
+        // z-index: 5000;
+
+        color: @navbar-color;
+        .header-wrapper--overlay & {
+            color: @navbar-slider-overlay-color;
+        }
+        .sticky &  {
+            color: @navbar-color;
+        }
+    }
+
+    .offcanvas-nav & {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .header-search--dropdown.is-open & {
+        transition-timing-function: ease-out, ease-out;
+        transition-duration: 0.5s, 0.3s;
+        display: block;
+        // transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.header-search--dropdown-left {
+    right: auto;
+    left: 0;
+    .search__wrapper {
+        float: left;
+    }
+}
+
+.search__dropdown-background {
+    z-index: @header-z-index - 1;
+    position: absolute;
+    width: 100%;
+    background-color: @navbar-bg;
+    top: 100%;
+    left: 0;
+    transform: scaleY(0);
+    transition: transform 0.45s ease-in, opacity 0.3s ease-in;
+    transform-origin: top left;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+
+    // always show the background in sticky mode of the navbar
+    .sticky & {
+        opacity: 1 !important;
+    }
+
+    // hide if the nav is in overlay mode (transparent over the slider)
+    .header-wrapper--overlay .header__nav-wrapper:not(.sticky) & {
+        opacity: 0;
+    }
+
+    &.is-open {
+        transform: scaleY(1);
+        transition-timing-function: ease-out, ease-out;
+        transition-duration: 0.45s;
+    }
+}
+
+.header__inner-wrapper {
+    position: relative;
+}
+
+.search__wrapper {
+    display: flex;
+    float: right;
+    width: 100%;
+    // max-width: 90vw;
+    // border-bottom: 1px solid;
+    // .header-wrapper--overlay & {
+    //     border-bottom: 1px solid @navbar-slider-overlay-color;
+    // }
+}
+.search__input {
+    // flex: 1 1 auto;
+    border: 0;
+    // border-bottom: 1px solid;
+    width: 100%;
+    background-color: transparent;
+
+    &:focus {
+        outline: none !important;
+    }
+
+    .input-placeholder({
+        color: inherit; //fade(@navbar-color, 80%);
+        text-transform: uppercase;
+    });
+
+    .header-search--dropdown & {
+        .header-wrapper--overlay & {
+            .input-placeholder({
+                color: @navbar-slider-overlay-color;
+            });
+        }
+        .sticky & {
+            .input-placeholder({
+                color: @navbar-color;
+            });
+        }
+    }
+
+    .offcanvas-nav & {
+        .input-placeholder({
+            color: @offcanvas-menu-text-color;
+        });
+    }
+}
+
+.search__wrapper > .twitter-typeahead {
+    flex: 1 1 auto;
+    // width: 100%;
+    border: 0;
+    // border-bottom: 1px solid;
+}
+
+.search__submit {
+    // color: @navbar-color;
+    border: 0;
+    // border-bottom: 1px solid currentColor;
+    background-color: transparent;
+    // .header-wrapper--overlay & {
+    //     color: @navbar-slider-overlay-color;
+    // }
+
+    .header-search--dropdown & {
+        border: 0;
+        margin-left: @navbar-padding-horizontal;
+        padding-left: @navbar-padding-horizontal;
+        padding-right: @navbar-padding-horizontal;
+        text-align: center;
+    }
+}
+// This is a bandaid. Search for error in js files
+.twitter-typeahead .tt-input[readonly] {
+    background-color: transparent !important;
+}

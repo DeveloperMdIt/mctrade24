@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro; $kundendaten = $_SESSION["\x4b\x75\x6e\144\x65"] ?? null; if (empty($kundendaten)) { goto RqciL; } require_once $oPlugin->getPaths()->getFrontendPath() . "\x6d\x61\x69\154\x63\150\x69\155\160\x2f\143\157\x6e\156\145\x63\164\x69\x6f\156\56\160\x68\x70"; $connection_data = get_mailchimp_connection_data(); $warenkorb = $_SESSION["\x57\141\x72\145\156\x6b\x6f\162\x62"]; $url = "\150\x74\x74\160\x73\72\57\57" . substr($connection_data->api_key, strpos($connection_data->api_key, "\55") + 1) . "\56\x61\x70\151\x2e\155\141\x69\154\x63\x68\151\155\160\x2e\143\157\155\57\63\x2e\60\57\x65\143\x6f\155\155\145\162\143\x65\x2f\x73\x74\157\x72\x65\x73\57" . $connection_data->store . "\x2f\x63\x61\x72\164\x73\x2f" . $kundendaten->kKunde; $result = json_decode(rudr_mailchimp_curl_connect($url, "\x44\105\114\x45\124\x45", $connection_data->api_key, $data)); RqciL:

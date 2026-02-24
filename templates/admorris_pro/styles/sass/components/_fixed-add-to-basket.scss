@@ -1,0 +1,200 @@
+// Fixed Add To Basket //
+
+@use '../abstracts/functions' as *;
+
+$shadow-color: calculate-shadow-color($body-bg);
+
+.fixed-bottom-pixel {
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+    z-index: -1000;
+}
+
+.productdetails-fixed-form {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: $body-bg;
+    z-index: $zindex-sticky + 1;
+    height: 100px;
+    padding: 15px 0;
+    transition:
+        opacity 0.5s ease-in-out,
+        transform 0.5s ease-in-out 0.5s;
+
+    &--top {
+        top: 0;
+        transform: translateY(calc(-100%));
+        box-shadow: 0 0 10px $shadow-color;
+        &.under-normal-header {
+            opacity: 0;
+            box-shadow: none;
+        }
+        &.under-sticky-header {
+            opacity: 1;
+            &.not-intersecting--top {
+                transform: translateY(var(--adm-header-height-fixed));
+            }
+        }
+    }
+
+    &--bottom {
+        bottom: 0;
+        transform: translateY(100px);
+        box-shadow: 0 0 10px $shadow-color;
+        &.not-intersecting {
+            transform: translateY(0);
+        }
+        &.bottom {
+            &.not-intersecting {
+                transform: translateY(100px);
+            }
+        }
+    }
+
+    & &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+
+        @media (max-width: $screen-xs-max) {
+            padding: 0 10px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0;
+        gap: 15px;
+
+        @media (max-width: $screen-xs-max) {
+            gap: 10px;
+            flex-grow: 1;
+        }
+    }
+    &__left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+        padding: 0;
+    }
+    &__image {
+        max-height: 90px;
+        width: auto;
+
+        @include adm-border-radius('xs', 'images-product-details');
+
+        @media (max-width: $screen-xs-max) {
+            display: none;
+        }
+    }
+    &__text {
+        margin: 0;
+
+        h2 {
+            font-size: 22px;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
+            @media (max-width: $screen-xs-max) {
+                font-size: 18px;
+            }
+        }
+    }
+    &__price {
+        @media (max-width: $screen-xs-max) {
+            .shipment {
+                display: block;
+            }
+        }
+    }
+
+    &__price_wrapper {
+        text-align: right;
+    }
+
+    // fixed add to basket
+    .productdetails-basket-action__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .alert {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .quantity-input {
+        order: 0;
+
+        @media (min-width: $screen-md) {
+            margin-right: 10px;
+        }
+    }
+    // .quantity {
+    //     @media (max-width: $screen-sm) {
+    //         display: none!important;
+    //     }
+    // }
+    .am-discount {
+        display: inline;
+        &__label {
+            padding: 0.2em 0.4em;
+        }
+        @media (max-width: $screen-xs-max) {
+            display: block;
+        }
+    }
+    .price {
+        vertical-align: middle;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 19px;
+        }
+    }
+    .price_wrapper {
+        text-align: right;
+        margin-bottom: 0;
+        @media (max-width: $screen-xs-max) {
+            text-align: left;
+        }
+    }
+    .price-note {
+        margin-right: 0;
+
+        .vat_info {
+            @media (max-width: $screen-xs-max) {
+                font-size: 9px;
+            }
+        }
+    }
+    .tooltip {
+        opacity: 1;
+        .tooltip-inner {
+            background-color: $info;
+            color: theme-color-level('info', $alert-color-level);
+            opacity: 1;
+        }
+        .tooltip-arrow {
+            border-color: $info;
+        }
+    }
+    @media (max-width: $screen-xs-max) {
+        padding: 0;
+        margin: 0;
+    }
+}

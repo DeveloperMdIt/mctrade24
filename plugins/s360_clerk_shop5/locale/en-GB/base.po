@@ -1,0 +1,528 @@
+msgid "Solution360 GmbH"
+msgstr "Solution360 GmbH"
+
+msgid "TODO"
+msgstr "@todo"
+
+msgid "Hinzufügen"
+msgstr "Add"
+
+msgid "Feed konnte nicht gefunden werden"
+msgstr "Feed could not be found"
+
+msgid "Feed konnte nicht gespeichert werden"
+msgstr "Feed could not be saved"
+
+msgid "Der Eintrag wurde erfolgreich gelöscht."
+msgstr "The entry was deleted successfully."
+
+msgid "Die Einstellungen wurden erfolgreich gespeichert."
+msgstr "The settings have been saved successfully."
+
+msgid "Allgemein"
+msgstr "General"
+
+msgid "Cookieless Tracking nutzen?"
+msgstr "Use Cookiless Tracking?"
+
+msgid "Kunden-Tracking ohne Cookies nutzen (Standard: Ja)"
+msgstr "Use visitor tracking without cookies (default: Yes)"
+
+msgid "Live Suche (Header)"
+msgstr "Live Search (Header)"
+
+msgid "Selektor Livesuche"
+msgstr "Selector Live Search"
+
+msgid "PQ Selektor Livesuche, unabhängig von Clerk Livesearch Config im Clerk Backend"
+msgstr "PQ Selector Live Search, independent of Clerk Livesearch Config in Clerk Backend"
+
+msgid "Clerk TemplateName Livesuche"
+msgstr "Clerk TemplateName Live Search"
+
+msgid "Template für die Live-Suche (Clerk Backend -> Content -> Livesuche -> Templatename)"
+msgstr "Template for the live search (Clerk Backend -> Content -> Live Search -> Template Name)"
+
+msgid "Anzahl Produkte"
+msgstr "Number of products"
+
+msgid "Anzahl der Produkte die angezeigt werden sollen"
+msgstr "Number of products to be displayed"
+
+msgid "Anzahl Suchvorschläge in der Livesuche"
+msgstr "Number of search suggestions in the live search"
+
+msgid "Anzahl der Suchvorschläge die angezeigt werden sollen"
+msgstr "Number of search suggestions to be displayed"
+
+msgid "Anzahl Kategorievorschläge"
+msgstr "Number of category suggestions"
+
+msgid "Anzahl der Kategorievorschläge die angezeigt werden sollen"
+msgstr "Number of category suggestions to be displayed"
+
+msgid "Anzahl Seitenvorschläge"
+msgstr "Number of page suggestions"
+
+msgid "Anzahl der Seitenvorschläge die angezeigt werden sollen"
+msgstr "Number of page suggestions to be displayed"
+
+msgid "Position"
+msgstr "Position"
+
+msgid "Position der Livesuche"
+msgstr "Live search position"
+
+msgid "rechts"
+msgstr "Right"
+
+msgid "links"
+msgstr "Left"
+
+msgid "zentriert"
+msgstr "Center"
+
+msgid "unterhalb"
+msgstr "Below"
+
+msgid "oben"
+msgstr "Top"
+
+msgid "nicht anzeigen"
+msgstr "Do Not Show"
+
+msgid "Suche (Ergebnisseite)"
+msgstr "Search (Result Page)"
+
+msgid "Clerk TemplateName Suche"
+msgstr "Clerk TemplateName Search"
+
+msgid "Template für die Suchergebnisseite (Clerk Backend -> Content -> Suche -> Templatename)"
+msgstr "Template for the search results page (Clerk Backend -> Content -> Search -> Template name)"
+
+msgid "Position Facetten"
+msgstr "Position facets"
+
+msgid "Position der Facetten"
+msgstr "Position of the facets"
+
+msgid "Facetten in URL anzeigen?"
+msgstr "Show facets in URL?"
+
+msgid "Clerk Facetten Attribute"
+msgstr "Clerk Facets Attributes"
+
+msgid "kommagetrennte Liste der verfügbaren Facetten"
+msgstr "comma-separated list of available facets"
+
+msgid "Clerk Facetten Attribute Multiple Werte"
+msgstr "Clerk Facets Attributes Multiple Values"
+
+msgid "kommagetrennte Liste der verfügbaren Facetten mit multiplen Werten"
+msgstr "comma-separated list of available facets with multiple values"
+
+msgid "Stapelgröße"
+msgstr "Batch size"
+
+msgid "Anstatt alle Produkte auf einmal aus der Datenbank auszulesen, wird immer nur ein Stapel an Produkten auf einmal ausgelesen. Kann bei einer großen Anzahl an Produkten den Speicherverbrauch reduzieren, erhöht dabei aber auch die Laufzeit und sollte daher nicht zu gering gesetzt werden (0 = alle)"
+msgstr "Instead of reading all products from the database at once, only one batch of products is read at a time. This can reduce memory consumption with a large number of products, but it also increases the runtime and should therefore not be set too low (0 = all)."
+
+msgid "Sprache"
+msgstr "Language"
+
+msgid "Kundengruppe"
+msgstr "Customer Group"
+
+msgid "Status"
+msgstr "State"
+
+msgid "Zuletzt geändert"
+msgstr "Update at"
+
+msgid "Aktion"
+msgstr "Action"
+
+msgid "Warnung"
+msgstr "Warning"
+
+msgid "Data Feed ist noch nicht konfiguriert"
+msgstr "Data Feed is not yet configured"
+
+msgid "Erfolgreich"
+msgstr "Success"
+
+msgid "Nicht konfiguriert"
+msgstr "Not Configured"
+
+msgid "Nicht erstellt"
+msgstr "Not Created"
+
+msgid "Fehler"
+msgstr "Error"
+
+msgid "Einstellungen"
+msgstr "Settings"
+
+msgid "Neu generieren"
+msgstr "Regenerate"
+
+msgid "Soll der Feed wirklich gelöscht werden?"
+msgstr "Should the feed really be deleted?"
+
+msgid "Löschen"
+msgstr "Delete"
+
+msgid "API Key"
+msgstr "API Key"
+
+msgid "Der API-Key des Data-Feed bei Clerk"
+msgstr "The API key of the data feed at Clerk"
+
+msgid "Private Key"
+msgstr "Private Key"
+
+msgid "Der Legacy Private API-Key des Data-Feed bei Clerk. Wird für die Zugriffsbeschränkung auf den Daten-Feed benötigt."
+msgstr "The legacy private API key of the data feed at Clerk. Required for restricting access to the data feed."
+
+msgid "Die Sprache der Daten im Feed"
+msgstr "The language of the data in the feed"
+
+msgid "Währung"
+msgstr "Currency"
+
+msgid "Die verwendete Währung der Preise im Feed"
+msgstr "The currency used for the prices in the feed"
+
+msgid "Die Einschränkung der Kundengruppe"
+msgstr "The restriction of the customer group"
+
+msgid "Zu übermittelnde Daten"
+msgstr "Data"
+
+msgid "Produkte in Feed aufnehmen"
+msgstr "Include products in feed"
+
+msgid "Attribute in Feed aufnehmen"
+msgstr "Include attributes in feed"
+
+msgid "Funktions-Attribute in Feed aufnehmen"
+msgstr "Include functional attributes in feed"
+
+msgid "Merkmale in Feed aufnehmen"
+msgstr "Include characteristics in feed"
+
+msgid "Kategorien in Feed aufnehmen"
+msgstr "Include categories in feed"
+
+msgid "Kunden in Feed aufnehmen"
+msgstr "Include customers in feed"
+
+msgid "Letzte Bestellungen in Feed aufnehmen"
+msgstr "Include orders in feed"
+
+msgid "Blog in Feed aufnehmen"
+msgstr "Include blog in feed"
+
+msgid "Eigene Seiten in Feed aufnehmen"
+msgstr "Include custom pages in feed"
+
+msgid "Welche Daten sollen im Feed enthalten sein"
+msgstr "What data should be included in the feed"
+
+msgid "Produkte ohne Preis"
+msgstr "Products without price"
+
+msgid "Produkte ohne Preis in Feed aufnehmen"
+msgstr "Include products without a price in feed"
+
+msgid "Kleinster Staffelpreis als Preis"
+msgstr "Lowest Bulk Price as Price"
+
+msgid "Den kleinsten Staffelpreis als Preis festlegen"
+msgstr "Use the lowest bulk price as the price"
+
+msgid "Kategorie Separator"
+msgstr "Category Separator"
+
+msgid "Separator für Kategorien, z.B. &gt;"
+msgstr "Separator for categories, e.g. &gt;"
+
+msgid "Blog-Seiten ID Prefix"
+msgstr "Blog-Page ID Prefix"
+
+msgid "ID-Prefix für Blog-Seiten, z.B. 10000-"
+msgstr "ID-Prefix for blog pages, e.g. 10000-"
+
+msgid "Eigene-Seiten ID Prefix"
+msgstr "Custom Pages ID Prefix"
+
+msgid "ID-Prefix für CMS-Seiten, z.B. 20000-"
+msgstr "ID-Prefix for custom pages, e.g. 20000-"
+
+msgid "Mapping"
+msgstr "Mapping"
+
+msgid "Wert für <code>color_codes</code> Attribut"
+msgstr "Value for <code>color_codes</code> Attribute"
+
+msgid "Aus welchem Attribut soll der Wert für 'color_codes' geladen werden (sofern vorhanden)"
+msgstr "From which attribute should the value for 'color_codes' be loaded (if available)?"
+
+msgid "Wert für <code>color_names</code> Attribut"
+msgstr "Value for <code>color_names</code> Attribute"
+
+msgid "Aus welchem Attribut soll der Wert für 'color_names' geladen werden (sofern vorhanden)"
+msgstr "From which attribute should the value for 'color_names' be loaded (if available)?"
+
+msgid "Wert für <code>gender</code> Attribut"
+msgstr "Value for <code>gender</code> Attribute"
+
+msgid "Aus welchem Attribut soll der Wert für 'gender' geladen werden (sofern vorhanden)"
+msgstr "From which attribute should the value for 'gender' be loaded (if available)?"
+
+msgid "Debugging"
+msgstr "Debugging"
+
+msgid "Zugriffsbeschränkung deaktivieren"
+msgstr "Deactivate access restriction"
+
+msgid "Cronverarbeitung"
+msgstr "Cron Handling"
+
+msgid "Aufgabenplaner"
+msgstr "Task Planner"
+
+msgid "Wawi-Abgleich"
+msgstr "Wawi-Sync"
+
+msgid "CLI"
+msgstr "CLI"
+
+msgid "Die Art und Weise wie der Cron für das generieren der Daten Feeds angestoßen werden soll. (Bei <i>Aufgabenplaner</i> wird der Cronjob zusammen mit den anderen Cronjobs, wie z.B. Exporte, bei Aufruf der cron_inc.php ausgeführt. Bei <i>CLI</i> wird der Cron über den Shop CLI Befehl <code>php cli s360_clerk_shop5:cron</code> ausgeführt, welcher über den System-Cron aufgerufen werden kann)"
+msgstr "The way in which the cron for generating the data feeds should be triggered. (In the case of <i>Task Planner</i>, the cron job is executed together with the other cron jobs, such as exports, when cron_inc.php is called. With <i>CLI</i>, the cron is executed via the shop CLI command <code>php cli s360_clerk_shop5:cron</code>, which can be called via the system cron)"
+
+msgid "Data Feeds erstellen:"
+msgstr "Generating Data Feeds:"
+
+msgid "- Feed ID %s [lang=%s;customer_group=%s]"
+msgstr "- Feed ID %s [lang=%s;customer_group=%s]"
+
+msgid "Fehler beim Erstellen des Feed: %s in %s in Zeile %s"
+msgstr "Error during feed generation: %s in %s on line %s"
+
+msgid "Data Feeds wurden erfolgreich erstellt"
+msgstr "Finished generating Data Feeds"
+
+msgid "Keine Feeds vorhanden!"
+msgstr "No feeds found!"
+
+msgid "Warenkorb Slider Position"
+msgstr "Shoppingcart slider position"
+
+msgid "Produkt Seite"
+msgstr "Product site"
+
+msgid "Artikel Selektor"
+msgstr "Article selector"
+
+msgid "Clerk TemplateName Artikel"
+msgstr "Clerk templateName article"
+
+msgid "Artikel Slider Position"
+msgstr "Articlekel slider position"
+
+msgid "Warenkorb Seite"
+msgstr "Shoppingcart site"
+
+msgid "Warenkorb Selektor Slider"
+msgstr "Shoppingcart selektor slider"
+
+msgid "Clerk TemplateName Warenkorb"
+msgstr "Clerk templateName shoppingcart"
+
+msgid "Anzahl Produkte im Warenkorb"
+msgstr "Number product in shoppingcart"
+
+msgid "In die Zwischenablage kopieren"
+msgstr "Copy to Clipboard"
+
+msgid "Solution360 ist eine Berliner Shop Agentur, die auf die Konzeption und Umsetzung hochwertiger Onlineshop-Projekte spezialisiert ist. Seit 2014 realisieren wir mit Leidenschaft die verschiedensten Onlineshop-Projekte ganzheitlich und professionell von der ersten Idee bis zum Go-Live."
+msgstr "Solution360 is a Berlin shop agency that specializes in the conception and implementation of high-quality online shop projects. Since 2014, we have been passionately realizing a wide variety of online shop projects, holistically and professionally, from the initial idea to go-live"
+
+msgid "Das ist unser Service:"
+msgstr "That is our service:"
+
+msgid "Clerk Dokumentation"
+msgstr "Clerk Documentation"
+
+msgid "Leistungsfähiger und schneller Support, sowie individuelle"
+msgstr "Efficient and fast support, as well as individual"
+
+msgid "Anfragen"
+msgstr "Requests"
+
+msgid "Hohe Qualität und regelmäßige"
+msgstr "High quality and regular"
+
+msgid "Updates"
+msgstr "Updates"
+
+msgid "Solution 360 - Partner für E-Commerce"
+msgstr "Solution 360 - Partner for E-Commerce"
+
+msgid "Powerstep Selektor"
+msgstr "Powerstep Selector"
+
+msgid "Clerk TemplateName Powerstep"
+msgstr "Clerk TemplateName Powerstep"
+
+msgid "Powerstep Einfügemethode"
+msgstr "Powerstep Method"
+
+msgid "Warenkorb Tracking nutzen?"
+msgstr "Use shopping cart tracking?"
+
+msgid "Clerk über Änderungen am Warenkorb benachrichtigen (Standard: Ja)"
+msgstr "Notify Clerk about changes to the shopping cart (default: Yes)"
+
+msgid "E-Mails anonymisieren"
+msgstr "Anonymise emails"
+
+msgid "E-Mail Adressen an Clerk anonymisiert als Hash übertragen (Standard: Ja)"
+msgstr "Transfer e-mail addresses to Clerk anonymised as hash (default: Yes)"
+
+msgid "Exit Intent"
+msgstr "Exit Intent"
+
+msgid "Clerk TemplateName Exit Intent"
+msgstr "Clerk TemplateName Exit Intent"
+
+msgid "Das Clerk Template des Exit Intent"
+msgstr "The clerk template for the exit intent"
+
+msgid "Verhindert, dass nachfolgende Slider Produkte aus vorherigen Slidern enthalten (Standard: Ja)"
+msgstr "Prevents subsequent sliders from containing products from previous sliders (Default: Yes)"
+
+msgid "Duplikate filtern"
+msgstr "Remove duplicates"
+
+msgid "Namen der Slider Templates die ausgegeben werden sollen. Mehrere Template Namen können als komma-separierte Liste angegeben werden."
+msgstr "Names of the slider templates to be shown. Multiple template names can be specified as a comma-separated list."
+
+msgid "Live Suche aktivieren?"
+msgstr "Activate Live Search?"
+
+msgid "Soll die Live Suche im Frontend aktiviert werden?"
+msgstr "Should the live search be activated in the frontend?"
+
+msgid "Ergebnisseite aktivieren?"
+msgstr "Activate results page?"
+
+msgid "Soll die Ergebnisseite im Frontend aktiviert werden?"
+msgstr "Should the results page be activated in the frontend?"
+
+msgid "Produktseiten Slider aktivieren?"
+msgstr "Activate product page slider?"
+
+msgid "Sollen die Slider auf der Produktseite aktiviert werden?"
+msgstr "Should the sliders be activated on the product page?"
+
+msgid "Warenkorb Slider aktivieren?"
+msgstr "Activate shoping cart slider?"
+
+
+msgid "Sollen die Slider im Warenkorb aktiviert werden?"
+msgstr "Should the sliders be activated in the shopping cart?"
+
+msgid "Powerstep Slider aktivieren?"
+msgstr "Activate powerstep slider?"
+
+msgid "Sollen die Slider im Powerstep aktiviert werden?"
+msgstr "Should the sliders be activated in the powerstep?"
+
+msgid "Exit Intent Slider aktivieren?"
+msgstr "Activate exit intent slider?"
+
+msgid "Sollen die Slider im Exit Intent aktiviert werden?"
+msgstr "Should the sliders be activated in the exit intent?"
+
+msgid "Kategorie Seite"
+msgstr "Category Page"
+
+msgid "Kategorieseiten Slider aktivieren?"
+msgstr "Activate category page slider?"
+
+msgid "Sollen die Slider auf der Kategorie-Seite aktiviert werden?"
+msgstr "Should the sliders be activated on the category page?"
+
+msgid "Kategorie Selektor Slider"
+msgstr "Category Page slider selector"
+
+msgid "Clerk TemplateName Kategorie"
+msgstr "Clerk TemplateName Category"
+
+msgid "Kategorie Slider Position"
+msgstr "Category Slider Position"
+
+msgid "termsAndServiceWarning"
+msgstr "Please note that this will send all historical orders to Clerk.io. The regulations of the data processing can be found in <a href=\"https://www.clerk.io/terms-of-service\" target=\"_blank\">Clerk's T&Cs</a>"
+
+msgid "Eigener Name für das Clerk JS um potentielle Adblocker zu umgehen"
+msgstr "Custom name for the Clerk JS to bypass potential adblockers"
+
+msgid "Omni-Suche"
+msgstr "Omni-Search"
+
+msgid "Bei aktivierter Omni-Suche haben die Einstellungen für die Live Suche keine Auswirkung!"
+msgstr "If Omni search is activated, the settings for the live search have no effect!"
+
+msgid "Omni-Suche aktivieren?"
+msgstr "Activate Omni-Search?"
+
+msgid "Soll die Omni-Suche im Frontend aktiviert werden?"
+msgstr "Should the omni search be activated in the frontend?"
+
+msgid "Selektor Omni-Suche"
+msgstr "Selector Omni-Search"
+
+msgid "PQ Selektor Omni-Suche, unabhängig von Clerk Omni-Suche Config im Clerk Backend"
+msgstr "PQ Selector Omni-Search, independent of Clerk Omni-Search Config in Clerk Backend"
+
+msgid "Template für die Omni-Suche (Clerk Backend -> Content -> Omnisearch -> Templatename)"
+msgstr "Template for the Omnisearch (Clerk Backend -> Content -> Omnisearch -> Template Name)"
+
+msgid "Clerk TemplateName Omni-Suche"
+msgstr "Clerk TemplateName Omni-Search"
+
+msgid "In Webseite einfügen"
+msgstr "Insert into website"
+
+msgid "über das Plugin (embedded code)"
+msgstr "via the plugin (embedded code)"
+
+msgid "über Clerk.js (injection)"
+msgstr "via clerk.js (injection)"
+
+msgid "Über das Plugin: Das Plugin setzt den Code an die in den Einstellungen definierte Stelle.<br/>Über Clerk.js: Der Einhängepunkt wird in Clerk und nicht im Plugin konfiguriert. Die nötigen Einstellungen müssen in Clerk vorgenommen werden!"
+msgstr "Via the plugin: The plugin places the code in the location defined in the settings.<br/>Via Clerk.js: The injection is configured in Clerk and not in the plugin. The necessary settings must be made in Clerk."
+
+msgid "Feed Product Mode"
+msgstr "Feed Product Mode"
+
+msgid "All products"
+msgstr "All products"
+
+msgid "Only parent products"
+msgstr "Only parent products"
+
+msgid "Only child products"
+msgstr "Only child products"
+
+msgid "Which products should be included in the product feed?"
+msgstr "Which products should be included in the product feed?"
+
+msgid "Track Variant Products in Tracking?"
+msgstr "Track Variant Products in Tracking?"
+
+msgid "If enabled, child product IDs will be tracked in cart events instead of the parent product."
+msgstr "If enabled, child product IDs will be tracked in cart events instead of the parent product."

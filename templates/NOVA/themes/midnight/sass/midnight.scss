@@ -1,0 +1,27 @@
+@import '../../base/sass/functions';
+
+//#customVariables#
+
+@import 'variables';
+
+@import 'allstyles';
+
+.text-dark { color: $gray-medium !important;}
+
+#footer, header, .fixed-search {
+  .form-control {
+    border-color: $primary;
+  }
+}
+.dropdown-item {
+  .btn-link {
+    color: $dropdown-link-color;
+  }
+}
+header {
+  @include media-breakpoint-up(lg) {
+    border-bottom: 4px solid $primary;
+  }
+}
+
+//#customContent#

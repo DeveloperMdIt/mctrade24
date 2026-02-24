@@ -1,0 +1,738 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<jtlshopplugin>
+    <Name>JTL PayPal Checkout</Name>
+    <Description>PayPal Checkout: die gängigsten Zahlarten PayPal, Lastschrift, Kredit-/Debitkarte, mehr als zehn lokale Zahlarten und, sofern für Sie verfügbar, Rechnungskauf</Description>
+    <Author>JTL-Software-GmbH</Author>
+    <URL>https://www.jtl-software.de</URL>
+    <XMLVersion>100</XMLVersion>
+    <ShopVersion>5.4.0</ShopVersion>
+    <Version>2.1.1</Version>
+    <CreateDate>2021-03-10</CreateDate>
+    <PluginID>jtl_paypal_commerce</PluginID>
+    <ExsID>d5c1f01a-9c07-4c8c-9677-cbb5f0a20304</ExsID>
+    <Install>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Infos</Name>
+            </Customlink>
+            <Customlink sort="2">
+                <Name>Zugangsdaten</Name>
+            </Customlink>
+            <Customlink sort="3">
+                <Name>Einstellungen</Name>
+            </Customlink>
+            <Customlink sort="4">
+                <Name>Versandinformationen</Name>
+            </Customlink>
+            <Customlink sort="5">
+                <Name>Webhook</Name>
+            </Customlink>
+            <Customlink sort="6">
+                <Name>Offene Bestellungen</Name>
+            </Customlink>
+        </Adminmenu>
+        <PaymentMethod>
+            <Method>
+                <Name>PayPal Checkout</Name>
+                <PictureURL>images/de-pp-logo-100px.png</PictureURL>
+                <Sort>1</Sort>
+                <SendMail>1</SendMail>
+                <Provider>PayPal</Provider>
+                <TSCode>PAYPAL</TSCode>
+                <PreOrder>1</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>PayPalCommerce.php</ClassFile>
+                <TemplateFile>template/paypalcommerce.tpl</TemplateFile>
+                <ClassName>PayPalCommerce</ClassName>
+                <MethodLanguage iso="GER">
+                    <Name>PayPal Checkout</Name>
+                    <ChargeName>PayPal Checkout</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+                <MethodLanguage iso="ENG">
+                    <Name>PayPal Checkout</Name>
+                    <ChargeName>PayPal Checkout</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+            </Method>
+            <Method>
+                <Name>Rechnungskauf mit Ratepay</Name>
+                <Sort>2</Sort>
+                <SendMail>1</SendMail>
+                <Provider>PayPal</Provider>
+                <TSCode>PAYPAL</TSCode>
+                <PreOrder>1</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>PayPalPUI.php</ClassFile>
+                <TemplateFile>template/paypalpui.tpl</TemplateFile>
+                <AdditionalTemplateFile>template/ppPUILegalInfo.tpl</AdditionalTemplateFile>
+                <ClassName>PayPalPUI</ClassName>
+                <MethodLanguage iso="GER">
+                    <Name>Rechnungskauf</Name>
+                    <ChargeName>Rechnungskauf</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+                <MethodLanguage iso="ENG">
+                    <Name>Pay upon Invoice</Name>
+                    <ChargeName>Pay upon Invoice</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+            </Method>
+            <Method>
+                <Name>PayPal Kreditkarte</Name>
+                <Sort>3</Sort>
+                <SendMail>1</SendMail>
+                <Provider>PayPal</Provider>
+                <TSCode>PAYPAL</TSCode>
+                <PreOrder>1</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>PayPalACDC.php</ClassFile>
+                <TemplateFile>template/paypalacdc.tpl</TemplateFile>
+                <AdditionalTemplateFile>template/paypalacdc_hostedfields.tpl</AdditionalTemplateFile>
+                <ClassName>PayPalACDC</ClassName>
+                <MethodLanguage iso="GER">
+                    <Name>Kredit- und Debitkarte</Name>
+                    <ChargeName>Kredit- und Debitkarte</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+                <MethodLanguage iso="ENG">
+                    <Name>Credit and Debit card</Name>
+                    <ChargeName>Credit and Debit card</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+            </Method>
+            <Method>
+                <Name>Google Pay</Name>
+                <PictureURL>images/googlepay-logo-100px.png</PictureURL>
+                <Sort>4</Sort>
+                <SendMail>1</SendMail>
+                <Provider>PayPal</Provider>
+                <TSCode>PAYPAL</TSCode>
+                <PreOrder>1</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>PayPalGPay.php</ClassFile>
+                <TemplateFile>template/paypalgpay.tpl</TemplateFile>
+                <ClassName>PayPalGPay</ClassName>
+                <MethodLanguage iso="GER">
+                    <Name>Google Pay</Name>
+                    <ChargeName>Google Pay</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+                <MethodLanguage iso="ENG">
+                    <Name>Google Pay</Name>
+                    <ChargeName>Google Pay</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+            </Method>
+            <Method>
+                <Name>Apple Pay</Name>
+                <PictureURL>images/apple-pay-mark.png</PictureURL>
+                <Sort>5</Sort>
+                <SendMail>1</SendMail>
+                <Provider>PayPal</Provider>
+                <TSCode>PAYPAL</TSCode>
+                <PreOrder>1</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>PayPalApplePay.php</ClassFile>
+                <TemplateFile>template/paypalapplepay.tpl</TemplateFile>
+                <AdditionalTemplateFile>template/paypalapplepay_checkavailability.tpl</AdditionalTemplateFile>
+                <ClassName>PayPalApplePay</ClassName>
+                <MethodLanguage iso="GER">
+                    <Name>Apple Pay</Name>
+                    <ChargeName>Apple Pay</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+                <MethodLanguage iso="ENG">
+                    <Name>Apple Pay</Name>
+                    <ChargeName>Apple Pay</ChargeName>
+                    <InfoText/>
+                </MethodLanguage>
+            </Method>
+        </PaymentMethod>
+        <FrontendLink>
+            <Link>
+                <Name>PayPal Onboarding</Name>
+                <Template>onboarding.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <SSL>0</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>paypal-onboarding-de</Seo>
+                    <Name>PayPal Onboarding</Name>
+                    <Title>PayPal Onboarding</Title>
+                    <MetaTitle>PayPal Onboarding</MetaTitle>
+                    <MetaKeywords>PayPal Onboarding</MetaKeywords>
+                    <MetaDescription>PayPal Onboarding</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>paypal-onboarding-en</Seo>
+                    <Name>PayPal Onboarding</Name>
+                    <Title>PayPal Onboarding</Title>
+                    <MetaTitle>PayPal Onboarding</MetaTitle>
+                    <MetaKeywords>PayPal Onboarding</MetaKeywords>
+                    <MetaDescription>PayPal Onboarding</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <Link>
+                <Name>PayPal Zahlungsstatus</Name>
+                <Template>pendingpayment.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <SSL>0</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>paypal-zahlungsstatus</Seo>
+                    <Name>PayPal Zahlungsstatus</Name>
+                    <Title>PayPal Zahlungsstatus</Title>
+                    <MetaTitle>PayPal Zahlungsstatus</MetaTitle>
+                    <MetaKeywords>PayPal Zahlungsstatus</MetaKeywords>
+                    <MetaDescription>PayPal Zahlungsstatus</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>paypal-payment-state</Seo>
+                    <Name>PayPal pending payment</Name>
+                    <Title>PayPal pending payment</Title>
+                    <MetaTitle>PayPal pending payment</MetaTitle>
+                    <MetaKeywords>PayPal pending payment</MetaKeywords>
+                    <MetaDescription>PayPal pending payment</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <Link>
+                <Name>PayPal Express-Checkout</Name>
+                <Template>expresscheckout.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <SSL>0</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>paypal-express-zahlung</Seo>
+                    <Name>PayPal Express-Checkout</Name>
+                    <Title>PayPal Express-Checkout</Title>
+                    <MetaTitle>PayPal Express-Checkout</MetaTitle>
+                    <MetaKeywords>PayPal Express-Checkout</MetaKeywords>
+                    <MetaDescription>PayPal Express-Checkout</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>paypal-express-checkout</Seo>
+                    <Name>PayPal express checkout</Name>
+                    <Title>PayPal express checkout</Title>
+                    <MetaTitle>PayPal express checkout</MetaTitle>
+                    <MetaKeywords>PayPal express checkout</MetaKeywords>
+                    <MetaDescription>PayPal express checkout</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <Link>
+                <Name>PayPal Checkout Webhook</Name>
+                <Template>webhook_PayPalCommerce.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <SSL>0</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>PayPalCheckoutWebhook</Seo>
+                    <Name>PayPal Checkout Webhook</Name>
+                    <Title>PayPal Checkout Webhook</Title>
+                    <MetaTitle>PayPal Checkout Webhook</MetaTitle>
+                    <MetaKeywords>PayPal Checkout Webhook</MetaKeywords>
+                    <MetaDescription>PayPal Checkout Webhook</MetaDescription>
+                </LinkLanguage>
+            </Link>
+        </FrontendLink>
+        <Locales>
+            <Variable>
+                <Name>jtl_paypal_commerce_payment_error</Name>
+                <Description>Meldung wenn eine Zahlung nicht abgeschlossen werden kann</Description>
+                <VariableLocalized iso="GER">Die Zahlung konnte nicht verarbeitet werden. Bitte probieren Sie es später noch einmal oder wählen Sie eine andere Zahlungsart aus.</VariableLocalized>
+                <VariableLocalized iso="ENG">The Payment could not be processed. Please try again later or choose a different payment method.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_paypal</Name>
+                <Description>Zahlungsartname bei PayPal</Description>
+                <VariableLocalized iso="GER">PayPal</VariableLocalized>
+                <VariableLocalized iso="ENG">PayPal</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_card</Name>
+                <Description>Zahlungsartname bei Kredit- oder Debitkarte</Description>
+                <VariableLocalized iso="GER">Kredit- oder Debitkarte</VariableLocalized>
+                <VariableLocalized iso="ENG">Credit or debit cards</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_credit</Name>
+                <Description>Zahlungsartname bei PayPal Später bezahlen</Description>
+                <VariableLocalized iso="GER">PayPal Später bezahlen</VariableLocalized>
+                <VariableLocalized iso="ENG">PayPal Pay Later</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_paylater</Name>
+                <Description>Zahlungsartname bei Pay Later</Description>
+                <VariableLocalized iso="GER">PayPal</VariableLocalized>
+                <VariableLocalized iso="ENG">PayPal</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_venmo</Name>
+                <Description>Zahlungsartname bei Venmo</Description>
+                <VariableLocalized iso="GER">Venmo</VariableLocalized>
+                <VariableLocalized iso="ENG">Venmo</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_sepa</Name>
+                <Description>Zahlungsartname bei SEPA-Lastschrift</Description>
+                <VariableLocalized iso="GER">SEPA-Lastschrift</VariableLocalized>
+                <VariableLocalized iso="ENG">SEPA-Lastschrift</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_bancontact</Name>
+                <Description>Zahlungsartname bei Bancontact</Description>
+                <VariableLocalized iso="GER">Bancontact</VariableLocalized>
+                <VariableLocalized iso="ENG">Bancontact</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_blik</Name>
+                <Description>Zahlungsartname bei BLIK</Description>
+                <VariableLocalized iso="GER">BLIK</VariableLocalized>
+                <VariableLocalized iso="ENG">BLIK</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_eps</Name>
+                <Description>Zahlungsartname bei eps</Description>
+                <VariableLocalized iso="GER">eps</VariableLocalized>
+                <VariableLocalized iso="ENG">eps</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_ideal</Name>
+                <Description>Zahlungsartname bei iDEAL</Description>
+                <VariableLocalized iso="GER">iDEAL</VariableLocalized>
+                <VariableLocalized iso="ENG">iDEAL</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_mercadopago</Name>
+                <Description>Zahlungsartname bei Mercado Pago</Description>
+                <VariableLocalized iso="GER">Mercado Pago</VariableLocalized>
+                <VariableLocalized iso="ENG">Mercado Pago</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_mybank</Name>
+                <Description>Zahlungsartname bei MyBank</Description>
+                <VariableLocalized iso="GER">MyBank</VariableLocalized>
+                <VariableLocalized iso="ENG">MyBank</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_p24</Name>
+                <Description>Zahlungsartname bei Przelewy24</Description>
+                <VariableLocalized iso="GER">Przelewy24</VariableLocalized>
+                <VariableLocalized iso="ENG">Przelewy24</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_sofort</Name>
+                <Description>Zahlungsartname bei Sofort</Description>
+                <VariableLocalized iso="GER">Sofort</VariableLocalized>
+                <VariableLocalized iso="ENG">Sofort</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_fundingmethod_satispay</Name>
+                <Description>Zahlungsartname bei Satispay</Description>
+                <VariableLocalized iso="GER">satispay</VariableLocalized>
+                <VariableLocalized iso="ENG">satispay</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_purchase_placeholder</Name>
+                <Description>Ergänzung der Zahlungsbeschreibung, wenn nicht alle Artikel aufgeführt werden können</Description>
+                <VariableLocalized iso="GER">und %d weitere Artikel</VariableLocalized>
+                <VariableLocalized iso="ENG">and %d more products</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_purchase_description</Name>
+                <Description>Artikelunabhängige Zahlungsbeschreibung, wenn diese Option aktiviert wurde</Description>
+                <VariableLocalized iso="GER">Bestellung {{OrderNumber}} bei {{ShopName}} vom {{OrderDate}}</VariableLocalized>
+                <VariableLocalized iso="ENG">Order {{OrderNumber}} at {{ShopName}} from {{OrderDate}}</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_instalment_banner_consent_placeholder</Name>
+                <Description>Dieser Text wird anstelle des Ratenzahlungs-Banners angezeigt, wenn noch kein Consent erteilt wurde</Description>
+                <VariableLocalized iso="GER"><![CDATA[Sie möchten in monatlichen Raten zahlen? <a href="#" onclick="return false;">Weitere Informationen</a>]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Would you like to pay in monthly instalments? <a href="#" onclick="return false;">more information</a>]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_instalment_banner_consent_description</Name>
+                <Description>Hinweistext für den Express-Checkout und das Ratenzahlung-Banner im Consent-Manager</Description>
+                <VariableLocalized iso="GER">Um Angebote zu erweiterten Zahlungsmöglichkeiten, insbesondere den Express-Checkout und die Zahlung in Raten, zu entsperren,
+                    benötigen wir Ihre Zustimmung zur Datenweitergabe und Speicherung von Drittanbieter-Cookies des Zahlungsanbieters PayPal.
+                    Dies erlaubt uns, Ihnen auch den Express-Checkout und die Ratenzahlung anzubieten. Ohne Ihre Zustimmung erfolgt nur die technisch notwendige Datenweitergabe
+                    an PayPal, jedoch können Sie die erweiterten Angebote zum Express-Checkout oder zur Ratenzahlung dann nicht auf dieser Seite verwenden.</VariableLocalized>
+                <VariableLocalized iso="ENG">In order to unlock offers for extended payment options, in particular express checkout and payment in instalments,
+                    we require your consent to the data transfer and storage of third-party cookies of the payment provider PayPal.
+                    This allows us to also offer you express checkout and payment by instalments. Without your consent, only the technically necessary data transfer
+                    to PayPal will take place, but you will then not be able to use the express checkout or extended offers for payment by instalments on this site.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_instalment_banner_consent_purpose</Name>
+                <Description>Beschreibung für Express Checkout und das Ratenzahlung-Banner im Consent-Manager</Description>
+                <VariableLocalized iso="GER">Nutzung des Express Checkout und Anzeige von Angeboten zur Ratenzahlung für einzelne Artikel oder Ihren kompletten Einkauf.</VariableLocalized>
+                <VariableLocalized iso="ENG">Using express checkout and Displaying offers for payment in instalments for individual items or your entire purchase.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_ecs_loading_placeholder</Name>
+                <Description>Platzhalter, wenn PayPal Komponenten geladen werden</Description>
+                <VariableLocalized iso="GER">Komponenten werden geladen</VariableLocalized>
+                <VariableLocalized iso="ENG">components are loading</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_ecs_preload_button_label_inactive</Name>
+                <Description>Expresskauf Button Beschriftung vor dem Klick (Consent-Manager aktiv)</Description>
+                <VariableLocalized iso="GER">Consent erteilen</VariableLocalized>
+                <VariableLocalized iso="ENG">grant consent</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_ecs_preload_button_label_active</Name>
+                <Description>Expresskauf Button Beschriftung nach dem Klick</Description>
+                <VariableLocalized iso="GER">Zahlungsart wählen</VariableLocalized>
+                <VariableLocalized iso="ENG">Choose a payment method</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_pui_legalinformation_header</Name>
+                <Description>Überschrift zu Rechtlichen Informationen für den Rechnungskauf</Description>
+                <VariableLocalized iso="GER">Rechtliche Informationen</VariableLocalized>
+                <VariableLocalized iso="ENG">Legal information</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_pui_legalinformation</Name>
+                <Description>Rechtliche Informationen für den Rechnungskauf</Description>
+                <VariableLocalized iso="GER"><![CDATA[Mit Auswahl der Zahlungsart und Klick auf den Button "Weiter" akzeptieren Sie die <a target="_blank" href="https://www.ratepay.com/legal-payment-terms">Ratepay Zahlungsbedingungen</a>
+                    und erklären sich mit der Durchführung einer <a target="_blank" href="https://www.ratepay.com/legal-payment-dataprivacy">Risikoprüfung durch Ratepay</a>, unseren Partner, einverstanden. Sie akzeptieren
+                    auch PayPal’s <a target="_blank" href="https://www.paypal.com/de/webapps/mpp/ua/rechnungskauf-mit-ratepay?locale.x=de_DE">Datenschutzerklärung</a>.<br>Falls Ihre Transaktion erfolgreich per Rechnungskauf abgewickelt werden kann,
+                    wird der Kaufpreis an Ratepay abgetreten und Sie dürfen nur an Ratepay überweisen, nicht an den Händler.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[By checking out the paymant method and clicking on the button "Next", you agree to the <a target="_blank" href="https://www.ratepay.com/legal-payment-terms">terms of payment</a> and <a target="_blank" href="https://www.ratepay.com/legal-payment-dataprivacy>performance of a risk check</a>
+                    from the payment partner, Ratepay. You also agree to PayPal’s <a target="_blank" href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full">privacy statement</a>.<br>If your request to purchase
+                    Upon invoice is accepted, the purchase price claim will be assigned to Ratepay, and you may only pay Ratepay, not the merchant.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_pui_banktransfer</Name>
+                <Description>Zahlungsinformation für den Rechnungskauf</Description>
+                <Type>textarea</Type>
+                <VariableLocalized iso="GER"><![CDATA[Bitte überweisen Sie den Betrag in Höhe von %value% %currency% bis zum %payment_due_date% auf das unten angegebene Konto. Wichtig: Bitte geben Sie unbedingt als Verwendungszweck %reference_number% an, sonst kann die Zahlung nicht zugeordnet werden.<br>
+Empfänger: %account_holder_name%<br>
+IBAN: %international_bank_account_number%<br>
+BIC: %bank_identifier_code%<br>
+Name der Bank: %bank_name%<br>
+Verwendungszweck: %reference_number%]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please transfer the amount of %currency% %value% to the account stated below by %payment_due_date%. Important: Please make sure to enter %reference_number% as the payment reference. Otherwise we will not be able to match your payment.<br>
+Payee: %account_holder_name%<br>
+IBAN: %international_bank_account_number%<br>
+BIC: %bank_identifier_code%<br>
+Bank name: %bank_name%<br>
+Payment reference: %reference_number%]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_pui_legal</Name>
+                <Description>Rechtliche Information zur Forderungsabtretung bei Rechnungskauf</Description>
+                <VariableLocalized iso="GER"><![CDATA[%company% hat die Forderung gegen Sie an die PayPal (Europe) S.à r.l. et Cie, S.C.A. abgetreten, die wiederum die Forderung an Ratepay GmbH abgetreten hat. Zahlungen mit schuldbefreiender Wirkung können nur an die Ratepay GmbH geleistet werden.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[%company% assigned the claims owed by you to PayPal (Europe) S.à r.l. et Cie, S.C.A., who in return assigned the claims to Ratepay GmbH. Payments with debt-discharging effect may only be made to Ratepay GmbH.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_ecs_wk_error_title</Name>
+                <Description>Titel der Meldung wenn beim Klick auf den Expresskauf-Button ein Warenkorb-Fehler auftritt</Description>
+                <VariableLocalized iso="GER">Der Artikel kann nicht in den Warekorb gelegt werden</VariableLocalized>
+                <VariableLocalized iso="ENG">The product can not be addedto the cart</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_ecs_wk_error_desc</Name>
+                <Description>Meldung wenn beim Klick auf den Expresskauf-Button ein Warenkorb-Fehler auftritt</Description>
+                <VariableLocalized iso="GER">Bitte prüfen Sie alle Eingaben und versuchen Sie es erneut.</VariableLocalized>
+                <VariableLocalized iso="ENG">Please Check your inputs and try it again.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_ecs_missing_data</Name>
+                <Description>Meldung wenn Rechnungsadressdaten vervollständigt werden müssen</Description>
+                <VariableLocalized iso="GER">Sind Ihre Adressdaten korrekt? Bitte überprüfen Sie die Felder auf Richtigkeit und vervollständigen Sie gegebenenfalls fehlende Angaben.</VariableLocalized>
+                <VariableLocalized iso="ENG">Are your address details correct? Please verify the fields and complete any missing information.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payment_declined</Name>
+                <Description>Meldung wenn eine Zahlung abgelehnt wurde</Description>
+                <VariableLocalized iso="GER">Zu Ihrer Bestellung %s ist die Zahlung über %s leider abgelehnt worden. Gern bieten wir Ihnen eine alternative Zahlungsmöglichkeit an, bitte setzen Sie sich dazu mit uns in Verbindung.</VariableLocalized>
+                <VariableLocalized iso="ENG">The Payment for your order %s has been declined by %s. Feel free to contact us for a different payment option.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>pui_customer_service_instructions</Name>
+                <Description>Tragen Sie hier Ihre Kundendiensthinweise ein</Description>
+                <VariableLocalized iso="GER">Bei Fragen zur Bestellung wenden Sie sich an: %s</VariableLocalized>
+                <VariableLocalized iso="ENG">For questions about your order, please contact: %s</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payment_pending_info</Name>
+                <Description>Meldung für verzögerten Zahlungsstatus</Description>
+                <VariableLocalized iso="GER">Ihre Zahlung wird vom Zahlungsanbieter noch geprüft. Dieser Vorgang kann einige Zeit in Anspruch nehmen. Wir informieren Sie per E-Mail, wenn Ihre Zahlung bearbeitet wurde.</VariableLocalized>
+                <VariableLocalized iso="ENG">Your payment is still being reviewed. This process may take some time. We will send you a confirmation via email if the payment is processed.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>pui_pending_approval_info</Name>
+                <Description>Meldung für verzögerten Zahlungsstatus beim Ratenkauf</Description>
+                <VariableLocalized iso="GER">Ihr Rechnungskauf mit Ratepay wird noch geprüft. Dieser Vorgang kann einige Zeit in Anspruch nehmen. Wir informieren Sie per E-Mail, wenn Ihr Rechnungskauf genehmigt wurde, und übersenden Ihnen in dieser Bestätigung auch die Informationen für Ihre Überweisung. Wichtig: Bitte überweisen Sie nur an Ratepay GmbH und verwenden Sie für Ihre Überweisung nur die Zahlungsinformationen aus der Bestätigung.</VariableLocalized>
+                <VariableLocalized iso="ENG">Your payment by invoice (Rechnungskauf mit Ratepay) is still being reviewed. This process may take some time. We will send you a confirmation via email if the payment by invoice is approved. You will also receive the details for the bank transfer in that email. Important: Please make the payment to Ratepay GmbH and make sure to only use the payment details from the conformation email for your transfer.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_3dserror_occured</Name>
+                <Description>Meldung wenn die 3DS-Prüfung fehlgeschlagen ist</Description>
+                <VariableLocalized iso="GER">Die Sicherheitsprüfung für Ihre Kredit- oder Debitkarte konnte nicht erfolgreich abgeschlossen werden. Bitte wählen Sie eine andere Kreditkarte oder eine andere Zahlungsart aus.</VariableLocalized>
+                <VariableLocalized iso="ENG">The security check for your credit or debit card could not be completed successfully. Please selet a different card or another payment method.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_invalid_input</Name>
+                <Description>Validierungsfehler für ungültige Eingaben bei der erweiterten Kartenzahlung</Description>
+                <VariableLocalized iso="GER">Keine gültige Eingabe</VariableLocalized>
+                <VariableLocalized iso="ENG">Invalid input</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_potentially_valid</Name>
+                <Description>Validierungsfehler für möglicherweise unvollständige Eingaben bei der erweiterten Kartenzahlung</Description>
+                <VariableLocalized iso="GER">Unvollständige Eingabe</VariableLocalized>
+                <VariableLocalized iso="ENG">Incomplete input</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_card_header</Name>
+                <Description>Überschrift zum Eingabeformular der Kreditkartendaten</Description>
+                <VariableLocalized iso="GER">Kreditkartendaten</VariableLocalized>
+                <VariableLocalized iso="ENG">Credit card details</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_card_number</Name>
+                <Description>Feld zur Eingabe der Kartennummer</Description>
+                <VariableLocalized iso="GER">Kartennummer</VariableLocalized>
+                <VariableLocalized iso="ENG">Card number</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_card_date</Name>
+                <Description>Feld zur Eingabe des Ablaufdatums</Description>
+                <VariableLocalized iso="GER">Ablaufdatum</VariableLocalized>
+                <VariableLocalized iso="ENG">Expiration date</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_card_security_code</Name>
+                <Description>Feld zur Eingabe der Sicherheitsnummer</Description>
+                <VariableLocalized iso="GER">Sicherheitsnummer</VariableLocalized>
+                <VariableLocalized iso="ENG">Security code</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_card_holder_name</Name>
+                <Description>Feld zur Eingabe des Karteninhabers</Description>
+                <VariableLocalized iso="GER">Name des Karteninhabers</VariableLocalized>
+                <VariableLocalized iso="ENG">Name of cardholder</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_card_holder_equals_billing</Name>
+                <Description>Auswahl zur Eingabe der Adresse des Karteninhabers</Description>
+                <VariableLocalized iso="GER">Adresse des Karteninhabers gleicht Rechnungsaddresse</VariableLocalized>
+                <VariableLocalized iso="ENG">Address of cardholder equals billing address</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>acdc_card_holder_adress</Name>
+                <Description>Überschrift zur Adresse des Karteninhabers</Description>
+                <VariableLocalized iso="GER">Adresse des Karteninhabers</VariableLocalized>
+                <VariableLocalized iso="ENG">Address of cardholder</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_psd2overcharge</Name>
+                <Description>Überschrift für erneute Autorisierung bei PayPal bei Überzahlung</Description>
+                <VariableLocalized iso="GER">Die Zahlung wurde als nicht autorisiert zurückgewiesen</VariableLocalized>
+                <VariableLocalized iso="ENG">The payment was rejected as unauthorized</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payer_action_required_psd2overcharge</Name>
+                <Description>Meldung für erneute Autorisierung bei PayPal bei Überzahlung</Description>
+                <VariableLocalized iso="GER">Der Zahlungsanbieter hat eine erneute Bestätigung der Kaufsumme angefordert. Dies kann z. B. daran liegen, dass die endgültige Warenkorbsumme größer ist als der zuvor autorisierte Betrag. Sie werden nun erneut zum Zahlungsanbieter weitergeleitet. Dabei handelt es sich NICHT um eine zweite Zahlung, sondern lediglich um die Bestätigung der geänderten Summe.</VariableLocalized>
+                <VariableLocalized iso="ENG">The payment service provider requested a reconfirmation of the purchase amount. One possible reason is that the final total costs indicated in the shopping basket are higher than the previously authorised amount. You will now be forwarded to the payment service provider again. This is NOT a second payment but simply a confirmation of the changed purchase amount.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payment_pi_auto_complete_description</Name>
+                <Description>Beschreibung für den Zahlungsabschluss</Description>
+                <VariableLocalized iso="GER">Bitte nehmen Sie die Zahlung vor, damit die Bestellung abgeschlossen werden kann.</VariableLocalized>
+                <VariableLocalized iso="ENG">Please make the payment so that your order can be completed.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payment_pi_auto_complete_header</Name>
+                <Description>Überschrift für den Zahlungsabschluss</Description>
+                <VariableLocalized iso="GER">Ihre Bestellung ist noch nicht abgeschlossen!</VariableLocalized>
+                <VariableLocalized iso="ENG">Your order is not yet complete!</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payment_notavailable</Name>
+                <Description>Meldung wenn eine Zahlungsart nicht zur Verfügung steht</Description>
+                <VariableLocalized iso="GER">Die Zahlungsart %s ist derzeit leider nicht verfügbar. Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut oder wählen Sie eine andere Zahlungsart.</VariableLocalized>
+                <VariableLocalized iso="ENG">The %s payment method is currently not available. Please try again later or select a different payment method.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_vaulting_enable_description</Name>
+                <Description>Label für die Aktivierung von Vaulting</Description>
+                <VariableLocalized iso="GER">Zahlungsmethode für zukünftige Einkäufe sicher speichern</VariableLocalized>
+                <VariableLocalized iso="ENG">Securely save payment method for future purchases</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_vaulting_enable_tooltip</Name>
+                <Description>Tooltip für die Aktivierung von Vaulting</Description>
+                <VariableLocalized iso="GER">Sie können beim nächsten Einkauf schneller und einfacher bezahlen.</VariableLocalized>
+                <VariableLocalized iso="ENG">You can pay quicker and easier for your next purchase.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payer_action_required</Name>
+                <Description>Überschrift für erneute Autorisierung bei PayPal Allgemein</Description>
+                <VariableLocalized iso="GER">Anmeldung beim Zahlungsanbieter erforderlich</VariableLocalized>
+                <VariableLocalized iso="ENG">Payment provider login required</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>jtl_paypal_commerce_payer_action_required_general</Name>
+                <Description>Meldung für erneute Autorisierung bei PayPal Allgemein</Description>
+                <VariableLocalized iso="GER"><![CDATA[Ihre Zahlung konnte nicht durchgeführt werden. Der Zahlungsanbieter hat eine Anmeldung gefordert. Schließen Sie diesen Hinweis und klicken Sie auf die Schaltfläche 'Jetzt kaufen'. Sie werden vom Zahlungsanbieter gebeten, Ihre Zugangsdaten einzugeben.<br>
+                    <strong>Hinweis</strong>: Ihre Zahlung wird erst nach der Anmeldung durchgeführt.]]>
+                </VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Your payment could not be processed. The payment provider has requested a login. Close this message and click the 'Buy now' button. You will be asked by the payment provider to enter your login information.<br>
+                    <strong>Note</strong>: Your payment will not be processed until you log in.]]></VariableLocalized>
+            </Variable>
+        </Locales>
+        <Emailtemplate>
+            <Template>
+                <Name>Rechnungskauf - Zahlungsinformationen</Name>
+                <Description />
+                <Type>text/html</Type>
+                <ModulId>paymentinformation</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>0</AGB>
+                <WRB>0</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Rechnungskauf - Zahlungsinformationen</Subject>
+                    <ContentHtml><![CDATA[{includeMailTemplate template=header type=html}
+Guten Tag {$Kunde->cVorname} {$Kunde->cNachname},<br><br>
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+für Ihre Bestellung {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_de}) bei {$Einstellungen.global.global_shopname} haben Sie die Zahlung mittels "{$Bestellung->cZahlungsartName}" gewählt.<br>
+Bitte benutzen Sie die folgenden Informationen für Ihre Überweisung:<br><br>
+{$Bestellung->cPUIZahlungsdaten}<br><br>
+
+Mit freundlichen Grüßen <br><br>
+
+Ihr Team von {$Firma->cName}
+
+{includeMailTemplate template=footer type=html}]]></ContentHtml>
+                    <ContentText><![CDATA[{includeMailTemplate template=header type=plain}
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+Guten Tag {$Kunde->cVorname} {$Kunde->cNachname},
+
+für Ihre Bestellung {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_de}) bei {$Einstellungen.global.global_shopname} haben Sie die Zahlung mittels "{$Bestellung->cZahlungsartName}" gewählt.
+Bitte benutzen Sie die folgenden Informationen für Ihre Überweisung:
+
+{$Bestellung->cPUIZahlungsdaten}
+
+Mit freundlichen Grüßen
+
+Ihr Team von {$Firma->cName}
+
+{includeMailTemplate template=footer type=plain}]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Pay upon Invoice - payment information</Subject>
+                    <ContentHtml><![CDATA[{includeMailTemplate template=header type=html}
+Dear {$Kunde->cVorname} {$Kunde->cNachname},<br><br>
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+For your order {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_de}) at {$Einstellungen.global.global_shopname}, you have chosen the payment method “{$Bestellung->cZahlungsartName}“.<br>
+Please use the following details for your bank transfer:<br><br>
+{$Bestellung->cPUIZahlungsdaten}<br><br>
+
+Yours sincerely,<br><br>
+
+{$Firma->cName}
+
+{includeMailTemplate template=footer type=html}]]></ContentHtml>
+                    <ContentText><![CDATA[{includeMailTemplate template=header type=plain}
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+Dear {$Kunde->cVorname} {$Kunde->cNachname},
+
+For your order {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_de}) at {$Einstellungen.global.global_shopname}, you have chosen the payment method “{$Bestellung->cZahlungsartName}“.
+Please use the following details for your bank transfer:
+
+{$Bestellung->cPUIZahlungsdaten}
+
+Yours sincerely,
+
+{$Firma->cName}
+
+{includeMailTemplate template=footer type=plain}]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+            <Template>
+                <Name>PayPal Zahlung abgelehnt</Name>
+                <Description />
+                <Type>text/html</Type>
+                <ModulId>declinepayment</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>0</AGB>
+                <WRB>0</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Zahlung abgelehnt</Subject>
+                    <ContentHtml><![CDATA[{includeMailTemplate template=header type=html}
+Guten Tag {$Kunde->cVorname} {$Kunde->cNachname},<br><br>
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+Zu Ihrer Bestellung {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_de}) bei {$Einstellungen.global.global_shopname} ist die Zahlung über {$Bestellung->Zahlungsart->cName} leider abgelehnt worden.<br>
+Gern bieten wir Ihnen eine alternative Zahlungsmöglichkeit an, bitte setzen Sie sich dazu mit uns in Verbindung.<br><br>
+
+Mit freundlichen Grüßen <br><br>
+
+Ihr Team von {$Firma->cName}
+
+{includeMailTemplate template=footer type=html}]]></ContentHtml>
+                    <ContentText><![CDATA[{includeMailTemplate template=header type=plain}
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+Guten Tag {$Kunde->cVorname} {$Kunde->cNachname},
+
+Zu Ihrer Bestellung {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_de}) bei {$Einstellungen.global.global_shopname} ist die Zahlung über {$Bestellung->Zahlungsart->cName} leider abgelehnt worden.
+Gern bieten wir Ihnen eine alternative Zahlungsmöglichkeit an, bitte setzen Sie sich dazu mit uns in Verbindung.
+
+Mit freundlichen Grüßen
+
+Ihr Team von {$Firma->cName}
+
+{includeMailTemplate template=footer type=plain}]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Payment declined</Subject>
+                    <ContentHtml><![CDATA[{includeMailTemplate template=header type=html}
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+Dear {$Kunde->cVorname} {$Kunde->cNachname},<br><br>
+
+The Payment for your order {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_en}) at {$Einstellungen.global.global_shopname} has been declined by {$Bestellung->Zahlungsart->cName}.<br>
+Feel free to contact us for a different payment option.<br><br>
+
+Best Regards <br><br>
+
+{$Firma->cName}
+
+{includeMailTemplate template=footer type=html}]]></ContentHtml>
+                    <ContentText><![CDATA[{includeMailTemplate template=header type=plain}
+{if empty($Bestellung)}{$Bestellung = $oPluginMail->tbestellung}{/if}
+Dear {$Kunde->cVorname} {$Kunde->cNachname},
+
+The Payment for your order {$Bestellung->cBestellNr} ({$Bestellung->dErstelldatum_en}) at {$Einstellungen.global.global_shopname} has been declined by {$Bestellung->Zahlungsart->cName}.
+Feel free to contact us for a different payment option.
+
+Best Regards
+
+{$Firma->cName}
+
+{includeMailTemplate template=footer type=plain}]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+        </Emailtemplate>
+		<CSS>
+            <file>
+                <name>style.css</name>
+            </file>
+        </CSS>
+    </Install>
+</jtlshopplugin>

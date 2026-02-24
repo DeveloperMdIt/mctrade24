@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\ioHandling; use JTL\Cron\Job; use JTL\Shop; class CronJobIO { public static function mapCron($args, $cronConst, $cronClass) : array { if (!($args["\164\171\x70\145"] === $cronConst)) { goto SkNac; } $args["\155\141\160\x70\151\x6e\147"] = $cronClass; SkNac: return $args; } public static function addCron(string $name, $type, int $frequency = 24, $startdate = "\x4e\x4f\x57\x28\x29", $starttime = "\60\61\x3a\60\x30\72\60\60") : void { $job = new \stdClass(); $job->name = $name; $job->jobType = $type; $job->frequency = $frequency; $job->startDate = $startdate; $job->startTime = $starttime; Shop::Container()->getDB()->insert("\164\143\162\157\x6e", $job); } public static function removeCron($type) : void { Shop::Container()->getDB()->delete("\164\x63\x72\x6f\156", "\152\x6f\x62\x54\171\x70\145", $type); } }

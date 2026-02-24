@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "Systemumgebung"
+msgstr "Systemumgebung"
+
+msgid "Shop-URL"
+msgstr "Shop-URL"
+
+msgid "API-TOKEN"
+msgstr "API-TOKEN"
+
+msgid "PDF-Verzeichnis-Historie"
+msgstr "PDF-Verzeichnis-Historie"
+
+msgid "PDF-Verzeichnis-Historie-Status"
+msgstr "PDF-Verzeichnis-Historie-Status"
+
+msgid "beschreibbar"
+msgstr "beschreibbar"
+
+msgid "Fehler: nicht beschreibbar (bitte Verzeichnisrechte anpassen)"
+msgstr "Fehler: nicht beschreibbar (bitte Verzeichnisrechte anpassen)"
+
+msgid "PDF-Verzeichnis-Mailanhang"
+msgstr "PDF-Verzeichnis-Mailanhang"
+
+msgid "PDF-Verzeichnis-Mailanhang-Status"
+msgstr "PDF-Verzeichnis-Mailanhang-Status"
+
+msgid "Spezialseiten-Status"
+msgstr "Spezialseiten-Status"
+
+msgid "AGB ok"
+msgstr "AGB ok"
+
+msgid "AGB existiert nicht"
+msgstr "AGB existiert nicht"
+
+msgid "WRB ok"
+msgstr "WRB ok"
+
+msgid "WRB existiert nicht"
+msgstr "WRB existiert nicht"
+
+msgid "Impressum ok"
+msgstr "Impressum ok"
+
+msgid "Impressum existiert nicht"
+msgstr "Impressum existiert nicht"
+
+msgid "Datenschutz ok"
+msgstr "Datenschutz ok"
+
+msgid "Datenschutz existiert nicht"
+msgstr "Datenschutz existiert nicht"
+
+msgid "Einstellungsparameter"
+msgstr "Einstellungsparameter"
+
+msgid "PDF-Dokumente downloaden"
+msgstr "PDF-Dokumente downloaden"
+
+msgid "Ja"
+msgstr "Ja"
+
+msgid "Nein"
+msgstr "Nein"
+
+msgid "Ja, als PDF-Datei"
+msgstr "Ja, als PDF-Datei"
+
+msgid "Ja, als Mailtext"
+msgstr "Ja, als Mailtext"
+
+msgid "Ja, als PDF-Datei & Mailtext"
+msgstr "Ja, als PDF-Datei & Mailtext"
+
+msgid "Einstellungen speichern"
+msgstr "Einstellungen speichern"
+
+msgid "Anzahl Datensätze"
+msgstr "Anzahl Datensätze"
+
+msgid "Datum"
+msgstr "Datum"
+
+msgid "Nr"
+msgstr "Nr"
+
+msgid "Dokumentenart"
+msgstr "Dokumentenart"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Sprache"
+msgstr "Sprache"
+
+msgid "PDF-Datei"
+msgstr "PDF-Datei"
+
+msgid "Einträge löschen"
+msgstr "Einträge löschen"
+
+msgid "Hier können Sie den Abgleich der Rechtstexte je Kundengruppe aktivieren oder deaktivieren"
+msgstr "Hier können Sie den Abgleich der Rechtstexte je Kundengruppe aktivieren oder deaktivieren"
+
+msgid "Kundengruppe"
+msgstr "Kundengruppe"
+
+msgid "Abgleich aktiv?"
+msgstr "Abgleich aktiv?"
+
+msgid "Rechtstexte an Bestellbestätigungs-Mail anhängen"
+msgstr "Rechtstexte an Bestellbestätigungs-Mail anhängen"
+
+msgid "Datenschutztext speichern unter"
+msgstr "Datenschutztext speichern unter"
+
+msgid "Inhaltsseite mit Spezialtyp Datenschutz"
+msgstr "Inhaltsseite mit Spezialtyp Datenschutz"
+
+msgid "Rechtstext-Element im Bereich der AGB/WRB"
+msgstr "Rechtstext-Element im Bereich der AGB/WRB"
+
+msgid "Anzuhängende Rechtstexte (falls aktiviert!)"
+msgstr "Anzuhängende Rechtstexte (falls aktiviert!)"
+
+msgid "Allgemeine Geschäftsbedingungen"
+msgstr "Allgemeine Geschäftsbedingungen"
+
+msgid "Widerrufsbelehrung"
+msgstr "Widerrufsbelehrung"
+
+msgid "Datenschutzerklärung"
+msgstr "Datenschutzerklärung"
+
+msgid "Einstellungen geändert - Bitte führen Sie einen vollständigen Abgleich der Rechtstexte durch!"
+msgstr "Einstellungen geändert - Bitte führen Sie einen vollständigen Abgleich der Rechtstexte durch!"
+
+msgid "Cache erfolgreich invalidiert"
+msgstr "Cache erfolgreich invalidiert"
+
+msgid "Konnte Cache nicht löschen!"
+msgstr "Konnte Cache nicht löschen!"

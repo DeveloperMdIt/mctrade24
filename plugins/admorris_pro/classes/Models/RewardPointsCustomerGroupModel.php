@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\Models; use AdmPro\Illuminate\Database\Eloquent\Model; class RewardPointsCustomerGroupModel extends Model { protected $table = "\170\160\154\165\x67\x69\x6e\137\141\x64\155\x6f\x72\162\151\163\137\x70\x72\157\x5f\x72\x65\x77\x61\162\144\137\x70\x6f\151\x6e\164\x73\137\143\x75\163\x74\x6f\155\x65\x72\137\147\x72\x6f\165\160\137\163\145\164\x74\x69\x6e\x67\x73"; protected $primaryKey = "\x63\x75\x73\164\157\155\145\162\x67\x72\157\165\160\137\x69\144"; public $timestamps = false; protected $casts = ["\x61\143\164\x69\166\x65\x5f\x69\x64" => "\x69\x6e\164"]; protected $attributes = ["\x61\x63\x74\151\166\145\x5f\x69\144" => 0, "\x65\141\x72\x6e\x5f\143\157\156\166\x65\162\x73\151\x6f\156\162\x61\164\145" => null]; public function getEarnConversionrateAttribute($value) { if (!($value === null || $value === '')) { goto t1CaK; } return null; t1CaK: return (float) $value; } }

@@ -1,0 +1,67 @@
+// subcategories
+
+@use '../vendor/utopia/utopia';
+
+.productlist-subcategories {
+    $gap-x: utopia.calculateClamp(
+        (
+            'minWidth': 900,
+            'maxWidth': 1240,
+            'minSize': 20,
+            'maxSize': 60,
+            'relativeTo': 'container',
+        )
+    );
+
+    $gap-y: utopia.calculateClamp(
+        (
+            'minWidth': 900,
+            'maxWidth': 1240,
+            'minSize': 60,
+            'maxSize': 95,
+            'relativeTo': 'viewport-width',
+        )
+    );
+
+    --css-auto-grid-min: 40ch;
+    --css-auto-grid-gap: #{$gap-y} #{$gap-x};
+}
+
+.subcategory-card {
+    > a {
+        display: block;
+    }
+}
+
+.subcategory-card__title {
+    color: $tone-base;
+    // font-size: var(--step-1);
+    font-size: 1.077rem;
+
+    font-weight: 700;
+    // margin-top: rem(20px);
+    // margin-bottom: rem(15px);
+    text-transform: uppercase;
+    display: block;
+    word-wrap: break-word;
+
+    &:hover {
+        color: $brand-tone50;
+        text-decoration: none;
+    }
+
+    @media (min-width: $screen-sm) {
+        font-size: 1.385rem;
+    }
+}
+
+.subcategory-card__desc {
+    color: $brand-tone50;
+}
+
+.subcategory-card__sub-list {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: var(--stack-spacing);
+    border-top: 1px solid $tone-10;
+}

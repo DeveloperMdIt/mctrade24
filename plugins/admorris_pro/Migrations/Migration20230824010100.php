@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\Migrations; use JTL\Update\IMigration; use Plugin\admorris_pro\Migration; class Migration20230824010100 extends Migration implements IMigration { protected $description = "\x41\x64\144\x20\x33\x36\x30\40\x53\x75\x62\160\141\x74\x68"; public function up() { try { $this->execute("\101\114\124\x45\122\40\124\x41\x42\x4c\105\40\x78\160\154\x75\147\x69\x6e\x5f\141\x64\155\157\x72\x72\x69\x73\137\x70\x72\x6f\137\x74\x68\162\145\x65\137\x73\x69\170\x74\x79\137\151\155\141\x67\x65\x5f\163\145\164\164\x69\x6e\x67\163\40\101\x44\x44\40\x73\165\x62\x70\x61\x74\x68\x20\126\101\122\x43\x48\101\x52\x28\62\65\65\51\40\116\x4f\x54\x20\116\x55\114\114\40\101\x46\124\105\x52\x20\142\x61\x73\x65\x70\141\x74\150"); } catch (\Throwable $th) { $this->log->warning($th); } } public function down() { try { $this->execute("\x41\114\x54\x45\122\x20\124\x41\102\114\x45\40\170\x70\x6c\x75\x67\151\156\x5f\141\144\x6d\157\x72\x72\x69\x73\137\x70\x72\x6f\137\164\x68\162\145\145\x5f\x73\151\x78\164\171\x5f\x69\x6d\x61\x67\x65\x5f\163\x65\164\164\151\x6e\x67\x73\x20\104\122\117\120\x20\x73\165\x62\160\141\164\x68"); } catch (\Throwable $th) { $this->log->warning($th); } } }

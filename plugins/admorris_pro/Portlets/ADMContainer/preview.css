@@ -1,0 +1,25 @@
+.opc-Container {
+  background-size: cover;
+  background-position: center;
+}
+
+.opc-Container {
+  padding: 0;
+  width: auto;
+}
+
+.opc-rootarea > .opc-Container.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opc-Container.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.full-width-container {
+  width: auto;
+  left: 0;
+  right: 0;
+}

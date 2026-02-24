@@ -1,0 +1,40 @@
+/* economica-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Economica';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Economica'), local('Economica-Regular'),
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* economica-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Economica';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Economica Italic'), local('Economica-Italic'),
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* economica-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Economica';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Economica Bold'), local('Economica-Bold'),
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* economica-700italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Economica';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Economica Bold Italic'), local('Economica-BoldItalic'),
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/economica/economica-v5-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

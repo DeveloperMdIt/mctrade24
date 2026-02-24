@@ -1,0 +1,38 @@
+.pushed-success .product-cell .pushed-success__image {
+    @include adm-border-radius('sm', 'images');
+}
+
+.modal-dialog:has(#pushed-success .recommendations) {
+    max-width: min($modal-xl, 96%) !important;
+}
+
+// [id='pushed-success'] .product-cell .caption {
+//     margin-top: 9px;
+// }
+
+// .pushed-success-slider {
+//     margin-left: 0 !important;
+//     margin-right: 0 !important;
+
+// }
+
+.pushed-success__button-group {
+    --min-width: 29rem;
+}
+
+.pushed-success-btn {
+    white-space: normal;
+    max-width: 20rem;
+}
+
+// from evo base.scss
+
+// #pushed-success {
+//     .panel h4 {
+//         color: $text-color;
+//     }
+//     .product-cell .caption {
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//     }
+// }

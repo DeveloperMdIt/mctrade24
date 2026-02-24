@@ -1,0 +1,20 @@
+/* domine-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Domine'), local('Domine-Regular'),
+         url('./templates/admorris_pro/fonts/domine/domine-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/domine/domine-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* domine-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Domine Bold'), local('Domine-Bold'),
+         url('./templates/admorris_pro/fonts/domine/domine-v5-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/domine/domine-v5-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

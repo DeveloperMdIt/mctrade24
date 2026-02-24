@@ -1,0 +1,9 @@
+{
+  "name": "jtlshop/plgin_jtl_gpsr",
+  "type": "library",
+  "version": "1.0.0",
+  "description": "JTL GPSR - Angaben zur Produktsicherheit",
+  "require": {
+    "php": ">=7.4"
+  }
+}

@@ -1,0 +1,234 @@
+{
+	"$schema": "./adminmenu/react-plugin-backend/pluginSettings.schema.json",
+	"settings": [
+		{
+			"label": "Allgemeine Einstellung",
+			"settingType": "heading"
+		},
+		{
+			"id": "api_key",
+			"label": "Doofinder API Key",
+			"description": "Hier einen Doofinder API Key aus dem Doofinder Backend einsetzen",
+			"settingType": "input",
+			"type": "string",
+			"defaultValue": ""
+		},
+		{
+			"id": "user_id",
+			"label": "Doofinder User ID",
+			"description": "Hier die Doofinder User ID aus dem Doofinder Backend einsetzen",
+			"settingType": "input",
+			"type": "string",
+			"defaultValue": ""
+		},
+		{
+			"id": "df_search",
+			"label": "Doofinder Suche aktivieren",
+			"description": "Soll die Doofinder Suche aktiviert werden?",
+			"settingType": "select",
+			"type": "boolean",
+			"defaultValue": false,
+			"selectItems": [
+				{
+					"value": true,
+					"label": "Ja"
+				},
+				{
+					"value": false,
+					"label": "Nein"
+				}
+			]
+		},
+		{
+			"label": "Erweiterte Einstellung",
+			"settingType": "heading",
+			"isClosedByDefault": true
+		},
+		{
+			"id": "df_recommendations",
+			"label": "Doofinder Recommendations (deprecated) verwenden",
+			"description": "Fügt das Doofinder Recommendations (deprecated) Script bei den angegebenen Selektoren an.",
+			"settingType": "select",
+			"type": "boolean",
+			"defaultValue": false,
+			"children": [
+				{
+					"id": "df_recommendations_selector",
+					"label": "Selektor für die Doofinder Recommendations (deprecated)",
+					"description": "An dieser Stelle werden die Doofinder Recommendations ausgespielt",
+					"settingType": "selectorPicker",
+					"defaultValue": {
+						"selector": "header",
+						"method": "prepend"
+					},
+					"showIfParentValueMatches": true
+				},
+				{
+					"id": "df_recommendations_total",
+					"label": "Anzahl an Artikeln für Recommendations (deprecated)",
+					"description": "Wie viele Artikel sollen in den Recommendations von Doofinder angezeigt werden?",
+					"settingType": "input",
+					"type": "int",
+					"defaultValue": 10,
+					"showIfParentValueMatches": true
+				}
+			],
+			"selectItems": [
+				{
+					"value": true,
+					"label": "Ja"
+				},
+				{
+					"value": false,
+					"label": "Nein"
+				}
+			]
+		},
+		{
+			"id": "export_secret",
+			"label": "Export Secret",
+			"description": "Passwort, mit der die URL Aufrufe für Export und Synchronisation geschützt werden können (optional).",
+			"settingType": "input",
+			"type": "string",
+			"defaultValue": ""
+		},
+		{
+			"id": "attributes",
+			"label": "Merkmale/Attribute",
+			"description": "Attribute/Merkmale welche an Doofinder übergeben werden sollen. Mit ; voneinander trennen (bspw.: design;erscheinungsjahr;...)",
+			"settingType": "input",
+			"type": "string",
+			"defaultValue": ""
+		},
+		{
+			"id": "attributes_number",
+			"label": "Merkmale/Attribute als Zahl",
+			"description": "Attribute/Merkmale welche als Zahl an Doofinder übergeben werden sollen. Diese können als Slider angezeigt werden. Mit ; voneinander trennen (bspw.: design;erscheinungsjahr;...)",
+			"settingType": "input",
+			"type": "string",
+			"defaultValue": ""
+		},
+		{
+			"id": "ws5_doofinder_updateOnWawiSync",
+			"label": "Artikel nach Wawi-Abgleich in Reindex aufnehmen",
+			"description": "Ist diese Option aktiviert, werden Artikel nach Änderungen in einem Wawi-Abgeleich automatisch in den Reindex aufgenommen. Dies führt zu mehr Requests an Doofinder, hält aber die Daten aktuell. Ist diese Option nicht aktiviert, werden Daten nicht mehr automatisch aktualisiert (nicht empfohlen).",
+			"settingType": "checkbox",
+			"defaultValue": true
+		},
+		{
+			"id": "ws5_doofinder_updateOnPurchase",
+			"label": "Artikel nach Kauf in Reindex aufnehmen",
+			"description": "Ist diese Option aktiviert, werden Artikel nach einem Kauf automatisch in den Reindex aufgenommen. Dies führt zu mehr Requests an Doofinder, hält aber die Daten aktuell. Ist diese Option nicht aktualisiert, werden Artikel erst nach dem nächsten Abgleich in Reindex aufgenommen und bei Doofinder aktualisiert.",
+			"settingType": "select",
+			"type": "boolean",
+			"defaultValue": false,
+			"selectItems": [
+				{
+					"value": true,
+					"label": "Ja"
+				},
+				{
+					"value": false,
+					"label": "Nein"
+				}
+			]
+		},
+		{
+			"id": "ws5_doofinder_exportImgSize",
+			"label": "Bildgröße",
+			"description": "Welche Bildgröße soll an den DooFinder übergeben werden?",
+			"settingType": "select",
+			"defaultValue": "md",
+			"type": "string",
+			"selectItems": [
+				{
+					"value": "xs",
+					"label": "mini"
+				},
+				{
+					"value": "sm",
+					"label": "klein"
+				},
+				{
+					"value": "md",
+					"label": "normal"
+				},
+				{
+					"value": "lg",
+					"label": "groß"
+				}
+			]
+		},
+		{
+			"id": "varexclude",
+			"label": "Variationen ausschließen",
+			"description": "Schließe Variationen aus (getrennt mit ;). Dieses Feature funktioniert nur, wenn nur Kinder exportiert werden. So wird die Hierachie des Produkts geändert.",
+			"settingType": "input",
+			"type": "string",
+			"defaultValue": ""
+		},
+		{
+			"id": "fathernames",
+			"label": "Vater-Artikelnamen für Kinder übergeben",
+			"description": "Exportiert Kindartikel mit dem Artikelnamen des Vaters",
+			"settingType": "checkbox",
+			"defaultValue": false
+		},
+		{
+			"id": "fatherurls",
+			"label": "Vater-URL für Kinder übergeben",
+			"description": "Exportiert Kindartikel mit der URL des Vaters",
+			"settingType": "checkbox",
+			"defaultValue": false
+		},
+		{
+			"id": "uvpstreichpreis",
+			"label": "UVP als Streichpreis",
+			"description": "Wenn UVP > Verkaufspreis, wird dieser als Streichpreis übergeben.",
+			"settingType": "checkbox",
+			"defaultValue": false
+		},
+		{
+			"id": "ws5_doofinder_category_export_mode",
+			"label": "Wie sollen die Kategorien des Artikels exportiert werden",
+			"description": "Soll der ganze Kategorie-Pfad übergeben werden, also alle Subkategorien oder nur das Kategorie-Blatt, also nur die letzte Kategorie im Kategorie-Pfad",
+			"settingType": "select",
+			"defaultValue": "path",
+			"type": "string",
+			"selectItems": [
+				{
+					"value": "path",
+					"label": "Kategorie-Pfad"
+				},
+				{
+					"value": "leaf",
+					"label": "Kategorie-Blatt"
+				}
+			]
+		},
+		{
+			"id": "singlesearchengineconnect",
+			"label": "Single Currency Searchengine Connect erlauben",
+			"description": "Single Currency Searchengine Connect erlauben",
+			"settingType": "checkbox",
+			"defaultValue": false
+		},
+		{
+			"id": "ws5_doofinder_lastSpecialPriceCheck",
+			"label": "Letzter Sonderpreis-Check",
+			"description": "Letzter Sonderpreis-Check",
+			"settingType": "dateTime",
+			"defaultValue": "2025-01-01 10:10:10",
+			"isHidden": true
+		},
+        {
+            "id": "ws5_doofinder_lastManualUpload", 
+            "label": "Timestamp, wann das letzte Mal uploadParts oder replaceParts genutzt wurde",
+			"description": "",
+            "settingType": "input",
+            "type": "int",
+            "defaultValue": 0,
+            "isHidden": true
+        }
+	]
+}

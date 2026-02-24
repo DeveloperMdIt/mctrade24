@@ -1,0 +1,2 @@
+msgid "jtl_search_full_export"
+msgstr "JTL Search Export"

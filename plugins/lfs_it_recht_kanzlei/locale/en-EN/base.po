@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_EN\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "Systemumgebung"
+msgstr "System environment"
+
+msgid "Shop-URL"
+msgstr "Shop-URL"
+
+msgid "API-TOKEN"
+msgstr "API-TOKEN"
+
+msgid "PDF-Verzeichnis-Historie"
+msgstr "PDF directory history"
+
+msgid "PDF-Verzeichnis-Historie-Status"
+msgstr "PDF directory history status"
+
+msgid "beschreibbar"
+msgstr "writeable"
+
+msgid "Fehler: nicht beschreibbar (bitte Verzeichnisrechte anpassen)"
+msgstr "Error: not writable (please adjust directory rights)"
+
+msgid "PDF-Verzeichnis-Mailanhang"
+msgstr "PDF directory mail attachment"
+
+msgid "PDF-Verzeichnis-Mailanhang-Status"
+msgstr "PDF directory mail attachment status"
+
+msgid "Spezialseiten-Status"
+msgstr "Special page status"
+
+msgid "AGB ok"
+msgstr "GTC ok"
+
+msgid "AGB existiert nicht"
+msgstr "GTC does not exist"
+
+msgid "WRB ok"
+msgstr "WRB ok"
+
+msgid "WRB existiert nicht"
+msgstr "WRB does not exist"
+
+msgid "Impressum ok"
+msgstr "Imprint ok"
+
+msgid "Impressum existiert nicht"
+msgstr "Imprint does not exist"
+
+msgid "Datenschutz ok"
+msgstr "Privacy policy ok"
+
+msgid "Datenschutz existiert nicht"
+msgstr "Privacy policy does not exist"
+
+msgid "Einstellungsparameter"
+msgstr "Setting parameters"
+
+msgid "PDF-Dokumente downloaden"
+msgstr "Download PDF documents"
+
+msgid "Ja"
+msgstr "Yes"
+
+msgid "Nein"
+msgstr "No"
+
+msgid "Ja, als PDF-Datei"
+msgstr "Yes, as PDF file"
+
+msgid "Ja, als Mailtext"
+msgstr "Yes, as mail text"
+
+msgid "Ja, als PDF-Datei & Mailtext"
+msgstr "Yes, as PDF file & mail text"
+
+msgid "Einstellungen speichern"
+msgstr "Save settings"
+
+msgid "Anzahl Datensätze"
+msgstr "Number of records"
+
+msgid "Datum"
+msgstr "Date"
+
+msgid "Nr"
+msgstr "No"
+
+msgid "Dokumentenart"
+msgstr "Document type"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Sprache"
+msgstr "Language"
+
+msgid "PDF-Datei"
+msgstr "PDF file"
+
+msgid "Einträge löschen"
+msgstr "Delete entries"
+
+msgid "Hier können Sie den Abgleich der Rechtstexte je Kundengruppe aktivieren oder deaktivieren"
+msgstr "Here you can activate or deactivate the synchronisation of the legal texts per customer group"
+
+msgid "Kundengruppe"
+msgstr "Customer group"
+
+msgid "Abgleich aktiv?"
+msgstr "Synchronization active?"
+
+msgid "Rechtstexte an Bestellbestätigungs-Mail anhängen"
+msgstr "Attach legal texts to order confirmation e-mail"
+
+msgid "Datenschutztext speichern unter"
+msgstr "Save privacy text as"
+
+msgid "Inhaltsseite mit Spezialtyp Datenschutz"
+msgstr "Content page with special type Privacy"
+
+msgid "Rechtstext-Element im Bereich der AGB/WRB"
+msgstr "Legal text element in the GTC/WRB area"
+
+msgid "Anzuhängende Rechtstexte (falls aktiviert!)"
+msgstr "Legal texts to be attached (if activated!)"
+
+msgid "Allgemeine Geschäftsbedingungen"
+msgstr "General Terms and Conditions"
+
+msgid "Widerrufsbelehrung"
+msgstr "Withdrawal policy"
+
+msgid "Datenschutzerklärung"
+msgstr "Privacy policy"
+
+msgid "Einstellungen geändert - Bitte führen Sie einen vollständigen Abgleich der Rechtstexte durch!"
+msgstr "Settings changed - Please carry out a complete update of the legal texts!"
+
+msgid "Cache erfolgreich invalidiert"
+msgstr "Cache successfully invalidated"
+
+msgid "Konnte Cache nicht löschen!"
+msgstr "Could not clear cache!"

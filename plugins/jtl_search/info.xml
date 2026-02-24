@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding="utf-8"?>
+<jtlshopplugin>
+	<Name>JTL Search</Name>
+	<Description>Eine fehlertolerante Suche</Description>
+	<Author>JTL-Software-GmbH</Author>
+	<URL>https://www.jtl-software.de</URL>
+	<XMLVersion>100</XMLVersion>
+	<ShopVersion>5.5.0</ShopVersion>
+	<PluginID>jtl_search</PluginID>
+	<Version>1.24.0</Version>
+	<CreateDate>2025-06-05</CreateDate>
+	<ExsID>3a650e27-e325-4012-9c0b-ddcefc95cd33</ExsID>
+	<Install>
+		<Boxes>
+			<Box>
+				<Name>Filter (JTL Search)</Name>
+				<Available>2</Available>
+				<TemplateFile>box_filter.tpl</TemplateFile>
+			</Box>
+		</Boxes>
+		<Adminmenu>
+			<Customlink sort="1">
+				<Name>Verwaltung</Name>
+				<Filename>verwaltung.php</Filename>
+			</Customlink>
+			<Customlink sort="2">
+				<Name>licenceKey</Name>
+				<Filename>license.php</Filename>
+			</Customlink>
+			<Settingslink sort="3">
+				<Name>Einstellungen</Name>
+				<Setting type="selectbox" initialValue="left" sort="1" conf="Y">
+					<Name>Ankerpunkt für Suchvorschläge</Name>
+					<Description></Description>
+					<ValueName>jtlsearch_suggest_align</ValueName>
+					<SelectboxOptions>
+						<Option value="left" sort="1">Links</Option>
+						<Option value="center" sort="2">Mitte</Option>
+						<Option value="right" sort="3">Rechts</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="selectbox" initialValue="1" sort="2" conf="Y">
+					<Name>JTL-Logo bei Suchvorschlägen anzeigen</Name>
+					<Description></Description>
+					<ValueName>jtlsearch_branding</ValueName>
+					<SelectboxOptions>
+						<Option value="1" sort="1">Ja</Option>
+						<Option value="0" sort="2">Nein</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="selectbox" initialValue="ger" sort="3" conf="Y" multiple="Y">
+					<Name>zu exportierende Sprachen</Name>
+					<Description></Description>
+					<ValueName>jtlsearch_export_languages</ValueName>
+					<OptionsSource>
+						<File>jtl_search_languagesource.php</File>
+					</OptionsSource>
+				</Setting>
+				<Setting type="none" initialValue="" sort="4" conf="Y">
+					<Name>cProjectId</Name>
+					<Description></Description>
+					<ValueName>cProjectId</ValueName>
+				</Setting>
+				<Setting type="none" initialValue="" sort="5" conf="Y">
+					<Name>cAuthHash</Name>
+					<Description></Description>
+					<ValueName>cAuthHash</ValueName>
+				</Setting>
+				<Setting type="none" initialValue="" sort="6" conf="Y">
+					<Name>cServerUrl</Name>
+					<Description></Description>
+					<ValueName>cServerUrl</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="delta" sort="7" conf="Y">
+					<Name>Art der Export-Updates</Name>
+					<Description></Description>
+					<ValueName>jtlsearch_export_updates</ValueName>
+					<SelectboxOptions>
+						<Option value="delta" sort="1">Delta-Export nach Wawi-Abgleich</Option>
+						<Option value="cron" sort="2">Cronjob</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="textarea" initialValue="1=1,--,sleep(,union all,pg_sleep,_s4_,http:,https:,file:,base64,../..,/etc/passwd" sort="20" conf="Y">
+					<Name>Blocklist</Name>
+					<Description>Geblockte Suchbegriffe (mit Komma getrennt)</Description>
+					<ValueName>blocklist</ValueName>
+				</Setting>
+				<Setting type="number" initialValue="48" sort="21" conf="Y">
+					<Name>Max. Länge</Name>
+					<Description>Maximale Länge eines Suchbegriffs</Description>
+					<ValueName>maxlength</ValueName>
+				</Setting>
+			</Settingslink>
+		</Adminmenu>
+		<Locales>
+			<Variable>
+				<VariableLocalized iso="GER">Suche nach</VariableLocalized>
+				<VariableLocalized iso="ENG">Your search for</VariableLocalized>
+				<Description></Description>
+				<Name>search_for</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Meinten Sie</VariableLocalized>
+				<VariableLocalized iso="ENG">Did you mean</VariableLocalized>
+				<Description></Description>
+				<Name>did_you_mean</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Seiten</VariableLocalized>
+				<VariableLocalized iso="ENG">Pages</VariableLocalized>
+				<Description></Description>
+				<Name>suggested_pages</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Suchbegriffe</VariableLocalized>
+				<VariableLocalized iso="ENG">Search terms</VariableLocalized>
+				<Description></Description>
+				<Name>suggested_search_terms</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Kategorievorschläge</VariableLocalized>
+				<VariableLocalized iso="ENG">Suggested categories</VariableLocalized>
+				<Description></Description>
+				<Name>suggested_categories</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Herstellervorschläge</VariableLocalized>
+				<VariableLocalized iso="ENG">Suggested manufacturers</VariableLocalized>
+				<Description></Description>
+				<Name>suggested_manufacturers</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Produktvorschläge</VariableLocalized>
+				<VariableLocalized iso="ENG">Suggested products</VariableLocalized>
+				<Description></Description>
+				<Name>suggested_products</Name>
+			</Variable>
+		</Locales>
+		<CSS>
+			<file>
+				<name>suggest.css</name>
+				<priority>5</priority>
+			</file>
+			<file>
+				<name>priceslider.css</name>
+				<priority>5</priority>
+			</file>
+		</CSS>
+		<JS>
+			<file>
+				<name>jquery.dependClass.js</name>
+				<priority>5</priority>
+				<position>body</position>
+			</file>
+			<file>
+				<name>jquery.slider.js</name>
+				<priority>5</priority>
+				<position>body</position>
+			</file>
+			<file>
+				<name>suggest.js</name>
+				<priority>5</priority>
+				<position>body</position>
+			</file>
+		</JS>
+	</Install>
+</jtlshopplugin>

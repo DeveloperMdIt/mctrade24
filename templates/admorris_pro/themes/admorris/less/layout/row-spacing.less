@@ -1,0 +1,13 @@
+/* Create spacing between row column elements 
+ * when stacked on top of each other in mobile view 
+ */
+.row-spacing {
+    --row-spacing: 2em;
+    margin-bottom: -2em;
+    margin-bottom: calc(var(--row-spacing) * -1);
+
+    & > * {
+        margin-bottom: 2em;
+        margin-bottom: var(--row-spacing);
+    }
+}

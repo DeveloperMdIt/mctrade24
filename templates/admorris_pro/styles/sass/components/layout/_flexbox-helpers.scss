@@ -1,0 +1,45 @@
+/* Flexbox helper classes */
+
+/**
+ * Stretch the last item to fill the remaining space
+ */
+.flex-column-stretch,
+.col--stretch {
+    display: flex;
+    flex-direction: column;
+    /* last item should grow */
+    > *:last-child {
+        flex: 1 auto;
+    }
+}
+
+.flex-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    > * {
+        flex: 1;
+        min-width: fit-content;
+    }
+}
+
+.gap {
+    gap: var(--gap, 1rem);
+}
+
+/** Create spacing between row column elements 
+ * when stacked on top of each other in mobile view 
+ * In previous versions the class was called .row-spacing
+ */
+.row-gap,
+.row-spacing {
+    row-gap: var(--row-gap, 2rem);
+}
+
+@each $size, $length in $spacers {
+    .row-gap-#{$size} {
+        --row-gap: #{$length};
+        @extend .row-gap;
+    }
+}

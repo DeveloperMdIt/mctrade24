@@ -1,0 +1,12 @@
+/* Product pagination */
+
+@use '../vendor/utopia/utopia';
+
+.navigation-wrapper {
+    align-items: flex-end;
+}
+
+.navigation-arrows {
+    display: flex;
+    justify-content: flex-end;
+}

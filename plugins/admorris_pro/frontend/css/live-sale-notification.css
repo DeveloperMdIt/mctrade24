@@ -1,0 +1,53 @@
+#admorris-live-sale-notification {
+  background-color: #fff;
+  color: #000;
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  height: 70px;
+  font-size: 13px !important;
+  margin: 20px;
+  z-index: 10000000;
+  overflow: hidden;
+  -moz-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.5);
+}
+#admorris-live-sale-notification-picture {
+  float: left;
+  margin-right: 15px;
+}
+#admorris-live-sale-notification-picture a {
+  display: block;
+  width: 90px;
+  height: 70px;
+}
+#admorris-live-sale-notification-picture a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#admorris-live-sale-notification-img {
+  width: 70px;
+  margin-right: 15px;
+}
+#admorris-live-sale-notification-text {
+  padding: 10px 15px 10px 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 350px;
+}
+@media screen and (min-width: 768px) {
+  .admorris-live-sale-notification-move {
+    margin-left: 100px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #admorris-live-sale-notification {
+    right: 50%;
+    left: 50%;
+    margin-right: -150px;
+    margin-left: -150px;
+  }
+}

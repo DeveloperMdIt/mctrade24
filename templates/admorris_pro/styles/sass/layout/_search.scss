@@ -1,0 +1,240 @@
+/**
+ * Search
+ */
+
+.header-wrapper .search__form.search__form {
+    --header-search-color: #{$navbar-color};
+    --header-search-placeholder-color: color-mix(in oklab, var(--header-search-color), transparent 60%);
+}
+
+.header-wrapper--overlay:not(:has(.sticky)) .header__nav-wrapper .search__form {
+    --header-search-color: #{$navbar-slider-overlay-color};
+    --header-search-placeholder-color: color-mix(in oklab, #{$navbar-slider-overlay-color}, transparent 60%);
+}
+
+.offcanvas-nav .search__form {
+    --header-search-color: #{$offcanvas-menu-text-color};
+    --header-search-placeholder-color: color-mix(in oklab, #{$offcanvas-menu-text-color}, transparent 60%);
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+    font-size: $header-search-font-size;
+
+    &.header-search--dropdown {
+        position: relative;
+        height: 100%;
+    }
+
+    .offcanvas-nav & {
+        width: 100%;
+    }
+}
+
+.header-row__element.search:has(.header-search--dropdown) + .header-row__element--shopnav {
+    margin-left: 0;
+}
+
+.header-row__element--mobile.search {
+    // nur wenn nicht dropdown ausgewaehlt ist flex-grow setzen
+    &:not(:has(.header-search--dropdown)) {
+        flex-grow: 1;
+        .header-search {
+            flex-grow: 1;
+        }
+    }
+
+    .header-search {
+        font-size: $mobile-header-icon-size;
+    }
+
+    &,
+    & .header-search {
+        justify-content: inherit;
+    }
+}
+
+.search__toggle {
+    background-color: transparent;
+    border: 0;
+    height: 100%;
+    padding: 10px $navbar-padding-x;
+
+    &:link {
+        text-decoration: none;
+    }
+}
+
+.search__form {
+    position: relative;
+    font-size: $header-search-font-size;
+    color: var(--header-search-color);
+
+    // desktop search
+    [id='search'] & {
+        min-width: var(--search-width, 350px);
+    }
+
+    [id='mobile-search'] & {
+        font-size: $mobile-header-icon-size;
+    }
+
+    [id='mobile-search']:not(.header-search--dropdown) & {
+        width: 100%;
+        max-width: var(--search-width, 350px);
+    }
+
+    [id='mobile-search'].header-search--dropdown & {
+        width: var(--search-width, 350px);
+    }
+
+    .header-search--underline & {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid currentColor;
+    }
+
+    .header-search--dropdown & {
+        position: absolute;
+        display: none;
+        transform: initial;
+        transform: translateY(0);
+        right: 0;
+        opacity: 0;
+        transition:
+            transform 0.45s ease-in,
+            opacity 0.2s ease-in;
+        // transition-delay: .1s;
+        top: 50%;
+        z-index: 900;
+        pointer-events: none;
+        // z-index: 5000;
+    }
+
+    .header-search--dropdown.header-search--underline & {
+        margin-right: 0.4rem;
+    }
+
+    .header-search--input & {
+        background-color: $search-input-bg;
+        border-color: var(--header-search-color);
+
+        @if $search-border == false {
+            border: 0;
+        }
+
+        .search__input {
+            padding: 0;
+        }
+    }
+
+    .offcanvas-nav & {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .header-search--dropdown.is-open & {
+        transition-timing-function: ease-out, ease-out;
+        transition-duration: 0.5s, 0.3s;
+        display: block;
+        // transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.header-search--dropdown-left {
+    right: auto;
+    left: 0;
+    .search__wrapper {
+        float: left;
+    }
+}
+
+.search__dropdown-background {
+    z-index: $header-z-index - 1;
+    position: absolute;
+    width: 100%;
+    background-color: $navbar-bg;
+    top: 100%;
+    left: 0;
+    transform: scaleY(0);
+    transition:
+        transform 0.45s ease-in,
+        opacity 0.3s ease-in;
+    transform-origin: top left;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 var(--header-row-border-radius-top-right) var(--header-row-border-radius-bottom-left);
+
+    // always show the background in sticky mode of the navbar
+    .sticky & {
+        opacity: 1 !important;
+    }
+
+    // hide if the nav is in overlay mode (transparent over the slider)
+    .header-wrapper--overlay .header__nav-wrapper:not(.sticky) & {
+        opacity: 0;
+    }
+
+    &.is-open {
+        transform: scaleY(1);
+        transition-timing-function: ease-out, ease-out;
+        transition-duration: 0.45s;
+    }
+}
+
+.header__inner-wrapper {
+    position: relative;
+}
+
+.search__wrapper {
+    display: flex;
+    width: 100%;
+    // max-width: 90vw;
+    // border-bottom: 1px solid;
+    // .header-wrapper--overlay & {
+    //     border-bottom: 1px solid $navbar-slider-overlay-color;
+    // }
+}
+.search__input {
+    border: 0;
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+
+    &:focus {
+        outline: none !important;
+    }
+
+    &::placeholder {
+        color: var(--header-search-placeholder-color);
+    }
+}
+
+.search__wrapper > .twitter-typeahead {
+    flex: 1 1 auto;
+    // width: 100%;
+    border: 0;
+    // border-bottom: 1px solid;
+}
+
+.search__submit {
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+
+    .header-search--dropdown & {
+        margin-left: $navbar-padding-x;
+        padding-left: $navbar-padding-x;
+    }
+}
+// This is a bandaid. Search for error in js files
+.twitter-typeahead .tt-input[readonly] {
+    background-color: transparent !important;
+}
+
+
+#autocomplete-list.dropdown-menu {
+    min-width: 100% !important;
+}

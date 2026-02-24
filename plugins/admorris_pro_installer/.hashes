@@ -1,0 +1,16 @@
+Bootstrap.php###efb218a451edef3627dc02f3e143d71b
+locale/en-GB/base.mo###760635a3e58a226dd72a6e6396b819f6
+locale/en-GB/base.po###c12668ea6a3b4cf908237d1d880611a6
+locale/de-DE/base.mo###64491c62f06c112b19d9cc3ebe48a59b
+locale/de-DE/base.po###1b7394002fc57311a7f6419f5476497d
+download/.gitkeep###d41d8cd98f00b204e9800998ecf8427e
+adminmenu/installer.tpl###9ab766bedb893798231b9b57b1ff53ef
+adminmenu/js/ioFetch.js###3988c97fbac0cac8b17d69c1970b15e1
+adminmenu/js/installer.js###df8cac9ba558f64c416177e72bcb2e45
+info.xml###0b3ec59a16bca708b1f75077dea64387
+Service/Installer.php###d057e7afc85565f856b635a35cded53b
+Service/LicenseApi.php###5de4491c1d84c60a2e0d1a453930c75b
+Service/InstallerState.php###890088bf397c8836c555bbc20dd8399a
+Service/ResourceExtractor.php###b567769c7f6a18a270b6734aa87d012f
+Traits/IoRequestTrait.php###bf1e866f6dc1d96919edc95b6b93d3f5
+Traits/PrettyContextLoggerTrait.php###9cf1393a17ed2ebe648e629b18a691c1

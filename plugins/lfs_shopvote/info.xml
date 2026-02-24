@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jtlshopplugin>
+    <Name>SHOPVOTE</Name>
+    <Description>Integriert die Funktionen zum sammeln und darstellen von Shop- und Produktbewertungen über SHOPVOTE in den JTL-Shop.</Description>
+    <Author>SHOPVOTE - Blickreif GmbH</Author>
+    <URL>https://www.shopvote.de/</URL>
+    <XMLVersion>102</XMLVersion>
+    <PluginID>lfs_shopvote</PluginID>
+    <ShopVersion>5.0.0</ShopVersion>
+    <Version>1.1.5</Version>
+    <CreateDate>2023-04-21</CreateDate>
+    <ExsID>728cc632-1f89-49d8-ae3a-dfb5c5f64cba</ExsID>
+    <Install>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Konfiguration</Name>
+                <Filename>lfs_shopvote_config.php</Filename>
+            </Customlink>
+            <Customlink sort="2">
+                <Name>Review-Sync</Name>
+                <Filename>lfs_shopvote_sync.php</Filename>
+            </Customlink>
+            <Settingslink sort="3">
+                <Name>Einstellungen</Name>
+                <Setting type="none" initialValue="R" sort="1" conf="Y">
+                    <Name>SHOPVOTE-Produktbewertungen anzeigen</Name>
+                    <Description>Sollen die SHOPVOTE-Produktbewertungen angezeigt werden?</Description>
+                    <ValueName>sv_show_productreview</ValueName>
+                </Setting>
+                <Setting type="none" initialValue="" sort="2" conf="Y">
+                    <Name>API-Key</Name>
+                    <Description>Ihr persönlicher API-Key von SHOPVOTE</Description>
+                    <ValueName>sv_api_key</ValueName>
+                </Setting>
+                <Setting type="none" initialValue="" sort="3" conf="Y">
+                    <Name>API-Secret</Name>
+                    <Description>Ihr persönliches API-Secret von SHOPVOTE</Description>
+                    <ValueName>sv_api_secret</ValueName>
+                </Setting>
+                <Setting type="none" initialValue="" sort="4" conf="Y">
+                    <Name>SHOPVOTE Grafik-Code</Name>
+                    <Description>JavaScript-Code für die SHOPVOTE-Grafik</Description>
+                    <ValueName>sv_graphic_code</ValueName>
+                </Setting>
+                <Setting type="none" initialValue="R" sort="5" conf="Y">
+                    <Name>SHOPVOTE-Produktbewertungen nutzen?</Name>
+                    <Description>Sollen die SHOPVOTE-Produktbewertungen angezeigt werden und wenn ja, wie?</Description>
+                    <ValueName>sv_show_use_productreviews</ValueName>
+                </Setting>
+                <Setting type="none" initialValue="1" sort="81" conf="Y">
+                    <Name>Shop5-Consentmanager beachten?</Name>
+                    <Description>Soll eine Zustimmung über den JTL-Shop5-Consentmanager beachtet werden?</Description>
+                    <ValueName>sv_respect_jtlconsentmanager</ValueName>
+                </Setting>
+            </Settingslink>
+        </Adminmenu>
+        <Locales>
+            <Variable>
+                <Name>sv_tabheader</Name>
+                <Description>Überschrift des SHOPVOTE-Produktbewertungtabs</Description>
+                <VariableLocalized iso="GER">Produktbewertungen</VariableLocalized>
+                <VariableLocalized iso="ENG">Product reviews</VariableLocalized>
+                <VariableLocalized iso="FRE">Avis sur les produits</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>sv_no_productreviews</Name>
+                <Description>Hinweis, dass keine SHOPVOTE-Bewertungen vorhanden sind</Description>
+                <VariableLocalized iso="GER">Es sind noch keine Produktbewertungen vorhanden</VariableLocalized>
+                <VariableLocalized iso="ENG">There are no product reviews available yet</VariableLocalized>
+                <VariableLocalized iso="FRE">Il n'y a pas encore de commentaire pour ce produit</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>sv_productreviews_available</Name>
+                <Description>Hinweis für Anzahl der vorhandenen SHOPVOTE-Bewertungen</Description>
+                <VariableLocalized iso="GER">Produktbewertung(en)</VariableLocalized>
+                <VariableLocalized iso="ENG">Product review(s)</VariableLocalized>
+                <VariableLocalized iso="FRE">Avis sur les produits</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>sv_stars</Name>
+                <Description>Bezeichnung der Sterne</Description>
+                <VariableLocalized iso="GER">Sterne</VariableLocalized>
+                <VariableLocalized iso="ENG">Stars</VariableLocalized>
+                <VariableLocalized iso="FRE">Étoiles</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>sv_from</Name>
+                <Description>Bezeichnung "aus"</Description>
+                <VariableLocalized iso="GER">aus</VariableLocalized>
+                <VariableLocalized iso="ENG">out of</VariableLocalized>
+                <VariableLocalized iso="FRE">sur</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>sv_productreviews</Name>
+                <Description>Beschriftung für Produktbewertungen</Description>
+                <VariableLocalized iso="GER">Produktbewertungen</VariableLocalized>
+                <VariableLocalized iso="ENG">Product reviews</VariableLocalized>
+                <VariableLocalized iso="FRE">Avis sur les produits</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>sv_showall_productreviews</Name>
+                <Description>Beschriftung für Link zu weiteren Bewertungen</Description>
+                <VariableLocalized iso="GER">Alle Bewertungen zum Artikel lesen >>></VariableLocalized>
+                <VariableLocalized iso="ENG">Read all reviews of the article >>></VariableLocalized>
+                <VariableLocalized iso="FRE">Lire toutes les critiques de l'article >>></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>sv_reviews_not_included</Name>
+                <Description>Hinweis das im Durchschnittswert die Shopvote-Bewertungen nicht berücksichtigt sind</Description>
+                <VariableLocalized iso="GER">Durchschnittswert ohne Berücksichtigung von SHOPVOTE-Bewertungen</VariableLocalized>
+                <VariableLocalized iso="ENG">Average value without consideration of SHOPVOTE ratings</VariableLocalized>
+                <VariableLocalized iso="FRE">Valeur moyenne sans tenir compte des notes de SHOPVOTE</VariableLocalized>
+            </Variable>
+        </Locales>
+        <ServicesRequiringConsent>
+            <Vendor>
+                <ID>lfs_shopvote</ID>
+                <Company>SHOPVOTE</Company>
+                <Localization iso="GER">
+                    <Name>SHOPVOTE</Name>
+                    <Purpose>Erfassung und Bereitstellung von Bewertungen</Purpose>
+                    <Description>Erfassung und Bereitstellung von Bewertungen</Description>
+                    <PrivacyPolicy>https://www.shopvote.de/datenschutz</PrivacyPolicy>
+                </Localization>
+                <Localization iso="ENG">
+                    <Name>SHOPVOTE</Name>
+                    <Purpose>Collection and provision of ratings</Purpose>
+                    <Description>Collection and provision of ratings</Description>
+                    <PrivacyPolicy>https://www.shopvote.de/datenschutz</PrivacyPolicy>
+                </Localization>
+            </Vendor>
+        </ServicesRequiringConsent>
+    </Install>
+</jtlshopplugin>

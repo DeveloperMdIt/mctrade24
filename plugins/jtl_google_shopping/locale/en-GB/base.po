@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Exportformat Google Shopping"
+msgstr "Exports products in Google Shopping format."
+
+msgid "Additional Exports"
+msgstr "Additional Exports"
+
+msgid "Export Attributes"
+msgstr "Export Attributes"
+
+msgid "Feature Mapping"
+msgstr "Feature Mapping"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Default product state"
+msgstr "Default product state"
+
+msgid "State of product by default"
+msgstr "State of product by default."
+
+msgid "new"
+msgstr "new"
+
+msgid "used"
+msgstr "used"
+
+msgid "refurbished"
+msgstr "refurbished"
+
+msgid "Function attribute for Article state"
+msgstr "Function attribute for Article state"
+
+msgid "Name of function attribute in which the article state is specified if it is not the default state"
+msgstr "Name of function attribute in which the article state is specified if it is not the default state."
+
+msgid "Function attribute for Google category"
+msgstr "Function attribute for Google category"
+
+msgid "Name of function attribute in which the Google category is specified"
+msgstr "Name of function attribute in which the Google category is specified."
+
+msgid "Shop name"
+msgstr "Shop name"
+
+msgid "Name of the shop"
+msgstr "Name of the shop."
+
+msgid "Shop description"
+msgstr "Shop description"
+
+msgid "Description of the shop"
+msgstr "Description of the shop."
+
+msgid "Max items"
+msgstr "Max items"
+
+msgid "Maximal count of articles per file"
+msgstr "Maximal count of articles per file. This value can only be chosen in steps of 2000 (2000, 4000, 6000, ..., 100000). The maximum count of articles exported per file is 100000."
+
+msgid "Articles with base price"
+msgstr "Articles with base price"
+
+msgid "do nothing"
+msgstr "do nothing"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "append base price to title"
+msgstr "append base price to title"
+
+msgid "do not export product"
+msgstr "do not export product"
+
+msgid "Export article ids of child articles as"
+msgstr "Export article ids of child articles as"
+
+msgid "By which scheme article ids of child articles should be exported"
+msgstr "By which scheme article ids of child articles should be exported? If no unambiguously article ids for child articles are selected in the Wawi, cArtNr_kArtikel should be used."
+
+msgid "Remove tags?"
+msgstr "Remove tags?"
+
+msgid "Removes HTML tags from product data"
+msgstr "Removes HTML tags from product data"
+
+msgid "cArtNr only"
+msgstr "cArtNr only"
+
+msgid "cArtNr_kArtikel"
+msgstr "cArtNr_kArtikel"
+
+msgid "Standard text if no product description exists"
+msgstr "Standard text if no product description exists."
+
+msgid "Sorry, but there is no description for this product"
+msgstr "Sorry, but there is no description for this product."
+
+msgid "An error occurred while zipping the export file"
+msgstr "An error occurred while zipping the export file!"
+
+msgid "An error occurred while loading the export format"
+msgstr "An error occurred while loading the export format!"
+
+msgid "An error occurred while getting the file handle"
+msgstr "An error occurred while getting the file handle!"
+
+msgid "An error occurred while loading the settings"
+msgstr "An error occurred while loading the settings!"
+
+msgid "Product could not be exported because no parent product exists"
+msgstr "Google Shopping (Plugin): Product with kArtikel: %d could not be exported because no parent product exists."
+
+msgid "Product could not be exported because no product exists for current settings"
+msgstr "Google Shopping (Plugin): Product with kArtikel: %d could not be exported because it is invisible with current settings."
+
+msgid "Create review feed"
+msgstr "Create review feed"
+
+msgid "Create feed of product reviews"
+msgstr "Create feed of product reviews"

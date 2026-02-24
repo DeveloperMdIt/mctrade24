@@ -1,0 +1,44 @@
+.btn {
+    text-transform: @btn-text-transform;
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active/* ,
+    .open > .dropdown-toggle& */ {
+        border-color: transparent;
+    }
+
+    .bootstrap-select & {
+        font-weight: 400;
+    }
+}
+
+.btn--wide {
+    width: 100%;
+    @media (min-width: @screen-sm) {
+        width: 240px;
+        max-width: 100%;
+    }
+}
+
+.am-spaced-button-group {
+    * + * {
+        margin-left: @spaced-button-group-spacing;
+    }
+}
+
+.pushed-success-btn {
+    white-space: normal;
+    max-width: 20rem;
+}
+
+.btn-hidden-default {
+    overflow: visible !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}

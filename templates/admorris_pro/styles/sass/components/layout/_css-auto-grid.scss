@@ -1,0 +1,19 @@
+:root {
+    --css-auto-grid-min: 20ch;
+    --css-auto-grid-gap: 1rem;
+}
+
+.css-auto-grid {
+    --min: var(--css-auto-grid-min);
+    --gap: var(--css-auto-grid-gap);
+    --variant: var(--css-auto-grid-variant, auto-fit);
+    display: grid;
+    grid-gap: var(--gap);
+    /* min() with 100% prevents overflow
+    in extra narrow spaces */
+    grid-template-columns: repeat(var(--variant), minmax(min(100%, var(--min)), 1fr));
+}
+
+.css-auto-grid--fill {
+    --css-auto-grid-variant: auto-fill;
+}

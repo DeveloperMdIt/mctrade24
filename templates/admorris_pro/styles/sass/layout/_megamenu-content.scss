@@ -1,0 +1,177 @@
+@use '../abstracts/functions' as *;
+
+.dropdown-menu--megamenu {
+    overflow: hidden; /* The vertical scrollbar causes an unwanted horizontal scrollbar in Firefox */
+    overflow-y: auto;
+    max-height: 80vh;
+
+    @supports (max-height: calc(100dvh - var(--some-var))) {
+        max-height: calc(95dvh - var(--adm-header-height));
+    }
+}
+
+// dropdown menu sizing & columns
+.header__desktop-nav {
+    .megamenu-content {
+        font-size: rem(13px); //0.929em; //
+        color: $header-dropdown-text-color;
+        padding-top: rem(34px);
+        padding-bottom: rem(34px);
+
+        $info-column-size: 190px;
+        $category-column-size: 242px;
+        $category-column-size--ch: 36ch;
+
+        &:where(:not(.megamenu-content--fullwidth)) {
+            padding-left: rem(36px);
+            padding-right: rem(36px);
+            max-width: 80vw;
+
+            /* dropdowns get too narrow without min-width */
+            min-width: $category-column-size;
+            min-width: $category-column-size--ch;
+        }
+
+        &.columns-2,
+        &.info-column {
+            // &.columns-2 {
+            min-width: $category-column-size * 2;
+            min-width: $category-column-size--ch * 2;
+        }
+        &.columns-3,
+        &.columns-4 {
+            min-width: $category-column-size * 3;
+            min-width: $category-column-size--ch * 3;
+        }
+
+        // &.columns-4 when ($font-size-base-px < 16px) {
+        //     @media (min-width: 1548px) {
+        //         min-width: $category-column-size * 4;
+        //         min-width: $category-column-size--ch * 4;
+
+        //     }
+
+        // }
+    }
+}
+
+.dropdown-menu--background-image {
+    --_dropdown-padding: var(--admorris-dropdown-padding, 300px);
+    background-size: auto 100%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    &:not(.dropdown-menu--full-width) {
+        padding-right: var(--_dropdown-padding);
+    }
+    // only for full-width dropdowns
+    .megamenu-content.megamenu-content--fullwidth {
+        padding-right: var(--_dropdown-padding);
+    }
+}
+
+.megamenu-content:not(.megamenu-content--fullwidth) {
+    &.columns-2 .megamenu-content__row,
+    .info-column .megamenu-content__row {
+        // .columns-2 .megamenu-content__row {
+        columns: 2;
+    }
+    &.columns-3 .megamenu-content__row,
+    &.columns-4 .megamenu-content__row {
+        columns: 3;
+        @if $font-size-base-px < 17px {
+            @media (min-width: $screen-lg) {
+                columns: 4;
+            }
+        }
+    }
+}
+
+.megamenu-content__row {
+    columns: auto 30ch;
+    .columns &,
+    .info-column & {
+        column-gap: pptfs(30px);
+    }
+
+    .category-wrapper,
+    .subsub {
+        &,
+        & * {
+            page-break-inside: avoid; /* added for firefox not supporting break-inside */
+            break-inside: avoid-column;
+        }
+    }
+
+    .category-wrapper + .category-wrapper {
+        margin-top: pptfs(25px);
+    }
+
+    .category-wrapper {
+        padding: 0;
+        // margin-bottom: 25px;
+        .title {
+            margin-top: 0;
+        }
+
+        .subsub {
+            a,
+            a:link,
+            a:visited {
+                color: rgba($header-dropdown-text-color, 60%);
+            }
+        }
+    }
+
+    // line between category-info and the list of categories
+    .megamenu-content__info + & {
+        margin-top: pptfs(32px);
+        padding-top: pptfs(45px);
+        border-top: 1px solid rgba($header-dropdown-text-color, 50%);
+    }
+}
+
+.megamenu-content__category-title,
+.megamenu-content__sub-category-title,
+.megamenu-content__item {
+    a,
+    a:link,
+    a:visited {
+        color: $header-dropdown-text-color;
+    }
+}
+
+.megamenu-content__category-title,
+.megamenu-content__item {
+    color: $header-dropdown-text-color;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.megamenu-content__category-title {
+    margin-bottom: pptfs(18px);
+}
+
+.megamenu-content__item {
+    & + & {
+        margin-top: pptfs(18px);
+    }
+}
+
+.megamenu-content__category-title {
+    font-size: $h4-font-size;
+    margin-top: 0;
+}
+
+.megamenu-content__sub-category-title {
+    color: $header-dropdown-text-color;
+    font-weight: 700;
+    text-transform: uppercase;
+    // margin-bottom: 16px;
+
+    & + .subsub {
+        margin-top: pptfs(8px);
+    }
+}
+
+.megamenu-content__description {
+}

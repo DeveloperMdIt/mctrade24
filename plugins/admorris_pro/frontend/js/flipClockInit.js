@@ -1,0 +1,1 @@
+var amFlipClockInit=function(){"use strict";return{init:function(e){var t=new Date(e.now),a=new Date(e.date);e.addDay&&a.setDate(a.getDate()+1);var n=(a.getTime()-t.getTime())/1e3;n=n>0?n:0;$(e.selector).FlipClock(n,{clockFace:e.format,language:e.language,showSeconds:e.showSeconds,countdown:!0})}}}();

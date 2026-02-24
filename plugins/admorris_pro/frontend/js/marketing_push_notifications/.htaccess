@@ -1,0 +1,5 @@
+<Files "manifest.json">
+    Satisfy Any
+Order Deny,Allow
+Allow from all
+</Files>

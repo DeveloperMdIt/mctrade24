@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jtlshopplugin>
+    <Name>easyCredit</Name>
+    <Description>Anbindung von easyCredit-Ratenkauf und easyCredit-Rechnungskauf</Description>
+    <Author>webStollen GmbH</Author>
+    <URL>https://www.webstollen.de</URL>
+    <XMLVersion>102</XMLVersion>
+    <ShopVersion>5.3.0</ShopVersion>
+    <PluginID>ws5_easycredit</PluginID>
+    <CreateDate>2021-01-21</CreateDate>
+    <Version>2.2.0</Version>
+    <ExsID>c9268129-699a-4ae2-81e3-103cd96b6835</ExsID>
+    <Install>
+        <Hooks>
+            <Hook id="131">hooks/131.php</Hook>
+        </Hooks>
+        <FlushTags>
+            CACHING_GROUP_PLUGIN,
+            CACHING_GROUP_TEMPLATE,
+            CACHING_GROUP_OBJECT
+        </FlushTags>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Dashboard</Name>
+            </Customlink>
+            <Settingslink sort="900">
+                <Name>Einstellungen</Name>
+                <Setting type="text" initialValue="" sort="1" conf="N">
+                    <Name>Artikelseite</Name>
+                    <Description/>
+                    <ValueName>articlePage</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="1" sort="2" conf="Y">
+                    <Name>Ratenkauf Widget auf der Artikeldetailseite aktivieren?</Name>
+                    <Description>Auf der Artikeldetailseite wird ein Beispiel für eine monatliche Rate zur günstigen Finanzierung des Artikels angezeigt.</Description>
+                    <ValueName>articleDisplay</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="#add-to-cart" sort="3" conf="Y">
+                    <Name>PHPQuery Selector</Name>
+                    <Description>Der PHPQuery Selector für das Einfügen des Ratenkauf-Beispiels.</Description>
+                    <ValueName>articleSelector</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="before" sort="4" conf="Y">
+                    <Name>PHPQuery Methode</Name>
+                    <Description>An welcher Stelle in Relation zu dem Selector soll das Ratenkauf-Beispiel eingefügt werden?</Description>
+                    <ValueName>articleMethod</ValueName>
+                    <SelectboxOptions>
+                        <Option value="after" sort="1">after</Option>
+                        <Option value="before" sort="2">before</Option>
+                        <Option value="prepend" sort="3">prepend</Option>
+                        <Option value="append" sort="4">append</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="" sort="5" conf="N">
+                    <Name>Bestellbestätigungsseite</Name>
+                    <Description/>
+                    <ValueName>orderConfirm</ValueName>
+                </Setting>    
+                <Setting type="text" initialValue="#content .order-completed" sort="7" conf="Y">
+                    <Name>PHPQuery Selector</Name>
+                    <Description>Der PHPQuery Selector für das Einfügen der Ratenkauf-Informationen.</Description>
+                    <ValueName>confirmationSelector</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="append" sort="8" conf="Y">
+                    <Name>PHPQuery Methode</Name>
+                    <Description>An welcher Stelle in Relation zu dem Selector sollen die Ratenkauf-Informationen eingefügt werden?</Description>
+                    <ValueName>confirmationMethod</ValueName>
+                    <SelectboxOptions>
+                        <Option value="after" sort="1">after</Option>
+                        <Option value="before" sort="2">before</Option>
+                        <Option value="prepend" sort="3">prepend</Option>
+                        <Option value="append" sort="4">append</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="" sort="9" conf="N">
+                    <Name>Bestellstatusseite</Name>
+                    <Description/>
+                    <ValueName>orderStatus</ValueName>
+                </Setting>    
+                <Setting type="selectbox" initialValue="1" sort="11" conf="Y">
+                    <Name>Ratenkauf-Informationen anzeigen?</Name>
+                    <Description>Auf der Bestellstatusseite werden nach dem Kauf Ratenkauf-Informationen angezeigt.</Description>
+                    <ValueName>statusDisplay</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="#account .order-items-total" sort="12" conf="Y">
+                    <Name>PHPQuery Selector</Name>
+                    <Description>Der PHPQuery Selector für das Einfügen der Ratenkauf-Informationen.</Description>
+                    <ValueName>statusSelector</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="append" sort="13" conf="Y">
+                    <Name>PHPQuery Methode</Name>
+                    <Description>An welcher Stelle in Relation zu dem Selector sollen die Ratenkauf-Informationen eingefügt werden?</Description>
+                    <ValueName>statusMethod</ValueName>
+                    <SelectboxOptions>
+                        <Option value="after" sort="1">after</Option>
+                        <Option value="before" sort="2">before</Option>
+                        <Option value="prepend" sort="3">prepend</Option>
+                        <Option value="append" sort="4">append</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="" sort="14" conf="N">
+                    <Name>Bestellabschlussseite</Name>
+                    <Description/>
+                    <ValueName>orderFinalize</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="1" sort="16" conf="Y">
+                    <Name>Ratenkauf-Informationen anzeigen?</Name>
+                    <Description>Auf der Bestellabschlussseite werden nach dem Kauf Ratenkauf-Informationen angezeigt.</Description>
+                    <ValueName>finalizeDisplay</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="#panel-submit-order .checkout-items-total" sort="17" conf="Y">
+                    <Name>PHPQuery Selector</Name>
+                    <Description>Der PHPQuery Selector für das Einfügen der Ratenkauf-Informationen.</Description>
+                    <ValueName>finalizeSelector</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="append" sort="18" conf="Y">
+                    <Name>PHPQuery Methode</Name>
+                    <Description>An welcher Stelle in Relation zu dem Selector sollen die Ratenkauf-Informationen eingefügt werden?</Description>
+                    <ValueName>finalizeMethod</ValueName>
+                    <SelectboxOptions>
+                        <Option value="after" sort="1">after</Option>
+                        <Option value="before" sort="2">before</Option>
+                        <Option value="prepend" sort="3">prepend</Option>
+                        <Option value="append" sort="4">append</Option>
+                    </SelectboxOptions>
+                </Setting>
+            </Settingslink>
+        </Adminmenu>
+        <PaymentMethod>
+            <Method>
+                <Name>ratenkauf by easyCredit</Name>
+                <PictureURL>images/easycredit-ratenkauf.svg</PictureURL>
+                <Sort>1</Sort>
+                <SendMail>0</SendMail>
+                <Provider>easyCredit</Provider>
+                <TSCode>FINANCING</TSCode>
+                <PreOrder>0</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>EasyCredit.php</ClassFile>
+                <ClassName>EasyCredit</ClassName>
+                <TemplateFile>tpl/bestellabschluss.tpl</TemplateFile>
+                <AdditionalTemplateFile>tpl/easycredit.tpl</AdditionalTemplateFile>
+                <MethodLanguage iso="GER">
+                    <Name>easyCredit-Ratenkauf</Name>
+                    <ChargeName>easyCredit-Ratenkauf</ChargeName>
+                    <InfoText>easyCredit-Ratenkauf</InfoText>
+                </MethodLanguage>
+                <Setting type="text" initialValue="" sort="1" conf="Y">
+                    <Name>easyCredit Webshop-ID</Name>
+                    <Description>Tragen Sie hier die Webshop-ID ein</Description>
+                    <ValueName>webshop_id</ValueName>
+                </Setting>
+                <Setting type="password" initialValue="" sort="2" conf="Y">
+                    <Name>easyCredit API-Kennwort</Name>
+                    <Description>Tragen Sie hier das API-Kennwort ein</Description>
+                    <ValueName>webshop_token</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="3" conf="Y">
+                    <Name>easyCredit API-Signatur (optional)</Name>
+                    <Description>Soll die API-Signatur activiert werden?</Description>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="1">Ja</Option>
+                        <Option value="N" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                    <ValueName>webshop_signatur</ValueName>
+                </Setting>
+                <Setting type="password" initialValue="" sort="4" conf="Y">
+                    <Name>easyCredit Geheimschlüssel</Name>
+                    <Description>Tragen Sie hier den Geheimschlüssel für die API-Signatur ein</Description>
+                    <ValueName>webshop_secret</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="200" sort="5" conf="Y">
+                    <Name>Mindestbestellwert</Name>
+                    <Description>Erst ab diesem Bestellwert kann diese Zahlungsart genutzt werden.</Description>
+                    <ValueName>min</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="10000" sort="6" conf="Y">
+                    <Name>Maximaler Bestellwert</Name>
+                    <Description>Nur bis zu diesem Bestellwert wird diese Zahlungsart angeboten. (einschliesslich)</Description>
+                    <ValueName>max</ValueName>
+                </Setting>
+            </Method>
+            <Method>
+                <Name>easyCredit Rechnungskauf</Name>
+                <PictureURL>images/easycredit-rechnungskauf.svg</PictureURL>
+                <Sort>2</Sort>
+                <SendMail>0</SendMail>
+                <Provider>easyCredit</Provider>
+                <TSCode>INVOICE</TSCode>
+                <PreOrder>0</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>EasyCreditRechnungskauf.php</ClassFile>
+                <ClassName>EasyCreditRechnungskauf</ClassName>
+                <TemplateFile>tpl/bestellabschluss.tpl</TemplateFile>
+                <AdditionalTemplateFile>tpl/easycredit.tpl</AdditionalTemplateFile>
+                <MethodLanguage iso="GER">
+                    <Name>easyCredit-Rechnungskauf</Name>
+                    <ChargeName>easyCredit-Rechnungskauf</ChargeName>
+                    <InfoText>easyCredit-Rechnungskauf</InfoText>
+                </MethodLanguage>
+                <Setting type="text" initialValue="" sort="1" conf="Y">
+                    <Name>easyCredit Webshop-ID</Name>
+                    <Description>Tragen Sie hier die Webshop-ID ein</Description>
+                    <ValueName>webshop_id</ValueName>
+                </Setting>
+                <Setting type="password" initialValue="" sort="2" conf="Y">
+                    <Name>easyCredit API-Kennwort</Name>
+                    <Description>Tragen Sie hier das API-Kennwort ein</Description>
+                    <ValueName>webshop_token</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="3" conf="Y">
+                    <Name>easyCredit API-Signatur (optional)</Name>
+                    <Description>Soll die API-Signatur activiert werden?</Description>
+                    <SelectboxOptions>
+                        <Option value="Y" sort="1">Ja</Option>
+                        <Option value="N" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                    <ValueName>webshop_signatur</ValueName>
+                </Setting>
+                <Setting type="password" initialValue="" sort="4" conf="Y">
+                    <Name>easyCredit Geheimschlüssel</Name>
+                    <Description>Tragen Sie hier den Geheimschlüssel für die API-Signatur ein</Description>
+                    <ValueName>webshop_secret</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="50" sort="5" conf="Y">
+                    <Name>Mindestbestellwert</Name>
+                    <Description>Erst ab diesem Bestellwert kann diese Zahlungsart genutzt werden.</Description>
+                    <ValueName>min</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="5000" sort="6" conf="Y">
+                    <Name>Maximaler Bestellwert</Name>
+                    <Description>Nur bis zu diesem Bestellwert wird diese Zahlungsart angeboten. (einschliesslich)</Description>
+                    <ValueName>max</ValueName>
+                </Setting>
+            </Method>
+        </PaymentMethod>
+        <Locales>
+            <Variable>
+                <Name>confirmation_interest_value</Name>
+                <Description>Darstellung der anfallenden Zinsen</Description>
+                <VariableLocalized iso="GER">Zinsen für Ratenzahlung mit easyCredit-Ratenkauf</VariableLocalized>
+                <VariableLocalized iso="ENG">Interest for installment payment with easyCredit installment purchase
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>confirmation_contract_information</Name>
+                <Description>Vorvertragliche Informationen</Description>
+                <VariableLocalized iso="GER">Vorvertragliche Informationen zum easyCredit-Ratenkauf hier abrufen
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">Retrieve pre-contractual information on easyCredit installment purchase
+                    here
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>confirmation_total</Name>
+                <Description>Gesamte Rechnungssumme inkl. Zinsen</Description>
+                <VariableLocalized iso="GER">Rechnungssumme:</VariableLocalized>
+                <VariableLocalized iso="ENG">Invoice amount:</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>confirmation_order_value</Name>
+                <Description>Gesamter Bestellbetrag</Description>
+                <VariableLocalized iso="GER">Bestellbetrag:</VariableLocalized>
+                <VariableLocalized iso="ENG">Order amount:</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>confirmation_installment_info</Name>
+                <Description>Informationen zum Ratenkauf</Description>
+                <VariableLocalized iso="GER">Informationen zu Ihrem Ratenkauf</VariableLocalized>
+                <VariableLocalized iso="ENG">Information about your installment purchase</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>request_declined_message</Name>
+                <Description>Nachricht an den Kunden bei negativer Kreditentscheidung</Description>
+                <VariableLocalized iso="GER">Leider können wir Ihnen keinen Ratenkauf anbieten. Bitte wählen Sie
+                    eine andere Zahlart!
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">Unfortunately, we cannot offer you an installment purchase. Please choose
+                    another payment method!
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>request_declined_message_invoice</Name>
+                <Description>Nachricht an den Kunden bei negativer Kreditentscheidung (Rechnungskauf)</Description>
+                <VariableLocalized iso="GER">Leider können wir Ihnen keinen Rechnungskauf anbieten. Bitte wählen Sie
+                    eine andere Zahlart!
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">Unfortunately, we cannot offer you purchase on account. Please choose
+                    another payment method!
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>general_error_notification</Name>
+                <Description>Genereller Hinweis bei Fehlern</Description>
+                <VariableLocalized iso="GER">Bitte überprüfen Sie Ihre Angaben!</VariableLocalized>
+                <VariableLocalized iso="ENG">Please check your information!</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>address_error_notification</Name>
+                <Description>Fehlermeldung an den Kunden, wenn die Lieferadresse nicht der Rechungsadresse entspricht.</Description>
+                <VariableLocalized iso="GER">Die Lieferadresse muss gleich der Rechnungsadresse sein.</VariableLocalized>
+                <VariableLocalized iso="ENG">The delivery address must be the same as the billing address.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>reauthorize_notification</Name>
+                <Description>Hinweis auf erneute Genehmigung</Description>
+                <VariableLocalized iso="GER">Ihre Adresse oder Ihr Warenkorb haben sich geaendert. Bitte starten Sie den
+                    Genehmigungsprozess erneut!
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">Your address or shopping cart has changed. Please restart the approval
+                    process!
+                </VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>finalize_error_notification</Name>
+                <Description>Hinweis bei Fehler während des Bestellabschlusses</Description>
+                <VariableLocalized iso="GER">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut!
+                </VariableLocalized>
+                <VariableLocalized iso="ENG">An error has occurred. Please try again!</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>authorization_error_notification</Name>
+                <Description>Hinweis bei Fehler während des Bestellabschlusses</Description>
+                <VariableLocalized iso="GER">Die Bezahlung wurde von easyCredit nicht authorisiert. Ihre Bestellung wurde automatisch storniert.</VariableLocalized>
+                <VariableLocalized iso="ENG">This payment method is for private persons only.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>company_error_notification</Name>
+                <Description>Hinweis bei Fehler während des Bestellabschlusses</Description>
+                <VariableLocalized iso="GER">Die Bezahlung mit easyCredit ist nur für Privatpersonen verfügbar.</VariableLocalized>
+                <VariableLocalized iso="ENG">The payment was not authorized by easyCredit. Your order was automatically canceled.</VariableLocalized>
+            </Variable>
+        </Locales>
+    </Install>
+</jtlshopplugin>

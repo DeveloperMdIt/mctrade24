@@ -1,0 +1,26 @@
+body {
+    &:has(.adm-portlet.opc-selected) .opc-portlet-toolbar {
+        .opc-label {
+            background-color: var(--adm-admin-primary-color) !important;
+            cursor: default;
+        }
+
+        .opc-toolbar-btn {
+            border-color: var(--adm-admin-primary-color);
+
+            &:hover, &:focus, &:active {
+                background-color: var(--adm-admin-primary-color-faded);
+            }
+        }
+    }
+
+    .opc-area {
+        .adm-portlet {
+            border-color: var(--adm-admin-primary-color) !important;
+
+            &.opc-selected {
+                border-color: var(--adm-admin-primary-color-hover) !important;
+            }
+        }
+    }
+}

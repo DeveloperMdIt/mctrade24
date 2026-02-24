@@ -1,0 +1,68 @@
+/* Overlay labels */
+
+/* 1. 'display: block' necessary because inline-block caused an issue in 
+ *    IE11 where images were either too big.
+ *    
+ */
+
+.image-wrapper {
+    overflow: hidden !important;
+    position: relative;
+    display: block; /* 1 */
+}
+
+.overlay-label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 10;
+    font-size: .pptfs(10px) [ @result];
+    color: white;
+    padding: 0.6em 0.9em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &.auflager {
+        background-color: @label-auflager;
+    }
+
+    &.lagerbestand0 {
+        background-color: @label-lagerbestand0;
+    }
+
+    &.bestseller {
+        background-color: @label-bestseller;
+    }
+
+    &.inkurzeverfugbar {
+        background-color: @label-inkurzeverfugbar;
+    }
+
+    &.neuimsortiment {
+        background-color: @label-neuimsortiment;
+    }
+
+    &.sonderangebote {
+        background-color: @label-sonderangebote;
+    }
+
+    &.topangebote {
+        background-color: @label-topangebote;
+    }
+
+    &.topbewertet {
+        background-color: @label-topbewertet;
+    }
+
+    &.vorbestellbar {
+        background-color: @label-vorbestellbar;
+    }
+    &.topbewertet {
+        background-color: @label-topbewertet;
+    }
+}
+
+.overlay-img {
+    left: 10px;
+}

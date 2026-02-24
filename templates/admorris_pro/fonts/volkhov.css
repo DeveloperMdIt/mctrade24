@@ -1,0 +1,40 @@
+/* volkhov-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Volkhov';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Volkhov Regular'), local('Volkhov-Regular'),
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* volkhov-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Volkhov';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Volkhov Italic'), local('Volkhov-Italic'),
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* volkhov-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Volkhov';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Volkhov Bold'), local('Volkhov-Bold'),
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* volkhov-700italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Volkhov';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Volkhov Bold Italic'), local('Volkhov-BoldItalic'),
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/volkhov/volkhov-v9-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

@@ -1,0 +1,83 @@
+.btn {
+    text-transform: $btn-text-transform;
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active/* ,
+    .open > .dropdown-toggle & */ {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    .bootstrap-select & {
+        font-weight: 400;
+    }
+}
+
+.btn--wide {
+    max-width: 100%;
+    @include media-breakpoint-up(sm) {
+        width: 30rem;
+    }
+}
+
+.am-spaced-button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $base-spacing--half;
+}
+
+.btn-hidden-default {
+    overflow: visible !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+.btn-add {
+    padding: 0.2rem 0.3rem 0.1rem 0.3rem;
+    font-size: 0.6rem;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+
+/* Buttons */
+
+.add-to-basket {
+    & > .btn {
+        width: 100%;
+    }
+
+    // & > .btn.disabled {
+    //     @include btn--disabled-dashed();
+    // }
+}
+
+.btn--disabled-dashed {
+    // needs higher specificity than .btn.disabled
+    &.btn {
+        color: $gray-base;
+        background-color: $body-bg;
+        opacity: 1;
+        // border-image-source: url("img/dash.png");
+        // border-image-slice: 1;
+        // border-image-repeat: round;
+        border: 2px dashed currentColor;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+@each $color, $value in $btn-theme-colors {
+  .btn-outline-#{$color} {
+    &:focus {
+        border-color: $value;
+    }
+  }
+}

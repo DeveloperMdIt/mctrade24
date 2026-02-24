@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "embedResponsive"
+msgstr "Video responsiv einbetten"
+
+msgid "source"
+msgstr "Quelle"
+
+msgid "localVideo"
+msgstr "Lokales Video"
+
+msgid "youtubeNote"
+msgstr "Weisen Sie in Ihrer Datenschutzerklärung auf folgende Punkte hin:<br/>- YouTube-Videos werden "
+"im „erweiterten Datenschutzmodus“ in Ihre Seiten eingebettet.<br>- Der Aufruf der Seiten führt zur "
+"Verbindungsaufnahme mit YouTube und DoubleClick.<br>- Schon ein Klick auf das Video kann weitere "
+"Datenverarbeitungsvorgänge auslösen, auf die der Website-Betreiber keinen Einfluss mehr hat. "
+
+msgid "videoID"
+msgstr "Video-ID / Video-URL"
+
+msgid "videoIDHelpYoutube"
+msgstr "Die Video-ID finden Sie nach dem Ist-gleich-Zeichen (?v=) der YouTube-URL, z. B."
+" https://www.youtube.com/watch?v=[Video-ID]."
+
+msgid "showControls"
+msgstr "Steuerelemente anzeigen"
+
+msgid "showCaptions"
+msgstr "Untertitel automatisch anzeigen"
+
+msgid "showTranscriptControls"
+msgstr "Einblenden des Transkripts für Kunden ermöglichen"
+
+msgid "showTranscriptControlsDesc"
+msgstr "Wählen Sie aus, ob Ihre Kunden die Transkripte für Vimeo-Videos anzeigen lassen können."
+
+msgid "showSimilarVideos"
+msgstr "Ähnliche Videos anzeigen"
+
+msgid "playlist"
+msgstr "Video-IDs für Playlist"
+
+msgid "playlistHelp"
+msgstr "Geben Sie die Video-IDs durch Kommas getrennt ein, z.B. xITQHgJ3RRo,sNYv0JgrUlw."
+
+msgid "videoIDHelpVimeo"
+msgstr "Die Video-ID finden Sie nach dem Schrägstrich (/) der Vimeo-URL, z. B. https://vimeo.com/[Video-ID]."
+
+msgid "repeatVideo"
+msgstr "Video nach dem Abspielen wiederholen"
+
+msgid "videoCaptions"
+msgstr "Untertitel hinzufügen"
+
+msgid "videoCaptionsDesc"
+msgstr "Laden Sie hier die Untertitel zum Video als VTT-Datei hoch."
+
+msgid "videoTranscript"
+msgstr "Transkript eingeben"
+
+msgid "videoTranscriptAsPopUp"
+msgstr "Transkript in eigenem Fenster anzeigen"
+
+msgid "muteVideo"
+msgstr "Video automatisch stummschalten"
+
+msgid "autoplayVideo"
+msgstr "Video automatisch abspielen"
+
+msgid "videoAutoplayDesc"
+msgstr "In vielen Browsern kann das Video nur automatisch abgespielt werden, wenn das Video stummgeschaltet ist."
+" Aktivieren Sie dafür die Checkbox „Video automatisch stummschalten“."
+
+msgid "showImage"
+msgstr "Profilbild anzeigen"
+
+msgid "showImageDesc"
+msgstr "Wählen Sie aus, ob das Profilbild des Vimeo-Nutzers angezeigt werden soll. Vimeo-Nutzer können selbst"
+" entscheiden, ob ihr Profilbild angezeigt werden soll und überschreiben ggf. Ihre Einstellung."
+
+msgid "showTitle"
+msgstr "Videotitel anzeigen"
+
+msgid "showTitleDesc"
+msgstr "Vimeo-Nutzer können selbst entscheiden, ob der Videotitel angezeigt werden soll und überschreiben ggf."
+" Ihre Einstellung."
+
+msgid "showAuthorInformation"
+msgstr "Kanalinformationen anzeigen"
+
+msgid "showAuthorInformationDesc"
+msgstr "Vimeo-Nutzer können selbst entscheiden, ob die Kanalinformationen angezeigt werden sollen und überschreiben"
+" ggf. Ihre Einstellung."
+
+msgid "videoURL"
+msgstr "Video-URL"
+
+msgid "colorYtDesc"
+msgstr "Farbe der Steuerelemente"
+
+msgid "showCaptionsYtDesc"
+msgstr "Auf YouTube werden nur Untertitel angezeigt, die von Nutzern für das Video manuell erstellt wurden."
+" Automatisch generierte Untertitel werden standardmäßig nicht angezeigt. "
+
+msgid "widthPx"
+msgstr "Breite (px)"
+
+msgid "heightPx"
+msgstr "Höhe (px)"
+
+msgid "startSec"
+msgstr "Start bei Sekunde"
+
+msgid "endSec"
+msgstr "Ende bei Sekunde"

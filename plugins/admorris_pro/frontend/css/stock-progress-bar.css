@@ -1,0 +1,23 @@
+#stock-progress-bar {
+  margin: 30px 0;
+}
+.stock-progress-bar-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+}
+span.stock-progress-bar-stock {
+  font-weight: 600;
+}
+.stock-progress-bar-outer {
+  width: 100%;
+  background-color: #e5e5e5;
+  height: 12px;
+  border-radius: 4px;
+  margin: 10px 0 0 0;
+}
+.stock-progress-bar-inner {
+  height: 100%;
+  border-radius: 5px;
+}

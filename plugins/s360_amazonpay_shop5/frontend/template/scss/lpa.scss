@@ -1,0 +1,157 @@
+.lpa-button {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    clear: both;
+}
+
+.lpa-button-subscription {
+    margin-bottom: 0.5em;
+}
+.lpa-button-subscription-label-title,
+.lpa-button-subscription-label-text,
+.lpa-button-subscription-discount-text {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+.lpa-button-subscription-label-title {
+    font-weight: bold;
+    font-size: small;
+}
+.lpa-button-subscription-label-text,
+.lpa-button-subscription-discount-text {
+    font-size: smaller;
+}
+.cart-dropdown {
+    .lpa-button-subscription {
+        display: none;
+    }
+}
+
+.lpa-button-wrapper {
+
+}
+
+.alert {
+    .lpa-button-context-pay {
+        .lpa-button-wrapper {
+            margin-top: 1em;
+        }
+    }
+}
+
+.lpa-button-container {
+    /* Margins make the button automatically center if its containing div is "too large", i.e. over 500px with */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.lpa-button-container img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.lpa-widget-container {
+    /* Recommended values by Amazon */
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 228px;
+    max-height: 400px;
+    height: 228px;
+    width:  100%;
+
+    margin-bottom: 1em;
+}
+
+.lpa-cancel {
+    margin-top: 1em;
+}
+
+.lpa-widget-placeholder {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+body[data-viewport="xs"] .lpa-submit,
+body[data-viewport="xs"] .lpa-cancel {
+    text-align: center;
+}
+
+body[data-viewport="sm"] .lpa-submit,
+body[data-viewport="md"] .lpa-submit,
+body[data-viewport="lg"] .lpa-submit,
+body[data-viewport="xl"] .lpa-submit {
+    text-align: right;
+}
+
+.lpa-edit-address .lpa-edit-optional:not([data-value=""]) {
+    display: none;
+}
+.lpa-preview-address {
+    margin: 1em 0;
+}
+.lpa-preview-address .preview-mail {
+    margin-top: 0.25em;
+}
+.lpa-preview-address .preview-heading {
+    margin-bottom: 0.5em;
+}
+.lpa-preview-address .preview-edit {
+    margin-top: 0.5em;
+}
+.lpa-checkout-comment {
+    margin-top: 0.25em;
+    margin-bottom: 1em;
+}
+.lpa-hidden {
+    display: none !important;
+}
+
+#lpaChangeAddressButton,
+#lpaChangePaymentButton {
+    cursor: pointer;
+}
+
+/* Compatibility Fix for EVO / NOVA (Evo puts CMS content into a container, NOVA does not) */
+.container {
+    /* our container is wrapped in another container, default to auto width, important is needed to override EVO default margins without having to resort to convolutedly long selectors */
+    .lpa-checkout-wrapper.container,
+    .lpa-alert-container.container,
+    .lpa-login-wrapper.container,
+    .container.lpa-conditional-container {
+        width: auto;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Compatibility Fix for EVO / NOVA (Evos checkboxes are nested in their labels and therefore have margin-left of -20px */
+#lpa-create-account-toggle {
+    margin-left: 0;
+}
+.lpa-checkout-wrapper {
+    .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+        margin-left: 0;
+    }
+}
+
+/* Fixes misalignment in cart dropdowns when appending to .cart-dropdown-buttons without a col on the path; complex negation might not be supported by all browsers, yet */
+.row.cart-dropdown-buttons .row.lpa-button-content:not(.row.cart-dropdown-buttons div[class*="col-"] .lpa-button-content) {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Fixes misalignment if button is direct child of form-rows (they have a different gutter (5px)) */
+.form-row > .lpa-button {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.lpa-subscriptions-table {
+    margin-top: 10px;
+}

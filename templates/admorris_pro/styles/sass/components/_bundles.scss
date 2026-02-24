@@ -1,0 +1,64 @@
+/* Bundles */
+
+.bundle {
+    &-list.row {
+        padding: 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        display: inline-block;
+        vertical-align: top;
+
+        &-head {
+            display: table;
+            display: flex;
+            align-items: center;
+        }
+
+        &-image,
+        &-plus {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        &-title {
+            @include product-cell__title();
+            padding-left: $thumbnail-padding;
+            padding-right: $plus-n-minus-button-size;
+            margin: 1em 0 2em;
+
+            a {
+                display: inline-block;
+                margin-bottom: 0.5em;
+            }
+
+            .price {
+                @include product-cell-price();
+            }
+        }
+    }
+}
+
+.bundle__card {
+    @include panel--minimal();
+    padding: 1em;
+    .bundle__name{
+        padding: 0 .5em ;
+    }
+    .card-header{
+        margin: 1em 0;
+        padding: .5em;
+    }
+}
+.bundle-price {
+    margin-bottom: 2.769rem;
+}
+
+.bundle-price__price {
+    color: theme-color('primary');
+    font-size: $h3-font-size;
+}

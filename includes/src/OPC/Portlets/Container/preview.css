@@ -1,0 +1,40 @@
+.opc-Container {
+  background-size: cover;
+  background-position: center;
+}
+.opc-Container .opc-container-pause {
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin: 7px;
+}
+.opc-Container .opc-container-pause:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.opc-Container {
+  padding: 0;
+  width: auto;
+}
+
+.opc-rootarea > .opc-Container.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opc-Container.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 767px) {
+  .opc-Container.container {
+    max-width: initial;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+}
+
+/*# sourceMappingURL=preview.css.map */

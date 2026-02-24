@@ -1,0 +1,23 @@
+html:has(body.modal-open) {
+    overflow: hidden;
+}
+
+// Fix for #513 - backdrop was not visible
+// .modal-backdrop {
+//     bottom: 0;
+//     z-index: $zindex-modal - 10;
+// }
+
+// .modal {
+//     z-index: $zindex-modal;
+// }
+
+*:has(> .modal-content) {
+    container-type: inline-size;
+}
+
+.modal-content {
+    @container (min-width: 600px) {
+        border-radius: adm-border-radius('lg', 'global');
+    }
+}

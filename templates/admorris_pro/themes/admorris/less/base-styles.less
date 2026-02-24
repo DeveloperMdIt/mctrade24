@@ -1,0 +1,192 @@
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow-y: scroll;
+    min-height: 100%;
+    font-size: (@font-size-base-px / 16px) * 1em;
+}
+
+body {
+    background-color: @body-bg;
+    font-size: 1em;
+    overflow-x: clip; /* used to avoid scrollbars with .full-width-container */
+}
+
+::selection {
+    background: @brand-primary;
+    /* WebKit/Blink Browsers */
+    color: white;
+}
+
+::-moz-selection {
+    background: @brand-primary;
+    /* Gecko Browsers */
+    color: white;
+}
+
+a:hover:not(.btn) {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.7;
+
+    // img {
+    //     opacity: 0.8;
+
+    // }
+}
+a:active {
+    opacity: 0.5;
+}
+
+button,
+.btn,
+.fa {
+    // &:focus,
+    &:active,
+    &:active {
+        // &:focus:active {
+        outline: none;
+        box-shadow: none;
+    }
+}
+/* Remove outline for non-keyboard :focus */
+/* https://github.com/WICG/focus-visible */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/*
+  strong focus indicator for keyboard focus.
+*/
+:focus-visible:not(input):not(select):not(textarea) {
+    outline: 2px dotted @brand-primary!important;
+}
+
+.badge {
+    text-shadow: none;
+}
+
+.navbar {
+    border-radius: 0;
+    border: 0;
+}
+
+// Undo rounded corners in static and fixed navbars
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    border-radius: 0;
+}
+
+//align manufacturer mobile icon and text
+.navbar-manufacturers {
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.nav-horizontal {
+    li {
+        float: left;
+    }
+    li + li {
+        margin-left: 10px;
+    }
+}
+// Fix active state of dropdown items in collapsed mode
+@media (max-width: @grid-float-breakpoint-max) {
+    .navbar .navbar-nav .open .dropdown-menu > .active > a {
+        &,
+        &:hover,
+        &:focus {
+            color: #fff;
+            //   #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
+        }
+    }
+}
+
+// hide filter sidebar temporarily
+// #sidepanel_left {
+//     display: none;
+// }
+
+[id="content-wrapper"] {
+    padding-top: 50px;
+}
+
+.dropdown-menu {
+    font-size: 1rem;
+}
+
+.label {
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding-left: 2ch;
+    padding-right: 2ch;
+}
+
+.input-group-addon > label {
+    margin-bottom: 0;
+}
+
+// fix strange bootstrap modal behaviour
+.modal-open {
+    padding-right: 0 !important;
+}
+// fix missing clearfix causing too small modal header when no title is present
+.modal-header {
+    .clearfix();
+}
+
+[id="maintenance-mode"] {
+    margin-bottom: 1px;
+    .navbar-text {
+        width: 100%;
+    }
+}
+
+.main-content {
+    p {
+        margin-bottom: @line-height-base * 1rem;
+    }
+}
+
+.consent-manager-wrapper {
+    display: none;
+}
+
+[class*="opc-"] .btn {
+    white-space: normal;
+}
+
+[required],
+.form-group.required :is(input, select, textarea),
+.form-group.required .bootstrap-select .btn {
+    background-image: url("../images/asterisk.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 32px 32px;
+}
+
+// Offset html anchors for fixed header
+// For modern browsers, just add the CSS3 :target selector to the page.
+// This will apply to all the anchors automatically.
+// ref: http://stackoverflow.com/a/21707103/6220029
+
+// :target {
+//   display: block;
+//   position: relative;
+//   top: var(--adm-header-height);
+//   visibility: hidden;
+// }
+
+// Moves OPC Button under header to avoid overlap
+#opc #opc-startmenu {
+    top: var(--adm-header-height) !important;
+    padding: 10px;
+}

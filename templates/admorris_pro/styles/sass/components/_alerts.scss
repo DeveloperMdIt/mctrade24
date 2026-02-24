@@ -1,0 +1,23 @@
+#alert-list:empty {
+    display: none;
+}
+
+.alert-info {
+    background-color: $alert-info-bg;
+    color: $alert-info-color;
+}
+
+.alert-success {
+    background-color: $alert-success-bg;
+    color: $alert-success-color;
+}
+
+.alert-warning {
+    background-color: $alert-warning-bg;
+    color: $alert-warning-color;
+}
+
+.alert-danger {
+    background-color: $alert-danger-bg;
+    color: $alert-danger-color;
+}

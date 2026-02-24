@@ -1,0 +1,83 @@
+/**
+* This formula calculates a value between 28 and 45 based on luma value of brand-primary.
+* It is meant to darken or lighten extrem color such as #fff and #000, respectively, more 
+* than color in the middle of the luma espectrum
+* NOTE: It doesn work with alpha colors!!!
+*/
+.sale-countdown {
+  display: flex!important;
+  color: white;
+  color: var(--textColor);
+  background-color: black;
+  background-color: var(--backgroundColor);
+  padding: 10px 5px 10px;
+  padding: var(--paddingTop) 5px var(--paddingBottom);
+  font-weight: 700;
+  font-size: 30px;
+  font-size: var(--fontSize);
+}
+@media (max-width: 991px) {
+  .sale-countdown {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 767px) {
+  .sale-countdown {
+    font-size: calc(var(--fontSize) * 0.75);
+  }
+}
+@media (max-width: 380px) {
+  .sale-countdown {
+    font-size: calc(var(--fontSize) * 0.6);
+  }
+}
+.sale-countdown__col {
+  flex: 1 1 0;
+}
+.sale-countdown__col:nth-child(2) {
+  margin: 0 6vw;
+  flex: 0 1 auto;
+  text-align: center;
+}
+.sale-countdown__col:nth-child(2) a,
+.sale-countdown__col:nth-child(2) a:hover,
+.sale-countdown__col:nth-child(2) a:visited {
+  color: white;
+  color: var(--textColor);
+  text-decoration: none;
+}
+@media (max-width: 991px) {
+  .sale-countdown__col:nth-child(2) {
+    order: -1;
+    flex: 1 0 100%;
+    margin: 0;
+  }
+}
+.sale-countdown__col:first-child {
+  text-align: right;
+}
+.sale-countdown__col:first-child,
+.sale-countdown__col:last-child {
+  font-size: 0.6em;
+}
+@media (max-width: 991px) {
+  .sale-countdown__col:first-child,
+  .sale-countdown__col:last-child {
+    flex: 1 0 auto;
+    margin: 0 10px;
+  }
+}
+@media (max-width: 320px) {
+  .sale-countdown__col:first-child,
+  .sale-countdown__col:last-child {
+    flex: 1 0 100%;
+    text-align: center;
+  }
+}
+.sale-countdown__percent,
+.sale-countdown__timer {
+  font-size: 1.5em;
+  margin-left: 3px;
+  color: #FF4D00;
+  color: var(--highlightColor);
+}

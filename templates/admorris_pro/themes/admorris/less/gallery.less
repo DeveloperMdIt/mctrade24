@@ -1,0 +1,214 @@
+@thumb-orientation: {
+    horizontal: 1;
+    vertical: 2;
+};
+
+:root {
+    --gallery-thumbnails-orientation: @gallery-thumbnails-orientation;
+}
+
+@thumb-orientation: {
+    horizontal: 1;
+    vertical: 2;
+};
+
+.productdetails-gallery {
+    @media (min-width: @screen-md) {
+        display: flex;
+        & when (@gallery-thumbnails-orientation = @thumb-orientation[horizontal]) {
+            flex-direction: column;
+        }
+    }
+    .onload-gallery-image {
+        background-color: @body-bg !important;
+    }
+}
+
+.productdetails-gallery__thumbs {
+    position: relative;
+    & when (@gallery-thumbnails-orientation = @thumb-orientation[horizontal]) {
+        order: 0 !important;
+    }
+
+    & when (@gallery-thumbnails-orientation = @thumb-orientation[vertical]) {
+        @media (min-width: @screen-md) {
+            width: 60px;
+            width: var(--article-image-xs-width, 60px);
+            order: -1;
+            flex: 0 0 auto;
+            margin-right: @thumbnail-margin;
+            min-height: 400px;
+            li + li {
+                margin-top: @thumbnail-margin;
+            }
+        }
+    }
+}
+
+.productdetails-gallery__image-thumbs {
+    max-width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    opacity: 1;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: both mandatory;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        width: 0 !important;
+        display: none;
+    }
+
+    & when (@gallery-thumbnails-orientation = @thumb-orientation[vertical]) {
+        @media (min-width: @screen-md) {
+            overflow-y: scroll;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            width: 100%;
+            // scroll-snap-type: y proximity;
+        }
+    }
+
+    & when (@gallery-thumbnails-orientation = @thumb-orientation[horizontal]) {
+        display: flex;
+        // flex-wrap: wrap;
+        margin-right: 0;
+    }
+
+    & when (@gallery-thumbnails-orientation = @thumb-orientation[vertical]) {
+        @media (min-width: @screen-md) {
+            width: 60px;
+            width: var(--article-image-xs-width, 60px);
+        }
+    }
+
+    li {
+        border: 0;
+        width: auto;
+        padding: 0;
+        scroll-snap-align: start;
+
+        & when (@gallery-thumbnails-orientation = @thumb-orientation[horizontal]) {
+            margin-top: 20px;
+            margin-right: 20px;
+            // min-width: 60px;
+            &:last-child {
+                margin-right: 0;
+            }
+            // @media (max-width: @screen-sm-max) {
+            //     max-width: 90px;
+            // }
+        }
+
+        &.active img {
+            opacity: 0.4;
+        }
+        img:hover {
+            cursor: pointer;
+        }
+    }
+
+    /* Thumb image */
+
+    img {
+        display: block;
+        height: auto;
+        background-color: @tone-10;
+
+        /* make images smaller on mobile */
+        @media (max-width: @screen-xs-max) {
+            max-width: 60px;
+            height: auto;
+        }
+    }
+
+    @media (max-width: @screen-sm-max) {
+        white-space: nowrap;
+        display: flex;
+
+        li {
+            vertical-align: middle;
+            margin: 2px 2px 0 0;
+        }
+    }
+}
+
+.productdetails-gallery__main-image {
+    overflow: hidden;
+    width: 100% !important;
+
+    .slick-slide {
+        position: relative;
+        a {
+            display: block;
+        }
+    }
+    .gallery-img {
+        width: 100%;
+        height: auto;
+        content-visibility: visible;
+
+        &[src$="keinBild.gif"] {
+            object-fit: none;
+        }
+    }
+}
+
+/* easyzoom */
+
+.easyzoom {
+    float: left;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.easyzoom-flyout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.7s ease;
+    background-color: @body-bg;
+
+    img {
+        width: auto !important;
+        min-width: 100%;
+        content-visibility: visible;
+    }
+}
+
+.easyzoom-notice {
+    font-size: 0;
+    padding: 10px;
+    background: @preloader-path center no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carousel.vertical .carousel-inner > .item {
+    padding-right: 0;
+}
+
+.product-images {
+    /* Hide all images except the first before the slider is loading */
+    > div:not(:first-child) img {
+        display: none;
+    }
+    height: 100% !important;
+
+    .easyzoom {
+        height: 100% !important;
+        width: 100% !important;
+        position: relative;
+    }
+}

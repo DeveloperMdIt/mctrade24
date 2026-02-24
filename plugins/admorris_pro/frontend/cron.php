@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro; use JTL\Shop; include $oPlugin->getPaths()->getFrontendPath() . "\163\145\x61\162\143\x68\57\x63\x72\157\x6e\57\x63\x72\157\156\137\152\157\142\x2e\x70\150\x70"; include $oPlugin->getPaths()->getFrontendPath() . "\155\141\x69\x6c\143\x68\x69\155\x70\x2f\x63\162\x6f\x6e\137\152\157\x62\56\x70\x68\160"; function admCron() { $plugin = Shop::get("\x6f\160\x6c\x75\x67\x69\156\137\x61\x64\155\x6f\162\x72\151\x73\x5f\x70\162\x6f"); if (!($plugin->getConfig()->getValue("\x61\144\x6d\x6f\x72\162\151\x73\x5f\x70\x72\x6f\137\163\x65\x61\162\143\x68\x5f\141\x63\x74\151\x76\145") === "\131")) { goto rxuPe; } executeSearchCron(); rxuPe: if (!($plugin->getConfig()->getValue("\141\144\x6d\157\162\162\151\163\137\160\x72\x6f\137\155\x61\x72\153\145\x74\x69\156\x67\x5f\155\x61\151\154\143\x68\151\155\x70\x5f\141\143\x74\x69\166\145") === "\131")) { goto SMYc6; } executeMailChimpCron(); SMYc6: return "\163\x75\x63\143\x65\x73\x73"; }

@@ -1,0 +1,214 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_EN\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "Keine Auswahl"
+msgstr "No selection"
+
+msgid "Nein"
+msgstr "No"
+
+msgid "Ja"
+msgstr "Yes"
+
+msgid "Einstellungen"
+msgstr "Settings"
+
+msgid "Einstellungen für Anbieter DHL"
+msgstr "Settings for provider DHL"
+
+msgid "DHL-Services anbieten"
+msgstr "Offer DHL services"
+
+msgid "Sollen die DHL-Services angeboten werden?"
+msgstr "Should the DHL services be offered?"
+
+msgid "DHL-Kundennummer"
+msgstr "DHL customer number"
+
+msgid "Ihre DHL-Kundennummer"
+msgstr "Your DHL customer number"
+
+msgid "Versand an Packstation erlauben?"
+msgstr "Allow shipping to Packstation?"
+
+msgid "Soll ein Versand an Packstationen möglich sein?"
+msgstr "Should shipping to packing stations be possible?"
+
+msgid "Für Packstation erlaubte Versandarten"
+msgstr "Shipping methods allowed for Packstation"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an eine Packstation zur Verfügung stehen?"
+msgstr "Which shipping methods should be available for a delivery to a Packstation?"
+
+msgid "Leider fehlgeschlagen"
+msgstr "Unfortunately failed"
+
+msgid "Versandarten exklusiv für Packstation"
+msgstr "Shipping methods exclusively for Packstation"
+
+msgid "Exklusive Versandarten werden bei Bestellungen an normale Lieferanschriften ausgeblendet"
+msgstr "Exclusive shipping methods are hidden for orders to normal delivery addresses"
+
+msgid "Versand an Postfilialen erlauben?"
+msgstr "Allow shipping to post offices?"
+
+msgid "Soll ein Versand an Postfilialen möglich sein?"
+msgstr "Should shipping to post offices be possible?"
+
+msgid "Für Postfiliale erlaubte Versandarten"
+msgstr "Shipping methods allowed for postal office"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an eine Postfiliale zur Verfügung stehen?"
+msgstr "What shipping methods should be available for delivery to a postal office?"
+
+msgid "Versandarten exklusiv für Postfiliale"
+msgstr "Shipping methods exclusively for postal office"
+
+msgid "Suchfunktion für Packstationen / Postfilialen aktivieren"
+msgstr "Activate search function for packing stations / postal branches"
+
+msgid "Sollen die Suchfunktion für Packstationen / Postfilialen aktiviert werden?"
+msgstr "Should the search function for packing stations / postal branches be activated?"
+
+msgid "Versand an bevorzugten Nachbarn erlauben?"
+msgstr "Allow shipping to preferred neighbours?"
+
+msgid "Soll ein Versand an einen bevorzugten Nachbarn möglich sein?"
+msgstr "Should shipping to a preferred neighbour be possible?"
+
+msgid "Für bevorzugten Nachbarn erlaubte Versandarten"
+msgstr "Shipping methods permitted for preferred neighbour"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Nachbarn zur Verfügung stehen?"
+msgstr "Which shipping methods should be available for a delivery to a preferred neighbour?"
+
+msgid "Versandarten exklusiv für bevorzugten Nachbarn"
+msgstr "Shipping methods exclusively for preferred neighbours"
+
+msgid "Einstellungen für bevorzugten Ort und Tag"
+msgstr "Preferred location and day settings"
+
+msgid "Zustellung an bevorzugten Ort erlauben?"
+msgstr "Allow delivery to preferred location?"
+
+msgid "Soll eine Zustellung an einen bevorzugten Ort erlaubt werden?"
+msgstr "Should delivery to a preferred location be allowed?"
+
+msgid "Zustellung an bevorzugtem Tag erlauben?"
+msgstr "Allow delivery on preferred day?"
+
+msgid "Soll eine Zustellung an einem bevorzugten Tag erlaubt werden?"
+msgstr "Should delivery on a preferred day be allowed?"
+
+msgid "Einstellungen für die Nutzung der DHL-Services"
+msgstr "Settings for the use of DHL services"
+
+msgid "Erlaubte Versandarten für bevorzugten Ort und Tag"
+msgstr "Allowed shipping methods for preferred location and day"
+
+msgid "Welche Versandarten sollen bei einer Lieferung an einen bevorzugten Ort zur Verfügung stehen?"
+msgstr "Which shipping methods should be available for delivery to a preferred location?"
+
+msgid "Zusatzkosten für Zustellung an bevorzugtem Tag"
+msgstr "Additional costs for delivery on preferred day"
+
+msgid "Zusatzkosten bei Zustellung an bevorzugtem Tag (Format: 4.60)"
+msgstr "Additional costs for delivery on preferred day (format: 4.60)"
+
+msgid "Versandeinstellungen für DHL-Services"
+msgstr " Shipping settings for DHL services"
+
+msgid "Versandeinstellungen zur Ermittlung von verfügbaren Tagen"
+msgstr "Shipping settings to determine available days"
+
+msgid "Ausgeschlossene Versandtage"
+msgstr "Excluded shipping days"
+
+msgid "Tage an denen keine Ware versendet wird - verfügbare Werte: MO - Montag, DI - Dienstag, MI - Mittwoch, DO - Donnerstag, FR - Freitag, SA - Samstag, SO - Sonntag"
+msgstr "Days on which no goods are dispatched - available values: MO - Monday, DI - Tuesday, MI - Wednesday, DO - Thursday, FR - Friday, SA - Saturday, SO - Sunday"
+
+msgid "Letzte Bestellzeit"
+msgstr "Last order time"
+
+msgid "Nach dieser Uhrzeit erfolgt der Versand erst am nächsten verfügbaren Tag - Format der Zeit: 12:00 oder 14:00"
+msgstr "After this time, dispatch will only take place on the next available day - format of time: 12:00 or 14:00"
+
+msgid "Bearbeitungszeit (in Tagen)"
+msgstr "Processing time (in days)"
+
+msgid "Die Anzahl der hier gesetzten Tage wird auf das mögliche Versanddatum hinzuaddiert"
+msgstr "The number of days set here is added to the possible dispatch date"
+
+msgid "Warenkorb-Lieferzeit für bevorzugten Tag beachten?"
+msgstr "Consider shopping cart delivery time for preferred day?"
+
+msgid "Soll die Warenkorb-Lieferzeit für die Berechnung der bevorzugten Tag beachtet werden (bitte nächste Einstellung beachten!)?"
+msgstr "Should the shopping basket delivery time be taken into account for the calculation of the preferred day (please note the next setting!)?"
+
+msgid "Warenkorb-Lieferzeit nur beachten wenn größer als"
+msgstr "Consider shopping cart delivery time only if greater than"
+
+msgid "Die Lieferzeit wird nur für die Berechnung der bevorzugten Tag herangezogen wenn der Wert größer ist als hier hinterlegt"
+msgstr "The delivery time is only used for the calculation of the preferred day if the value is greater than the value entered here."
+
+msgid "JTL-Wawi-Einstellungen"
+msgstr "JTL WaWi settings"
+
+msgid "Einstellungen für JTL-Wawi"
+msgstr "Settings for JTL-Wawi"
+
+msgid "Genutzte JTL-Wawi-Version"
+msgstr "JTL WaWi version used"
+
+msgid "Welche JTL-Wawi-Version wird aktuell genutzt?"
+msgstr "Which JTL WaWi version is currently used?"
+
+msgid "Version kleiner 1.5.8.x"
+msgstr "Version less than 1.5.8.x"
+
+msgid "Version größer 1.5.8.x"
+msgstr "Version greater than 1.5.8.x"
+
+msgid "Systemeinstellungen"
+msgstr "System settings"
+
+msgid "Einstellungsparameter für debug-Ausgabe"
+msgstr "Setting parameters for debug output"
+
+msgid "debug-Ausgabe in Systemlog"
+msgstr "debug output in system log"
+
+msgid "debug-Ausgabe in Systemlog schreiben?"
+msgstr "Write debug output to system log?"
+
+msgid "DHL-Sandbox-Modus"
+msgstr "DHL Sandbox Mode"
+
+msgid "Handelt es sich um ein Testsystem und sollen Abfragen über die DHL-Sandbox durchgeführt werden?"
+msgstr "Is this a test system and are queries to be carried out via the DHL sandbox?"
+
+msgid "DHL-Sandbox-Benutzername"
+msgstr "DHL Sandbox username"
+
+msgid "Ihr Benutzername für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)"
+msgstr "Your username for testing the plugin with the DHL Sandbox (your data for https://entwickler.dhl.de/)"
+
+msgid "DHL-Sandbox-Passwort"
+msgstr "DHL Sandbox password"
+
+msgid "Ihr Passwort für den Test des Plugins mit der DHL-Sandbox (Ihre Daten für https://entwickler.dhl.de/)"
+msgstr "Your password for testing the plug-in with the DHL Sandbox (your data for https://entwickler.dhl.de/)"
+
+msgid "Please enable option \"Prompt address 2\" in the shipping address options"
+msgstr "Please enable option \"Prompt address 2\" in the shipping address options"
+

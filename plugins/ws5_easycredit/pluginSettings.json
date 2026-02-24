@@ -1,0 +1,271 @@
+[
+    {
+    "label": "Automatisierter WaWi-Sync",
+    "settingType": "heading"
+    },
+    {
+        "id": "autoCapture",
+        "label": "Meldung der Lieferung",
+        "description": "Sollen Bestellungen, die in der WaWi als versandt markiert sind, automatisch (als Capture) an easyCredit gemeldet werden?.",
+        "settingType": "select",
+        "type": "int",
+        "defaultValue": 1,
+        "selectItems": [
+            {
+                "value": 1,
+                "label": "Ja"
+            },
+            {
+                "value": 0,
+                "label": "Nein"
+            }
+        ]
+    },
+    {
+        "id": "autoStorno",
+        "label": "Auto-Storno",
+        "description": "Sollen Bestellungen, die in der WaWi als stroniert markiert sind, automatisch (als Refund) an easyCredit gemeldet werden?.",
+        "settingType": "select",
+        "type": "int",
+        "defaultValue": 1,
+        "selectItems": [
+            {
+                "value": 1,
+                "label": "Ja"
+            },
+            {
+                "value": 0,
+                "label": "Nein"
+            }
+        ]
+    },
+    {
+        "label": "Raten-Rechner auf der Artikelseite",
+        "settingType": "heading"
+    },
+    {
+        "id": "articleDisplay",
+        "label": "Ratenkauf Widget auf der Artikeldetailseite aktivieren?",
+        "description": "Auf der Artikeldetailseite wird ein Beispiel für eine monatliche Rate zur günstigen Finanzierung des Artikels angezeigt.",
+        "settingType": "select",
+        "type": "int",
+        "defaultValue": 1,
+        "selectItems": [
+            {
+                "value": 1,
+                "label": "Ja"
+            },
+            {
+                "value": 0,
+                "label": "Nein"
+            }
+        ]
+    },
+    {
+        "id": "articleSelector",
+        "label": "PHPQuery Selector",
+        "description": "Der PHPQuery Selector für das Einfügen des Ratenkauf-Beispiels.",
+        "settingType": "input",
+        "type": "string",
+        "defaultValue": "#add-to-cart"
+    },
+    {
+        "id": "articleMethod",
+        "label": "PHPQuery Methode",
+        "description": "An welcher Stelle in Relation zu dem Selector soll das Ratenkauf-Beispiel eingefügt werden?",
+        "settingType": "select",
+        "type": "string",
+        "defaultValue": "before",
+        "selectItems": [
+            {
+                "value": "after",
+                "label": "after"
+            },
+            {
+                "value": "before",
+                "label": "before"
+            },
+            {
+                "value": "prepend",
+                "label": "prepend"
+            },
+            {
+                "value": "append",
+                "label": "append"
+            }
+        ]
+    },
+    {
+        "label": "Anzeige der Ratenkauf-Informationen (Höhe der Zinsen & Rechnungssumme) auf:",
+        "settingType": "heading"
+    },
+    {
+        "label": "Bestellbestätigungsseite - Zusammenfassung der Bestellung im Checkout (obligatorisch)",
+        "settingType": "heading"
+    },
+    {
+        "id": "finalizeDisplay",
+        "label": "Ratenkauf-Informationen anzeigen?",
+        "description": "Auf der Bestellabschlussseite werden nach dem Kauf Ratenkauf-Informationen angezeigt.",
+        "settingType": "select",
+        "type": "int",
+        "defaultValue": 1,
+        "selectItems": [
+            {
+                "value": 1,
+                "label": "Ja"
+            },
+            {
+                "value": 0,
+                "label": "Nein"
+            }
+        ],
+        "isHidden": true
+    },
+    {
+        "id": "finalizeSelector",
+        "label": "PHPQuery Selector",
+        "description": "Der PHPQuery Selector für das Einfügen der Ratenkauf-Informationen.",
+        "settingType": "input",
+        "type": "string",
+        "defaultValue": "#panel-submit-order .checkout-items-total"
+    },
+    {
+        "id": "finalizeMethod",
+        "label": "PHPQuery Methode",
+        "description": "An welcher Stelle in Relation zu dem Selector sollen die Ratenkauf-Informationen eingefügt werden?",
+        "settingType": "select",
+        "type": "string",
+        "defaultValue": "append",
+        "selectItems": [
+            {
+                "value": "after",
+                "label": "after"
+            },
+            {
+                "value": "before",
+                "label": "before"
+            },
+            {
+                "value": "prepend",
+                "label": "prepend"
+            },
+            {
+                "value": "append",
+                "label": "append"
+            }
+        ]
+    },
+    {
+        "label": "Bestellabschlussseite - Nach dem Kauf (optional)",
+        "settingType": "heading"
+    },
+    {
+        "id": "confirmationDisplay",
+        "label": "Ratenkauf-Informationen anzeigen?",
+        "description": "Auf der Bestellabschlussseite werden nach dem Kauf Ratenkauf-Informationen angezeigt.",
+        "settingType": "select",
+        "type": "int",
+        "defaultValue": 1,
+        "selectItems": [
+            {
+                "value": 1,
+                "label": "Ja"
+            },
+            {
+                "value": 0,
+                "label": "Nein"
+            }
+        ]
+    },
+    {
+        "id": "confirmationSelector",
+        "label": "PHPQuery Selector",
+        "description": "Der PHPQuery Selector für das Einfügen der Ratenkauf-Informationen.",
+        "settingType": "input",
+        "type": "string",
+        "defaultValue": "#content .order-completed"
+    },
+    {
+        "id": "confirmationMethod",
+        "label": "PHPQuery Methode",
+        "description": "An welcher Stelle in Relation zu dem Selector sollen die Ratenkauf-Informationen eingefügt werden?",
+        "settingType": "select",
+        "type": "string",
+        "defaultValue": "append",
+        "selectItems": [
+            {
+                "value": "after",
+                "label": "after"
+            },
+            {
+                "value": "before",
+                "label": "before"
+            },
+            {
+                "value": "prepend",
+                "label": "prepend"
+            },
+            {
+                "value": "append",
+                "label": "append"
+            }
+        ]
+    },
+    {
+        "label": "Bestellstatusseite - Unter Mein Konto (optional)",
+        "settingType": "heading"
+    },
+    {
+        "id": "statusDisplay",
+        "label": "Ratenkauf-Informationen anzeigen?",
+        "description": "Auf der Bestellstatusseite werden nach dem Kauf Ratenkauf-Informationen angezeigt.",
+        "settingType": "select",
+        "type": "int",
+        "defaultValue": 1,
+        "selectItems": [
+            {
+                "value": 1,
+                "label": "Ja"
+            },
+            {
+                "value": 0,
+                "label": "Nein"
+            }
+        ]
+    },
+    {
+        "id": "statusSelector",
+        "label": "PHPQuery Selector",
+        "description": "Der PHPQuery Selector für das Einfügen der Ratenkauf-Informationen.",
+        "settingType": "input",
+        "type": "string",
+        "defaultValue": "#account .order-items-total"
+    },
+    {
+        "id": "statusMethod",
+        "label": "PHPQuery Methode",
+        "description": "An welcher Stelle in Relation zu dem Selector sollen die Ratenkauf-Informationen eingefügt werden?",
+        "settingType": "select",
+        "type": "string",
+        "defaultValue": "append",
+        "selectItems": [
+            {
+                "value": "after",
+                "label": "after"
+            },
+            {
+                "value": "before",
+                "label": "before"
+            },
+            {
+                "value": "prepend",
+                "label": "prepend"
+            },
+            {
+                "value": "append",
+                "label": "append"
+            }
+        ]
+    }
+]

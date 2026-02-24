@@ -1,0 +1,29 @@
+/* Flexbox helper */
+
+.flex-eq-height-columns {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+        flex: 1 auto;
+    }
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    /* last item should grow */
+    > *:last-child {
+        flex: 1 auto;
+    }
+}
+
+.flex-wrap,
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// .row-eq-height > * {
+//     flex: 0 auto;
+// }

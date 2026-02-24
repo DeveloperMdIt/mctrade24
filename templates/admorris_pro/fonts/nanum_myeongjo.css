@@ -1,0 +1,20 @@
+/* nanum-myeongjo-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('NanumMyeongjo'),
+         url('./templates/admorris_pro/fonts/nanum_myeongjo/nanum-myeongjo-v8-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/nanum_myeongjo/nanum-myeongjo-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* nanum-myeongjo-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Nanum Myeongjo';
+    font-style: normal;
+    font-weight: 700;
+    src: local('NanumMyeongjo Bold'), local('NanumMyeongjoBold'),
+         url('./templates/admorris_pro/fonts/nanum_myeongjo/nanum-myeongjo-v8-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/nanum_myeongjo/nanum-myeongjo-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

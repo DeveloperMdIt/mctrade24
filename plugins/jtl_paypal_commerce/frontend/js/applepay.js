@@ -1,0 +1,243 @@
+class PPCApplePayHandler
+{
+    /**
+     * @param {jquery} $
+     */
+    constructor($)
+    {
+        this.$               = $;
+        this.shopName        = '';
+        this.locale          = 'de';
+        this.fundingSource   = '';
+        this.ppcJtl          = null;
+        this.ppcConfig       = null;
+        this.ppcOrderId      = '';
+        this.cancelURL       = '#';
+        this.stateURL        = '#';
+        this.transactionInfo = { };
+        this.billingContact  = null;
+        this.isSandbox       = true;
+        this.callbacks       = {};
+        this.logger          = null;
+    }
+
+    /**
+     * @param {object} params
+     * @return void
+     */
+    init(params)
+    {
+        this.shopName        = params.shopName;
+        this.locale          = params.locale;
+        this.fundingSource   = params.fundingSource;
+        this.ppcOrderId      = params.orderId;
+        this.cancelURL       = params.cancelURL;
+        this.stateURL        = params.stateURL;
+        this.transactionInfo = params.transactionInfo;
+        this.billingContact  = params.billingContact;
+        this.isSandbox       = params.isSandbox !== false;
+        this.callbacks       = params.callbacks;
+
+        if (this.fundingSource !== '') {
+            this.$('#complete-order-button').hide();
+            this.$('#ppc-loading-spinner-confirmation').show();
+        }
+    }
+
+    async getConfig()
+    {
+        if (this.ppcConfig === null) {
+            await this.ppcJtl.Applepay().config()
+                .then(applepayConfig => {
+                    this.ppcConfig = applepayConfig;
+                })
+        }
+
+        return this.ppcConfig;
+    }
+
+    getTransactionInfo()
+    {
+        return this.transactionInfo;
+    }
+
+    async getPaymentRequest()
+    {
+        const applePayConfig = await this.getConfig();
+        const paymentRequest = this.getTransactionInfo();
+
+        paymentRequest.merchantCapabilities = applePayConfig.merchantCapabilities;
+        paymentRequest.supportedNetworks    = applePayConfig.supportedNetworks;
+
+        return paymentRequest;
+    }
+
+    checkAvailability()
+    {
+        return (window.ApplePaySession
+            && window.ApplePaySession.supportsVersion(4)
+            && window.ApplePaySession.canMakePayments()
+        );
+    }
+
+    onApplePayNotAvailable(data)
+    {
+        if (typeof this.callbacks.onApplePayNotAvailable === 'function') {
+            this.callbacks.onApplePayNotAvailable(data);
+        } else {
+            this.logger.warn('PPCApplePay: onApplePayNotAvailable', data);
+        }
+    }
+
+    /**
+     * @param {object} ppc_jtl
+     * @param {PPCPaymentLogger} logger
+     * @return {Promise<void>}
+     */
+    async render(ppc_jtl, logger)
+    {
+        this.ppcJtl = ppc_jtl;
+        this.logger = logger;
+
+        this.logger.debug('PPCApplePay.render', ppc_jtl);
+        if (!this.checkAvailability()) {
+            this.onApplePayNotAvailable(this.ppcJtl);
+        } else {
+            this.getConfig()
+                .then(applepayConfig => {
+                    if (applepayConfig.isEligible) {
+                        this.addButton()
+                    } else {
+                        this.logger.warn('PPCApplePay.render: Apple Pay configuration is not eligible');
+                        this.onApplePayNotAvailable(applepayConfig);
+                    }
+                })
+                .catch(applepayConfigError => {
+                    this.logger.warn('PPCApplePay.render: Error while fetching Apple Pay configuration.');
+                    this.onApplePayNotAvailable(applepayConfigError);
+                });
+        }
+    }
+
+    async addButton()
+    {
+        this.$('#ppc-loading-spinner-confirmation').hide();
+        this.$('#paypal-button-container').append(
+            this.$('<apple-pay-button id="ppc_btn-appl" buttonstyle="black" type="order" locale="\' + this.locale + \'">')
+        );
+        this.$('#ppc_btn-appl').on('click', () => this.onButtonClicked());
+    }
+
+    /**
+     * @param {string} title
+     * @param {string} message
+     */
+    cancelPayment(title, message)
+    {
+        eModal.setModalOptions({backdrop: 'static'});
+
+        eModal.alert({
+            message: message,
+            title: title,
+            onHide: () => {
+                window.location.href = this.cancelURL;
+            },
+            buttons: [{
+                text: 'OK',
+                close: true,
+                click: () => {
+                    window.location.href = this.cancelURL;
+                }
+            }],
+        });
+    }
+
+    async onButtonClicked()
+    {
+        if (!this.$('form#complete_order')[0].checkValidity()) {
+            return;
+        }
+
+        this.$('#ppc-loading-spinner-confirmation').show();
+        this.$('#paypal-button-container').addClass('opacity-half');
+
+        try {
+            const paymentRequest = await this.getPaymentRequest();
+            const appleSession   = new ApplePaySession(4, paymentRequest);
+            this.logger.debug('PPCApplePay.onButtonClicked: Create appleSession with paymentRequest', paymentRequest);
+
+            appleSession.onvalidatemerchant = (event) => {
+                this.onValidateMerchant(appleSession, event);
+            }
+
+            appleSession.onpaymentauthorized = (event) => {
+                this.onPaymentAuthorized(appleSession, event);
+            }
+
+            appleSession.oncancel = (event) => {
+                this.onPaymentCanceled(appleSession, event);
+            }
+
+            appleSession.begin();
+            this.logger.debug('PPCApplePay: ApplePaySession started');
+        } catch (err) {
+            this.logger.err('PPCApplePay: can not create ApplePaySession', err);
+        }
+    }
+
+    async onPaymentCanceled(appleSession, cancelData)
+    {
+        if (typeof this.callbacks.onApplePayCanceled === 'function') {
+            this.callbacks.onApplePayCanceled(cancelData);
+        } else {
+            this.logger.debug('PPCApplePay: ApplePaySession canceled', cancelData);
+        }
+    }
+
+    async onValidateMerchant(appleSession, merchantData)
+    {
+        this.ppcJtl.Applepay().validateMerchant({
+            validationUrl: merchantData.validationURL,
+            displayName: this.shopName
+        })
+            .then(validateResult => {
+                appleSession.completeMerchantValidation(validateResult.merchantSession);
+            })
+            .catch(validateError => {
+                appleSession.abort();
+                this.onApplePayNotAvailable(validateError);
+            });
+    }
+
+    onCompleteOrder(appleSession, confirmResult)
+    {
+        this.logger.debug('PPCApplePayHandler.onCompleteOrder', confirmResult);
+        history.pushState(null, null, this.stateURL);
+        let commentField       = this.$('#comment'),
+            commentFieldHidden = this.$('#comment-hidden');
+        if (commentField && commentFieldHidden) {
+            commentFieldHidden.val(commentField.val());
+        }
+
+        appleSession.completePayment(ApplePaySession.STATUS_SUCCESS);
+        this.$('form#complete_order').submit();
+    }
+
+    async onPaymentAuthorized(appleSession, authData)
+    {
+        const confirmData = {
+            orderId: this.ppcOrderId,
+            token: authData.payment.token,
+            billingContact: this.billingContact,
+        };
+        this.logger.debug('PPCApplePayHandler: Applepay.confirmOrder', confirmData);
+        this.ppcJtl.Applepay().confirmOrder(confirmData)
+            .then(confirmResult => {
+                this.onCompleteOrder(appleSession, confirmResult);
+            })
+            .catch(confirmError => {
+                appleSession.completePayment(ApplePaySession.STATUS_FAILURE);
+                this.onApplePayNotAvailable(confirmError);
+            });
+    }
+}

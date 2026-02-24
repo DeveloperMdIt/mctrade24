@@ -1,0 +1,9 @@
+{
+  "name": "jtlshop/paypal_commerce",
+  "type": "library",
+  "version": "2.1.0",
+  "description": "JTL-Shop PayPal-Checkout Plugin",
+  "require": {
+    "php": ">=8.1"
+  }
+}

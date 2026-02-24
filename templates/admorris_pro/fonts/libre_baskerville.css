@@ -1,0 +1,30 @@
+/* libre-baskerville-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Libre Baskerville'), local('LibreBaskerville-Regular'),
+         url('./templates/admorris_pro/fonts/libre_baskerville/libre-baskerville-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/libre_baskerville/libre-baskerville-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* libre-baskerville-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Libre Baskerville';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Libre Baskerville Italic'), local('LibreBaskerville-Italic'),
+         url('./templates/admorris_pro/fonts/libre_baskerville/libre-baskerville-v5-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/libre_baskerville/libre-baskerville-v5-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* libre-baskerville-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Libre Baskerville Bold'), local('LibreBaskerville-Bold'),
+         url('./templates/admorris_pro/fonts/libre_baskerville/libre-baskerville-v5-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/libre_baskerville/libre-baskerville-v5-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

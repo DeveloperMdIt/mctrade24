@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "ShopVote - Integration"
+msgstr "ShopVote - Integration"
+
+msgid "API-Key"
+msgstr "API-Key"
+
+msgid "Ihr persönlicher API Key von ShopVote"
+msgstr "Ihr persönlicher API Key von ShopVote"
+
+msgid "API-Secret"
+msgstr "API-Secret"
+
+msgid "Grafik-Code"
+msgstr "Grafik-Code"
+
+msgid "Hinterlegen Sie in diesem Feld den Grafik-Code den Sie im Backend von ShopVote beziehen können"
+msgstr "Hinterlegen Sie in diesem Feld den Grafik-Code den Sie im Backend von ShopVote beziehen können"
+
+msgid "Bitte hier den Grafik-Code einfügen..."
+msgstr "Bitte hier den Grafik-Code einfügen..."
+
+msgid "ShopVote-Produktbewertungen anzeigen"
+msgstr "ShopVote-Produktbewertungen anzeigen"
+
+msgid "Nein"
+msgstr "Nein"
+
+msgid "Ja"
+msgstr "Ja"
+
+msgid "Shopeigene Bewertungen ersetzen"
+msgstr "Shopeigene Bewertungen ersetzen"
+
+msgid "Shopeigene Bewertungen und ShopVote Bewertungen anzeigen"
+msgstr "Shopeigene Bewertungen und ShopVote Bewertungen anzeigen"
+
+msgid "In eigenem Tab anzeigen"
+msgstr "In eigenem Tab anzeigen"
+
+msgid "Die Bewertungen können mit den shopeigenen Bewertungen zusammengefasst werden oder die shopeigenen Bewertungen werden durch die ShopVote Bewertungen ersetzt"
+msgstr "Die Bewertungen können mit den shopeigenen Bewertungen zusammengefasst werden oder die shopeigenen Bewertungen werden durch die ShopVote Bewertungen ersetzt"
+
+msgid "Der übermittelte Formular-Token war ungültig"
+msgstr "Der übermittelte Formular-Token war ungültig"
+
+msgid "Die Einstellungen wurden erfolgreich gespeichert"
+msgstr "Die Einstellungen wurden erfolgreich gespeichert"
+
+msgid "Die Einstellungen konnten nicht gespeichert werden"
+msgstr "Die Einstellungen konnten nicht gespeichert werden"
+
+msgid "Consentmanager-Integration"
+msgstr "Consentmanager-Integration"
+
+msgid "Integration in den Consentmanager des JTL-Shop"
+msgstr "Integration in den Consentmanager des JTL-Shop"
+
+msgid "Shop5-Consentmanager beachten?"
+msgstr "Shop5-Consentmanager beachten?"
+
+msgid "Soll eine Zustimmung über den JTL-Shop5-Consentmanager beachtet werden?"
+msgstr "Soll eine Zustimmung über den JTL-Shop5-Consentmanager beachtet werden?"

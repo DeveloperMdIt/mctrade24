@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;700&display=swap');
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-weight:400;
+    font-family:"Inria Serif", serif;
+    font-weight: 700;
+}
+
+.opc-Button{
+    .btn{
+        font-weight:400;
+        letter-spacing:1px;
+        padding-left:36px;
+        padding-right:36px;
+    }
+}
+
+.opc-product-slider{
+    padding-top:28px !important;
+}
+
+// .header__container-shadow{
+//     position: relative;
+//     &::before{
+//         display: block;
+//         content:'';
+//         position: absolute;
+//         left:0;
+//         right:0;
+//         top:10px;
+//         bottom:0;
+//         box-shadow: rgba(69, 69, 73, 0.1) 0px 0px 10px 0px;
+//         border-radius: 10px;
+//         z-index: -1;
+//     }
+// }
+
+.shipping-cost-progress-bar{
+    &__title{
+        font-size: 20px !important;
+    }
+    &__footer{
+        font-size: 16px !important;
+    }
+}
+
+/* Mini-Cart: "Zum Warenkorb" als echter Button */
+.cart-dropdown-buttons a.btn.btn-link.btn-block{
+  display:block;                 /* volle Breite */
+  background:#ffc300 !important; /* Hintergrundfarbe */
+  color:#111 !important;         /* Textfarbe */
+  border:1px solid #ffc300;
+  border-radius:10px;
+  font-weight:800;
+  padding:.65rem 1rem;
+  text-align:center;
+  text-decoration:none !important;
+  transition:.2s ease;
+}
+.cart-dropdown-buttons a.btn.btn-link.btn-block:hover,
+.cart-dropdown-buttons a.btn.btn-link.btn-block:focus{
+  background:#ffd54d !important; /* etwas heller beim Hover */
+  border-color:#ffd54d;
+  color:#111 !important;
+  box-shadow:0 6px 14px rgba(255,195,0,.35);
+  outline: none;
+}
+
+/* ========== Mini-Cart: PayPal Buttons VOLLBREIT, kein Überlappen ========== */
+
+/* Container: darf umbrechen, mit Abstand */
+#ppc-miniCart-horizontal-container{
+  display:flex;
+  flex-wrap:wrap;
+  column-gap:12px;
+  row-gap:12px;
+  align-items:stretch;
+}
+
+/* Wichtig: Bootstrap .col-sm-6 in diesem Block neutralisieren (statt 50% -> 100%) */
+#ppc-miniCart-horizontal-container .ppc-standalone-buttons.col-sm-6{
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  min-width: 0;
+}
+
+/* PayPal-Wrapper & iframes füllen die Spaltenbreite */
+#ppc-miniCart-horizontal-container [id^="zoid-paypal-buttons-"],
+#ppc-miniCart-horizontal-container [id^="zoid-paypal-buttons-"] > iframe,
+#ppc-miniCart-horizontal-container .paypal-buttons,
+#ppc-miniCart-horizontal-container iframe{
+  width:100% !important;
+  max-width:100% !important;
+  display:block !important;
+}
+
+/* Bootstrap-Row-Gutter in dieser Zeile abschalten, damit nichts „quetscht“ */
+#ppc-miniCart-horizontal-container.row{
+  --bs-gutter-x: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Optional: Dropdown etwas breiter machen (falls sonst immer noch zu schmal) */
+#miniCart .dropdown-menu,
+.cart-dropdown .dropdown-menu{
+  width: min(520px, 95vw);   /* z.B. 520px, aber nicht breiter als 95% vom Viewport */
+  max-width: 95vw;
+}

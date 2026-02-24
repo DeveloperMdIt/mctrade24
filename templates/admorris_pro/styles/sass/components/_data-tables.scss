@@ -1,0 +1,32 @@
+/* specificity needed to overwrite datatables.min.css style rule */
+
+div.dataTables_wrapper div.dataTables_filter input[type='search'] {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* shipping-adresses */
+.select-shipping-address {
+    .dataTables_wrapper {
+        border: 1px solid $gray-lighter;
+        padding: map-get($spacers, 3);
+        margin-bottom: map-get($spacers, 4);
+        td:first-child {
+            width: 5%;
+        }
+    }
+    margin-top: map-get($spacers, 3);
+}
+
+table.dataTable {
+    td {
+        vertical-align: middle;
+    }
+    .dt-address {
+        cursor: pointer;
+    }
+}
+
+// table.dataTable.stripe>tbody>tr.odd>*, table.dataTable.display>tbody>tr.odd>* {
+// 	box-shadow: inset 0 0 0 9999px rgba(0,0,0,.023);
+// }

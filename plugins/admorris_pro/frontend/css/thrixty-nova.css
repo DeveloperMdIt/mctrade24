@@ -1,0 +1,43 @@
+.thrixty {
+  width: 100% !important;
+  height: auto !important;
+}
+div[thrixty='found'] .thrixty_showroom {
+  width: 100% !important;
+  height: auto !important;
+}
+.thrixty-wrapper div[thrixty='found'] .thrixty_canvas_container {
+  width: 100% !important;
+  height: auto !important;
+  margin-left: 0px !important;
+}
+.product-images:not(.slick-initialized) > div:not(:first-child) {
+  display: none;
+}
+.product-thumbnails:not(.slick-initialized) .preview-first.first-ml:not(:first-child) {
+  margin-left: 0.5rem !important;
+  opacity: 0.5;
+}
+.product-thumbnails:not(.slick-initialized) .last-mr:not(:last-child) {
+  margin-right: 0.5rem !important;
+  opacity: 0.5;
+}
+.gallery-with-action.fullscreen .slick-list {
+  max-height: calc(100vh - 300px);
+}
+.gallery-with-action.fullscreen .slick-list .slick-track {
+  max-height: inherit;
+}
+.gallery-with-action.fullscreen .slick-list .slick-track .slick-slide > div,
+.gallery-with-action.fullscreen .slick-list .slick-track .slick-slide > div > .square {
+  height: 100%;
+}
+.gallery-with-action.fullscreen div[thrixty='found'] {
+  width: max-content !important;
+  height: calc(85vh - 230px) !important;
+  aspect-ratio: 1;
+  margin: auto;
+}
+.gallery-with-action.fullscreen #gallery .square-image .inner img {
+  max-height: 100% !important;
+}

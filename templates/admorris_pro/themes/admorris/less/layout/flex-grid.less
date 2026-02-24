@@ -1,0 +1,25 @@
+/**
+ * http://www.heydonworks.com/article/the-flexbox-holy-albatross
+ * https://codepen.io/heydon/pen/JwwZaX
+ */
+
+.am-flexgrid {
+    display: flex;
+    flex-wrap: wrap;
+    --min-width: 40rem;
+    --margin: 1rem;
+    --modifier: calc(var(--min-width) - 100%);
+    margin: -1rem;
+    margin: calc(var(--margin) * -1);
+}
+
+.am-flexgrid > * {
+    flex-grow: 1;
+    flex-basis: calc(var(--modifier) * 999);
+    margin: 1rem;
+    margin: var(--margin);
+}
+
+.am-flexgrid--center {
+    justify-content: center;
+}

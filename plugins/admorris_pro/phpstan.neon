@@ -1,0 +1,17 @@
+parameters:
+  paths:
+    - ./
+  excludePaths:
+    - vendor (?)
+    - packages
+    - build
+    - node_modules
+  scanDirectories:
+    - ../../
+  bootstrapFiles:
+    - stubs/dynamicConsts.php
+  level: 5
+  exceptions:
+    checkedExceptionClasses:
+      - 'Error'
+      - 'Exception'

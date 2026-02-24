@@ -1,0 +1,118 @@
+// @deprecated leftover form old slider. check and delete if not needed
+
+// .am-slider__content-wrapper {
+.am-slider__row {
+    display: flex !important;
+    justify-content: center;
+    > * {
+        margin: 0;
+    }
+}
+
+.am-slider__row--left {
+    justify-content: flex-start;
+}
+
+.am-slider__row--right {
+    justify-content: flex-end;
+}
+
+// .am-slider__row-item {
+//     margin: auto;
+// }
+
+.am-slider__button-link {
+    padding: 12px;
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    &:hover,
+    &:active,
+    &:visited,
+    &:link {
+        text-decoration: none;
+        color: inherit;
+        opacity: 1;
+    }
+}
+
+.am-slider__slide-link {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.rs-background-video-layer iframe {
+    border: 0;
+}
+
+.header-wrapper--fullscreen,
+.header-wrapper--framed {
+    .rev_slider_wrapper.fullscreen-container {
+        height: 100vh;
+    }
+}
+
+.am-slider__title {
+    font-family: $slider-font-family-title;
+}
+
+.am-slider__content,
+.am-slider__extra-text,
+/* specificity hack needed to override revolution slider style */
+.am-slider__button.am-slider__button {
+    font-family: $slider-font-family-content;
+    text-align: center;
+}
+
+.am-slider__content {
+    font-size: 25px;
+    line-height: 1.25;
+
+    @media (min-width: $screen-sm) {
+        font-size: 17px;
+    }
+}
+
+.am-slider__content-wrapper .line-wrapper {
+    margin: 10px 0;
+}
+
+.tp-video-play-button {
+    display: none !important;
+}
+
+// center slider text when header overlay is active
+.header-wrapper--overlay {
+    .rev_row_zone_middle,
+    .tparrows {
+        margin-top: calc(var(--adm-header-height) / 2);
+        transition: margin 0.5s;
+    }
+}
+
+@media (max-height: 520px) {
+    .rev_slider_wrapper.fullscreen-container .rev_row_wrap {
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
+
+.rev_column {
+    width: 600px;
+    min-width: 40%;
+}
+
+// .rev_row_zone_middle {
+//     top: 0 !important;
+//     transform: translateY(0) !important;
+//     display: flex !important;
+//     align-items: center !important;
+//     height: 100% !important;
+// }

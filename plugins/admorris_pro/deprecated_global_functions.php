@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ use JTL\Shop; use function Plugin\admorris_pro\triggerHelperFunctionsDeprecationError; function renderIcon($iconId, $classes = '', $title = '', $fixedSize = false) { triggerHelperFunctionsDeprecationError(__FUNCTION__, "\44\141\144\x6d\x49\143\157\156\x2d\76\x72\145\x6e\144\x65\x72\x49\143\x6f\x6e\x28\x29"); return Shop::get("\141\x64\155\111\143\x6f\156")->renderIcon($iconId, $classes, $title, $fixedSize); } function useIcon($iconId) { triggerHelperFunctionsDeprecationError(__FUNCTION__, "\x24\x61\x64\155\x49\x63\x6f\156\55\76\x75\x73\x65\x49\x63\157\156\50\x29"); return Shop::get("\x61\144\x6d\x49\143\157\156")->useIcon($iconId); } function usePaymentIcon($iconId) { triggerHelperFunctionsDeprecationError(__FUNCTION__, "\44\x61\144\x6d\x49\143\157\156\55\x3e\x75\x73\x65\x50\x61\x79\x6d\145\x6e\x74\x49\143\x6f\156\50\x29"); return Shop::get("\x61\x64\155\x49\143\x6f\x6e")->usePaymentIcon($iconId); }

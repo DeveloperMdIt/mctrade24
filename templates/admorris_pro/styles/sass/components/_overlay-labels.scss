@@ -1,0 +1,94 @@
+@use '../abstracts/functions' as *;
+
+/* Overlay labels */
+
+/* 1. 'display: block' necessary because inline-block caused an issue in
+ *    IE11 where images were either too big.
+ *
+ */
+
+.image-wrapper {
+    overflow: hidden !important;
+    position: relative;
+    display: block; /* 1 */
+}
+
+.overlay-label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 10;
+    font-size: rem(10px);
+    color: white;
+    padding: 0.6em 0.9em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @if map-get($border-radius-factors, 'global') != 0 {
+        margin: 0 5px;
+    }
+
+    @include adm-border-radius('xs', 'global');
+
+    &.auflager {
+        background-color: $label-auflager;
+        color: $label-auflager-font;
+    }
+
+    &.lagerbestand0 {
+        background-color: $label-lagerbestand0;
+        color: $label-lagerbestand0-font;
+    }
+
+    &.bestseller {
+        background-color: $label-bestseller;
+        color: $label-bestseller-font;
+    }
+
+    &.inkurzeverfugbar {
+        background-color: $label-inkurzeverfugbar;
+        color: $label-inkurzeverfugbar-font;
+    }
+
+    &.neuimsortiment {
+        background-color: $label-neuimsortiment;
+        color: $label-neuimsortiment-font;
+    }
+
+    &.sonderangebote {
+        background-color: $label-sonderangebote;
+        color: $label-sonderangebote-font;
+    }
+
+    &.topangebote {
+        background-color: $label-topangebote;
+        color: $label-topangebote-font;
+    }
+
+    &.topbewertet {
+        background-color: $label-topbewertet;
+        color: $label-topbewertet-font;
+    }
+
+    &.vorbestellbar {
+        background-color: $label-vorbestellbar;
+        color: $label-vorbestellbar-font;
+    }
+    &.topbewertet {
+        background-color: $label-topbewertet;
+        color: $label-topbewertet-font;
+    }
+}
+
+.overlay-img {
+    left: 10px;
+}
+
+@if map-get($border-radius-factors, 'global') != 0 {
+    .am-discount__label {
+        margin: 0 5px;
+
+        @include adm-border-radius('xs', 'global');
+    }
+}

@@ -1,0 +1,32 @@
+<Files *.tpl>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</Files>
+
+<Files *.php>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</Files>
+
+<Files "index.php">
+    Require all granted
+</Files>
+
+RedirectMatch 302 package.json /404
+RedirectMatch 302 package-lock.json /404
+RedirectMatch 302 gulpfile.js /404
+RedirectMatch 302 template.xml /404
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "max-age=31536000, public"
+</IfModule>

@@ -1,0 +1,78 @@
+.swatches {
+    --cluster-spacing: 0.5rem;
+    --swatch-width: 90px;
+    font-size: 1.14285em;
+
+    .product-cell & {
+        --swatch-width: 40px;
+    }
+    .product-cell__body--center & {
+        > * {
+            justify-content: center;
+        }
+    }
+
+    .variation {
+        flex: 0 1 40px;
+        background: @swatches-bg;
+        color: @swatches-color;
+        border: 1px solid @tone-10;
+        &.active {
+            border-color: @btn-primary-bg;
+            background-color: @btn-primary-bg !important;
+            color: @btn-primary-color !important;
+        }
+    }
+
+    .label-variation {
+        img {
+            margin: auto;
+        }
+    }
+
+    &.imgswatches .variation {
+        color: @text-color !important;
+        background-color: @body-bg !important;
+    }
+
+    [data-stock="out-of-stock"].variation,
+    .variation.not-available,
+    [data-stock="in-short-supply"].variation {
+        .label-variation {
+            opacity: 0.5;
+        }
+        border: 1px dashed @brand-danger;
+    }
+
+    &.cluster > * {
+        align-items: flex-start;
+    }
+
+    &.imgswatches, &.textswatches {
+        .label-surcharge {
+            display: block;
+            width: 100%;
+            margin: 0px;
+            padding: 0.2em 5px 0.3em;
+        }
+    }
+}
+
+.variation--image {
+    min-width: var(--swatch-width);
+}
+
+.variation--text {
+    max-width: calc(100% - var(--cluster-spacing));
+    .label-variation {
+        padding: 0 1em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: inline-block;
+        max-width: 100%;
+    }
+    .product-cell & {
+        flex-grow: 1;
+    }
+}

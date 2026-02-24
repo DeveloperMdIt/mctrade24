@@ -1,0 +1,138 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Normally NOTHING will be changed here."
+msgstr "Hier braucht im Normalfall NICHTS verändert zu werden. Bitte setzen Sie diese Einstellungen immer wieder auf Standard zurück, falls Probleme auftreten."
+
+msgid "ID"
+msgstr "ID"
+
+msgid "V-ID"
+msgstr "V-ID"
+
+msgid "Parent-ID"
+msgstr "Vater-ID"
+
+msgid "Google name"
+msgstr "Google Name"
+
+msgid "Value name"
+msgstr "Wertname"
+
+msgid "Value type"
+msgstr "Werttyp"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Actions"
+msgstr "Aktionen"
+
+msgid "Currently no attributes exists"
+msgstr "Zurzeit wurden keine Attribute angelegt."
+
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+msgid "Reset all"
+msgstr "Alles zurücksetzen"
+
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Create new attribute"
+msgstr "Neues Attribut anlegen"
+
+msgid "Save new attribute"
+msgstr "Neues Attribut speichern"
+
+msgid "How is the name of the attribute in Google export export file"
+msgstr "Wie soll das Attribut in der Export-Datei für Google heißen?"
+
+msgid "All attributes will be reseted"
+msgstr "Sollen alle Attribute auf Standard zurückgesetzt werden?"
+
+msgid "Which field type should be used to export the value"
+msgstr "Aus welchem \"Feld\"-Typ soll der Wert exportiert werden?"
+
+msgid "Depending on the value type"
+msgstr "Je nach Werttyp"
+
+msgid "Article property"
+msgstr "Artikel-Eigenschaft"
+
+msgid "Function attribute"
+msgstr "Funktions-Attribut"
+
+msgid "Attribute"
+msgstr "Attribut"
+
+msgid "Feature"
+msgstr "Merkmal"
+
+msgid "Static value"
+msgstr "statischer Wert"
+
+msgid "Parent attribute"
+msgstr "Vater-Attribut"
+
+msgid "Which property of article object contains the value"
+msgstr "Welche Eigenschaft des Artikel-Objektes enthält den Wert?"
+
+msgid "Which type contains the value"
+msgstr "Welches %s enthält den Wert?"
+
+msgid "This value will be exported as it is"
+msgstr "Dieser Wert wird immer genauso exportiert."
+
+msgid "Leave this blank if attribute is a parent attribute"
+msgstr "Lassen Sie das Feld leer, wenn dies ein Vater-Attribut ist."
+
+msgid "Should this attribute be exported"
+msgstr "Soll dieses Attribut exportiert werden?"
+
+msgid "Attention"
+msgstr "Achtung"
+
+msgid "Enter the ID of the parent attribute"
+msgstr "Hier die ID des Attributes eintragen, von dem dieses ein Kind-Attribut ist."
+
+msgid "Only IDs are allowed for which the value type Parent attribute is selected"
+msgstr "Es sind nur IDs für \"V-ID\" zulässig, für die der Werttyp \"Vater-Attribut\" ausgewählt ist."
+
+msgid "Leave this blank, if this attribute is not a child attribute"
+msgstr "Lassen Sie \"V-ID\" leer, wenn dieses Attribut kein Kind-Attribut ist."
+
+msgid "A valid value for this must be entered"
+msgstr "Es muss ein gültiger Wert für \"%s\" eingegeben werden."
+
+msgid "Attribute with ID could not be ..."
+msgstr "Attribut mit der ID: %d konnte nicht %s werden."
+
+msgid "Attribute with ID successfully ..."
+msgstr "Attribut mit der ID: %d wurde erfolgreich %s."
+
+msgid "All attributes would be successfully reset to default values"
+msgstr "Alle Attribute wurden erfolgreich auf Standardwerte zurückgesetzt."
+
+msgid "Attributes could not be reset to default values"
+msgstr "Attribute konnten nicht auf Standardwerte zurückgesetzt werden."
+
+msgid "Attribute would be successfully added"
+msgstr "Das Attribut wurde erfolgreich hinzugefügt."
+
+msgid "Attribute could not be added"
+msgstr "Das Attribut konnte nicht hinzugefügt werden."
+
+msgid "reset"
+msgstr "zurückgesetzt"
+
+msgid "deleted"
+msgstr "gelöscht"
+
+msgid "changed"
+msgstr "geändert"

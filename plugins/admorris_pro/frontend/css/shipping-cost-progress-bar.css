@@ -1,0 +1,72 @@
+.shipping-cost-progress-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.shipping-cost-progress-bar--mini {
+  margin-bottom: 0;
+  padding: 20px 10px;
+}
+.shipping-cost-progress-bar--nova {
+  margin: 20px -20px -20px -20px;
+  width: calc(100% + 40px);
+}
+.shipping-cost-progress-bar__title {
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+}
+.shipping-cost-progress-bar--mini .shipping-cost-progress-bar__title {
+  font-size: 18px;
+  line-height: 18px;
+}
+.shipping-cost-progress-bar__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .shipping-cost-progress-bar__wrapper {
+    width: 66%;
+  }
+}
+.shipping-cost-progress-bar--mini .shipping-cost-progress-bar__wrapper {
+  width: 95%;
+  margin-top: 10px;
+}
+.shipping-cost-progress-bar__descriptor {
+  font-size: 15px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.shipping-cost-progress-bar--mini .shipping-cost-progress-bar__descriptor {
+  font-size: 13px;
+}
+.shipping-cost-progress-bar__outer {
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.3);
+  height: 12px;
+  border-radius: 4px;
+  margin: 0 10px 0 10px;
+}
+.shipping-cost-progress-bar__inner {
+  height: 100%;
+  border-radius: 5px;
+}
+.shipping-cost-progress-bar__footer {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+.shipping-cost-progress-bar--mini .shipping-cost-progress-bar__footer {
+  font-size: 13px;
+  margin: 15px 5px 0;
+}

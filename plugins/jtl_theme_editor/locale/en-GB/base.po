@@ -1,0 +1,86 @@
+msgid "compile theme"
+msgstr "compile theme"
+
+msgid "--- select theme ---"
+msgstr "--- select theme ---"
+
+msgid "reset file to default"
+msgstr "reset file to default"
+
+msgid "save file"
+msgstr "save file"
+
+msgid "compile file"
+msgstr "compile file"
+
+msgid "compile JavaScript"
+msgstr "compile JavaScript"
+
+msgid "show all themes"
+msgstr "Alle Themes anzeigen"
+
+msgid "compileSuccessMsg"
+msgstr "Successfully compiled theme to %s."
+
+msgid "Theme directory %s has no write permissions."
+msgstr "Theme directory %s has no write permissions."
+
+msgid "File %s could not be saved."
+msgstr "File %s could not be saved."
+
+msgid "Backup %s could not be created."
+msgstr "Backup %s could not be created."
+
+msgid "Input file missing."
+msgstr "Input file missing."
+
+msgid "Invalid input file: %s."
+msgstr "Invalid input file: %s."
+
+msgid "File saved successfully."
+msgstr "File saved successfully."
+
+msgid "Could not copy file (theme directory write permissions?)"
+msgstr "Could not copy file (theme directory write permissions?)"
+
+msgid "Not allowed to open file %s - %s"
+msgstr "Not allowed to open file %s - %s"
+
+msgid "warningCompile"
+msgstr "<b>Attention!</b> Compiling overwrites to file \"bootstrap.css\" in your theme directory.<br>Please create a backup file!"
+
+msgid "actionCompile"
+msgstr "compile now"
+
+msgid "warningReset"
+msgstr "Are you sure you want to reset this file to its default?<br><b>Your changes will be lost!</b>"
+
+msgid "actionReset"
+msgstr "reset"
+
+msgid "JavaScript compiled successfully."
+msgstr "JavaScript compiled successfully."
+
+msgid "Could not delete file."
+msgstr "Could not delete file."
+
+msgid "File not found."
+msgstr "File not found."
+
+msgid "Original not found or file was not edited yet."
+msgstr "Original not found or file was not edited yet."
+
+msgid "Theme directory %s could not be found."
+msgstr "Theme directory %s could not be found."
+
+msgid "CSRF token missing. Session timeout?"
+msgstr "CSRF token missing. Session timeout?"
+
+msgid "Method not found."
+msgstr "Method not found."
+
+msgid "Unauthorized."
+msgstr "Unauthorized."
+
+msgid "No less/sass file found in %s for theme %s."
+msgstr "No less/sass file found in %s for theme %s."

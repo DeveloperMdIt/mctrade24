@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\Migrations; use JTL\Plugin\Migration; use JTL\Update\IMigration; class Migration20250603010101 extends Migration implements IMigration { protected $description = "\101\144\144\40\160\162\x6f\40\x73\154\x69\x64\145\162\40\141\x6c\x74\40\x54\x61\x67\x20\x73\x65\164\x74\x69\x6e\147"; public function up() { $this->execute("\101\114\x54\x45\122\x20\x54\x41\x42\x4c\105\x20\x78\160\154\165\147\151\156\137\141\x64\155\157\162\162\151\163\137\x70\x72\157\x5f\163\154\x69\144\145\40\x41\104\104\x20\141\x6c\x74\124\141\x67\x20\166\x61\162\x63\x68\141\x72\50\62\65\x35\51"); } public function down() { $this->execute("\101\x4c\x54\x45\122\x20\x54\x41\102\114\105\x20\170\160\x6c\165\x67\151\x6e\x5f\141\x64\x6d\x6f\162\x72\x69\163\137\160\162\157\137\163\x6c\x69\x64\145\40\x44\x52\117\120\40\141\x6c\164\x54\141\147"); } }

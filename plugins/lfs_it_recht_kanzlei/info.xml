@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jtlshopplugin>
+    <Name>AGB-Schnittstelle der IT-Recht Kanzlei</Name>
+    <Description>Kostenloses Plugin zur automatisierten Nutzung von abmahnsicheren Rechtstexten im JTL-Shop</Description>
+    <Author>lilfoot.software im Auftrag und unter Lizenz der IT-Recht Kanzlei</Author>
+    <URL>https://lilfoot.software</URL>
+    <PluginID>lfs_it_recht_kanzlei</PluginID>
+    <XMLVersion>102</XMLVersion>
+    <ShopVersion>5.0.0</ShopVersion>
+    <Version>1.0.11</Version>
+    <CreateDate>2025-04-24</CreateDate>
+    <ExsID>31312fc9-47e8-4685-ac0c-c366ddb4a6f1</ExsID>
+    <Install>
+        <FlushTags>CACHING_GROUP_CATEGORY</FlushTags>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Rechtstexte-Log</Name>
+            </Customlink>
+            <Customlink sort="2">
+                <Name>Einstellungen</Name>
+            </Customlink>
+            <Customlink sort="3">
+                <Name>Kundengruppen-Einstellungen</Name>
+            </Customlink>
+        </Adminmenu>
+    </Install>
+</jtlshopplugin>

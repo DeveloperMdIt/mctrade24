@@ -1,0 +1,25 @@
+
+msgid "installer.extracted"
+msgstr "Dateien entpackt"
+
+msgid "installer.installed"
+msgstr "Installation erfolgreich abgeschlossen. Sie werden zum admorris Pro Plugin weitergeleitet."
+
+msgid "installer.already_present"
+msgstr "Admorris Pro bereits vorhanden. Falls Sie updaten wollen gehen Sie im Plugin auf 'Update'."
+
+msgid "installer.license_not_ok"
+msgstr "Lizenz nicht ok"
+
+msgid "installer.license_invalid"
+msgstr "Wir konnten keine gültige Lizenz zu dieser Domain finden! Bitte wenden Sie sich an den Support."
+
+msgid "installer.version_mismatch"
+msgstr "Wir konnten leider keine passende Version zu Ihrer Shop Version finden! Bitte wenden Sie sich an den Support."
+
+msgid "installer.not_extracted"
+msgstr "Noch nicht entpackt"
+
+msgid "installer.cannot_create_download_dir"
+msgstr "Download-Verzeichnis kann nicht erstellt werden"
+

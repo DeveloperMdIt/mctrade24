@@ -1,0 +1,20 @@
+# JTL Shop Gitignore
+media/
+mediafiles/
+bilder/
+export/
+downloads/
+uploads/
+admorris_pro_backups/
+media/PDF.rar
+jtl_shop_55_20250819.zip
+templates_c/
+dbeS/tmp/
+jtllogs/
+includes/config.JTL-Shop.ini.php
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+vendor/

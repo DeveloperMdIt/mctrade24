@@ -1,0 +1,44 @@
+/*
+ * ---Rabattanzeige---
+*/
+.am-discount__label {
+  padding: 0.45em 0.5em;
+  font-weight: 700;
+  display: inline-block;
+}
+.am-discount--list {
+  line-height: 1 !important;
+}
+.am-discount--overlay {
+  position: absolute;
+  z-index: 10;
+}
+.am-discount--overlay .am-discount__label-text {
+  font-size: 0.7em;
+}
+.am-discount--caption,
+.am-discount--details {
+  margin: 0.5em 0;
+}
+.am-discount__old-price-text.am-discount__old-price-text {
+  border-bottom: 0;
+}
+.am-discount__old-price-info {
+  margin-right: 0.5em;
+}
+.am-discount__old-price {
+  position: relative;
+  padding: 0 0.3em;
+  font-weight: 700;
+}
+.am-discount__old-price:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  content: '';
+  border-top-style: solid;
+  top: calc(50% - 1px);
+}
+.am-discount__old-price-text {
+  text-decoration: none;
+}

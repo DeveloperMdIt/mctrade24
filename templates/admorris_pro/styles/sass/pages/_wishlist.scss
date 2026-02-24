@@ -1,0 +1,79 @@
+.wishlist-to-cart {
+    align-items: center;
+    justify-content: flex-end;
+    --modifier: calc(29rem - 100%);
+
+    [id='account'] & {
+        --modifier: calc(20rem - 100%);
+    }
+
+    .js-spinner {
+        text-align: right;
+    }
+}
+
+.dropdown.wishlist-options .dropdown-item {
+    position: relative;
+}
+
+.wishlist__add-to-cart-col {
+    align-self: flex-end;
+}
+
+.btn.wishlist-pos-delete {
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+/* public wishlist background-color fix. Has dark background because it is disabled */
+/* input */
+[name='wishlist-url'][readonly] {
+    background-color: white;
+}
+
+/* a dark background color-theme causes the text of the addon to be dark on dark */
+[id='edit-wishlist-name'] .input-group-addon {
+    color: inherit;
+}
+
+.pagination-wrapper {
+    gap: 10px;
+}
+
+.wishlist-options .dropdown-item .btn {
+    color: inherit;
+    text-align: left;
+    text-transform: none;
+}
+
+.wishlist-img {
+    @include adm-border-radius('sm', 'images');
+}
+
+.wishlist-item-buttons {
+    margin-top: var(--stack-spacing);
+}
+
+.wishlist-all-to-cart {
+    pointer-events: none;
+    .col {
+        margin-left: auto;
+    }
+    button[value='addAllToCart'] {
+        margin-top: var(--stack-spacing);
+        pointer-events: all;
+    }
+    &.sticky-bottom {
+        position: sticky;
+        bottom: 10px;
+
+        &.is-stuck {
+            z-index: 30;
+        }
+    }
+}
+
+.wishlist-item textarea.form-control {
+    height: calc(1.5em + 1.25rem + 10px);
+}

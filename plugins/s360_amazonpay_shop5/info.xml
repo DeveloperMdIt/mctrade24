@@ -1,0 +1,1131 @@
+<?xml version="1.0"?>
+<jtlshopplugin>
+    <Name>Amazon Pay (Checkout v2)</Name>
+    <Description>lpaInfoDescription</Description>
+    <Author>Solution360 GmbH</Author>
+    <URL>https://www.solution360.de</URL>
+    <XMLVersion>100</XMLVersion>
+    <PluginID>s360_amazonpay_shop5</PluginID>
+    <MinShopVersion>5.1.0</MinShopVersion>
+    <Version>1.2.22</Version>
+    <CreateDate>2025-10-07</CreateDate>
+    <Install>
+        <Adminmenu>
+            <Customlink sort="10">
+                <Name>lpaTabOrders</Name>
+            </Customlink>
+            <Customlink sort="20">
+                <Name>lpaTabAccount</Name>
+            </Customlink>
+            <Customlink sort="30">
+                <Name>lpaTabConfig</Name>
+            </Customlink>
+            <Customlink sort="40">
+                <Name>lpaTabSubscriptionOverview</Name>
+            </Customlink>
+            <Customlink sort="50">
+                <Name>lpaTabSubscriptionConfig</Name>
+            </Customlink>
+        </Adminmenu>
+        <Locales>
+            <Variable>
+                <Name>login_not_allowed</Name>
+                <Description>lpaLangVar_login_not_allowed</Description>
+                <VariableLocalized iso="GER"><![CDATA[Sie können sich leider nicht einloggen, weil Ihr Shop-Konto noch nicht aktiviert ist oder gesperrt wurde.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[You may not log in because your shop account is not yet active or has been blocked.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>return_error_generic</Name>
+                <Description>lpaLangVar_return_error_generic</Description>
+                <VariableLocalized iso="GER"><![CDATA[Beim Versuch, Sie mit Amazon zu authentifizieren, ist leider ein Problem aufgetreten.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[There was a problem performing authenticating you with Amazon.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>return_error_no_checkout</Name>
+                <Description>lpaLangVar_return_error_no_checkout</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bitte klicken Sie den Amazon Pay-Button, um die Bestellung mit Amazon Pay zu bezahlen.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please click the Amazon Pay button to pay with Amazon Pay.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>error_generic</Name>
+                <Description>lpaLangVar_error_generic</Description>
+                <VariableLocalized iso="GER"><![CDATA[Leider ist ein technisches Problem aufgetreten.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Unfortunately, a technical error occured.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>error_checkout_generic</Name>
+                <Description>lpaLangVar_error_checkout_generic</Description>
+                <VariableLocalized iso="GER"><![CDATA[Leider ist ein technisches Problem aufgetreten. Bitte laden Sie diese Seite neu und versuchen Sie es erneut oder nutzen Sie eine andere Zahlungsart, um Ihre Bestellung abzuschlie&szlig;en.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Unfortunately, a technical error occured. Please reload this page and try again or use a different payment method to place your order.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>error_not_logged_in</Name>
+                <Description>lpaLangVar_error_not_logged_in</Description>
+                <VariableLocalized iso="GER"><![CDATA[Sie sind nicht (mehr) mit Amazon eingeloggt. Bitte loggen Sie sich ein, indem Sie den Bezahlen mit Amazon Button klicken.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[You are not logged in with Amazon (anymore). Please log in with Amazon by pressing the Pay with Amazon button.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>error_missing_orid</Name>
+                <Description>lpaLangVar_error_missing_orid</Description>
+                <VariableLocalized iso="GER"><![CDATA[Es wurde keine Amazon Order Referenz-ID &uuml;bergeben. Bitte versuchen Sie es erneut oder nutzen Sie eine andere Zahlungsart.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[The Amazon order reference id is missing. Please try again or use a different payment method.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>soft_decline</Name>
+                <Description>lpaLangVar_soft_decline</Description>
+                <VariableLocalized iso="GER">Es gab ein Problem mit der ausgew&#xE4;hlten Zahlungsart aus ihrem Amazon Konto. Bitte &#xE4;ndern Sie die gew&#xFC;nschte Zahlungsart oder legen Sie eine neue Zahlungsart an. Wenn Sie eine Kreditkarte verwenden, stellen Sie sicher, dass Sie gen&#xFC;gend Geld auf der Karte haben und versuchen Sie es erneut.</VariableLocalized>
+                <VariableLocalized iso="ENG">There has been a problem with the selected payment method from your Amazon account, please update the payment method or choose another one. If you are using a credit card, make sure you have sufficient funds on the card and try again.</VariableLocalized>
+                <VariableLocalized iso="FRE">Un probl&#xE8;me est survenu avec le mode de paiement s&#xE9;lectionn&#xE9; sur votre compte Amazon. Mettez &#xE0; jour le mode de paiement ou s&#xE9;lectionnez-en un autre. Si vous utilisez une carte de cr&#xE9;dit, merci de vous assurer que vous disposez des fonds n&#xE9;c&#xE9;ssaires et faites une nouvelle tentative.</VariableLocalized>
+                <VariableLocalized iso="ITA">Si &#xE8; verificato un problema con il metodo di pagamento selezionato dal tuo account Amazon. Aggiorna il metodo di pagamento o scegline uno diverso. Se stai usando una carta di credito, assicurati di avere fondi a sufficienza sulla carta e riprova.</VariableLocalized>
+                <VariableLocalized iso="SPA">Se ha producido un problema con el m&#xE9;todo de pago seleccionado en tu cuenta de Amazon. Actualiza el m&#xE9;todo de pago o selecciona otro. Si est&#xE1;s usando una tarjeta de cr&#xE9;dito, confirma que tenga suficientes fondos y vuelve a intentar.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>account_merge_required</Name>
+                <Description>lpaLangVar_account_merge_required</Description>
+                <VariableLocalized iso="GER"><![CDATA[Zu Ihrer Amazon-E-Mail ist bereits ein Kundenkonto in diesem Shop vorhanden. Bitte loggen Sie sich in das Shop-Kundenkonto ein, um Ihre Identität zu bestätigen.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[There already exists a shop customer account for your Amazon e-mail address. Please log in to your shop customer account to verify your identity.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>account_merge_successful</Name>
+                <Description>lpaLangVar_account_merge_successful</Description>
+                <VariableLocalized iso="GER"><![CDATA[Ihr Amazon-Konto wurde erfolgreich mit Ihrem bestehenden Shop-Konto verknüpft.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[You Amazon account was successfully linked with your existing shop account.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>account_create_address_selection_title</Name>
+                <Description>lpaLangVar_account_create_address_selection_title</Description>
+                <VariableLocalized iso="GER"><![CDATA[Adress-Auswahl]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Address Selection]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>address_selection_error</Name>
+                <Description>lpaLangVar_address_selection_error</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bei der Auswahl der Adresse ist ein Fehler aufgetreten.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[An error occured while selecting the address.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>packstation_not_allowed</Name>
+                <Description>lpaLangVar_packstation_not_allowed</Description>
+                <VariableLocalized iso="GER"><![CDATA[Packstation-Adressen sind an dieser Stelle nicht erlaubt. Bitte geben Sie eine andere Adresse ein.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Packstation addresses are not allowed at this point. Please enter a different address.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>please_wait</Name>
+                <Description>lpaLangVar_please_wait</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bitte warten...]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please wait...]]></VariableLocalized>
+            </Variable>
+            <!-- Hint texts at the creation screen -->
+            <Variable>
+                <Name>create_description</Name>
+                <Description>lpaLangVar_create_description</Description>
+                <VariableLocalized iso="GER"><![CDATA[Amazon Pay legt f&uuml;r Sie ein Kundenkonto in diesem Shop an. Bitte geben Sie Ihre Rechnungs-Adresse ein und f&uuml;llen Sie ggf. die fehlenden Pflicht-Angaben aus, um die automatische Accounterstellung im Shop abzuschlie&szlig;en.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Amazon Pay is about to create an account for you in this shop. Please enter your billing address and fill in the additional mandatory fields to complete the automatic account creation in the shop.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>create_description_optional</Name>
+                <Description>lpaLangVar_create_description_optional</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bitte geben Sie Ihre Rechnungs-Adresse ein und f&uuml;llen Sie ggf. die fehlenden Pflicht-Angaben aus. Auf Wunsch wird f&uuml;r Sie auch ein Kundenkonto im Shop erstellt.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please enter your billing address and fill in the additional mandatory fields. Optionally, you can also choose to create a shop account.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>create_description_guest</Name>
+                <Description>lpaLangVar_create_description_guest</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bitte geben Sie Ihre Rechnungs-Adresse ein und f&uuml;llen Sie ggf. die fehlenden Pflicht-Angaben aus, um den Checkout fortzusetzen.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please enter your billing address and fill in the additional mandatory fields to proceed with the checkout.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>create_description_billing_override</Name>
+                <Description>lpaLangVar_create_description_billing_override</Description>
+                <VariableLocalized iso="GER"><![CDATA[Amazon Pay legt f&uuml;r Sie ein Kundenkonto in diesem Shop an. Bitte geben Sie Ihre initiale Rechnungs-Adresse ein und f&uuml;llen Sie ggf. die fehlenden Pflicht-Angaben aus, um die automatische Accounterstellung im Shop abzuschlie&szlig;en. Beachten Sie bitte, dass bei einer Bezahlung mit Amazon Pay die Rechnungsadresse aus Ihrem <u>Amazon Konto</u> verwendet wird.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Amazon Pay is about to create an account for you in this shop. Please enter your initial billing address and fill in the additional mandatory fields to complete the automatic account creation in the shop. Please be aware that, when paying with Amazon Pay, the billing address from your <u>Amazon account</u> will be used.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>create_description_optional_billing_override</Name>
+                <Description>lpaLangVar_create_description_optional_billing_override</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bitte geben Sie Ihre initiale Rechnungs-Adresse ein und f&uuml;llen Sie ggf. die fehlenden Pflicht-Angaben aus. Auf Wunsch wird f&uuml;r Sie auch ein Kundenkonto im Shop erstellt. Beachten Sie bitte, dass bei einer Bezahlung mit Amazon Pay die Rechnungsadresse aus Ihrem <u>Amazon Konto</u> verwendet wird.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please enter your initial billing address and fill in the additional mandatory fields. Optionally, you can also choose to create a shop account. Please be aware that, when paying with Amazon Pay, the billing address from your <u>Amazon account</u> will be used.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>create_description_guest_billing_override</Name>
+                <Description>lpaLangVar_create_description_guest_billing_override</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bitte geben Sie Ihre initiale Rechnungs-Adresse ein und f&uuml;llen Sie ggf. die fehlenden Pflicht-Angaben aus, um den Checkout fortzusetzen. Beachten Sie bitte, dass bei einer Bezahlung mit Amazon Pay die Rechnungsadresse aus Ihrem <u>Amazon Konto</u> verwendet wird.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please enter your initial billing address and fill in the additional mandatory fields to proceed with the checkout. Please be aware that, when paying with Amazon Pay, the billing address from your <u>Amazon account</u> will be used.]]></VariableLocalized>
+            </Variable>
+
+            <Variable>
+                <Name>general_billing_override</Name>
+                <Description>lpaLangVar_general_billing_override</Description>
+                <VariableLocalized iso="GER"><![CDATA[Es wird die Rechnungsadresse aus Ihrem <u>Amazon Konto</u> verwendet.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[The billing address from your <u>Amazon account</u> will be used.]]></VariableLocalized>
+            </Variable>
+
+            <Variable>
+                <Name>checkout_currency_changed</Name>
+                <Description>lpaLangVar_checkout_currency_changed</Description>
+                <VariableLocalized iso="GER"><![CDATA[Hinweis: Es wurde automatisch auf die folgende W&auml;hrung gewechselt: ]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Notice: We automatically switched to the following currency: ]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>checkout_address_changed</Name>
+                <Description>lpaLangVar_checkout_address_changed</Description>
+                <VariableLocalized iso="GER"><![CDATA[Warnung: Es wurde eine veränderte Lieferadresse erkannt. Es wurde keine Bestellung angelegt. Versuchen Sie es bitte erneut.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Warning: A changed delivery address was detected. The order was not created. Please try again.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>checkout_immediate_capture_title</Name>
+                <Description>lpaLangVar_checkout_immediate_capture_title</Description>
+                <VariableLocalized iso="GER"><![CDATA[Ich habe zur Kenntnis genommen, dass die Zahlung sofort nach dem Absenden der Bestellung erfolgt.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[I hereby acknowledge that the payment will be captured immediately after placing the order.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>checkout_error_acknowledge_immediate_capture</Name>
+                <Description>lpaLangVar_checkout_error_acknowledge_immediate_capture</Description>
+                <VariableLocalized iso="GER"><![CDATA[Bitte best&auml;tigen Sie, dass die Zahlung sofort bei Bestellung erfolgt.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Please confirm that the payment will be executed immediately when the order is placed.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>check_order_hint</Name>
+                <Description>lpaLangVar_check_order_hint</Description>
+                <VariableLocalized iso="GER"><![CDATA[Sie k&ouml;nnen Ihre Bestellung im n&auml;chsten Schritt noch einmal pr&uuml;fen.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[You can verify the order in the next step before placing it.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>cancel_checkout</Name>
+                <Description>lpaLangVar_cancel_checkout</Description>
+                <VariableLocalized iso="GER"><![CDATA[Amazon Pay-Bestellvorgang verlassen]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Cancel Pay with Amazon]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>hard_decline</Name>
+                <Description>lpaLangVar_hard_decline</Description>
+                <VariableLocalized iso="GER">Bei der Verarbeitung Ihrer Bestellung ist ein Fehler aufgetreten. Kontaktieren Sie uns oder probieren Sie es bitte sp&#xE4;ter erneut.</VariableLocalized>
+                <VariableLocalized iso="ENG">There was an error processing your order. Please contact us or try again later.</VariableLocalized>
+                <VariableLocalized iso="FRE">Lors du traitement de votre commande une erreur s'est produite. Veuillez nous contacter ou essayez de nouveau plus tard.</VariableLocalized>
+                <VariableLocalized iso="ITA">Si &#xE8; verificato un errore durante l'elaborazione dell'ordine. Contattaci o riprova pi&#xF9; tardi.</VariableLocalized>
+                <VariableLocalized iso="SPA">Se ha producido un error al procesar su pedido. Por favor, cont&#xE1;ctenos o int&#xE9;ntelo de nuevo m&#xE1;s tarde.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>checkout_cart_changed_redirect</Name>
+                <Description>lpaLangVar_checkout_cart_changed_redirect</Description>
+                <VariableLocalized iso="GER"><![CDATA[Ihr Warenkorb wurde (z.B. aufgrund von Preis- oder Lagerbestandsänderungen) aktualisiert. Sie werden in Kürze zur Versandartauswahl zurückgeleitet.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Your shopping cart has been updated due to price or stock changes. You will shortly be returned to the shipping method selection.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>fail_safe_confirmation</Name>
+                <Description>lpaLangVar_fail_safe_confirmation</Description>
+                <VariableLocalized iso="GER"><![CDATA[Es ist ein technischer Fehler beim Bestellabschluss aufgetreten. Ihre Bestellung wurde jedoch angelegt. Bitte pr&uuml;fen Sie Ihre E-Mails auf die Bestellbest&auml;tigungsmail und/oder kontaktieren Sie uns bitte zur weiteren Kl&auml;rung.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[A technical error occured while completing your order. Nevertheless, your order was placed successfully. Please check your mail for a confirmation message and/or contact us for further details.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>billing_override_hint</Name>
+                <Description>lpaLangVar_billing_override_hint</Description>
+                <VariableLocalized iso="GER"><![CDATA[Es wird die Rechnungsadresse aus Ihrem <u>Amazon Konto</u> verwendet.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[The billing address from your <u>Amazon account</u> will be used.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>async_auth_hint</Name>
+                <Description>lpaLangVar_async_auth_hint</Description>
+                <VariableLocalized iso="GER">Ihre Zahlung mit Amazon Pay ist derzeit noch in Pr&#xFC;fung. Bitte beachten Sie, dass wir uns mit Ihnen in K&#xFC;rze per Email in Verbindung setzen werden, falls noch Unklarheiten bestehen sollten.</VariableLocalized>
+                <VariableLocalized iso="ENG">Your transaction with Amazon Pay is currently being validated. Please be aware that we will inform you shortly as needed.</VariableLocalized>
+                <VariableLocalized iso="FRE">Votre transaction avec Amazon Pay est en cours de validation. Vous serez inform&#xE9; prochainement de son suivi.</VariableLocalized>
+                <VariableLocalized iso="ITA">La vostra transazione con Amazon Pay &#xE8; in fase di validazione. Vi informeremo del risultato della transazione a breve.</VariableLocalized>
+                <VariableLocalized iso="SPA">Tu transacci&#xF3;n con Amazon Pay se est&#xE1; verificando. Te informaremos tan pronto como sea posible.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>behavioral_overlay_title</Name>
+                <Description>lpaLangVar_behavioral_overlay_title</Description>
+                <VariableLocalized iso="GER">LOREM IPSUM</VariableLocalized>
+                <VariableLocalized iso="ENG">LOREM IPSUM</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>behavioral_overlay_text</Name>
+                <Description>lpaLangVar_behavioral_overlay_text</Description>
+                <VariableLocalized iso="GER">DOLOR</VariableLocalized>
+                <VariableLocalized iso="ENG">DOLOR</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>no_shipping_method</Name>
+                <Description>lpaLangVar_no_shipping_method</Description>
+                <VariableLocalized iso="GER">F&#xFC;r die ausgew&#xE4;hlte Lieferadresse kann keine Versandart angeboten werden. Bitte w&#xE4;hlen Sie eine andere Lieferadresse aus.</VariableLocalized>
+                <VariableLocalized iso="ENG">We cannot offer a shipping method for the selected shipping address. Please choose a different shipping address.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>no_shipping_address</Name>
+                <Description>lpaLangVar_no_shipping_address</Description>
+                <VariableLocalized iso="GER">Die ausgew&#xE4;hlte Lieferadresse konnte nicht verarbeitet werden. Bitte w&#xE4;hlen Sie eine andere Lieferadresse aus.</VariableLocalized>
+                <VariableLocalized iso="ENG">The selected shipping address could not be processed. Please select a different shipping address.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>select_shipping_method</Name>
+                <Description>lpaLangVar_select_shipping_method</Description>
+                <VariableLocalized iso="GER">Bitte w&#xE4;hlen Sie zun&#xE4;chst eine Lieferadresse und Versandart aus.</VariableLocalized>
+                <VariableLocalized iso="ENG">Please choose a shipping address and shipping method, first.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>change_amazonpay_paymethod</Name>
+                <Description>lpaLangVar_change_amazonpay_paymethod</Description>
+                <VariableLocalized iso="GER">Amazon Pay Zahlart &#xE4;ndern</VariableLocalized>
+                <VariableLocalized iso="ENG">Change Amazon Pay Payment Method</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>change_amazonpay_deliveryaddress</Name>
+                <Description>lpaLangVar_change_amazonpay_deliveryaddress</Description>
+                <VariableLocalized iso="GER">Amazon Pay Lieferadresse &#xE4;ndern</VariableLocalized>
+                <VariableLocalized iso="ENG">Change Amazon Pay Shipping Address</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>payment_not_successful</Name>
+                <Description>lpaLangVar_payment_not_successful</Description>
+                <VariableLocalized iso="GER">Ihre Zahlung mit Amazon Pay war nicht erfolgreich. Bitte versuchen Sie es mit einer anderen Zahlungsart.</VariableLocalized>
+                <VariableLocalized iso="ENG">Your payment was not successful. Please try another payment method.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>merchant_info_failed_recharge_on_expired</Name>
+                <Description>lpaLangVar_merchant_info_failed_recharge_on_expired</Description>
+                <VariableLocalized iso="GER">Eine Charge (Zahlung) ist ungenutzt abgelaufen und konnte nicht automatisch erneuert werden. Sie m&#xFC;ssen das Geld anderweitig vom Kunden erhalten.</VariableLocalized>
+                <VariableLocalized iso="ENG">A charge (payment) expired unused and could not be automatically renewed. You have to get the money from the customer in a different way.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>merchant_info_amazon_canceled_charge</Name>
+                <Description>lpaLangVar_merchant_info_amazon_canceled_charge</Description>
+                <VariableLocalized iso="GER">Eine Charge (Zahlung) wurde durch Amazon abgebrochen. Sie m&#xFC;ssen das Geld anderweitig vom Kunden erhalten.</VariableLocalized>
+                <VariableLocalized iso="ENG">A charge (payment) was canceled by Amazon. You have to get the money from the customer in a different way.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>merchant_info_failed_capture</Name>
+                <Description>lpaLangVar_merchant_info_failed_capture</Description>
+                <VariableLocalized iso="GER">Ein Zahlungseinzug ist mit einem Fehler abgebrochen. Bitte ziehen Sie das Geld manuell ein!</VariableLocalized>
+                <VariableLocalized iso="ENG">A capture failed with an error. Please capture the money manually.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>closure_reason_storno</Name>
+                <Description>lpaLangVar_closure_reason_storno</Description>
+                <VariableLocalized iso="GER">Die Bestellung wurde storniert.</VariableLocalized>
+                <VariableLocalized iso="ENG">The order was cancelled.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>apb_redirect_loader_icon</Name>
+                <Description>lpaLangVar_apb_redirect_loader_icon</Description>
+                <VariableLocalized iso="GER">fas fa-spinner fa-pulse fa-5x</VariableLocalized>
+                <VariableLocalized iso="ENG">fas fa-spinner fa-pulse fa-5x</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>apb_redirect_text</Name>
+                <Description>lpaLangVar_apb_redirect_text</Description>
+                <VariableLocalized iso="GER">Bitte warten! Sie werden in K&#xFC;rze zu Amazon Pay weitergeleitet. Sollte innerhalb von 30 Sekunden keine automatische Weiterleitung erfolgen, klicken Sie bitte den folgenden Link an:</VariableLocalized>
+                <VariableLocalized iso="ENG">Please wait! You are being redirected to Amazon Pay shortly. If you are not redirected automatically within 30 seconds, click the following link:</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>apb_redirect_link_label</Name>
+                <Description>lpaLangVar_apb_redirect_link_label</Description>
+                <VariableLocalized iso="GER">Weiter zu Amazon Pay</VariableLocalized>
+                <VariableLocalized iso="ENG">Continue to Amazon Pay</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>error_redirect</Name>
+                <Description>lpaLangVar_error_redirect</Description>
+                <VariableLocalized iso="GER">Beim Versuch, Sie zu Amazon Pay weiterzuleiten, ist ein Fehler aufgetreten. Es wurde keine Bestellung angelegt. Versuchen Sie es bitte erneut.</VariableLocalized>
+                <VariableLocalized iso="ENG">An error occured while trying to redirect you to Amazon Pay. The order was not created. Please try again.</VariableLocalized>
+            </Variable>
+            <!-- Subscription specific -->
+            <Variable>
+                <Name>subscription_customer_canceled</Name>
+                <Description>lpaLangVar_subscription_customer_canceled</Description>
+                <VariableLocalized iso="GER">Die wiederkehrende Bestellung wurde erfolgreich beendet.</VariableLocalized>
+                <VariableLocalized iso="ENG">The recurring order was successfully canceled.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_cancel_failed</Name>
+                <Description>lpaLangVar_subscription_customer_cancel_failed</Description>
+                <VariableLocalized iso="GER">Beim Versuch, die wiederkehrende Bestellung zu beenden, ist ein Fehler aufgetreten. Versuchen Sie es bitte erneut oder nehmen Sie direkt Kontakt mit uns auf.</VariableLocalized>
+                <VariableLocalized iso="ENG">An error occured while trying to cancel the recurring order. Please try again or contact us directly.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_select_label_title</Name>
+                <Description>lpaLangVar_subscription_interval_select_label_title</Description>
+                <VariableLocalized iso="GER">Mit Amazon Pay als Abo bestellbar!</VariableLocalized>
+                <VariableLocalized iso="ENG">Available as Subscription w/ Amazon Pay!</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_select_label_text</Name>
+                <Description>lpaLangVar_subscription_interval_select_label_text</Description>
+                <VariableLocalized iso="GER">Keine Zusatz-Geb&#xFC;hren, jederzeit k&#xFC;ndbar.</VariableLocalized>
+                <VariableLocalized iso="ENG">No additional fees, cancel anytime.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_none</Name>
+                <Description>lpaLangVar_subscription_interval_display_none</Description>
+                <VariableLocalized iso="GER">Einmalige Lieferung</VariableLocalized>
+                <VariableLocalized iso="ENG">One-time purchase</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_singular_d</Name>
+                <Description>lpaLangVar_subscription_interval_display_singular_d</Description>
+                <VariableLocalized iso="GER">t&#xE4;glich</VariableLocalized>
+                <VariableLocalized iso="ENG">daily</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_singular_w</Name>
+                <Description>lpaLangVar_subscription_interval_display_singular_w</Description>
+                <VariableLocalized iso="GER">w&#xF6;chentlich</VariableLocalized>
+                <VariableLocalized iso="ENG">weekly</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_singular_m</Name>
+                <Description>lpaLangVar_subscription_interval_display_singular_m</Description>
+                <VariableLocalized iso="GER">monatlich</VariableLocalized>
+                <VariableLocalized iso="ENG">monthly</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_singular_y</Name>
+                <Description>lpaLangVar_subscription_interval_display_singular_y</Description>
+                <VariableLocalized iso="GER">j&#xE4;hrlich</VariableLocalized>
+                <VariableLocalized iso="ENG">yearly</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_plural_d</Name>
+                <Description>lpaLangVar_subscription_interval_display_plural_d</Description>
+                <VariableLocalized iso="GER">alle #amount# Tage</VariableLocalized>
+                <VariableLocalized iso="ENG">every #amount# days</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_plural_w</Name>
+                <Description>lpaLangVar_subscription_interval_display_plural_w</Description>
+                <VariableLocalized iso="GER">alle #amount# Wochen</VariableLocalized>
+                <VariableLocalized iso="ENG">every #amount# weeks</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_plural_m</Name>
+                <Description>lpaLangVar_subscription_interval_display_plural_m</Description>
+                <VariableLocalized iso="GER">alle #amount# Monate</VariableLocalized>
+                <VariableLocalized iso="ENG">every #amount# months</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_interval_display_plural_y</Name>
+                <Description>lpaLangVar_subscription_interval_display_plural_y</Description>
+                <VariableLocalized iso="GER">alle #amount# Jahre</VariableLocalized>
+                <VariableLocalized iso="ENG">every #amount# years</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_error_redirect</Name>
+                <Description>lpaLangVar_subscription_error_redirect</Description>
+                <VariableLocalized iso="GER">Eine wiederkehrende Bestellung mit dem gew&#xE4;hlten Intervall ist nicht m&#xF6;glich. Bitte versuchen Sie es mit einem der angebotenen Intervalle oder nutzen Sie eine einmalige Bestellung.</VariableLocalized>
+                <VariableLocalized iso="ENG">A recurring order for the selected interval is not possible. Please select one of the available intervals or do a one-time order instead.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_checkout_hint</Name>
+                <Description>lpaLangVar_subscription_checkout_hint</Description>
+                <VariableLocalized iso="GER">Sie haben eine wiederkehrende Bestellung ausgew&#xE4;hlt. Diese Bestellung wird sich in folgendem Intervall wiederholen:</VariableLocalized>
+                <VariableLocalized iso="ENG">You have selected a recurring order. This order will repeat in the following interval:</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_created_hint</Name>
+                <Description>lpaLangVar_subscription_created_hint</Description>
+                <VariableLocalized iso="GER">Ihre wiederkehrende Bestellung wurde eingerichtet.</VariableLocalized>
+                <VariableLocalized iso="ENG">Your recurring order was created.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_failed_hint</Name>
+                <Description>lpaLangVar_subscription_failed_hint</Description>
+                <VariableLocalized iso="GER">Ihre wiederkehrende Bestellung konnte leider nicht eingerichtet werden - die jetzige Bestellung wurde jedoch erfolgreich erstellt.</VariableLocalized>
+                <VariableLocalized iso="ENG">Your recurring order could not be created, unfortunately. However, your current order was created successfully.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_subscriptions_available</Name>
+                <Description>lpaLangVar_subscription_customer_subscriptions_available</Description>
+                <VariableLocalized iso="GER">Wenn Sie Ihre mit Amazon Pay get&#xE4;tigten Abo-Bestellungen verwalten m&#xF6;chten, klicken Sie bitte hier:</VariableLocalized>
+                <VariableLocalized iso="ENG">If you want to manage your recurring orders paid with Amazon Pay, please click here:</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_subscriptions_available_link</Name>
+                <Description>lpaLangVar_subscription_customer_subscriptions_available_link</Description>
+                <VariableLocalized iso="GER">Mein Abo-Bestellungen</VariableLocalized>
+                <VariableLocalized iso="ENG">My Recurring Orders</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_no_subscriptions</Name>
+                <Description>lpaLangVar_subscription_customer_no_subscriptions</Description>
+                <VariableLocalized iso="GER">Sie haben keine Abo-Bestellungen.</VariableLocalized>
+                <VariableLocalized iso="ENG">You have no recurring orders.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_confirm_cancel</Name>
+                <Description>lpaLangVar_subscription_customer_confirm_cancel</Description>
+                <VariableLocalized iso="GER">Soll die wiederkehrende Bestellung f&#xFC;r folgende Zahlungsvereinbarung jetzt beendet werden?</VariableLocalized>
+                <VariableLocalized iso="ENG">Do you want to stop the recurring orders for the following Charge Permission ID now?</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_charge_permission_id</Name>
+                <Description>lpaLangVar_subscription_customer_charge_permission_id</Description>
+                <VariableLocalized iso="GER">Zahlungsvereinbarungs-ID (Amazon Pay)</VariableLocalized>
+                <VariableLocalized iso="ENG">Charge Permission ID (Amazon Pay)</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_interval</Name>
+                <Description>lpaLangVar_subscription_customer_interval</Description>
+                <VariableLocalized iso="GER">Gew&#xE4;hltes Intervall</VariableLocalized>
+                <VariableLocalized iso="ENG">Selected Interval</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_orders</Name>
+                <Description>lpaLangVar_subscription_customer_orders</Description>
+                <VariableLocalized iso="GER">Bestellungen</VariableLocalized>
+                <VariableLocalized iso="ENG">Orders</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_status</Name>
+                <Description>lpaLangVar_subscription_customer_status</Description>
+                <VariableLocalized iso="GER">Abo-Status</VariableLocalized>
+                <VariableLocalized iso="ENG">Subscription Status</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_next_order_time</Name>
+                <Description>lpaLangVar_subscription_customer_next_order_time</Description>
+                <VariableLocalized iso="GER">N&#xE4;chster Bestellzeitpunkt</VariableLocalized>
+                <VariableLocalized iso="ENG">Next Order Time</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_action</Name>
+                <Description>lpaLangVar_subscription_customer_action</Description>
+                <VariableLocalized iso="GER">Aktionen</VariableLocalized>
+                <VariableLocalized iso="ENG">Actions</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_status_canceled</Name>
+                <Description>lpaLangVar_subscription_customer_status_canceled</Description>
+                <VariableLocalized iso="GER">Beendet</VariableLocalized>
+                <VariableLocalized iso="ENG">Ended</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_status_active</Name>
+                <Description>lpaLangVar_subscription_customer_status_active</Description>
+                <VariableLocalized iso="GER">Aktiv</VariableLocalized>
+                <VariableLocalized iso="ENG">Active</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_status_paused</Name>
+                <Description>lpaLangVar_subscription_customer_status_paused</Description>
+                <VariableLocalized iso="GER">Pausiert / in Pr&#xFC;fung</VariableLocalized>
+                <VariableLocalized iso="ENG">Paused / In Review</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_status_unknown</Name>
+                <Description>lpaLangVar_subscription_customer_status_unknown</Description>
+                <VariableLocalized iso="GER">Unbekannt</VariableLocalized>
+                <VariableLocalized iso="ENG">Unknown</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_action_cancel</Name>
+                <Description>lpaLangVar_subscription_customer_action_cancel</Description>
+                <VariableLocalized iso="GER">Abo beenden</VariableLocalized>
+                <VariableLocalized iso="ENG">Stop Subscription</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_order_recurring</Name>
+                <Description>lpaLangVar_subscription_customer_order_recurring</Description>
+                <VariableLocalized iso="GER">wiederkehrend</VariableLocalized>
+                <VariableLocalized iso="ENG">recurring</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_order_initial</Name>
+                <Description>lpaLangVar_subscription_customer_order_initial</Description>
+                <VariableLocalized iso="GER">initial</VariableLocalized>
+                <VariableLocalized iso="ENG">initial</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_description</Name>
+                <Description>lpaLangVar_subscription_customer_description</Description>
+                <VariableLocalized iso="GER">Hier finden Sie eine &#xDC;bersicht &#xFC;ber alle mit Amazon Pay durchgef&#xFC;hrten wiederkehrenden (Abo-)Bestellungen. Sie k&#xF6;nnen hier auch Ihre wiederkehrenden Bestellungen jederzeit beenden.</VariableLocalized>
+                <VariableLocalized iso="ENG">Here you can find an overview over all you recurring orders, paid with Amazon Pay. You can stop your recurring orders from here, at any time.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_customer_subscriptions_disabled</Name>
+                <Description>lpaLangVar_subscription_customer_subscriptions_disabled</Description>
+                <VariableLocalized iso="GER">Derzeit werden in unserem Shop keine neuen automatisch wiederkehrenden Bestellungen angelegt. Bei Fragen zu Ihrer Bestellung nehmen Sie bitte Kontakt mit uns auf.</VariableLocalized>
+                <VariableLocalized iso="ENG">Our shop is currently not creating any new automatically recurring orders. If you have any questions please contact us.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_discount_rate_hint</Name>
+                <Description>Text, der dem Kunden bei einem m&#xF6;glichen Abo-Rabatt angezeigt wird.</Description>
+                <VariableLocalized iso="GER">Sparen Sie bis zu #amount#% bei regelm&#xE4;&#xDF;iger Lieferung.</VariableLocalized>
+                <VariableLocalized iso="ENG">Save up to #amount#% when you schedule repeat deliveries.</VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>subscription_discount_cart_position</Name>
+                <Description>Bezeichnung der Amazon Pay-Abo-Rabatt Position im Warenkorb.</Description>
+                <VariableLocalized iso="GER">Abo-Rabatt</VariableLocalized>
+                <VariableLocalized iso="ENG">Subscription Discount</VariableLocalized>
+            </Variable>
+        </Locales>
+        <FrontendLink>
+            <!-- IPN Endpoint -->
+            <Link>
+                <Filename>ipn.php</Filename>
+                <Name>Amazon Pay - IPN Endpunkt</Name>
+                <Template>ipn.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-ipn</Seo>
+                    <Name>Amazon Pay IPN Endpunkt</Name>
+                    <Title>Amazon Pay IPN Endpunkt</Title>
+                    <MetaTitle>Amazon Pay IPN Endpunkt</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay IPN Endpunkt</MetaDescription>
+                </LinkLanguage>
+            </Link>
+
+            <!-- Login with Amazon Pay -->
+            <Link>
+                <Filename>login.php</Filename>
+                <Name>Amazon Pay - Login</Name>
+                <Template>login.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-login</Seo>
+                    <Name>Login mit Amazon</Name>
+                    <Title>Login mit Amazon</Title>
+                    <MetaTitle>Login mit Amazon</MetaTitle>
+                    <MetaKeywords>Login, Amazon</MetaKeywords>
+                    <MetaDescription>Login mit Amazon</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>amazonpay-login-eng</Seo>
+                    <Name>Login with Amazon</Name>
+                    <Title>Login with Amazon</Title>
+                    <MetaTitle>Login with Amazon</MetaTitle>
+                    <MetaKeywords>Login, Amazon</MetaKeywords>
+                    <MetaDescription>Login with Amazon</MetaDescription>
+                </LinkLanguage>
+            </Link>
+
+            <!-- Checkout with Amazon Pay -->
+            <Link>
+                <Filename>checkout.php</Filename>
+                <Name>Amazon Pay - Checkout</Name>
+                <Template>checkout.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-checkout</Seo>
+                    <Name>Bezahlen mit Amazon</Name>
+                    <Title>Bezahlen mit Amazon</Title>
+                    <MetaTitle>Bezahlen mit Amazon</MetaTitle>
+                    <MetaKeywords>Bezahlen, Amazon Pay</MetaKeywords>
+                    <MetaDescription>Bezahlen mit Amazon</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>amazonpay-checkout-eng</Seo>
+                    <Name>Pay with Amazon</Name>
+                    <Title>Pay with Amazon</Title>
+                    <MetaTitle>Pay with Amazon</MetaTitle>
+                    <MetaKeywords>Pay, Amazon Pay</MetaKeywords>
+                    <MetaDescription>Pay with Amazon</MetaDescription>
+                </LinkLanguage>
+            </Link>
+
+            <!-- Return URL nach Login / Initialisierung Checkout -->
+            <Link>
+                <Filename>return.php</Filename>
+                <Name>Amazon Pay - Return URL</Name>
+                <Template>return.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-return</Seo>
+                    <Name>Amazon Pay Return URL</Name>
+                    <Title>Amazon Pay Return URL</Title>
+                    <MetaTitle>Amazon Pay Return URL</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay Return URL</MetaDescription>
+                </LinkLanguage>
+            </Link>
+
+            <!-- Process return from Amazon Pay after payment / MFA challenge -->
+            <Link>
+                <Filename>result.php</Filename>
+                <Name>Amazon Pay - Result URL</Name>
+                <Template>dummy.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-result</Seo>
+                    <Name>Bezahlen mit Amazon Pay - Verarbeitung Ergebnis</Name>
+                    <Title>Bezahlen mit Amazon Pay</Title>
+                    <MetaTitle>Bezahlen mit Amazon Pay</MetaTitle>
+                    <MetaKeywords>Bezahlen, Amazon Pay</MetaKeywords>
+                    <MetaDescription>Bezahlen mit Amazon Pay</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>amazonpay-result-eng</Seo>
+                    <Name>Pay with Amazon Pay - Process Result</Name>
+                    <Title>Pay with Amazon Pay</Title>
+                    <MetaTitle>Pay with Amazon Pay</MetaTitle>
+                    <MetaKeywords>Pay, Amazon Pay</MetaKeywords>
+                    <MetaDescription>Pay with Amazon Pay</MetaDescription>
+                </LinkLanguage>
+            </Link>
+
+            <!-- Redirect Link where we sent the user off to Amazon Pay when he uses the additional payment button (APB) -->
+            <Link>
+                <Filename>apb_redirect.php</Filename>
+                <Name>Amazon Pay - Redirect URL</Name>
+                <Template>apb_redirect.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-apb-redirect</Seo>
+                    <Name>Amazon Pay Redirect URL</Name>
+                    <Title>Amazon Pay Redirect URL</Title>
+                    <MetaTitle>Amazon Pay Redirect URL</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay Redirect URL</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>amazonpay-apb-redirect-eng</Seo>
+                    <Name>Amazon Pay Redirect URL</Name>
+                    <Title>Amazon Pay Redirect URL</Title>
+                    <MetaTitle>Amazon Pay Redirect URL</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay Redirect URL</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <!-- Auto Key Exchange Controller -->
+            <Link>
+                <Filename>auto_key_exchange.php</Filename>
+                <Name>Amazon Pay - Auto Key Exchange</Name>
+                <Template>auto_key_exchange.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-auto-key-exchange</Seo>
+                    <Name>Amazon Pay Auto Key Exchange</Name>
+                    <Title>Amazon Pay Auto Key Exchange</Title>
+                    <MetaTitle>Amazon Pay Auto Key Exchange</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay Auto Key Exchange</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>amazonpay-auto-key-exchange-eng</Seo>
+                    <Name>Amazon Pay Auto Key Exchange</Name>
+                    <Title>Amazon Pay Auto Key Exchange</Title>
+                    <MetaTitle>Amazon Pay Auto Key Exchange</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay Auto Key Exchange</MetaDescription>
+                </LinkLanguage>
+            </Link>
+            <!-- Link where customers can see their own current subscriptions and manage them -->
+            <Link>
+                <Filename>subscription_customer.php</Filename>
+                <Name>Amazon Pay - Subscription Overview Customer</Name>
+                <Template>subscription_customer.tpl</Template>
+                <VisibleAfterLogin>Y</VisibleAfterLogin>
+                <PrintButton>Y</PrintButton>
+                <NoFollow>Y</NoFollow>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>amazonpay-subscriptions-customer</Seo>
+                    <Name>Amazon Pay Abo-&#xDC;bersicht Kunde</Name>
+                    <Title>Amazon Pay Abo-&#xDC;bersicht</Title>
+                    <MetaTitle>Amazon Pay Abo-&#xDC;bersicht</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay Abo-&#xDC;bersicht</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>amazonpay-subscriptions-customer-eng</Seo>
+                    <Name>Amazon Pay Subscription Overview Customer</Name>
+                    <Title>Amazon Pay Subscription Overview</Title>
+                    <MetaTitle>Amazon Pay Subscription Overview</MetaTitle>
+                    <MetaKeywords>Amazon Pay</MetaKeywords>
+                    <MetaDescription>Amazon Pay Subscription Overview</MetaDescription>
+                </LinkLanguage>
+            </Link>
+        </FrontendLink>
+        <PaymentMethod>
+            <Method>
+                <Name>Amazon Pay</Name>
+                <PictureURL>images/100px/amazonpay-logo-rgb_clr.png</PictureURL>
+                <Sort>1</Sort>
+                <SendMail>0</SendMail>
+                <Provider>Solution 360 GmbH</Provider>
+                <TSCode>OTHER</TSCode>
+                <PreOrder>1</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>AmazonPay.php</ClassFile>
+                <ClassName>AmazonPay</ClassName>
+                <TemplateFile>template/dummy.tpl</TemplateFile>
+                <AdditionalTemplateFile>template/dummy.tpl</AdditionalTemplateFile>
+                <MethodLanguage iso="GER">
+                    <Name>Amazon Pay</Name>
+                    <ChargeName>Amazon Pay</ChargeName>
+                    <InfoText><![CDATA[Zahlen Sie jetzt mit den Zahlinformationen aus Ihrem Amazon-Konto.]]></InfoText>
+                </MethodLanguage>
+                <MethodLanguage iso="ENG">
+                    <Name>Amazon Pay</Name>
+                    <ChargeName>Amazon Pay</ChargeName>
+                    <InfoText><![CDATA[Pay now using the payment information stored in your Amazon account.]]></InfoText>
+                </MethodLanguage>
+                <MethodLanguage iso="FRE">
+                    <Name>Amazon Pay</Name>
+                    <ChargeName>Amazon Pay</ChargeName>
+                    <InfoText><![CDATA[Le service Amazon Pay utilise les informations de paiement enregistrées sur votre compte Amazon.]]></InfoText>
+                </MethodLanguage>
+                <MethodLanguage iso="ITA">
+                    <Name>Amazon Pay</Name>
+                    <ChargeName>Amazon Pay</ChargeName>
+                    <InfoText><![CDATA[Amazon Pay utilizza le informazioni di pagamento memorizzate nel tuo account Amazon.]]></InfoText>
+                </MethodLanguage>
+                <MethodLanguage iso="SPA">
+                    <Name>Amazon Pay</Name>
+                    <ChargeName>Amazon Pay</ChargeName>
+                    <InfoText><![CDATA[Amazon Pay utiliza la información de pago almacenada en tu cuenta de Amazon.]]></InfoText>
+                </MethodLanguage>
+            </Method>
+        </PaymentMethod>
+        <Emailtemplate>
+            <Template>
+                <Name>Amazon Pay Soft-Decline</Name>
+                <Description>Wird dem Kunden bei einem Soft-Decline (Ablehnung der gew&#xE4;hlten Zahlungsart durch Amazon) beim Bezahlen mit Amazon zugesendet.</Description>
+                <Type>text/html</Type>
+                <ModulId>amazonpaysoftdecline</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>0</AGB>
+                <WRB>0</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Bitte aktualisieren Sie Ihre Zahlungsinformationen</Subject>
+                    <ContentHtml><![CDATA[
+<p>Sehr geehrter Kunde,</p>
+<br />
+<p>Vielen Dank für Ihre Bestellung {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} bei {$Einstellungen.global.global_shopname}.</p>
+<p>Leider wurde Ihre Bezahlung bei Amazon Pay abgelehnt.</p>
+<p>Sie können unter <a href="https://payments.amazon.de/overview">https://payments.amazon.de/overview</a> die Zahlungsinformationen für Ihre Bestellung
+aktualisieren, indem Sie eine andere Zahlungsweise auswählen oder eine neue Zahlungsweise angeben.</p>
+<p>Mit der neuen Zahlungsweise wird dann ein Zahlungsversuch vorgenommen, und Sie erhalten eine Bestätigungsmail.</p>
+<br />
+<p>Mit freundlichem Gruß</p>
+<br />
+<p>Ihr Team von {$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Sehr geehrter Kunde,
+
+Vielen Dank für Ihre Bestellung {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} bei {$Einstellungen.global.global_shopname}.
+Leider wurde Ihre Bezahlung bei Amazon Pay abgelehnt.
+Sie können unter https://payments.amazon.de/overview die Zahlungsinformationen für Ihre Bestellung
+aktualisieren, indem Sie eine andere Zahlungsweise auswählen oder eine neue Zahlungsweise angeben.
+Mit der neuen Zahlungsweise wird dann ein Zahlungsversuch vorgenommen, und Sie erhalten eine Bestätigungsmail.
+
+Mit freundlichem Gruß
+
+Ihr Team von {$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Please update your payment information</Subject>
+                    <ContentHtml><![CDATA[
+<p>Valued customer,</p>
+<br />
+<p>Thank you very much for your order {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} at {$Einstellungen.global.global_shopname}.</p>
+<p>Unfortunately, Amazon Pay declined your payment.</p>
+<p>Please go to <a href="https://payments.amazon.co.uk/overview">https://payments.amazon.co.uk/overview</a> and update the payment information
+for your order. Afterwards we will automatically request payment again from Amazon Pay
+and you will receive a confirmation mail.</p>
+<br />
+<p>Kind regards,</p>
+<p>{$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Valued customer,
+
+Thank you very much for your order {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} at {$Einstellungen.global.global_shopname}.
+Unfortunately, Amazon Pay declined your payment.
+Please go to https://payments.amazon.co.uk/overview and update the payment information
+for your order. Afterwards we will automatically request payment again from Amazon Pay
+and you will receive a confirmation mail.
+
+Kind regards,
+{$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+
+            <Template>
+                <Name>Amazon Pay Hard-Decline</Name>
+                <Description>Wird dem Kunden bei einem Hard-Decline (komplette Ablehnung durch Amazon) beim Bezahlen mit Amazon zugesendet.</Description>
+                <Type>text/html</Type>
+                <ModulId>amazonpayharddecline</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>0</AGB>
+                <WRB>0</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Bitte kontaktieren Sie uns wegen Ihrer Bestellung</Subject>
+                    <ContentHtml><![CDATA[
+<p>Sehr geehrter Kunde,</p>
+<br />
+<p>Vielen Dank für Ihre Bestellung bei {$Einstellungen.global.global_shopname}.</p>
+<p>Leider wurde die Zahlung zu Ihrer Bestellung {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} in unserem Onlineshop {$Einstellungen.global.global_shopname} von Amazon Pay zurückgewiesen.</p>
+<p>Bitte kontaktieren Sie uns.</p>
+<br />
+<p>Mit freundlichem Gruß</p>
+<br />
+<p>Ihr Team von {$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Sehr geehrter Kunde,
+
+Vielen Dank für Ihre Bestellung bei {$Einstellungen.global.global_shopname}.
+Leider wurde die Zahlung zu Ihrer Bestellung {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} in unserem Onlineshop {$Einstellungen.global.global_shopname} von Amazon Pay zurückgewiesen.
+Bitte kontaktieren Sie uns.
+
+Mit freundlichem Gruß
+
+Ihr Team von {$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Please contact us about your order</Subject>
+                    <ContentHtml><![CDATA[
+<p>Valued customer,</p>
+<br />
+<p>Unfortunately, Amazon Pay declined the payment for your order {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} in our online shop {$Einstellungen.global.global_shopname}.</p>
+<p>Please contact us.</p>
+<br />
+<p>Kind regards,</p>
+<p>{$Einstellungen.global.global_shopname}</p>
+                     ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Valued customer,
+
+Unfortunately, Amazon Pay declined the payment for your order {if isset($oPluginMail, $oPluginMail->order, $oPluginMail->order->cBestellNr)}{$oPluginMail->order->cBestellNr}{/if} in our online shop {$Einstellungen.global.global_shopname}.
+Please contact us.
+
+Kind regards,
+{$Einstellungen.global.global_shopname}
+                     ]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+            <Template>
+                <Name>Amazon Pay Info</Name>
+                <Description>Wird dem H&#xE4;ndler bei Problemen mit Bestellungen zugesendet.</Description>
+                <Type>text/html</Type>
+                <ModulId>amazonpayinfo</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>0</AGB>
+                <WRB>0</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Amazon Pay: Ein Problem erfordert Ihr Eingreifen</Subject>
+                    <ContentHtml><![CDATA[
+<p>Sehr geehrter Händler,</p>
+<br />
+<p>Es gab ein Problem mit der Bestellung {$oPluginMail->cBestellNr} ({$oPluginMail->chargePermissionId}).</p>
+<br />
+<p>{$oPluginMail->message}</p>
+<br />
+<p>- automatisch generierte Mail -</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Sehr geehrter Händler,
+
+Es gab ein Problem mit der Bestellung {$oPluginMail->cBestellNr} ({$oPluginMail->chargePermissionId}).
+
+{$oPluginMail->message}
+
+- automatisch generierte Mail -
+                    ]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Amazon Pay: A problem requires your attention</Subject>
+                    <ContentHtml><![CDATA[
+<p>Valued merchant,</p>
+<br />
+<p>There was a problem with order {$oPluginMail->cBestellNr} ({$oPluginMail->chargePermissionId}).
+<br />
+<p>{$oPluginMail->message}</p>
+<br />
+<p>- automatically generated mail -</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Valued merchant,
+
+There was a problem with order {$oPluginMail->cBestellNr} ({$oPluginMail->chargePermissionId}).
+
+{$oPluginMail->message}
+
+- automatically generated mail -
+                    ]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+            <Template>
+                <Name>Amazon Pay Abo Reminder</Name>
+                <Description>Wird dem Kunden vor Erneuerung der Abo-Bestellung zugesendet.</Description>
+                <Type>text/html</Type>
+                <ModulId>amazonpaysubreminder</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>1</AGB>
+                <WRB>1</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Ankuendigung: Wiederkehrende Bestellung wird bald ausgeloest</Subject>
+                    <ContentHtml><![CDATA[
+<p>Sehr geehrter Kunde,</p>
+<br />
+<p>In Kürze wird Ihre Abo-Bestellung erneut ausgelöst. Wenn Sie Ihre aktiven Abo-Bestellungen bei uns einsehen möchten oder Ihre Abos bearbeiten möchten, loggen Sie sich bitte in Ihr Kundenkonto bei uns oder bei Amazon ein.</p>
+<br />
+<p>Mit freundlichem Gruß,</p>
+<br />
+<p>Ihr Team von {$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Sehr geehrter Kunde,
+
+In Kürze wird Ihre Abo-Bestellung erneut ausgelöst. Wenn Sie Ihre aktiven Abo-Bestellungen bei uns einsehen möchten oder Ihre Abos bearbeiten möchten, loggen Sie sich bitte in Ihr Kundenkonto bei uns oder bei Amazon ein.
+
+Mit freundlichem Gruß
+
+Ihr Team von {$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Recurring order will be created soon</Subject>
+                    <ContentHtml><![CDATA[
+<p>Valued customer,</p>
+<br />
+<p>Your recurring order with us will be created soon. If you want to view or change your active subscriptions with us, please log in into your customer account or check your Amazon account.</p>
+<br />
+<p>Kind regards,</p>
+<p>{$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Valued customer,
+
+Your recurring order with us will be created soon. If you want to review or change your active subscriptions with us, please log in into your customer account or check your Amazon account.
+
+Kind regards,
+{$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+            <Template>
+                <Name>Amazon Pay Abo Start</Name>
+                <Description>Wird dem Kunden bei Beginn eines Abos zugesendet.</Description>
+                <Type>text/html</Type>
+                <ModulId>amazonpaysubstarted</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>0</AGB>
+                <WRB>0</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Wiederkehrende Bestellung gestartet</Subject>
+                    <ContentHtml><![CDATA[
+<p>Sehr geehrter Kunde,</p>
+<br />
+<p>Ihre bei uns aufgegebene und mit Amazon Pay bezahlte Bestellung mit der Bestellnummer {$oPluginMail->order->cBestellNr} wurde als Abo-Bestellung gestartet und wird zukünftig in wiederkehrenden Intervallen automatisch ausgeführt. Wenn Sie Ihre Abo-Bestellungen bei uns einsehen möchten oder Ihre Abos bearbeiten möchten, loggen Sie sich bitte in Ihr Kundenkonto bei uns oder bei Amazon ein.</p>
+<br />
+<p>Mit freundlichem Gruß,</p>
+<br />
+<p>Ihr Team von {$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Sehr geehrter Kunde,
+
+Ihre bei uns kürzlich aufgegebene und mit Amazon Pay bezahlte Bestellung mit der Bestellnummer {$oPluginMail->order->cBestellNr} wurde als Abo-Bestellung gestartet und wird zukünftig in wiederkehrenden Intervallen automatisch ausgeführt. Wenn Sie Ihre Abo-Bestellungen bei uns einsehen möchten oder Ihre Abos bearbeiten möchten, loggen Sie sich bitte in Ihr Kundenkonto bei uns oder bei Amazon ein.
+
+Mit freundlichem Gruß
+
+Ihr Team von {$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Recurring order started</Subject>
+                    <ContentHtml><![CDATA[
+<p>Valued customer,</p>
+<br />
+<p>Your recent order {$oPluginMail->order->cBestellNr} with us that was paid with Amazon Pay was started as a recurring order and will be renewed in recurring intervals in the future. If you want to view or change your subscriptions with us, please log in into your customer account or check your Amazon account.</p>
+<br />
+<p>Kind regards,</p>
+<p>{$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Valued customer,
+
+Your recent order {$oPluginMail->order->cBestellNr} with us that was paid with Amazon Pay was started as a recurring order and will be renewed in recurring intervals in the future. If you want to review or change your subscriptions with us, please log in into your customer account or check your Amazon account.
+
+Kind regards,
+{$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+            <Template>
+                <Name>Amazon Pay Abo Ende</Name>
+                <Description>Wird dem Kunden bei Beendingung eines Abos zugesendet.</Description>
+                <Type>text/html</Type>
+                <ModulId>amazonpaysubstopped</ModulId>
+                <Active>Y</Active>
+                <AKZ>0</AKZ>
+                <AGB>0</AGB>
+                <WRB>0</WRB>
+                <TemplateLanguage iso="GER">
+                    <Subject>Wiederkehrende Bestellung beendet</Subject>
+                    <ContentHtml><![CDATA[
+<p>Sehr geehrter Kunde,</p>
+<br />
+<p>Ihre bei uns vorhandene Abo-Bestellung wurde beendet. Wenn Sie Ihre Abo-Bestellungen bei uns einsehen möchten oder Ihre Abos bearbeiten möchten, loggen Sie sich bitte in Ihr Kundenkonto bei uns oder bei Amazon ein.</p>
+<br />
+<p>Mit freundlichem Gruß,</p>
+<br />
+<p>Ihr Team von {$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Sehr geehrter Kunde,
+
+Ihre bei uns vorhandene Abo-Bestellung wurde beendet. Wenn Sie Ihre Abo-Bestellungen bei uns einsehen möchten oder Ihre Abos bearbeiten möchten, loggen Sie sich bitte in Ihr Kundenkonto bei uns oder bei Amazon ein.
+
+Mit freundlichem Gruß
+
+Ihr Team von {$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+                <TemplateLanguage iso="ENG">
+                    <Subject>Recurring order stopped</Subject>
+                    <ContentHtml><![CDATA[
+<p>Valued customer,</p>
+<br />
+<p>Your recurring order with us was stopped. If you want to view or change your subscriptions with us, please log in into your customer account or check your Amazon account.</p>
+<br />
+<p>Kind regards,</p>
+<p>{$Einstellungen.global.global_shopname}</p>
+                    ]]></ContentHtml>
+                    <ContentText><![CDATA[
+Valued customer,
+
+Your recurring order with us was stopped. If you want to review or change your subscriptions with us, please log in into your customer account or check your Amazon account.
+
+Kind regards,
+{$Einstellungen.global.global_shopname}
+                    ]]></ContentText>
+                </TemplateLanguage>
+            </Template>
+        </Emailtemplate>
+    </Install>
+<ExsID>c477df88-3226-4578-a600-6485fbcc1254</ExsID></jtlshopplugin>

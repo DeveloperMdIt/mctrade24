@@ -1,0 +1,133 @@
+<?php
+namespace Plugin\admorris_pro;
+
+use JTL\Shop;
+use Plugin\admorris_pro\Utils\TypeConverter;
+
+/**
+ * IO Functions for Sale Coundowns
+ */
+
+
+
+function admGetSaleCountdownList($req) {
+  $response = [];
+  $response['error'] = false;
+
+  try {
+  $saleCountdowns = Shop::Container()->getDB()->getObjects('SELECT * FROM xplugin_admorris_pro_sale_countdown');
+
+  if (count($saleCountdowns) > 0) {
+    foreach ($saleCountdowns as $sale) {
+      $sale->name = htmlspecialchars_decode($sale->name, ENT_QUOTES);
+      $sale->active = TypeConverter::convertIntegerToBool($sale->active);
+      $sale->id = (int) $sale->id;
+
+      $sale->showFromDate = TypeConverter::dateTimeStringToIso($sale->showFromDate);
+      $sale->startDate = TypeConverter::dateTimeStringToIso($sale->startDate);
+      $sale->endDate = TypeConverter::dateTimeStringToIso($sale->endDate);
+
+      $texts = Shop::Container()->getDB()->query('SELECT * FROM xplugin_admorris_pro_sale_countdown_text WHERE saleCountdownId=' . (int)$sale->id, 2);
+      if ($texts) {
+
+        $bannerText = new \stdClass();
+        foreach ($texts as $textLang) {
+          $langId = $textLang->languageId;
+          $bannerText->$langId = htmlspecialchars_decode($textLang->bannerText, ENT_QUOTES);
+          $sale->bannerText = $bannerText;
+        }
+      }
+
+    }
+    $response['data'] = $saleCountdowns;
+    
+  } else {
+    $response['data'] = [];
+  }
+  } catch (\Throwable $th) {
+    $response['error'] = true;
+
+  }
+
+  
+
+  header('Content-type: application/json');
+  return(json_encode($response));
+}
+
+function admSaveSaleCountdown($req) {
+  $response = [];
+  $response['error'] = false;
+
+  $data = $req['data'];
+  
+  $bannerText = $data['bannerText'];
+  unset($data['bannerText']);
+  $data['name'] = TypeConverter::encode_with_specialchars($data['name']);
+  // $data['id'] = (int)$data['id'];
+
+  $data['showFromDate'] = date('Y-m-d H:i:s', strtotime($data["showFromDate"]));
+  $data['startDate'] = date('Y-m-d H:i:s', strtotime($data["startDate"]));
+  $data['endDate'] = date('Y-m-d H:i:s', strtotime($data["endDate"]));
+  $data = (object) $data;
+
+
+
+  if (isset($data->id)) {
+    /** update */
+    $save = Shop::Container()->getDB()->update('xplugin_admorris_pro_sale_countdown', 'id', (int)$data->id, $data);
+    
+    if ($save < 0) {
+      $response['error'] = true;
+    }
+
+    saveBannerText($bannerText, $data->id);
+
+  } else {
+    /** new */
+    $id = Shop::Container()->getDB()->insert('xplugin_admorris_pro_sale_countdown', $data);
+    
+    if ($id) {
+      saveBannerText($bannerText, $id, true);
+      $response['id'] = (int) $id;
+    } else {
+      $response['error'] = true;
+    }
+  }  
+
+  header('Content-type: application/json');
+  return(json_encode($response));
+
+
+
+  
+}
+
+function saveBannerText($bannerText, $id, $new = false) {
+  if (!$new) {
+    /** delete previous db entries */
+    Shop::Container()->getDB()->delete('xplugin_admorris_pro_sale_countdown_text', 'saleCountdownId', (int)$id);
+  }
+  foreach ($bannerText as $key => $value) {
+    $textLang = new \stdClass();
+    $textLang->saleCountdownId = (int)$id;
+    $textLang->languageId = $key;
+    $textLang->bannerText = TypeConverter::encode_with_specialchars($value);
+
+    Shop::Container()->getDB()->insert('xplugin_admorris_pro_sale_countdown_text', $textLang);
+
+  }
+}
+
+function admDeleteSaleCountdown($req) {
+  $response = [];
+  $response['error'] = false;
+
+  $id = $req['id'];
+  
+  Shop::Container()->getDB()->delete('xplugin_admorris_pro_sale_countdown', 'id', (int)$id);
+  Shop::Container()->getDB()->delete('xplugin_admorris_pro_sale_countdown_text', 'saleCountdownId', (int)$id);
+
+  header('Content-type: application/json');
+  return(json_encode($response));
+}

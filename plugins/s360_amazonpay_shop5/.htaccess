@@ -1,0 +1,10 @@
+# This file blocks access to any files (in addition to what is blocked by the plugins/.htaccess) file
+<FilesMatch ".+\.(php|xml|lock|json|tpl|mo|po)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>

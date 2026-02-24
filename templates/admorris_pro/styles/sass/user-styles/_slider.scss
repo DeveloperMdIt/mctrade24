@@ -1,0 +1,25 @@
+.am-slide__content-title--animated{
+    font-size: 20px !important;
+    font-weight: 400;
+    text-transform: uppercase;
+    @media(max-width:$screen-xs-max){
+        font-size: 16px !important;
+    }
+}
+.am-slide__content-text--animated{
+    font-size: 50px !important;
+    text-transform: uppercase;
+    font-family: $headings-font-family;
+    @media(max-width:$screen-xs-max){
+        font-size: 28px !important;
+    }
+}
+.am-slide__content-button{
+    margin-top: 0 !important;
+}
+.am-slide__content-button--animated{
+    border:none !important;
+    &:hover, &:focus, &:active{
+        background-color: transparent !important;
+    }
+}

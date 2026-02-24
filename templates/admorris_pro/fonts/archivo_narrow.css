@@ -1,0 +1,60 @@
+/* archivo-narrow-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Archivo Narrow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Archivo Narrow Regular'), local('ArchivoNarrow-Regular'),
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* archivo-narrow-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Archivo Narrow';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Archivo Narrow Italic'), local('ArchivoNarrow-Italic'),
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* archivo-narrow-500 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Archivo Narrow';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Archivo Narrow Medium'), local('ArchivoNarrow-Medium'),
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* archivo-narrow-500italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Archivo Narrow';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Archivo Narrow Medium Italic'), local('ArchivoNarrow-MediumItalic'),
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-500italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-500italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* archivo-narrow-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Archivo Narrow';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Archivo Narrow Bold'), local('ArchivoNarrow-Bold'),
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* archivo-narrow-700italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Archivo Narrow';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Archivo Narrow Bold Italic'), local('ArchivoNarrow-BoldItalic'),
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/archivo_narrow/archivo-narrow-v8-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

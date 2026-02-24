@@ -1,0 +1,86 @@
+msgid "compile theme"
+msgstr "Theme kompilieren"
+
+msgid "--- select theme ---"
+msgstr "--- Theme auswählen ---"
+
+msgid "reset file to default"
+msgstr "Datei auf Original zurücksetzen"
+
+msgid "save file"
+msgstr "Datei speichern"
+
+msgid "compile file"
+msgstr "Datei kompilieren"
+
+msgid "compile JavaScript"
+msgstr "JavaScript kompilieren"
+
+msgid "show all themes"
+msgstr "Alle Themes anzeigen"
+
+msgid "compileSuccessMsg"
+msgstr "Theme erfolgreich nach %s kompiliert."
+
+msgid "Theme directory %s has no write permissions."
+msgstr "Theme-Ordner %s hat keine Schreibrechte."
+
+msgid "File %s could not be saved."
+msgstr "Fehler beim Speichern der Datei %s."
+
+msgid "Backup %s could not be created."
+msgstr "Fehler beim Erstellen des Backups %s."
+
+msgid "Input file missing."
+msgstr "Datei nicht angegeben."
+
+msgid "Invalid input file: %s."
+msgstr "Ungültige Datei: %s."
+
+msgid "File saved successfully."
+msgstr "Datei wurde erfolgreich gespeichert."
+
+msgid "Could not copy file (theme directory write permissions?)"
+msgstr "Fehler beim Kopieren der Datei (Schreibrechte Theme-Ordner?)"
+
+msgid "Not allowed to open file %s - %s"
+msgstr "Datei nicht erlaubt: %s - %s"
+
+msgid "warningCompile"
+msgstr "<b>Achtung!</b> Beim Kompilieren wird die Datei \"bootstrap.css\" in Ihrem Theme-Ordner überschrieben.<br>Bitte legen Sie daher eine Sicherungs-Kopie an!"
+
+msgid "actionCompile"
+msgstr "Jetzt kompilieren"
+
+msgid "warningReset"
+msgstr "Sind Sie sicher, dass Sie diese Datei wieder auf den Standard zurücksetzen möchten?<br><b>Ihre eigenen Änderungen gehen dadurch verloren!</b>"
+
+msgid "actionReset"
+msgstr "Zurücksetzen"
+
+msgid "JavaScript compiled successfully."
+msgstr "JavaScript wurde kompiliert."
+
+msgid "Could not delete file."
+msgstr "Fehler beim Löschen der Datei."
+
+msgid "File not found."
+msgstr "Datei nicht gefunden."
+
+msgid "Original not found or file was not edited yet."
+msgstr "Original nicht gefunden oder Datei noch nicht bearbeitet."
+
+msgid "Theme directory %s could not be found."
+msgstr "Theme-Ordner %s wurde nicht gefunden."
+
+msgid "CSRF token missing. Session timeout?"
+msgstr "CSRF-Token fehlt. Session timeout?"
+
+msgid "Method not found."
+msgstr "Methode nicht gefunden."
+
+msgid "Unauthorized."
+msgstr "Nicht erlaubt."
+
+msgid "No less/sass file found in %s for theme %s."
+msgstr "Keine less/sass-Datei in %s für Theme %s gefunden."

@@ -1,0 +1,49 @@
+.chat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  color: #fff;
+  right: 0;
+  bottom: 0;
+  margin: 20px 20px;
+  font-size: 36px;
+  border: 0;
+  text-align: center;
+  box-shadow: 0 2px 11px -1px rgba(0, 0, 0, 0.2);
+  z-index: 100000;
+}
+.chat-button:hover,
+.chat-button:active,
+.chat-button:focus {
+  color: white;
+  text-decoration: none;
+}
+.chat-icon svg {
+  width: 36px;
+  height: 36px;
+}
+.move-left-one {
+  right: 70px;
+}
+.whatsapp_chat_mobile {
+  display: none;
+}
+.chat-button--whatsapp {
+  background-color: #03e676;
+}
+.chat-button--whatsapp:hover,
+.chat-button--whatsapp:focus {
+  background-color: #02b45c;
+}
+@media only screen and (max-device-width: 780px) {
+  .whatsapp_chat_desktop {
+    display: none;
+  }
+  .whatsapp_chat_mobile {
+    display: block;
+  }
+}

@@ -1,0 +1,14 @@
+// INFO: this comment is replaced with the custom variables from the plugin
+//#customVariables#
+
+// Variables
+/* variables-plugin: user styles editor variables */
+@import '../user-styles/user-variables';
+@import 'border-radius';
+@import 'mixins';
+@import 'variables';
+@import 'variables-custom';
+@import '../vendor/bootstrap/functions';
+@import '../vendor/bootstrap/variables';
+@import 'legacy-variables';
+@import '../vendor/bootstrap/mixins';

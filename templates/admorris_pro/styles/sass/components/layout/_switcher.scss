@@ -1,0 +1,34 @@
+.switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--switcher-gap, 1rem);
+}
+
+.switcher > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--min-width, 40rem) - 100%) * 999);
+}
+
+//   .switcher > :nth-last-child(n+ 5),
+//   .switcher > :nth-last-child(n+ 5) ~ * {
+//     flex-basis: 100%;
+//   }
+
+/**
+ * http://www.heydonworks.com/article/the-flexbox-holy-albatross
+ * https://codepen.io/heydon/pen/JwwZaX
+ */
+
+.am-flexgrid {
+    display: flex;
+    flex-wrap: wrap;
+    --min-width: 40rem;
+    --margin: 1rem;
+    --modifier: calc(var(--min-width) - 100%);
+    gap: var(--margin, 1rem);
+}
+
+.am-flexgrid > * {
+    flex-grow: 1;
+    flex-basis: calc(var(--modifier) * 999);
+}

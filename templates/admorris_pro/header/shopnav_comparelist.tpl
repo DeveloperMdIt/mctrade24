@@ -1,0 +1,1 @@
+{* deprecated - moved to layout/header_shop_nav_compare.tpl *}

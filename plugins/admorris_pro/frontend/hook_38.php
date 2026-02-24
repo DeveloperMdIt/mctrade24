@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro; use JTL\Shop; if (!($oPlugin->getConfig()->getValue("\x61\x64\155\x6f\x72\x72\151\163\137\160\x72\157\x5f\x6d\141\x72\153\145\x74\x69\x6e\x67\137\155\141\x69\x6c\143\x68\151\x6d\x70\137\x61\143\x74\151\x76\x65") === "\x59")) { goto GR5fz; } require_once $oPlugin->getPaths()->getFrontendPath() . "\x6d\x61\151\x6c\143\x68\x69\x6d\160\57\143\157\156\x6e\145\x63\x74\151\x6f\x6e\56\x70\150\x70"; if (!(isset($args_arr["\157\x4e\145\167\163\154\x65\164\164\145\x72\105\155\160\146\141\x65\x6e\x67\145\162"]) && is_object($args_arr["\x6f\x4e\x65\167\x73\154\x65\x74\164\x65\162\x45\x6d\160\146\141\145\x6e\147\145\x72"]))) { goto CyonN; } $oNewsletterEmpfaenger = $args_arr["\157\x4e\x65\x77\x73\154\145\164\164\x65\162\105\x6d\160\x66\141\145\156\x67\x65\162"]; $subscription = rudr_mailchimp_subscribe_unsubscribe($oNewsletterEmpfaenger->cEmail, "\x75\156\x73\165\x62\x73\143\x72\x69\x62\x65\x64", '', array("\106\x4e\x41\x4d\105" => $oNewsletterEmpfaenger->cVorname, "\114\x4e\101\115\105" => $oNewsletterEmpfaenger->cNachname)); CyonN: GR5fz:

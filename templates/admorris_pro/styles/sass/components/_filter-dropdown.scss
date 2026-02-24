@@ -1,0 +1,69 @@
+/* Filter Dropdown
+ * Used in: 
+ * productlist/result_options.tpl 
+ * blog/overview.tpl
+ */
+
+.filter-dropdown {
+    .badge {
+        background-color: theme-color('primary');
+    }
+
+    @media (max-width: $screen-xs-max) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.bootstrap-select {
+    box-shadow: none;
+    background-color: transparent;
+
+    &.open button,
+    button:hover {
+        color: $link-hover-color;
+        transition:
+            border-color ease-in-out 0.15s,
+            box-shadow ease-in-out 0.15s;
+    }
+
+    &.open button {
+        border-bottom-color: theme-color('primary');
+    }
+
+    &.bootstrap-select.btn-group .dropdown-menu {
+        margin-top: 0;
+    }
+}
+
+.filter-dropdown__button {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    text-transform: uppercase;
+    box-shadow: none;
+    color: $text-color;
+    font-weight: bold;
+
+    &.filter-dropdown__button {
+        border-radius: 0;
+    }
+
+    &:focus {
+        box-shadow: none;
+        border-top-color: transparent;
+        border-bottom: 2px solid theme-color('primary');
+    }
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+        text-decoration: none;
+        // color: $text-color;
+    }
+
+    & + .dropdown-menu {
+        min-width: 100%;
+    }
+}

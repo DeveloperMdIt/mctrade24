@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro; use AdmPro\Illuminate\Database\Eloquent\Model; use Plugin\admorris_pro\Models\ThreeSixtyImageSettings; use Plugin\admorris_pro\Models\EnhancedEcommerceTrackingModel; use Plugin\admorris_pro\Models\RewardPointsSettings; final class InitialDataGenerator { use LoggerTrait; private array $modelArray = [ThreeSixtyImageSettings::class, EnhancedEcommerceTrackingModel::class, RewardPointsSettings::class]; protected $loggerPrefix = "\111\x6e\151\x74\151\141\x6c\104\x61\x74\x61\x47\145\x6e\x65\162\x61\164\x6f\x72"; public function __construct() { $this->initLogger(); $this->log->debug("\111\x6e\x69\x74\151\141\154\151\172\x69\156\x67\x20\144\145\x66\x61\165\154\164\40\x73\x65\x74\x74\151\x6e\147\x73"); foreach ($this->modelArray as $model) { try { if (!$model::all()->isNotEmpty()) { goto E_Lsz; } goto DKh1m; E_Lsz: $settings = new $model(); $settings->save(); } catch (\Throwable $th) { $this->log->error($th); } DKh1m: } U40qN: } }

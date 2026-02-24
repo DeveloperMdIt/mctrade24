@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ declare (strict_types=1); namespace Plugin\admorris_pro_installer; use JTL\Events\Dispatcher; use JTL\Plugin\Bootstrapper; use JTL\Smarty\JTLSmarty; use Plugin\admorris_pro_installer\Traits\PrettyContextLoggerTrait; use Plugin\admorris_pro_installer\Service\Installer; class Bootstrap extends Bootstrapper { use PrettyContextLoggerTrait; private Installer $installer; public function boot($dispatcher) { $this->installer = new Installer($this->getPlugin()); $dispatcher->hookInto(\HOOK_IO_HANDLE_REQUEST_ADMIN, function (array $args) { try { $io = $args["\x69\157"]; $io->register("\141\x64\155\120\162\x6f\111\156\163\x74\x61\154\x6c\145\162", $this->installer->request(...)); } catch (\Throwable $th) { $this->log->error($th); } }); } public function renderAdminMenuTab(string $tabName, int $menuID, \JTL\Smarty\JTLSmarty $smarty) : string { return $this->installer->renderAdminMenuTab($tabName, $menuID, $smarty); } public function installed() { parent::installed(); $backendUrl = $this->getPlugin()->getPaths()->getBackendURL(); header("\114\157\143\x61\x74\x69\x6f\x6e\x3a\40{$backendUrl}"); exit; } }

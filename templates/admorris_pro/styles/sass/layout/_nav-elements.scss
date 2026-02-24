@@ -1,0 +1,243 @@
+@use 'sass:math';
+
+.header__logo {
+    display: flex;
+    align-items: center;
+
+    // if a second inverted logo is uploaded in the template-settings
+    &.header__logo--invert {
+        .header__logo-img {
+            display: block;
+        }
+        .header__inverted-logo-img {
+            display: none;
+        }
+
+        .header-wrapper.header-wrapper--overlay .header__nav-wrapper:not(.sticky) & {
+            .header__logo-img {
+                display: none;
+            }
+            .header__inverted-logo-img {
+                display: block;
+            }
+        }
+    }
+}
+
+.header__text-box {
+    // text-transform: uppercase;
+    font-size: $header-text-box-font-size;
+    padding: 10px 0;
+}
+
+.header__social-icons {
+    display: flex;
+    white-space: nowrap;
+
+    .btn-social {
+        display: block;
+        color: inherit;
+        padding: 7px 12px;
+    }
+
+    .header-row__col--3 & {
+        text-align: right;
+    }
+    .header-row__col--2 & {
+        text-align: center;
+    }
+
+    .offcanvas-nav__element & {
+        flex-wrap: wrap;
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+}
+
+.header__desktop-nav .header__contact-item .nav-link {
+    text-transform: none !important;
+    padding: 0;
+}
+
+.inline-separator-list {
+    margin-bottom: 0;
+    padding: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    // white-space: nowrap;
+
+    li {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        // color: inherit;
+
+        &::after {
+            content: '';
+            background-color: currentColor;
+            width: 2px;
+            height: 1.1em;
+            margin: 0 0.5em;
+        }
+
+        &:last-child {
+            // margin: 0;
+            &::after {
+                content: none;
+                margin: 0;
+            }
+        }
+    }
+
+    a {
+        display: inline-block;
+    }
+}
+
+.header__cms-pages {
+    font-size: $header-cms-pages-font-size;
+    padding: 10px 0;
+    a:link,
+    a:hover,
+    a:visited {
+        color: inherit;
+    }
+}
+
+.language {
+    font-size: $header-language-selector-font-size;
+}
+
+.header__nav {
+    /* the .inline-seperator-list shouldn't wrap in the header layouts, 
+    only in the offcanvas navigation */
+    .language-selector--inline {
+        flex-wrap: nowrap;
+    }
+}
+
+.language-selector--inline .nav-link {
+    padding: 3px 0;
+    &,
+    &:link,
+    &:hover,
+    &:visited {
+        color: inherit;
+    }
+}
+
+.language-selector--dropdown .nav-link {
+    padding: 10px 1em;
+}
+
+/**
+ * Mobile Nav Elements
+ * ===================
+ */
+
+.header__offcanvas-toggle {
+    border: 0;
+    background-color: transparent;
+    color: var(--header-row-text-color);
+    font-size: 22px;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.mobile-navbar__shopnav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    text-align: right;
+
+    a {
+        padding: 5px 10px;
+    }
+    li {
+        padding: 0;
+        display: inline-block;
+    }
+    li + li {
+        margin-left: 5px;
+    }
+}
+
+.shopnav__link {
+    padding: $nav-link-padding-y $nav-link-padding-x;
+    text-transform: var(--header-row-text-transform);
+
+    .header__mobile-nav & {
+        padding: 0.5rem 0.7rem;
+    }
+
+    .nav &,
+    .header-row__element--shopnav & {
+        position: relative;
+        height: 100%;
+
+        &:link {
+            text-decoration: none;
+        }
+        &:hover,
+        &:focus {
+            background-color: transparent;
+        }
+    }
+}
+
+.dropdown-toggle,
+.shopnav__link {
+    white-space: nowrap;
+}
+
+.megamenu {
+    @media (min-width: $screen-md) {
+        .navbar-nav > li > a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.header-row__col--1 .dropdown-menu.dropdown-menu-right {
+    transform-origin: top left;
+    left: 0;
+    right: auto;
+}
+
+/* Mobile Manufacturer-dropdown */
+.header__manufacturer-dropdown {
+    @media (max-width: 991px) {
+        .navbar-nav & .dropdown-menu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: $dropdown-bg;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        }
+    }
+}
+
+.header__mobile-nav .megamenu {
+    /* Dropdown needs to be full width */
+    position: static;
+}
+
+/* Remove Bootstrap dropdown caret pseudo element when our custom icon is in use */
+.nav-link,
+.dropdown-toggle {
+    &:has(.icon-content:last-child),
+    &.shopnav__link {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.header-row__element.comparelist:has(.nav-item.d-none) {
+    display: none;
+}

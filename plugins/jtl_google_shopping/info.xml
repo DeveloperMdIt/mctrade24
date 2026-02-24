@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<jtlshopplugin>
+	<Name>JTL Exportformat Google Shopping</Name>
+	<Description>Exportformat Google Shopping</Description>
+	<Author>JTL-Software-GmbH</Author>
+	<URL>https://www.jtl-software.de</URL>
+	<PluginID>jtl_google_shopping</PluginID>
+	<XMLVersion>100</XMLVersion>
+	<ShopVersion>5.5.0</ShopVersion>
+	<Version>2.4.1</Version>
+	<CreateDate>2025-06-19</CreateDate>
+	<ExsID>2e0916bd-73a6-4ee5-a2c2-116dbe7b262f</ExsID>
+	<Install>
+		<ExportFormat>
+			<Format>
+				<Name>Google Shopping (Plugin)</Name>
+				<FileName>googleshopping.zip</FileName>
+				<Header></Header>
+				<ContentFile>googleShopping.php</ContentFile>
+				<Encoding>UTF-8noBOM</Encoding>
+				<VarCombiOption>2</VarCombiOption>
+				<OnlyStockGreaterZero>N</OnlyStockGreaterZero>
+				<OnlyPriceGreaterZero>N</OnlyPriceGreaterZero>
+				<OnlyProductsWithDescription>N</OnlyProductsWithDescription>
+				<ShippingCostsDeliveryCountry>DE</ShippingCostsDeliveryCountry>
+				<EncodingQuote>N</EncodingQuote>
+				<UseCache>Y</UseCache>
+				<EncodingDoubleQuote>N</EncodingDoubleQuote>
+				<EncodingSemicolon>N</EncodingSemicolon>
+				<Async>Y</Async>
+			</Format>
+			<Format>
+				<Name>Google Review (Plugin)</Name>
+				<FileName>googlereview.xml</FileName>
+				<Header></Header>
+				<ContentFile>googleReview.php</ContentFile>
+				<Encoding>UTF-8noBOM</Encoding>
+				<VarCombiOption>2</VarCombiOption>
+				<OnlyStockGreaterZero>N</OnlyStockGreaterZero>
+				<OnlyPriceGreaterZero>N</OnlyPriceGreaterZero>
+				<OnlyProductsWithDescription>N</OnlyProductsWithDescription>
+				<ShippingCostsDeliveryCountry>DE</ShippingCostsDeliveryCountry>
+				<EncodingQuote>N</EncodingQuote>
+				<UseCache>Y</UseCache>
+				<EncodingDoubleQuote>N</EncodingDoubleQuote>
+				<EncodingSemicolon>N</EncodingSemicolon>
+				<Async>Y</Async>
+			</Format>
+		</ExportFormat>
+		<Adminmenu>
+			<Customlink sort="4">
+				<Name>Additional Exports</Name>
+			</Customlink>
+			<Customlink sort="2">
+				<Name>Export Attributes</Name>
+			</Customlink>
+			<Customlink sort="3">
+				<Name>Feature Mapping</Name>
+			</Customlink>
+			<Settingslink sort="1">
+				<Name>Settings</Name>
+				<Setting type="selectbox" initialValue="neu" sort="3" conf="Y">
+					<Name>Default product state</Name>
+					<Description>State of product by default</Description>
+					<ValueName>default_product_condition</ValueName>
+					<SelectboxOptions>
+						<Option value="new" sort="1">new</Option>
+						<Option value="used" sort="2">used</Option>
+						<Option value="refurbished" sort="3">refurbished</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="text" initialValue="artikelzustand" sort="4" conf="Y">
+					<Name>Function attribute for Article state</Name>
+					<Description>Name of function attribute in which the article state is specified if it is not the default state</Description>
+					<ValueName>product_condition</ValueName>
+				</Setting>
+				<Setting type="text" initialValue="googlekat" sort="5" conf="Y">
+					<Name>Function attribute for Google category</Name>
+					<Description>Name of function attribute in which the Google category is specified</Description>
+					<ValueName>product_googlecat</ValueName>
+				</Setting>
+				<Setting type="text" initialValue="Webshop" sort="1" conf="Y">
+					<Name>Shop name</Name>
+					<Description>Name of the shop</Description>
+					<ValueName>shopname</ValueName>
+				</Setting>
+				<Setting type="text" initialValue="Shopbeschreibung" sort="2" conf="Y">
+					<Name>Shop description</Name>
+					<Description>Description of the shop</Description>
+					<ValueName>shopbeschreibung</ValueName>
+				</Setting>
+				<Setting type="text" initialValue="20000" sort="6" conf="Y">
+					<Name>Max items</Name>
+					<Description>Maximal count of articles per file</Description>
+					<ValueName>maxItem</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="0" sort="8" conf="Y">
+					<Name>Export article ids of child articles as</Name>
+					<Description>By which scheme article ids of child articles should be exported</Description>
+					<ValueName>ext_artnr_child</ValueName>
+					<SelectboxOptions>
+						<Option value="0" sort="1">cArtNr only</Option>
+						<Option value="1" sort="2">cArtNr_kArtikel</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="selectbox" initialValue="Y" sort="9" conf="Y">
+					<Name>Remove tags?</Name>
+					<Description>Removes HTML tags from product data</Description>
+					<ValueName>strip_tags</ValueName>
+					<SelectboxOptions>
+						<Option value="Y" sort="1">Yes</Option>
+						<Option value="N" sort="2">No</Option>
+					</SelectboxOptions>
+				</Setting>
+			</Settingslink>
+		</Adminmenu>
+		<Locales>
+			<Variable>
+				<VariableLocalized iso="GER">Leider steht zu diesem Artikel keine Beschreibung zur Verfügung.</VariableLocalized>
+				<VariableLocalized iso="ENG">Sorry, but there is no description for this product.</VariableLocalized>
+				<Description>Standard text if no product description exists</Description>
+				<Name>no_product_description_exists</Name>
+			</Variable>
+		</Locales>
+	</Install>
+</jtlshopplugin>

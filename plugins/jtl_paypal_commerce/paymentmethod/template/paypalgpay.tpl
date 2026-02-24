@@ -1,0 +1,1 @@
+TemplateFile GooglePay

@@ -1,0 +1,20 @@
+.table {
+	tbody:first-child tr:first-child td { border-top: 0; }
+}
+
+.table-vertical-middle {
+	th, td { vertical-align: middle; }
+	margin-bottom: 0;
+}
+
+table caption {
+	caption-side: top;
+}
+
+.table-img {
+	img {
+		width: 45px;
+		height: 45px;
+		object-fit: contain;
+	}
+}

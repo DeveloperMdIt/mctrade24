@@ -1,0 +1,81 @@
+#opc {
+  --adm-admin-primary-color: #5362ed;
+  --adm-admin-primary-color-hover: #584ce4;
+  --adm-admin-primary-color-faded: #dde0fb;
+  --adm-admin-primary-gradient: linear-gradient(75deg, var(--adm-admin-primary-color) 0%, #6086e8 100%);
+
+  #configModal .modal-dialog {
+    .modal-header {
+      background: var(--adm-admin-primary-gradient) !important;
+    }
+
+    button.opc-btn-primary {
+      background-color: var(--adm-admin-primary-color);
+      border-color: var(--adm-admin-primary-color);
+
+      &:hover, &:focus, &:active {
+        background-color: var(--adm-admin-primary-color-hover);
+        border-color: var(--adm-admin-primary-color-hover);
+      }
+    }
+
+    button.opc-btn-secondary {
+      color: var(--adm-admin-primary-color);
+      border-color: var(--adm-admin-primary-color);
+
+      &:hover, &:focus, &:active {
+        color: var(--adm-admin-primary-color-hover);
+        border-color: var(--adm-admin-primary-color-hover);
+      }
+    }
+
+    .nav-tabs .nav-item .nav-link.active {
+      border-color: var(--adm-admin-primary-color);
+      color: var(--adm-admin-primary-color);
+    }
+
+    .form-group label {
+      display: block;
+    }
+
+    .checkbox-standalone {
+      background-color: var(--adm-admin-primary-color-faded);
+      border-radius: 5px;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    .color-display, .colorpicker-preset, .colorpicker-range {
+      border: solid 1px #435A6B;
+    }
+
+    .colorpicker-satval, .colorpicker-hue, .colorpicker-alpha, .colorpicker-preset {
+      cursor: pointer;
+    }
+
+    .row-layout-previews .layout-preview > * {
+      background-color: var(--adm-admin-primary-color);
+    }
+
+    .list-group-item {
+      &:hover, &:focus, &:active {
+        color: var(--adm-admin-primary-color);
+      }
+
+      &.active {
+        border: 1px solid var(--adm-admin-primary-color);
+        background-color: var(--adm-admin-primary-color);
+
+        &:hover, &:focus, &:active {
+          color: white;
+          background-color: var(--adm-admin-primary-color-hover);
+          border-color: var(--adm-admin-primary-color-hover);
+        }
+      }
+    }
+  } 
+
+  .row-layout-previews {
+    margin-bottom: 15px;
+  }
+} 

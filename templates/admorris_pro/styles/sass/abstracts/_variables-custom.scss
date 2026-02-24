@@ -1,0 +1,453 @@
+@use 'sass:color';
+
+/**
+* Admorris Custom Variables
+*/
+
+/**
+* Header
+*/
+
+@use 'sass:math';
+@use 'sass:map';
+@use '../vendor/utopia/utopia';
+
+$row-gap: 2rem !default;
+
+$navbar-slider-overlay-color: var(--header-row-text-color) !default;
+$navbar-color: var(--header-row-text-color) !default;
+$navbar-bg: transparent !default;
+$search-input-bg: transparent !default;
+$search-border: true !default;
+
+$header-z-index: 800 !default;
+
+$header-navbar-link-color: black !default; //$tone-base;
+$header-navbar-link-color--inverted: white !default;
+$header-navbar-slider-overlay-link-color: inherit !default; // white;
+// $header-navbar-affix-link-color: $navbar-affix-color; //black;
+
+$header-row-bg-color1: black !default;
+$header-row-bg-color2: white !default;
+$header-row-bg-color3: white !default;
+
+$header-row-bg-color: $header-row-bg-color1, $header-row-bg-color2, $header-row-bg-color3;
+
+$header-row-text-color1: white !default;
+$header-row-text-color2: black !default;
+$header-row-text-color3: black !default;
+
+$header-row-text-color: $header-row-text-color1, $header-row-text-color2, $header-row-text-color3;
+
+$header-row-font-size1: 11px !default;
+$header-row-font-size2: 14px !default;
+$header-row-font-size3: 11px !default;
+
+$header-row-font-size: $header-row-font-size1, $header-row-font-size2, $header-row-font-size3;
+
+$header-row-bg-color-overlay1: $tone-25 !default;
+$header-row-bg-color-overlay2: transparent !default;
+$header-row-bg-color-overlay3: transparent !default;
+
+$header-row-bg-color-overlay: $header-row-bg-color-overlay1, $header-row-bg-color-overlay2,
+    $header-row-bg-color-overlay3;
+
+$header-row-text-color-overlay1: $header-navbar-link-color--inverted !default;
+$header-row-text-color-overlay2: white !default;
+$header-row-text-color-overlay3: white !default;
+
+$header-row-text-color-overlay: $header-row-text-color-overlay1, $header-row-text-color-overlay2,
+    $header-row-text-color-overlay3;
+
+$header-row-text-transform1: none !default;
+$header-row-text-transform2: none !default;
+$header-row-text-transform3: none !default;
+
+$header-row-text-transform: $header-row-text-transform1, $header-row-text-transform2, $header-row-text-transform3;
+
+$header-row-font-weight1: 700 !default;
+$header-row-font-weight2: 700 !default;
+$header-row-font-weight3: 700 !default;
+
+$header-row-font-weight: $header-row-font-weight1, $header-row-font-weight2, $header-row-font-weight3;
+
+$header-row-padding: () !default;
+$header-row-padding: map.merge(
+    (
+        top1: 0px,
+        bottom1: 0px,
+        left1: 0px,
+        right1: 0px,
+        top2: 0px,
+        bottom2: 0px,
+        left2: 0px,
+        right2: 0px,
+        top3: 0px,
+        bottom3: 0px,
+        left3: 0px,
+        right3: 0px,
+    ),
+    $header-row-padding
+);
+
+$header-row-margin: () !default;
+$header-row-margin: map.merge(
+    (
+        top1: 0px,
+        bottom1: 0px,
+        top2: 0px,
+        bottom2: 0px,
+        top3: 0px,
+        bottom3: 0px,
+    ),
+    $header-row-margin
+);
+
+$header-row-border-radius: () !default;
+$header-row-border-radius: map.merge(
+    (
+        top-left1: 0px,
+        top-right1: 0px,
+        bottom-left1: 0px,
+        bottom-right1: 0px,
+        top-left2: 0px,
+        top-right2: 0px,
+        bottom-left2: 0px,
+        bottom-right2: 0px,
+        top-left3: 0px,
+        top-right3: 0px,
+        bottom-left3: 0px,
+        bottom-right3: 0px,
+    ),
+    $header-row-border-radius
+);
+
+$header-row-border: () !default;
+$header-row-border: map.merge(
+    (
+        position1: none,
+        position2: none,
+        position3: none,
+        style1: solid,
+        style2: solid,
+        style3: solid,
+        width1: 0px,
+        width2: 0px,
+        width3: 0px,
+        color1: #404040,
+        color2: #404040,
+        color3: #404040
+    ),
+    $header-row-border
+);
+
+$header-row-bg-color-mobile1: black !default;
+$header-row-bg-color-mobile2: transparent !default;
+$header-row-bg-color-mobile3: transparent !default;
+
+$header-row-bg-color-mobile: $header-row-bg-color-mobile1, $header-row-bg-color-mobile2, $header-row-bg-color-mobile3;
+
+$header-row-text-color-mobile1: white !default;
+$header-row-text-color-mobile2: black !default;
+$header-row-text-color-mobile3: black !default;
+
+$header-row-text-color-mobile: $header-row-text-color-mobile1, $header-row-text-color-mobile2,
+    $header-row-text-color-mobile3;
+
+$header-row-font-size-mobile1: 11px !default;
+$header-row-font-size-mobile2: 14px !default;
+$header-row-font-size-mobile3: 11px !default;
+
+$header-row-font-size-mobile: $header-row-font-size-mobile1, $header-row-font-size-mobile2,
+    $header-row-font-size-mobile3;
+
+$header-row-bg-color-overlay-mobile1: $tone-25 !default;
+$header-row-bg-color-overlay-mobile2: transparent !default;
+$header-row-bg-color-overlay-mobile3: transparent !default;
+
+$header-row-bg-color-overlay-mobile: $header-row-bg-color-overlay-mobile1, $header-row-bg-color-overlay-mobile2,
+    $header-row-bg-color-overlay-mobile3;
+
+$header-row-text-color-overlay-mobile1: $header-navbar-link-color--inverted !default;
+$header-row-text-color-overlay-mobile2: white !default;
+$header-row-text-color-overlay-mobile3: white !default;
+
+$header-row-text-color-overlay-mobile: $header-row-text-color-overlay-mobile1, $header-row-text-color-overlay-mobile2,
+    $header-row-text-color-overlay-mobile3;
+
+$header-row-text-transform-mobile1: none !default;
+$header-row-text-transform-mobile2: none !default;
+$header-row-text-transform-mobile3: none !default;
+
+$header-row-text-transform-mobile: $header-row-text-transform-mobile1, $header-row-text-transform-mobile2,
+    $header-row-text-transform-mobile3;
+
+$header-row-font-weight-mobile1: 700 !default;
+$header-row-font-weight-mobile2: 700 !default;
+$header-row-font-weight-mobile3: 700 !default;
+
+$header-row-font-weight-mobile: $header-row-font-weight-mobile1, $header-row-font-weight-mobile2,
+    $header-row-font-weight-mobile3;
+
+$header-row-padding-mobile: () !default;
+$header-row-padding-mobile: map.merge(
+    (
+        top1: 0px,
+        bottom1: 0px,
+        left1: 0px,
+        right1: 0px,
+        top2: 0px,
+        bottom2: 0px,
+        left2: 0px,
+        right2: 0px,
+        top3: 0px,
+        bottom3: 0px,
+        left3: 0px,
+        right3: 0px,
+    ),
+    $header-row-padding-mobile
+);
+
+$header-row-margin-mobile: () !default;
+$header-row-margin-mobile: map.merge(
+    (
+        top1: 0px,
+        bottom1: 0px,
+        top2: 0px,
+        bottom2: 0px,
+        top3: 0px,
+        bottom3: 0px,
+    ),
+    $header-row-margin-mobile
+);
+
+$header-row-border-radius-mobile: () !default;
+$header-row-border-radius-mobile: map.merge(
+    (
+        top-left1: 0px,
+        top-right1: 0px,
+        bottom-left1: 0px,
+        bottom-right1: 0px,
+        top-left2: 0px,
+        top-right2: 0px,
+        bottom-left2: 0px,
+        bottom-right2: 0px,
+        top-left3: 0px,
+        top-right3: 0px,
+        bottom-left3: 0px,
+        bottom-right3: 0px,
+    ),
+    $header-row-border-radius-mobile
+);
+
+$header-row-border-mobile: () !default;
+$header-row-border-mobile: map.merge(
+    (
+        position1: none,
+        position2: none,
+        position3: none,
+        style1: solid,
+        style2: solid,
+        style3: solid,
+        width1: 0px,
+        width2: 0px,
+        width3: 0px,
+        color1: #404040,
+        color2: #404040,
+        color3: #404040
+    ),
+    $header-row-border-mobile
+);
+
+$header-row-sticky1: false !default;
+$header-row-sticky2: true !default;
+$header-row-sticky3: false !default;
+$header-row-sticky-mobile1: false !default;
+$header-row-sticky-mobile2: true !default;
+$header-row-sticky-mobile3: false !default;
+
+// lists of above header-row-sticky variables
+$header-row-sticky: $header-row-sticky1, $header-row-sticky2, $header-row-sticky3;
+$header-row-sticky-mobile: $header-row-sticky-mobile1, $header-row-sticky-mobile2, $header-row-sticky-mobile3;
+
+$header-row-sticky-bg1: white !default;
+$header-row-sticky-bg2: white !default;
+$header-row-sticky-bg3: white !default;
+$header-row-sticky-bg-mobile1: white !default;
+$header-row-sticky-bg-mobile2: white !default;
+$header-row-sticky-bg-mobile3: white !default;
+$header-row-sticky-color1: black !default;
+$header-row-sticky-color2: black !default;
+$header-row-sticky-color3: black !default;
+$header-row-sticky-color-mobile1: black !default;
+$header-row-sticky-color-mobile2: black !default;
+$header-row-sticky-color-mobile3: black !default;
+
+$header-row-sticky-bg: $header-row-sticky-bg1, $header-row-sticky-bg2, $header-row-sticky-bg3;
+$header-row-sticky-bg-mobile: $header-row-sticky-bg-mobile1, $header-row-sticky-bg-mobile2,
+    $header-row-sticky-bg-mobile3;
+$header-row-sticky-color: $header-row-sticky-color1, $header-row-sticky-color2, $header-row-sticky-color3;
+$header-row-sticky-color-mobile: $header-row-sticky-color-mobile1, $header-row-sticky-color-mobile2,
+    $header-row-sticky-color-mobile3;
+
+$mobile-nav-breakpoint: 1030px !default;
+$mobile-nav-icon-size: 18px !default;
+
+/**
+* Header Elements
+*/
+
+$logo-width-desktop: 100px !default;
+$logo-width-mobile: 100px !default;
+$logo-width-sticky: 100px !default;
+$logo-width-sticky-mobile: 100px !default;
+
+// header shop nav
+$header-shop-nav-color: inherit !default;
+$header-shop-nav-slider-overlay-color: inherit !default; //#D62263;
+$header-shop-nav-affix-color: inherit !default;
+$header-shop-nav-font-size: inherit !default;
+$header-shop-nav-text-transform: uppercase !default;
+$header-shop-nav-font-weight: 500 !default;
+
+$header-search-font-size: inherit !default;
+$header-contact-item-font-size: inherit !default;
+$header-cms-pages-font-size: inherit !default;
+$header-language-selector-font-size: inherit !default;
+$header-text-box-font-size: inherit !default;
+
+/**
+* Megamenu
+*/
+
+$megamenu-font-size: inherit !default; //undefined;
+$megamenu-font-weight: inherit !default;
+$megamenu-text-transform: inherit !default;
+$header-social-icons-font-size: inherit !default; //16px;
+$mobile-header-icon-size: inherit !default; //18px; // only used for search
+
+$split-menu-spacing: 30px !default;
+
+/**
+ * Header Dropdown Menu
+ */
+$header-dropdown-text-color: black !default;
+$header-dropdown-background-color: white !default;
+
+/**
+* Offcanvas Menu
+*/
+
+$offcanvas-menu-background-color: #394452 !default;
+$offcanvas-menu-text-color: white !default;
+
+/**
+* Offcanvas Filter
+*/
+
+$offcanvas-filter-background-color: white !default;
+$offcanvas-filter-text-color: rgba(black, math.div(50%, 100%)) !default;
+$offcanvas-filter-text-hover-color: black !default;
+
+/**
+ * Slider
+ */
+
+$slider-font-family-title: $headings-font-family !default;
+$slider-font-family-content: $font-family-base !default;
+
+/**
+ * Scroll to top button
+ */
+
+$scroll-to-top-active: true !default;
+$scroll-to-top-position: right !default;
+$scroll-to-top-type: rounded !default;
+$scroll-to-top-offset: false !default;
+$scroll-to-top-button-content: icon !default;
+$scroll-to-top-color: theme-color('primary') !default;
+$scroll-to-top-text-color: $text-color !default;
+$chat-is-active: false !default;
+
+/**
+ * Icon size multiplier
+ */
+$icon-size-multiplier: 1 !default;
+
+/**
+* Product Gallery
+*/
+$product-gallery-sticky: true !default;
+$gallery-thumbnails-orientation: 2 !default;
+
+$wishlist-comparelist-button-position: bottom_left !default;
+$wishlist-comparelist-button-vertical-offset: 18 !default;
+$wishlist-comparelist-button-horizontal-offset: 10 !default;
+
+/**
+* Shipping and Payment Logo Colors
+*/
+$shipping-payment-logos-footer-color: theme-color('primary') !default;
+$shipping-payment-logos-details-page-color: theme-color('primary') !default;
+
+$additional-info-spacing--desktop: 59px !default;
+$additional-info-spacing--mobile: 48px !default;
+
+/**
+ * Container sizes
+ */
+$container-sizes: (
+    xs: 650px,
+    s: 900px,
+    m: 1260px,
+    l: 1480px,
+    xl: 1680px,
+    fullwidth: 2800px,
+) !default;
+
+$container-padding: utopia.calculateClamp(
+    (
+        'minWidth': 320,
+        'maxWidth': 1240,
+        'minSize': 20,
+        'maxSize': 50,
+        'usePx': true,
+        'relativeTo': 'viewport-width',
+    )
+) !default;
+
+$footer-newsletter-as-column: true !default;
+
+/* Nova variables */
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+
+$highlight-border-size: 0.375rem !default;
+
+$bg-config-recommendation: color.adjust($primary, $lightness: 40%, $space: hsl) !default;
+$cool-white: #f8f8f8 !default;
+$border-color: #adb5bd !default;
+
+
+// alert colors
+$alert-success-color: #36593d;
+$alert-success-bg: #edfff1;
+
+$alert-info-color: #27373f;
+$alert-info-bg: #eef9ff;
+
+$alert-warning-color: #68522c;
+$alert-warning-bg: #fcf8e3;
+
+$alert-danger-color: #683b46;
+$alert-danger-bg: #ffedf1;
+
+$brand-custom-tones: false !default;
+$brand-text-muted: rgba($tone-base, 60%) !default;
+$brand-tone50: rgba($tone-base, 60%) !default;
+$brand-tone25: rgba($tone-base, 25%) !default;

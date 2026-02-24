@@ -1,0 +1,76 @@
+/**
+* This formula calculates a value between 28 and 45 based on luma value of brand-primary.
+* It is meant to darken or lighten extrem color such as #fff and #000, respectively, more 
+* than color in the middle of the luma espectrum
+* NOTE: It doesn work with alpha colors!!!
+*/
+/** icon style '.icon-reorder' inline because then the rest of these styles can be
+  * be loaded async without the icon being shown to big before they
+  * are loaded
+  */
+.reorder__dropdown-button {
+  text-transform: none;
+}
+.reorder-list {
+  margin-top: 5em;
+}
+.reorder-list .productlist__row {
+  margin-bottom: 20px;
+}
+.reorder-dropdown {
+  min-width: 480px;
+  overflow-y: auto;
+  max-height: 60vh;
+  max-height: calc(70vh - 3em);
+  padding: 10px 30px 0 !important;
+}
+.reorder-dropdown__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+}
+.reorder-dropdown__item .price {
+  font-size: inherit;
+  font-weight: 400;
+}
+.reorder-dropdown__image-wrapper {
+  width: 100px;
+}
+.reorder-dropdown__image-wrapper--small {
+  width: 50px;
+}
+.reorder-dropdown__image {
+  max-width: 100%;
+}
+.reorder-dropdown__info {
+  flex: 1;
+  padding: 1em;
+  padding-left: 0;
+}
+.reorder-dropdown__image-wrapper + .reorder-dropdown__info {
+  padding-left: 1em;
+}
+.reorder-dropdown__add-to-cart-btn {
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.5em;
+}
+.reorder-dropdown__add-to-cart-btn .icon-reorder svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+.reorder-dropdown__overview-btn {
+  padding: 1.7em 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.reorder-dropdown__price {
+  margin-top: 0.4em;
+}
+.reorder-dropdown__article-link {
+  color: inherit;
+}

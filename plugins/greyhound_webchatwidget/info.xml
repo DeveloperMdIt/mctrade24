@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jtlshopplugin>
+    <Name>GREYHOUND Webchat-Widget</Name>
+    <Description>Dieses Plugin ermöglicht die einfache Einbindung des GREYHOUND Webchat-Widgets in deinen JTL-Shop. Dadurch können Shopbesucher direkt über den Webchat mit dem Kundenservice interagieren und Fragen stellen.</Description>
+    <Author>GREYHOUND Software GmbH</Author>
+    <URL>https://greyhound-software.com</URL>
+    <XMLVersion>102</XMLVersion>
+    <PluginID>greyhound_webchatwidget</PluginID>
+    <ShopVersion>5.0.0</ShopVersion>
+    <Version>1.0.3</Version>
+    <CreateDate>2024-03-07</CreateDate>
+    <ExsID>7e5be5ec-7406-456a-8708-be1fe25b58b6</ExsID>
+    <Install>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Start</Name>
+                <Filename>welcome.php</Filename>
+            </Customlink>
+            <Settingslink sort="2">
+				<Name>Konfiguration</Name>
+                <Setting type="text" initialValue="" sort="0" conf="N">
+                    <Name>Konfiguration</Name>
+                    <ValueName>Spacer</ValueName>
+                    <Description></Description>
+                </Setting>
+                <Setting type="checkbox" initialValue="" sort="1" conf="Y">
+                    <Name>Aktiv</Name>
+                    <Description>Diese Einstellung aktiviert oder deaktiviert die Anzeige des GREYHOUND Webchat-Widgets.</Description>
+                    <ValueName>greyhound_webchatwidget_active</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="" sort="1" conf="Y">
+                    <Name>Absender-Adresse</Name>
+                    <Description>Bitte trage hier die Zeichenfolge ein, die Du im Feld "Absender Adresse" in den Messenger-Kontoeinstellungen in GREYHOUND findest.</Description>
+                    <ValueName>greyhound_webchatwidget_token</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="" sort="1" conf="Y">
+                    <Name>API Schlüssel</Name>
+                    <Description>Bitte trage hier die Zeichenfolge ein, die Du im Feld "API Schlüssel" in den Messenger-Kontoeinstellungen in GREYHOUND findest.</Description>
+                    <ValueName>greyhound_webchatwidget_api</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="" sort="30" conf="N">
+                    <Name>Datenschutz</Name>
+                    <ValueName>Spacer</ValueName>
+                    <Description></Description>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="31" conf="Y">
+                    <Name>GREYHOUND Webchat-Widget zum Consent Manager hinzufügen</Name>
+                    <Description>Integriert einen Schalter und Hinweise bezüglich des GREYHOUND Messenger Service in den Consent Manager des JTL-Shops. Das Webchat-Widget wird bei Benutzung dieser Option nur jenen Kunden angezeigt, die ihre Zustimmung dafür über den Consent Manager erteilt haben.</Description>
+                    <ValueName>greyhound_webchatwidget_consent</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+            </Settingslink>
+        </Adminmenu>
+    </Install>
+</jtlshopplugin>

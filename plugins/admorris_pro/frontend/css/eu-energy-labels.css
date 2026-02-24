@@ -1,0 +1,163 @@
+.eu-energy-label-wrapper--list-lt,
+.eu-energy-label-wrapper--list-lb,
+.eu-energy-label-wrapper--list-rt,
+.eu-energy-label-wrapper--list-rb {
+  position: absolute;
+  z-index: 10;
+}
+.eu-energy-label-wrapper--list-lt,
+.eu-energy-label-wrapper--list-lb {
+  left: 0;
+}
+.eu-energy-label-wrapper--list-rt,
+.eu-energy-label-wrapper--list-rb {
+  right: 0;
+}
+.eu-energy-label-wrapper--list-rt .eu-energy-label,
+.eu-energy-label-wrapper--list-rb .eu-energy-label {
+  flex-direction: row-reverse !important;
+}
+.eu-energy-label-wrapper--list-rt .eu-energy-label .svg-triangle,
+.eu-energy-label-wrapper--list-rb .eu-energy-label .svg-triangle {
+  transform: rotate(180deg);
+  margin-right: -0.5px;
+  margin-left: 0;
+}
+.eu-energy-label-wrapper--list-rt .eu-energy-label-value,
+.eu-energy-label-wrapper--list-rb .eu-energy-label-value {
+  flex-direction: row-reverse;
+  border-right-width: 1px;
+  border-left-width: 0;
+}
+.eu-energy-label-wrapper--list-lt,
+.eu-energy-label-wrapper--list-rt {
+  top: 20px;
+}
+.eu-energy-label-wrapper--list-lb,
+.eu-energy-label-wrapper--list-rb {
+  bottom: 20px;
+}
+.eu-energy-label-wrapper--detail {
+  float: right;
+  margin-left: 1rem;
+}
+.eu-energy-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Calibri, Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  height: 1.5em;
+  margin-bottom: 0.385em;
+}
+.eu-energy-label sup {
+  top: -0.4em;
+  margin-left: -0.1em;
+}
+@media (max-width: 1000px) {
+  .productcell .eu-energy-label,
+  .productbox .eu-energy-label,
+  .product-wrapper .eu-energy-label {
+    font-size: 22px;
+  }
+}
+.eu-energy-label .svg-triangle {
+  height: 1.5em;
+  margin-left: -0.5px;
+}
+.eu-energy-label .svg-triangle__stroke {
+  stroke: #4d474b;
+  stroke-width: 1px;
+}
+.eu-energy-label--button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+.eu-energy-label-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.333em;
+  /* using text-shadow instead of text-stroke because stroke only outside looks better */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.eu-energy-label-scale {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0.2em;
+  font-size: 0.467em;
+  line-height: 0.857;
+  background-color: white;
+  color: black;
+}
+.eu-energy-label-scale-arrow {
+  width: 0.571em;
+}
+.eu-energy-label-value {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  line-height: 1.3;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border: solid #4d474b;
+  border-width: 1px 0 1px 1px;
+  z-index: 2;
+}
+.eu-energy-label-value .sup-large {
+  font-size: 65%;
+}
+.eu-energy-link {
+  margin-top: 0;
+  font-size: 13px;
+}
+.eu-energy-label-arrow {
+  max-height: 100%;
+}
+.eu-energy-label-arrow--0 {
+  fill: #00a652;
+}
+.eu-energy-label-arrow--1 {
+  fill: #51b747;
+}
+.eu-energy-label-arrow--2 {
+  fill: #bdd630;
+}
+.eu-energy-label-arrow--3 {
+  fill: #fef200;
+}
+.eu-energy-label-arrow--4 {
+  fill: #fdb813;
+}
+.eu-energy-label-arrow--5 {
+  fill: #f37020;
+}
+.eu-energy-label-arrow--6 {
+  fill: #ed1b24;
+}
+.eu-energy-label-value--0 .eu-energy-label-text {
+  background-color: #00a652;
+}
+.eu-energy-label-value--1 .eu-energy-label-text {
+  background-color: #51b747;
+}
+.eu-energy-label-value--2 .eu-energy-label-text {
+  background-color: #bdd630;
+}
+.eu-energy-label-value--3 .eu-energy-label-text {
+  background-color: #fef200;
+}
+.eu-energy-label-value--4 .eu-energy-label-text {
+  background-color: #fdb813;
+}
+.eu-energy-label-value--5 .eu-energy-label-text {
+  background-color: #f37020;
+}
+.eu-energy-label-value--6 .eu-energy-label-text {
+  background-color: #ed1b24;
+}

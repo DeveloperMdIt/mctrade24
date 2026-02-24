@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jtlshopplugin>
+    <Name>S360 Clerk</Name>
+    <Description>Mit diesem Plugin, kann der Clerk Dienst zu ihrem JTL-Shop 5 hinzugefügt werden.</Description>
+    <Author>Solution360 GmbH </Author>
+    <URL>https://www.solution360.de</URL>
+    <PluginID>s360_clerk_shop5</PluginID>
+    <XMLVersion>100</XMLVersion>
+    <MinShopVersion>5.1.0</MinShopVersion>
+    <Version>1.0.7</Version>
+    <CreateDate>2023-04-18</CreateDate>
+    <Install>
+        <Adminmenu>
+            <Customlink sort="10">
+                <Name>Dashboard</Name>
+            </Customlink>
+            <Customlink sort="20">
+                <Name>Stores</Name>
+            </Customlink>
+            <Settingslink sort="30">
+                <Name>Einstellungen</Name>
+                <!-- General Settings -->
+                <Setting type="text" initialValue="Y" sort="310" conf="N">
+                    <Name>Allgemein</Name>
+                    <ValueName>general</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="on" sort="320" conf="Y">
+                    <Name>Cookieless Tracking nutzen?</Name>
+                    <Description>Kunden-Tracking ohne Cookies nutzen (Standard: Ja)</Description>
+                    <ValueName>use_cookieless_tracking</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="0" sort="325" conf="Y">
+                    <Name>Track Variant Products in Tracking?</Name>
+                    <Description>If enabled, child product IDs will be tracked in cart/order events instead of the parent product.</Description>
+                    <ValueName>track_variant_products</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="on" sort="330" conf="Y">
+                    <Name>Warenkorb Tracking nutzen?</Name>
+                    <Description>Clerk über Änderungen am Warenkorb benachrichtigen (Standard: Ja)</Description>
+                    <ValueName>use_cart_tracking</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="on" sort="340" conf="Y">
+                    <Name>E-Mails anonymisieren</Name>
+                    <Description>E-Mail Adressen an Clerk anonymisiert als Hash übertragen (Standard: Ja)</Description>
+                    <ValueName>use_hashed_mails</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="" sort="350" conf="Y">
+                    <Name>Clerk JS Name</Name>
+                    <Description>Eigener Name für das Clerk JS um potentielle Adblocker zu umgehen</Description>
+                    <ValueName>custom_clerk_js_name</ValueName>
+                </Setting>
+
+                <!-- Omni Search -->
+                <Setting type="text" initialValue="" sort="375" conf="N">
+                    <Name>Omni-Suche</Name>
+                    <Description>Bei aktivierter Omni-Suche haben die Einstellungen für die Live Suche keine Auswirkung!</Description>
+                    <ValueName>omnisearch_headline</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="embedded" sort="377" conf="Y">
+                    <Name>In Webseite einfügen</Name>
+                    <Description><![CDATA[Über das Plugin: Das Plugin setzt den Code an die in den Einstellungen definierte Stelle.<br/>Über Clerk.js: Der Einhängepunkt wird in Clerk und nicht im Plugin konfiguriert. Die nötigen Einstellungen müssen in Clerk vorgenommen werden!]]></Description>
+                    <ValueName>omnisearch_insert_method</ValueName>
+                    <SelectboxOptions>
+                        <Option value="embedded" sort="1">über das Plugin (embedded code)</Option>
+                        <Option value="injection" sort="2">über Clerk.js (injection)</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="checkbox" initialValue="off" sort="380" conf="Y">
+                    <Name>Omni-Suche aktivieren?</Name>
+                    <Description>Soll die Omni-Suche im Frontend aktiviert werden?</Description>
+                    <ValueName>omnisearch_active</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="#search-header" sort="381" conf="Y">
+                    <Name>Selektor Omni-Suche</Name>
+                    <Description>PQ Selektor Omni-Suche, unabhängig von Clerk Omni-Suche Config im Clerk Backend</Description>
+                    <ValueName>omnisearch_selector</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="@omni-search" sort="382" conf="Y">
+                    <Name>Clerk TemplateName Omni-Suche</Name>
+                    <Description><![CDATA[Template für die Omni-Suche (Clerk Backend -> Content -> Omnisearch -> Templatename)]]></Description>
+                    <ValueName>omnisearch_template</ValueName>
+                </Setting>
+
+                <!-- Live Search -->
+                <Setting type="text" initialValue="" sort="400" conf="N">
+                    <Name>Live Suche (Header)</Name>
+                    <ValueName>livesearch_headline</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="on" sort="405" conf="Y">
+                    <Name>Live Suche aktivieren?</Name>
+                    <Description>Soll die Live Suche im Frontend aktiviert werden?</Description>
+                    <ValueName>livesearch_active</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="#search-header" sort="410" conf="Y">
+                    <Name>Selektor Livesuche</Name>
+                    <Description>PQ Selektor Livesuche, unabhängig von Clerk Livesearch Config im Clerk Backend</Description>
+                    <ValueName>livesearch_selector</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="@live-search" sort="420" conf="Y">
+                    <Name>Clerk TemplateName Livesuche</Name>
+                    <Description><![CDATA[Template für die Live-Suche (Clerk Backend -> Content -> Livesuche -> Templatename)]]></Description>
+                    <ValueName>livesearch_template</ValueName>
+                </Setting>
+                <!-- <Setting type="number" initialValue="6" sort="43" conf="Y">
+                    <Name>Anzahl Produkte</Name>
+                    <Description>Anzahl der Produkte die angezeigt werden sollen</Description>
+                    <ValueName>livesearch_limit</ValueName>
+                </Setting> -->
+                <Setting type="number" initialValue="6" sort="440" conf="Y">
+                    <Name>Anzahl Suchvorschläge in der Livesuche</Name>
+                    <Description>Anzahl der Suchvorschläge die angezeigt werden sollen</Description>
+                    <ValueName>count_search_suggestions</ValueName>
+                </Setting>
+                <Setting type="number" initialValue="6" sort="450" conf="Y">
+                    <Name>Anzahl Kategorievorschläge</Name>
+                    <Description>Anzahl der Kategorievorschläge die angezeigt werden sollen</Description>
+                    <ValueName>count_category_suggestions</ValueName>
+                </Setting>
+                <Setting type="number" initialValue="6" sort="460" conf="Y">
+                    <Name>Anzahl Seitenvorschläge</Name>
+                    <Description>Anzahl der Seitenvorschläge die angezeigt werden sollen</Description>
+                    <ValueName>count_page_suggestions</ValueName>
+                </Setting>
+                <Setting type="radio" initialValue="center" sort="470" conf="Y">
+                    <Name>Position</Name>
+                    <Description>Position der Livesuche</Description>
+                    <RadioOptions>
+                        <Option value="right" sort="1">rechts</Option>
+                        <Option value="left" sort="2">links</Option>
+                        <Option value="center" sort="3">zentriert</Option>
+                        <Option value="below" sort="4">unterhalb</Option>
+                        <Option value="off" sort="5">nicht anzeigen</Option>
+                    </RadioOptions>
+                    <ValueName>livesearch_position</ValueName>
+                </Setting>
+
+                <!-- Search Result Page -->
+                <Setting type="text" initialValue="" sort="500" conf="N">
+                    <Name>Suche (Ergebnisseite)</Name>
+                    <ValueName>search_headline</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="on" sort="505" conf="Y">
+                    <Name>Ergebnisseite aktivieren?</Name>
+                    <Description>Soll die Ergebnisseite im Frontend aktiviert werden?</Description>
+                    <ValueName>search_page_active</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="@search-page" sort="510" conf="Y">
+                    <Name>Clerk TemplateName Suche</Name>
+                    <Description><![CDATA[Template für die Suchergebnisseite (Clerk Backend -> Content -> Suche -> Templatename)]]></Description>
+                    <ValueName>search_page_template</ValueName>
+                </Setting>
+                <!-- <Setting type="number" initialValue="36" sort="52" conf="Y">
+                    <Name>Anzahl Produkte</Name>
+                    <Description>Anzahl der Produkte die angezeigt werden sollen</Description>
+                    <ValueName>search_page_limit</ValueName>
+                </Setting> -->
+                <Setting type="radio" initialValue="left" sort="530" conf="Y">
+                    <Name>Position Facetten</Name>
+                    <Description>Position der Facetten</Description>
+                    <RadioOptions>
+                        <Option value="top" sort="1">oben</Option>
+                        <Option value="left" sort="2">links</Option>
+                        <Option value="none" sort="3">nicht anzeigen</Option>
+                    </RadioOptions>
+                    <ValueName>position_facettes</ValueName>
+                </Setting>
+                <Setting type="checkbox" initialValue="true" sort="540" conf="Y">
+                    <Name>Facetten in URL anzeigen?</Name>
+                    <Description>Facetten in URL anzeigen?</Description>
+                    <ValueName>facettes_in_url</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="brand, price" sort="550" conf="Y">
+                    <Name>Clerk Facetten Attribute</Name>
+                    <Description>kommagetrennte Liste der verfügbaren Facetten</Description>
+                    <ValueName>facette_attributes</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="brand, price" sort="560" conf="Y">
+                    <Name>Clerk Facetten Attribute Multiple Werte</Name>
+                    <Description>kommagetrennte Liste der verfügbaren Facetten mit multiplen Werten</Description>
+                    <ValueName>facette_multiselect_attributes</ValueName>
+                </Setting>
+
+                <!-- Data Feed -->
+                <Setting type="text" initialValue="Y" sort="600" conf="N">
+                    <Name>Data Feed</Name>
+                    <ValueName>datafeed</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="task" sort="610" conf="Y">
+                    <Name>Cronverarbeitung</Name>
+                    <Description><![CDATA[Die Art und Weise wie der Cron für das generieren der Daten Feeds angestoßen werden soll. (Bei <i>Aufgabenplaner</i> wird der Cronjob zusammen mit den anderen Cronjobs, wie z.B. Exporte, bei Aufruf der cron_inc.php ausgeführt. Bei <i>CLI</i> wird der Cron über den Shop CLI Befehl <code>php cli s360_clerk_shop5:cron</code> ausgeführt, welcher über den System-Cron aufgerufen werden kann)]]></Description>
+                    <ValueName>cron_method</ValueName>
+                    <SelectboxOptions>
+                        <Option value="task" sort="1">Aufgabenplaner</Option>
+                        <Option value="cli" sort="2">CLI</Option>
+                        <Option value="sync" sort="3">Wawi-Abgleich</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="number" initialValue="0" sort="620" conf="Y">
+                    <Name>Stapelgröße</Name>
+                    <Description><![CDATA[Anstatt alle Produkte auf einmal aus der Datenbank auszulesen, wird immer nur ein Stapel an Produkten auf einmal ausgelesen. Kann bei einer großen Anzahl an Produkten den Speicherverbrauch reduzieren, erhöht dabei aber auch die Laufzeit und sollte daher nicht zu gering gesetzt werden (0 = alle)]]></Description>
+                    <ValueName>batch_size</ValueName>
+                </Setting>
+
+                <!-- product page -->
+                <Setting type="text" initialValue="" sort="700" conf="N">
+                    <Name>Produkt Seite</Name>
+                    <ValueName>productpage_headline</ValueName>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="705" conf="Y">
+                    <Name>Produktseiten Slider aktivieren?</Name>
+                    <Description>Sollen die Slider auf der Produktseite aktiviert werden?</Description>
+                    <ValueName>article_slider_active</ValueName>
+                </Setting>
+                <Setting type="text" initialValue=".et-productdetail-information-wrapper" sort="710" conf="Y">
+                    <Name>Artikel Selektor Slider</Name>
+                    <Description>Artikel Selektor Slider</Description>
+                    <ValueName>article_slider_selector</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="" sort="720" conf="Y">
+                    <Name>Clerk TemplateName Artikel</Name>
+                    <Description>Namen der Slider Templates die ausgegeben werden sollen. Mehrere Template Namen können als komma-separierte Liste angegeben werden.</Description>
+                    <ValueName>article_slider_template</ValueName>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="after" sort="730" conf="Y">
+                    <Name>Slider </Name>
+                    <Description>Artikel Slider Position</Description>
+                    <ValueName>article_slider_position</ValueName>
+                    <SelectboxOptions>
+                        <Option value="before" sort="1">Before</Option>
+                        <Option value="after" sort="2">After</Option>
+                        <Option value="append" sort="3">Append</Option>
+                        <Option value="prepend" sort="4">Prepend</Option>
+                        <Option value="replaceWith" sort="5">ReplaceWith</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="740" conf="Y">
+                    <Name>Duplikate filtern</Name>
+                    <Description>Verhindert, dass nachfolgende Slider Produkte aus vorherigen Slidern enthalten (Standard: Ja)</Description>
+                    <ValueName>article_exclude_duplicates</ValueName>
+                </Setting>
+
+                <!-- shopping cart page -->
+                <Setting type="text" initialValue="" sort="800" conf="N">
+                    <Name>Warenkorb Seite</Name>
+                    <ValueName>shoppingcartpage_headline</ValueName>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="805" conf="Y">
+                    <Name>Warenkorb Slider aktivieren?</Name>
+                    <Description>Sollen die Slider im Warenkorb aktiviert werden?</Description>
+                    <ValueName>shoppingcart_slider_active</ValueName>
+                </Setting>
+                <Setting type="text" initialValue=".basket_wrapper" sort="810" conf="Y">
+                    <Name>Warenkorb Selektor Slider</Name>
+                    <Description>Warenkorb Selektor Slider</Description>
+                    <ValueName>shoppingcart_slider_selector</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="" sort="820" conf="Y">
+                    <Name>Clerk TemplateName Warenkorb</Name>
+                    <Description>Namen der Slider Templates die ausgegeben werden sollen. Mehrere Template Namen können als komma-separierte Liste angegeben werden.</Description>
+                    <ValueName>shopping_cart_template</ValueName>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="append" sort="830" conf="Y">
+                    <Name>Slider </Name>
+                    <Description>Warenkorb Slider Position</Description>
+                    <ValueName>shoppingcart_slider_position</ValueName>
+                    <SelectboxOptions>
+                        <Option value="before" sort="1">Before</Option>
+                        <Option value="after" sort="2">After</Option>
+                        <Option value="append" sort="3">Append</Option>
+                        <Option value="prepend" sort="4">Prepend</Option>
+                        <Option value="replaceWith" sort="5">ReplaceWith</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="840" conf="Y">
+                    <Name>Duplikate filtern</Name>
+                    <Description>Verhindert, dass nachfolgende Slider Produkte aus vorherigen Slidern enthalten (Standard: Ja)</Description>
+                    <ValueName>shopping_cart_exclude_duplicates</ValueName>
+                </Setting>
+
+                <!-- power step -->
+                <Setting type="text" initialValue="" sort="900" conf="N">
+                    <Name>Powerstep</Name>
+                    <ValueName>powerstep_headline</ValueName>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="905" conf="Y">
+                    <Name>Powerstep Slider aktivieren?</Name>
+                    <Description>Sollen die Slider im Powerstep aktiviert werden?</Description>
+                    <ValueName>powerstep_slider_active</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="#pushed-success" sort="910" conf="Y">
+                    <Name>Powerstep Selektor</Name>
+                    <Description>Powerstep Selektor</Description>
+                    <ValueName>powerstep_selector</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="" sort="920" conf="Y">
+                    <Name>Clerk TemplateName Powerstep</Name>
+                    <Description>Namen der Slider Templates die ausgegeben werden sollen. Mehrere Template Namen können als komma-separierte Liste angegeben werden.p</Description>
+                    <ValueName>powerstep_template</ValueName>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="append" sort="930" conf="Y">
+                    <Name>Powerstep Einfügemethode</Name>
+                    <Description>Powerstep Position</Description>
+                    <ValueName>powerstep_position</ValueName>
+                    <SelectboxOptions>
+                        <Option value="before" sort="1">Before</Option>
+                        <Option value="after" sort="2">After</Option>
+                        <Option value="append" sort="3">Append</Option>
+                        <Option value="prepend" sort="4">Prepend</Option>
+                        <Option value="replaceWith" sort="5">ReplaceWith</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="940" conf="Y">
+                    <Name>Duplikate filtern</Name>
+                    <Description>Verhindert, dass nachfolgende Slider Produkte aus vorherigen Slidern enthalten (Standard: Ja)</Description>
+                    <ValueName>powerstep_exclude_duplicates</ValueName>
+                </Setting>
+
+                <!-- category page -->
+                <Setting type="text" initialValue="" sort="1000" conf="N">
+                    <Name>Kategorie Seite</Name>
+                    <ValueName>categorypage_headline</ValueName>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="1005" conf="Y">
+                    <Name>Kategorieseiten Slider aktivieren?</Name>
+                    <Description>Sollen die Slider auf der Kategorie-Seite aktiviert werden?</Description>
+                    <ValueName>category_slider_active</ValueName>
+                </Setting>
+                <Setting type="text" initialValue=".productlist-page-nav" sort="1010" conf="Y">
+                    <Name>Kategorie Selektor Slider</Name>
+                    <Description>Kategorie Selektor Slider</Description>
+                    <ValueName>category_slider_selector</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="" sort="1020" conf="Y">
+                    <Name>Clerk TemplateName Kategorie</Name>
+                    <Description>Namen der Slider Templates die ausgegeben werden sollen. Mehrere Template Namen können als komma-separierte Liste angegeben werden.</Description>
+                    <ValueName>category_slider_template</ValueName>
+                </Setting>
+
+                <Setting type="selectbox" initialValue="before" sort="1030" conf="Y">
+                    <Name>Slider </Name>
+                    <Description>Kategorie Slider Position</Description>
+                    <ValueName>category_slider_position</ValueName>
+                    <SelectboxOptions>
+                        <Option value="before" sort="1">Before</Option>
+                        <Option value="after" sort="2">After</Option>
+                        <Option value="append" sort="3">Append</Option>
+                        <Option value="prepend" sort="4">Prepend</Option>
+                        <Option value="replaceWith" sort="5">ReplaceWith</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="1040" conf="Y">
+                    <Name>Duplikate filtern</Name>
+                    <Description>Verhindert, dass nachfolgende Slider Produkte aus vorherigen Slidern enthalten (Standard: Ja)</Description>
+                    <ValueName>category_exclude_duplicates</ValueName>
+                </Setting>
+
+                <!-- exit intent -->
+                <Setting type="text" initialValue="" sort="1100" conf="N">
+                    <Name>Exit Intent</Name>
+                    <ValueName>exit_intent_headline</ValueName>
+                </Setting>
+
+                <Setting type="checkbox" initialValue="on" sort="1105" conf="Y">
+                    <Name>Exit Intent Slider aktivieren?</Name>
+                    <Description>Sollen die Slider im Exit Intent aktiviert werden?</Description>
+                    <ValueName>exit_intent_slider_active</ValueName>
+                </Setting>
+
+                <Setting type="text" initialValue="" sort="1110" conf="Y">
+                    <Name>Clerk TemplateName Exit Intent</Name>
+                    <Description>Das Clerk Template des Exit Intent</Description>
+                    <ValueName>exit_intent_template</ValueName>
+                </Setting>
+
+            </Settingslink>
+        </Adminmenu>
+
+        <Locales>
+            <Variable>
+                <Name>search_headline</Name>
+                <Description>Seitenüberschrift</Description>
+                <VariableLocalized iso="GER"><![CDATA[Suchen nach: ]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[search for: ]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>search_headline_products</Name>
+                <Description>Livesuche Überschrift Produkte.</Description>
+                <VariableLocalized iso="GER"><![CDATA[Produkte]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Products]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>search_headline_categories</Name>
+                <Description>Livesuche Überschrift Kategorien</Description>
+                <VariableLocalized iso="GER"><![CDATA[Kategorien]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Categories]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>search_headline_suggestions</Name>
+                <Description>Livesuche Überschrift Anregungen</Description>
+                <VariableLocalized iso="GER"><![CDATA[Anregungen]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Suggestions]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>search_headline_pages</Name>
+                <Description>Livesuche Überschrift Seiten</Description>
+                <VariableLocalized iso="GER"><![CDATA[Seiten]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Pages]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>search_show_all_results</Name>
+                <Description>Livesuche Label Alle Ergebnisse anzeigen Button</Description>
+                <VariableLocalized iso="GER"><![CDATA[weitere Ergebnisse]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[more results]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>search_label_load_more</Name>
+                <Description>Suche Label weitere Artikel anzeigen Button</Description>
+                <VariableLocalized iso="GER"><![CDATA[weitere Artikel laden]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[load more articles]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>search_label_load_more_progress</Name>
+                <Description>Suche Label Progress Bar</Description>
+                <VariableLocalized iso="GER"><![CDATA[Sie haben ###PRODUCTCOUNT### von ###COUNT### angesehen]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[You have viewed ###PRODUCTCOUNT### by ###COUNT###]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>no_results</Name>
+                <Description>Keine Ergebnisse</Description>
+                <VariableLocalized iso="GER"><![CDATA[Ihre Suche nach ###QUERY### ergab keine Ergebnisse.]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Your search for ###QUERY### did not give any results.]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>facets_view_more</Name>
+                <Description>Facetten mehr anzeigen</Description>
+                <VariableLocalized iso="GER"><![CDATA[mehr anzeigen]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[view more]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>facets_view_all</Name>
+                <Description>Alle Facetten anzeigen</Description>
+                <VariableLocalized iso="GER"><![CDATA[Filter anzeigen]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[show filters]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>facets_search_for</Name>
+                <Description>Facetten Suchen nach</Description>
+                <VariableLocalized iso="GER"><![CDATA[Suchen nach]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[search for]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>facets_headline_brand</Name>
+                <Description>Überschrift Facette Marke</Description>
+                <VariableLocalized iso="GER"><![CDATA[Marke]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Brand]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>facets_headline_category</Name>
+                <Description>Überschrift Facette Kategorien</Description>
+                <VariableLocalized iso="GER"><![CDATA[Kategorien]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[categories]]></VariableLocalized>
+            </Variable>
+            <Variable>
+                <Name>facets_headline_price</Name>
+                <Description>Überschrift Facette Preis</Description>
+                <VariableLocalized iso="GER"><![CDATA[Preis]]></VariableLocalized>
+                <VariableLocalized iso="ENG"><![CDATA[Price]]></VariableLocalized>
+            </Variable>
+
+        </Locales>
+
+        <FrontendLink>
+            <Link>
+                <Filename>-</Filename>
+                <Name>Suchergebnisse</Name>
+                <Template>clerk_searchresults.tpl</Template>
+                <LinkGroup>hidden</LinkGroup>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <Identifier>clerkSearchResults</Identifier> <!-- since Shop 5.1.0 -->
+                <SSL>2</SSL>
+                <NoFollow>Y</NoFollow>
+                <LinkLanguage iso="GER">
+                    <Seo>suchergebnisse</Seo>
+                    <Name>Suchergebnisse</Name>
+                    <Title>Suchergebnisse</Title>
+                    <MetaTitle>Suchergebnisse</MetaTitle>
+                    <MetaKeywords>Suchergebnisse</MetaKeywords>
+                    <MetaDescription>Suchergebnisse</MetaDescription>
+                </LinkLanguage>
+                <LinkLanguage iso="ENG">
+                    <Seo>searchresults</Seo>
+                    <Name>Search Results</Name>
+                    <Title>Search Results</Title>
+                    <MetaTitle>Search Results</MetaTitle>
+                    <MetaKeywords>Search Results</MetaKeywords>
+                    <MetaDescription>Search Results</MetaDescription>
+                </LinkLanguage>
+            </Link>
+        </FrontendLink>
+    </Install>
+<ExsID>50cbe906-6b80-466c-baf9-06a3971eb71a</ExsID></jtlshopplugin>

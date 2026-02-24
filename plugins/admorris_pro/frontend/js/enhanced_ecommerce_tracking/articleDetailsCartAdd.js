@@ -1,0 +1,1 @@
+import{fillPayload,payloadItemsEmpty}from"./fillPayload.js?v=1.0.4";export function articleDetailsCartAdd(a){document.querySelector("#buy_form").addEventListener("submit",(t=>{const o=new FormData(t.target),e=fillPayload({formData:o,payloadData:a,matrixQuantityName:"variBoxAnzahl"});payloadItemsEmpty(e)||gtag("event","add_to_cart",e)}))}

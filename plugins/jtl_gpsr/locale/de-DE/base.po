@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Ergänzende Angaben zum Hersteller und verantwortlichen Personen."
+msgstr "Ergänzende Angaben zum Hersteller und zu verantwortlichen Personen"
+
+msgid "Beschreibung der Angaben zur Produktsicherheit"
+msgstr "Mit diesem Plugin können Sie für Artikel erweiterte Hersteller-Kontaktdaten sowie optional Daten zu einer"
+       " verantwortlichen Person anzeigen lassen. Diese Angaben pflegen Sie über Funktionsattribute in JTL-Wawi."
+       " Mehr Informationen zum Einrichten des Plugins finden Sie im <a href=\"https://jtl-url.de/zdd92\">JTL-Guide</a><br>"
+       " Für weitere Pflichtangaben nutzen Sie bitte die Standardfunktionen von JTL-Wawi und JTL-Shop wie Bilder,"
+       " Mediendateien (z. B. für PDF-Datenblätter-Downloads), Artikel-Attribute und Artikelbeschreibungstexte."
+
+msgid "Auf der Artikeldetailseite anzeigen"
+msgstr "Auf Artikeldetailseite anzeigen"
+
+msgid "Sollen die Informationen auf der Artikeldetailseite angezeigt werden?"
+msgstr "Geben Sie an, ob die Informationen auf der Artikeldetailseite angezeigt werden sollen."
+
+msgid "Geben Sie hier die Templatedatei an."
+msgstr "Geben Sie die Templatedatei an, in die die Angaben zur Produktsicherheit auf der Artikeldetailseite eingefügt"
+       " werden sollen.<br>"
+       " Wenn Sie das NOVA Template verwenden, geben Sie „productdetails/attributes.tpl“ an.<br>"
+       " Wenn Sie ein angepasstes Template verwenden und den Namen der genauen Templatedatei nicht kennen, fragen Sie"
+       " bitte beim Hersteller Ihres Templates nach."
+
+msgid "Templateblock"
+msgstr "Template-Block"
+
+msgid "Geben Sie hier den Templateblock an."
+msgstr "Geben Sie den Block innerhalb der Templatedatei an, in den die Angaben zur Produktsicherheit auf der"
+       " Artikeldetailseite eingefügt werden sollen.<br>"
+       " Wenn Sie das NOVA Template verwenden, geben Sie „productdetails-attributes“ an.<br>"
+       " Wenn Sie ein angepasstes Template verwenden und den Namen des genauen Blocks nicht kennen, fragen Sie bitte"
+       " beim Hersteller Ihres Templates nach."
+
+msgid "Auf der Artikelliste anzeigen"
+msgstr "Auf Artikelliste anzeigen"
+
+msgid "Sollen die Informationen auf der Artikelliste angezeigt werden?"
+msgstr "Geben Sie an, ob die Informationen auf der Artikelliste angezeigt werden sollen."
+
+msgid "Geben Sie hier die Templatedatei für die Liste an."
+msgstr "Geben Sie die Templatedatei an, in die die Angaben zur Produktsicherheit auf der Artikelliste eingefügt"
+       " werden sollen.<br>"
+       " Wenn Sie das NOVA Template verwenden, geben Sie „productlist/item_list.tpl“ an.<br>"
+       " Wenn Sie ein angepasstes Template verwenden und den Namen der genauen Templatedatei nicht kennen,"
+       " fragen Sie bitte beim Hersteller Ihres Templates nach."
+
+msgid "Geben Sie hier den Templateblock für die Liste an."
+msgstr "Geben Sie den Block innerhalb der Templatedatei an, in den die Angaben zur Produktsicherheit auf der"
+       " Artikelliste eingefügt werden sollen.<br>"
+       " Wenn Sie das NOVA Template verwenden, geben Sie „productlist-item-list-buy-form“ an.<br>"
+       " Wenn Sie ein angepasstes Template verwenden und den Namen des genauen Blocks nicht kennen, fragen Sie bitte"
+       " beim Hersteller Ihres Templates nach."
+
+msgid "Anzeigeposition im Block"
+msgstr "Anzeigeposition im Block"
+
+msgid "Geben Sie hier die Anzeigeposition an."
+msgstr "Geben Sie an, ob die Angaben zur Produktsicherheit am Anfang oder am Ende des Blocks eingefügt werden sollen."
+
+msgid "Geben Sie hier die Darstellung der Herstellerangaben in Smarty-Syntax an."
+msgstr "Geben Sie in Smarty-Syntax an, wie die Herstellerangaben dargestellt werden sollen."
+
+msgid "Geben Sie hier die Darstellung der verantwortlichen Person in Smarty-Syntax an."
+msgstr "Geben Sie in Smarty-Syntax an, wie die verantwortliche Person dargestellt werden soll."
+
+msgid "Templateverzeichnis existiert nicht"
+msgstr "Templateverzeichnis existiert nicht oder ist nicht lesbar"
+
+msgid "Templatedatei existiert nicht"
+msgstr "Templatedatei existiert nicht oder ist nicht lesbar"
+
+msgid "Wollen Sie alle Einstellungen auf Standardwerte zurücksetzen?"
+msgstr "Möchten Sie alle Einstellungen auf Standardwerte zurücksetzen?"
+
+msgid "Wollen Sie die Darstellung der Herstellerinformationen zurücksetzen?"
+msgstr "Möchten Sie die Darstellung der Herstellerinformationen zurücksetzen?"

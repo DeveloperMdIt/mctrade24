@@ -1,0 +1,6 @@
+<?php
+/*   __________________________________________________
+    |  Copyright by admorris.pro  |
+    |__________________________________________________|
+*/
+ namespace Plugin\admorris_pro\update; enum UpdateResponse : int { case SUCCESS = 1; case ERROR = 2; case VERSION_INCOMPATIBLE = 3; case INVALID_LICENSE = 4; public function getMessage() : string { return match ($this) { self::SUCCESS => "\x55\160\144\141\164\x65\40\143\x6f\155\160\154\145\x74\145\x64\x20\163\x75\143\143\145\163\x73\146\x75\154\x6c\x79", self::ERROR => "\101\x6e\x20\145\x72\x72\157\162\x20\157\x63\143\x75\162\162\145\x64\x20\x64\165\x72\x69\156\x67\x20\164\150\145\x20\165\x70\144\141\164\145", self::VERSION_INCOMPATIBLE => "\x54\150\151\x73\40\166\x65\162\163\x69\x6f\x6e\40\x69\163\x20\156\x6f\164\40\143\157\155\160\x61\x74\151\x62\x6c\145\40\167\x69\x74\x68\40\171\157\x75\162\40\x73\171\163\164\145\x6d", self::INVALID_LICENSE => "\x49\x6e\166\141\154\151\144\x20\x6f\x72\40\x65\170\x70\151\162\x65\x64\40\x6c\151\143\x65\156\x73\145", }; } }

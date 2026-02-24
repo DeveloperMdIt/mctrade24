@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Row"
+msgstr "Grid Layout"
+
+msgid "Layout"
+msgstr "Segmentation"
+
+msgid "Column"
+msgstr "Column"
+
+msgid "Columns"
+msgstr "Columns"
+
+msgid "rowLayoutDesc"
+msgstr "Specifies the width of columns on devices of different sizes. "
+"12 means that a column is displayed at full width."
+
+msgid "rowLayoutWarning"
+msgstr "<strong>Attention:</strong> When you change the segmentation to a smaller number of columns the respective "
+"difference of columns will be truncated at the rightmost end. So make sure to move the contents of these columns to "
+"there appropriate place beforehand."

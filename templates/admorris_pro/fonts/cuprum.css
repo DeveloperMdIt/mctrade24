@@ -1,0 +1,40 @@
+/* cuprum-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Cuprum';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Cuprum Regular'), local('Cuprum-Regular'),
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* cuprum-italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Cuprum';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Cuprum Italic'), local('Cuprum-Italic'),
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* cuprum-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Cuprum';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Cuprum Bold'), local('Cuprum-Bold'),
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* cuprum-700italic - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Cuprum';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Cuprum Bold Italic'), local('Cuprum-BoldItalic'),
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./templates/admorris_pro/fonts/cuprum/cuprum-v9-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

@@ -1,0 +1,93 @@
+@use 'sass:map';
+.card-gray {
+    background: $tone-10;
+    border: 0;
+
+    .card-header {
+        background: transparent;
+        .h4 {
+            padding-inline: map.get($spacers, 4);
+        }
+    }
+
+    .card-body {
+        padding: map.get($spacers, 2) map.get($spacers, 4) map.get($spacers, 4);
+    }
+
+    &:not(:has(.card-header)) .card-body {
+        padding: map.get($spacers, 4);
+    }
+}
+
+.card-products {
+    .card-header {
+        background: $white;
+    }
+
+    .card-header .btn {
+        background: $tone-10;
+        padding: rem(15px, 16px) rem(30px, 16px);
+    }
+
+    .card-body {
+        padding: map.get($spacers, 3);
+    }
+}
+
+.card {
+    overflow: clip; /* using clip here, because hidden causes scroll-margin to not work anymore */
+
+    @container (min-width: 600px) {
+        @include adm-border-radius('lg', 'panels');
+    }
+
+    .card-header {
+        :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.card:not(.card-products) .card-header .btn {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.card-header {
+    border-bottom: 0;
+    :focus-visible {
+        outline-offset: -2px;
+    }
+
+    a {
+        z-index: 1;
+    }
+
+    button {
+        background-color: transparent;
+
+        &::after {
+            content: '';
+            inset: 0;
+            position: absolute;
+        }
+    }
+
+    span.h4,
+    span.h5 {
+        padding: 1rem 1.25rem;
+    }
+
+    &:has([data-toggle='collapse']) {
+        padding: 0;
+        position: relative;
+
+        [data-toggle='collapse'] {
+            padding: $card-spacer-y $card-spacer-x;
+        }
+    }
+}
+
+*:has(> .card) {
+    container-type: inline-size;
+}
