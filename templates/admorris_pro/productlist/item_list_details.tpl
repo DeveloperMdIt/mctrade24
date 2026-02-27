@@ -15,7 +15,7 @@
             && !empty($Artikel->cHerstellerBildKlein)}
                 <div class="media-left">
                     {if !empty($Artikel->cHerstellerHomepage)}<a href="{$Artikel->cHerstellerHomepage}">{/if}
-                        <img src="{$Artikel->cHerstellerBildKlein}" alt="" class="product-list-item__manufacturer img-sm">
+                        {image src=$Artikel->cHerstellerBildKlein alt="" class="product-list-item__manufacturer img-sm" fluid=false webp=true}
                     {if !empty($Artikel->cHerstellerHomepage)}</a>{/if}
                 </div>
             {/if}

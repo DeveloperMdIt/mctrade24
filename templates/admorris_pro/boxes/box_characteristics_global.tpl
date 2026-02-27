@@ -3,7 +3,7 @@
     <div class="box box-global-characteristics" id="sidebox{$oBox->getID()}-{$oMerkmal->kMerkmal}">
         <div class="product-filter-headline">
             {if !empty($oMerkmal->cBildpfadKlein) && $oMerkmal->cBildpfadKlein !== $smarty.const.BILD_KEIN_MERKMALBILD_VORHANDEN}
-                <img src="{$oMerkmal->cBildURLKlein}" alt="" class="vmiddle" />
+                {image src=$oMerkmal->cBildURLKlein alt="" class="vmiddle" fluid=false webp=true}
             {/if}
             {$oMerkmal->getName()}
         </div>
@@ -19,7 +19,7 @@
                             <li>
                                 <a role="menuitem" tabindex="-1" href="{$oMerkmalWert->cSeo}">
                                     {if ($oMerkmal->getType() === 'BILD' || $oMerkmal->getType() === 'BILD-TEXT') && $oMerkmalWert->nBildKleinVorhanden === 1}
-                                       <img src="{$oMerkmalWert->cBildURLKlein}" alt="{$oMerkmalWert->getValue()|escape:'quotes'}" />
+                                       {image src=$oMerkmalWert->cBildURLKlein alt="{$oMerkmalWert->getValue()|escape:'quotes'}" webp=true fluid=false}
                                     {/if}
                                     {if $oMerkmal->getType() !== 'BILD'}
                                         {$oMerkmalWert->getValue()}
@@ -35,7 +35,7 @@
                         <li>
                             <a href="{$oMerkmalWert->getURL()}"{if $NaviFilter->hasCharacteristicValue() && isset($oMerkmalWert->kMerkmalWert) && $NaviFilter->getCharacteristicValue()->getValue() == $oMerkmalWert->kMerkmalWert} class="active"{/if}>
                                 {if ($oMerkmal->getType() === 'BILD' || $oMerkmal->getType() === 'BILD-TEXT') && $oMerkmalWert->nBildKleinVorhanden === 1}
-                                   <img src="{$oMerkmalWert->cBildURLKlein}" alt="{$oMerkmalWert->getValue()|escape:'quotes'}" />
+                                   {image src=$oMerkmalWert->cBildURLKlein alt="{$oMerkmalWert->getValue()|escape:'quotes'}" webp=true fluid=false}
                                 {/if}
                                 {if $oMerkmal->getType() !== 'BILD'}
                                     {$oMerkmalWert->getValue()}

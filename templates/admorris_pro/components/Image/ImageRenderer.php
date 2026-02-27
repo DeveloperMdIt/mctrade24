@@ -31,26 +31,9 @@ class ImageRenderer extends BlockRenderer implements ComponentRendererInterface
         $useWebP = $admPro->webpBrowserSupport() && $params['webp']->getValue() === true && \JTL\Media\Image::hasWebPSupport();
 
         if ($useWebP) {
-            /* Some paths might not have webp versions (e.g. external plugins) */
-            $excludePaths = [
-                'OPC/Portlets',
-                'plugins',
-            ];
-            foreach ($excludePaths as $excludePath) {
-                if (strpos($params['src']->getValue(), $excludePath) !== false) {
-                    $useWebP = false;
-                    break;
-                }
-            }
+            /* All images can benefit from WebP */
         }
 
-        if ($useWebP) {
-            /* If the image renderer is called with a data-desc attribute, we should not use webp */
-            $data = $params['data']->getValue();
-            if (isset($data) && is_array($data) && isset($data['desc'])) {
-                $useWebP = false;
-            }
-        }
 
         $tpl->assign('useWebP', $useWebP);
 

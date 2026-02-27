@@ -55,6 +55,12 @@
             {/block}
 
             {block name='snippets-maintenance-head-resources'}
+                {* Fonts Preloading *}
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;700&family=Inter:wght@400;700;800&display=swap">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;700&family=Inter:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+
                 {* css *}
 
                 {include 'layout/styles.tpl'}
@@ -247,7 +253,7 @@
 
     <div class="maintenance-container">
         <div class="logo-placeholder">
-            <img src="{$ShopLogoURL}" alt="{$meta_title}">
+            {image src=$ShopLogoURL alt=$meta_title webp=true fluid=false height=80}
         </div>
 
         <div class="status-badge">

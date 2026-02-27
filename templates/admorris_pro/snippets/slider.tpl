@@ -14,7 +14,7 @@
                     <div class="slide">
                 {/if}
 
-                <img alt="{$oSlide->getTitle()|escape:'html'}" title="{$slideTitle}" src="{$oSlide->getAbsoluteImage()}"{if !empty($oSlide->getAbsoluteThumbnail()) && $oSlider->getThumbnail()} data-thumb="{$oSlide->getAbsoluteThumbnail()}"{/if}/>
+                {image alt=$oSlide->getTitle()|escape:'html' title=$slideTitle src=$oSlide->getAbsoluteImage() webp=true datathumb=(!empty($oSlide->getAbsoluteThumbnail()) && $oSlider->getThumbnail()) ? $oSlide->getAbsoluteThumbnail() : null}
 
                 {if !empty($oSlide->getLink())}
                     </a>

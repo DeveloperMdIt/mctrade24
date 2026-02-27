@@ -80,7 +80,7 @@
                                 {block name='productdetails-info-product-brand-logo'}
                                     <div class="manufacturer-logo">
                                         <a href="{$Artikel->cHerstellerURL}">
-                                            <img src="{$Artikel->cBildpfad_thersteller}" alt="Logo {$Artikel->cHersteller}">
+                                            {image src=$Artikel->cBildpfad_thersteller alt="Logo {$Artikel->cHersteller}" webp=true fluid=false}
                                         </a>
                                     </div>
                                 {/block}
