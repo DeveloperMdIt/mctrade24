@@ -19,7 +19,7 @@
 
     <div class="header__logo{if !empty($HeaderShopLogoInverted)} header__logo--invert{/if}{$svgLogoClass}" id="logo-{$layoutType}" style="min-width: {$minWidth}px;">
         {block name="logo"}
-        <a href="{$ShopHomeURL}">
+        <a href="{$ShopHomeURL}" aria-label="{$logoAltAttribute|escape:'html'}">
             {if !empty($HeaderShopLogo && empty($svgLogoClass))}
                 {responsiveImage
                     src="{$HeaderShopLogo}"

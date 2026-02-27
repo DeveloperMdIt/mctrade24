@@ -2,7 +2,7 @@
     {opcMountPoint id='opc_before_banner'}
     <div class="banner">
         {block name='banner-map'}
-            <img alt="{$oImageMap->cTitel}" src="{$oImageMap->cBildPfad}" class="img-fluid" />
+            {image src=$oImageMap->cBildPfad alt=$oImageMap->cTitel fluid=true webp=true}
             {foreach $oImageMap->oArea_arr as $oImageMapArea}
                 {strip}
                 <a href="{$oImageMapArea->cUrl}" class="area {$oImageMapArea->cStyle}" style="left:{math equation="100/bWidth*posX" bWidth=$oImageMap->fWidth posX=$oImageMapArea->oCoords->x}%;top:{math equation="100/bHeight*posY" bHeight=$oImageMap->fHeight posY=$oImageMapArea->oCoords->y}%;width:{math equation="100/bWidth*aWidth" bWidth=$oImageMap->fWidth aWidth=$oImageMapArea->oCoords->w}%;height:{math equation="100/bHeight*aHeight" bHeight=$oImageMap->fHeight aHeight=$oImageMapArea->oCoords->h}%" title="{$oImageMapArea->cTitel|strip_tags|escape:'html':'UTF-8':FALSE|escape:'quotes'}">

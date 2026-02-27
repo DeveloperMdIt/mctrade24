@@ -61,6 +61,12 @@
             <link rel="preload" href="{$amTemplateDirFull}fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
             <link rel="preload" href="{$amTemplateDirFull}fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
         {/if}
+        {if isset($admorris_pro_templateSettings) && $admorris_pro_templateSettings->fontFamilyBase === 'Inria Serif'}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;700&display=swap">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;700&display=swap" media="print" onload="this.media='all'">
+        {/if}
 
         {include file='slider/am_slider_header.tpl'}
         
