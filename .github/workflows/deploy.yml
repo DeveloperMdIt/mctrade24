@@ -18,7 +18,11 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps # Netcup nutzt standardmäßig explizites FTPS
+          port: 21
           server-dir: /httpdocs/
+          timeout: 90000 # Erhöht auf 90 Sekunden
+          security: loose # Ignoriert Zertifikatsfehler (oft nötig in GH Actions)
           exclude: |
             **/.git*
             **/.git*/**
