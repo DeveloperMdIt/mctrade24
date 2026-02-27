@@ -14,7 +14,7 @@ jobs:
 
       - name: Enable Maintenance Mode
         run: |
-          curl -s "https://mctrade24.de/maintenance_toggle.php?mode=on&token=mctrade_deploy_token_2026" || true
+          curl -s "https://mctrade24.com/maintenance_toggle.php?mode=on&token=mctrade_deploy_token_2026" || true
 
       - name: Sync files via SSH/Rsync
         run: |
@@ -33,4 +33,4 @@ jobs:
 
       - name: Disable Maintenance Mode
         run: |
-          curl -s "https://mctrade24.de/maintenance_toggle.php?mode=off&token=mctrade_deploy_token_2026" || true
+          curl -s "https://mctrade24.com/maintenance_toggle.php?mode=off&token=mctrade_deploy_token_2026" || true
