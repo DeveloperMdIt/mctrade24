@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 2 * * *' # Täglich um 02:00 Uhr nachts
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
