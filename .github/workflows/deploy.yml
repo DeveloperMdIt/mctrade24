@@ -13,31 +13,23 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Enable Maintenance Mode
-        # Wir hängen ein "|| true" an, damit der Deploy nicht abbricht, 
-        # wenn das Skript beim ALLERERSTEN Mal noch nicht auf dem Server liegt.
         run: |
           curl -s "https://mctrade24.de/maintenance_toggle.php?mode=on&token=mctrade_deploy_token_2026" || true
 
-      - name: Sync files to Netcup via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.FTP_USERNAME }}
-          server: ${{ secrets.FTP_SERVER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22 # Nutzt den SSH-Port
-          local_path: './*'
-          remote_path: '/httpdocs'
-          sftp_only: true
-          # Hier listen wir alle Ordner auf, die NICHT überschrieben werden sollen
-          ignore: |
-            .git*
-            node_modules
-            templates_c
-            media/image/storage
-            bilder
-            mediafiles
-            includes/config.JTL-Shop.ini.php
-            install
+      - name: Sync files via SSH/Rsync
+        run: |
+          sudo apt-get update && sudo apt-get install -y sshpass
+          
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz -e "ssh -o StrictHostKeyChecking=no -p 22" \
+            --exclude='.git*' \
+            --exclude='node_modules' \
+            --exclude='templates_c' \
+            --exclude='media/image/storage' \
+            --exclude='bilder' \
+            --exclude='mediafiles' \
+            --exclude='includes/config.JTL-Shop.ini.php' \
+            --exclude='install' \
+            ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/httpdocs/
 
       - name: Disable Maintenance Mode
         run: |
