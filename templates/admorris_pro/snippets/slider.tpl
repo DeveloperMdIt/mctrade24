@@ -14,7 +14,7 @@
                     <div class="slide">
                 {/if}
 
-                {image alt=$oSlide->getTitle()|escape:'html' title=$slideTitle src=$oSlide->getAbsoluteImage() webp=true datathumb=(!empty($oSlide->getAbsoluteThumbnail()) && $oSlider->getThumbnail()) ? $oSlide->getAbsoluteThumbnail() : null}
+                {image alt=$oSlide->getTitle()|escape:'html' title=$slideTitle src=$oSlide->getAbsoluteImage() webp=true datathumb=(!empty($oSlide->getAbsoluteThumbnail()) && $oSlider->getThumbnail()) ? $oSlide->getAbsoluteThumbnail() : null fetchpriority=($oSlide@first) ? "high" : "auto"}
 
                 {if !empty($oSlide->getLink())}
                     </a>

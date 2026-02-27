@@ -9,7 +9,7 @@
         
     {/if}
 
-    <link type="text/css" href="{$templateCssPath}styles.css?v={$admPro->getCssFileHash('styles.css')}" rel="stylesheet">
+    <link type="text/css" href="{$templateCssPath}styles.css?v={$admPro->getCssFileHash('styles.css')}" rel="stylesheet" fetchpriority="high">
 
     {if $nSeitenTyp === $smarty.const.PAGE_STARTSEITE}
         <link type="text/css" href="{$templateCssPath}homepage.css?v={$admPro->getCssFileHash('homepage.css')}" rel="stylesheet">

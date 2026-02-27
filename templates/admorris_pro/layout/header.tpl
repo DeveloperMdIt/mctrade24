@@ -61,6 +61,8 @@
             <link rel="preload" href="{$amTemplateDirFull}fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
             <link rel="preload" href="{$amTemplateDirFull}fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
         {/if}
+        <link rel="preload" href="{$templateCssPath}styles.css?v={$admPro->getCssFileHash('styles.css')}" as="style">
+
         {if isset($admorris_pro_templateSettings) && $admorris_pro_templateSettings->fontFamilyBase === 'Inria Serif'}
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,6 +71,12 @@
         {/if}
 
         {include file='slider/am_slider_header.tpl'}
+
+        {* Preload first slider image if on homepage *}
+        {if $nSeitenTyp === 1 && isset($amSlider) && count($amSlider->slide_arr) > 0}
+            {$firstSlide = $amSlider->slide_arr[0]}
+            <link rel="preload" as="image" href="{$firstSlide->cBildPfadFull}" fetchpriority="high">
+        {/if}
         
         {* preload first image on productpage *}
         {if $nSeitenTyp === PAGE_ARTIKEL && !empty($Artikel->Bilder[0])}

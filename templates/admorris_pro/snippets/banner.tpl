@@ -10,7 +10,7 @@
                         {assign var='oArtikel' value=$oImageMapArea->oArtikel}
                         <div class="area-desc">
                             {if $oImageMapArea->oArtikel}
-                                <img src="{$oArtikel->cVorschaubild}" alt="{$oArtikel->cName|strip_tags|escape:'quotes'|truncate:60}" class="img-fluid center-block" />
+                                {image src=$oArtikel->cVorschaubild alt=$oArtikel->cName|strip_tags|escape:'quotes'|truncate:60 class="img-fluid center-block" webp=true fluid=true}
                             {/if}
                             {if $oImageMapArea->oArtikel}
                                 {include file='productdetails/price.tpl' Artikel=$oArtikel tplscope='box'}
