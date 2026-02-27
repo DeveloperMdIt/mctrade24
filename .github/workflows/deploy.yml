@@ -20,7 +20,7 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y sshpass
           
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz -e "ssh -o StrictHostKeyChecking=no -p 22" \
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz --chmod=Du=rwx,Dg=rwx,Do=rx,Fu=rw,Fg=rw,Fo=r -e "ssh -o StrictHostKeyChecking=no -p 22" \
             --exclude='.git*' \
             --exclude='node_modules' \
             --exclude='templates_c' \
