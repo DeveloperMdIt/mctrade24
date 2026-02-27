@@ -1,0 +1,31 @@
+name: Deploy to Netcup
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Täglich um 02:00 Uhr nachts
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Sync files to Netcup
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /httpdocs/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/templates_c/**
+            **/media/image/storage/**
+            **/bilder/**
+            **/mediafiles/**
+            **/includes/config.JTL-Shop.ini.php
+            **/install/**
