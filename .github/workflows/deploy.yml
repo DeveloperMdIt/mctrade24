@@ -29,7 +29,7 @@ jobs:
             --exclude='mediafiles' \
             --exclude='includes/config.JTL-Shop.ini.php' \
             --exclude='install' \
-            ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/httpdocs/
+            ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:httpdocs/
 
       - name: Disable Maintenance Mode
         run: |
