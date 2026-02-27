@@ -54,4 +54,4 @@ jobs:
         run: |
           echo "UPDATE teinstellungen SET cWert='N' WHERE cName='wartungsmodus_aktiviert';" | \
           sshpass -e ssh -o StrictHostKeyChecking=no -p 22 "$SSH_USER@$SSH_HOST" \
-            "mysql -u '$DB_USER' -p'$DB_PASS' '$DB_NAME'"
+          "mysql -h 127.0.0.1 -u '$DB_USER' -p'$DB_PASS' '$DB_NAME'"
