@@ -34,6 +34,7 @@ jobs:
             --exclude='mediafiles' \
             --exclude='includes/config.JTL-Shop.ini.php' \
             --exclude='install' \
+            --exclude='test_sync.php' \
             ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:httpdocs/
 
       - name: Disable Maintenance Mode (via SSH + MySQL)
