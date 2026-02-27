@@ -4,16 +4,13 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 2 * * *' # Täglich um 02:00 Uhr nachts
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Enable Maintenance Mode
-        run: |
-          curl -sL "https://mctrade24.com/mct_deploy.php?mode=on&token=mctrade_deploy_token_2026" || true
 
       - name: Sync files via SSH/Rsync
         run: |
@@ -29,6 +26,10 @@ jobs:
             --exclude='includes/config.JTL-Shop.ini.php' \
             --exclude='install' \
             ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:httpdocs/
+
+      - name: Enable Maintenance Mode
+        run: |
+          curl -sL "https://mctrade24.com/mct_deploy.php?mode=on&token=mctrade_deploy_token_2026" || true
 
       - name: Disable Maintenance Mode
         run: |
