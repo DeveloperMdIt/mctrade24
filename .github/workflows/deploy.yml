@@ -12,11 +12,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Enable Maintenance Mode (via SSH + MySQL)
+        run: |
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -p 22 \
+            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} \
+            "mysql -u ${{ secrets.DB_USER }} -p'${{ secrets.DB_PASSWORD }}' -h ${{ secrets.DB_HOST }} ${{ secrets.DB_NAME }} \
+             -e \"UPDATE teinstellungen SET cWert='Y' WHERE cName='wartungsmodus_aktiviert';\"" || true
+
       - name: Sync files via SSH/Rsync
         run: |
-          sudo apt-get update && sudo apt-get install -y sshpass
-          
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r -e "ssh -o StrictHostKeyChecking=no -p 22" \
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r \
+            -e "ssh -o StrictHostKeyChecking=no -p 22" \
             --exclude='.git*' \
             --exclude='node_modules' \
             --exclude='templates_c' \
@@ -27,10 +36,9 @@ jobs:
             --exclude='install' \
             ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:httpdocs/
 
-      - name: Enable Maintenance Mode
+      - name: Disable Maintenance Mode (via SSH + MySQL)
         run: |
-          curl -sL "https://mctrade24.com/mct_deploy.php?mode=on&token=mctrade_deploy_token_2026" || true
-
-      - name: Disable Maintenance Mode
-        run: |
-          curl -sL "https://mctrade24.com/mct_deploy.php?mode=off&token=mctrade_deploy_token_2026" || true
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -p 22 \
+            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} \
+            "mysql -u ${{ secrets.DB_USER }} -p'${{ secrets.DB_PASSWORD }}' -h ${{ secrets.DB_HOST }} ${{ secrets.DB_NAME }} \
+             -e \"UPDATE teinstellungen SET cWert='N' WHERE cName='wartungsmodus_aktiviert';\"" || true
