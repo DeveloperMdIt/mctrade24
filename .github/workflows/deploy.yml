@@ -13,13 +13,13 @@ jobs:
 
       - name: Enable Maintenance Mode
         run: |
-          curl -s "https://mctrade24.com/maintenance_toggle.php?mode=on&token=mctrade_deploy_token_2026" || true
+          curl -sL "https://mctrade24.com/mct_deploy.php?mode=on&token=mctrade_deploy_token_2026" || true
 
       - name: Sync files via SSH/Rsync
         run: |
           sudo apt-get update && sudo apt-get install -y sshpass
           
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz --chmod=Du=rwx,Dg=rwx,Do=rx,Fu=rw,Fg=rw,Fo=r -e "ssh -o StrictHostKeyChecking=no -p 22" \
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r -e "ssh -o StrictHostKeyChecking=no -p 22" \
             --exclude='.git*' \
             --exclude='node_modules' \
             --exclude='templates_c' \
@@ -32,4 +32,4 @@ jobs:
 
       - name: Disable Maintenance Mode
         run: |
-          curl -s "https://mctrade24.com/maintenance_toggle.php?mode=off&token=mctrade_deploy_token_2026" || true
+          curl -sL "https://mctrade24.com/mct_deploy.php?mode=off&token=mctrade_deploy_token_2026" || true
