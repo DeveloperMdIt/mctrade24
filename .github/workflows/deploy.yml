@@ -3,7 +3,7 @@ name: Deploy to Netcup
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *' # Täglich um 02:00 Uhr nachts
+    - cron: '0 2 * * *'
 
 jobs:
   deploy:
@@ -16,15 +16,22 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
       - name: Enable Maintenance Mode (via SSH + MySQL)
+        env:
+          SSHPASS: ${{ secrets.FTP_PASSWORD }}
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
         run: |
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -p 22 \
-            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} \
-            "mysql -u ${{ secrets.DB_USER }} -p'${{ secrets.DB_PASSWORD }}' -h ${{ secrets.DB_HOST }} ${{ secrets.DB_NAME }} \
-             -e \"UPDATE teinstellungen SET cWert='Y' WHERE cName='wartungsmodus_aktiviert';\"" || true
+          echo "UPDATE teinstellungen SET cWert='Y' WHERE cName='wartungsmodus_aktiviert';" | \
+          sshpass -e ssh -o StrictHostKeyChecking=no -p 22 "$SSH_USER@$SSH_HOST" \
+            "mysql -u '$DB_USER' -p'$DB_PASS' '$DB_NAME'"
 
       - name: Sync files via SSH/Rsync
         run: |
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r \
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync -avz \
+            --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r \
             -e "ssh -o StrictHostKeyChecking=no -p 22" \
             --exclude='.git*' \
             --exclude='node_modules' \
@@ -34,12 +41,17 @@ jobs:
             --exclude='mediafiles' \
             --exclude='includes/config.JTL-Shop.ini.php' \
             --exclude='install' \
-            --exclude='test_sync.php' \
             ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:httpdocs/
 
       - name: Disable Maintenance Mode (via SSH + MySQL)
+        env:
+          SSHPASS: ${{ secrets.FTP_PASSWORD }}
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
         run: |
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -p 22 \
-            ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} \
-            "mysql -u ${{ secrets.DB_USER }} -p'${{ secrets.DB_PASSWORD }}' -h ${{ secrets.DB_HOST }} ${{ secrets.DB_NAME }} \
-             -e \"UPDATE teinstellungen SET cWert='N' WHERE cName='wartungsmodus_aktiviert';\"" || true
+          echo "UPDATE teinstellungen SET cWert='N' WHERE cName='wartungsmodus_aktiviert';" | \
+          sshpass -e ssh -o StrictHostKeyChecking=no -p 22 "$SSH_USER@$SSH_HOST" \
+            "mysql -u '$DB_USER' -p'$DB_PASS' '$DB_NAME'"
