@@ -13,7 +13,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Enable Maintenance Mode
-        # Aktiviert den Wartungsmodus VOR dem Sync
         run: |
           curl -s "https://mctrade24.de/maintenance_toggle.php?mode=on&token=mctrade_deploy_token_2026" || echo "Bridge script not ready yet"
 
@@ -23,11 +22,10 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
+          protocol: sftp # Umgestellt auf SFTP (Port 22)
+          port: 22
           server-dir: /httpdocs/
           timeout: 90000
-          security: loose
           exclude: |
             **/.git*
             **/.git*/**
@@ -40,6 +38,5 @@ jobs:
             **/install/**
 
       - name: Disable Maintenance Mode
-        # Deaktiviert den Wartungsmodus NACH dem Sync
         run: |
           curl -s "https://mctrade24.de/maintenance_toggle.php?mode=off&token=mctrade_deploy_token_2026"
