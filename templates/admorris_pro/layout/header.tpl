@@ -274,7 +274,7 @@
 
 
     {block name='head-resources-jquery'}
-        <script src="{$amTemplateDirFull}js/jquery-3.7.1.min.js"></script>
+        <script defer src="{$ShopURL}/{if empty($parentTemplateDir)}{$currentTemplateDir}{else}{$parentTemplateDir}{/if}js/jquery-3.7.1.min.js"></script>
     {/block}
 
     {block name="head-asset-loading"}{/block}

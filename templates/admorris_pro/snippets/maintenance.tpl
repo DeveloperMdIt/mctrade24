@@ -124,58 +124,154 @@
     {/block}
 
     {block name='snippets-maintenance-content'}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3">
-                <div id="maintenance-notice" class="card panel-info">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-6">
-                                <h3 class="">{* {$admIcon->renderIcon('wrench', 'icon-content icon-content--default')}  *}{lang key="maintainance" section="global"}</h3>
-                            </div>
-                            <div class="col-6">
-                                <ul class="list-inline user-settings float-right">
-                                    {block name='snippets-maintenance-top-bar-user-settings-language'}
-                                        {if isset($smarty.session.Sprachen) && $smarty.session.Sprachen|@count > 1}
-                                            <li class="language-dropdown center-block dropdown">
-                                                <a href="#" class="dropdown-toggle btn btn-secondary btn-sm" data-toggle="dropdown" itemprop="inLanguage" itemscope itemtype="http://schema.org/Language" title="{lang key='selectLang'}">
-                                                {* {$admIcon->renderIcon('languageSelection', 'icon-content icon-content--default')} *}
-                                                    {foreach $smarty.session.Sprachen as $Sprache}
-                                                        {if $Sprache->kSprache == $smarty.session.kSprache}
-                                                            <span class="lang-{$lang}" itemprop="name"> {$Sprache->displayLanguage}</span>
-                                                        {/if}
-                                                    {/foreach}
-                                                    <span class="caret"></span>
-                                                </a>
-                                                <ul id="language-dropdown" class="dropdown-menu dropdown-menu-right">
-                                                    {foreach $smarty.session.Sprachen as $oSprache}
-                                                        {if $oSprache->kSprache != $smarty.session.kSprache}
-                                                            <li>
-                                                                <a href="{$oSprache->url}" class="link_lang {$oSprache->iso}" rel="nofollow">{$oSprache->displayLanguage}</a>
-                                                            </li>
-                                                        {/if}
-                                                    {/foreach}
-                                                </ul>
-                                            </li>
-                                        {/if}
-                                    {/block}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        {lang key="maintenanceModeActive" section="global"}
-                    </div>
-                </div>
-            </div>
+    <style>
+        :root {
+            --primary-bg: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background: radial-gradient(circle at top right, #1e293b, var(--primary-bg));
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .maintenance-container {
+            position: relative;
+            z-index: 10;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-placeholder {
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .logo-placeholder img {
+            max-height: 80px;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom right, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.025em;
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 9999px;
+            color: var(--accent-color);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .status-pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+        }
+
+        .footer-info {
+            border-top: 1px solid var(--glass-border);
+            padding-top: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-dim);
+        }
+
+        .bg-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(56, 189, 248, 0) 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+    </style>
+
+    <div class="bg-glow"></div>
+
+    <div class="maintenance-container">
+        <div class="logo-placeholder">
+            <img src="{$ShopLogoURL}" alt="{$meta_title}">
+        </div>
+
+        <div class="status-badge">
+            <span class="status-pulse"></span>
+            Wartungsarbeiten aktiv
+        </div>
+
+        <h1>Wir sind bald wieder da</h1>
+        <p>
+            Wir führen gerade wichtige Performance-Optimierungen und Wartungsarbeiten durch, um Ihr Einkaufserlebnis noch schneller und besser zu gestalten. 
+            Vielen Dank für Ihre Geduld!
+        </p>
+
+        <div class="footer-info">
             {if isset($oSpezialseiten_arr[$smarty.const.LINKTYP_IMPRESSUM])}
-            <div class="col-lg-6 offset-lg-3 text-center">
-                <h2 class="mt-2">{$oSpezialseiten_arr[$smarty.const.LINKTYP_IMPRESSUM]->getTitle()}</h2>
-                <p>{$oSpezialseiten_arr[$smarty.const.LINKTYP_IMPRESSUM]->getContent()}</p>
-            </div>
+                <strong>{$oSpezialseiten_arr[$smarty.const.LINKTYP_IMPRESSUM]->getTitle()}</strong><br>
+                {$oSpezialseiten_arr[$smarty.const.LINKTYP_IMPRESSUM]->getContent()|strip_tags|truncate:200}
+            {else}
+                &copy; {$smarty.now|date_format:"%Y"} {$meta_title}
             {/if}
         </div>
     </div>
+    {/block}
+
     {* JavaScripts *}
     {block name='snippets-maintenance-footer-js'}
         {assign var='isFluidContent' value=isset($Einstellungen.template.theme.pagelayout) && $Einstellungen.template.theme.pagelayout === 'fluid' && isset($Link) && $Link->getIsFluid()}

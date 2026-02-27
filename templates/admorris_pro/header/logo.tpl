@@ -53,8 +53,11 @@
                 />
                 {/if}
             {elseif isset($ShopLogoURL)}
-                {image
-                    src=$ShopLogoURL
+                {image src=$ShopLogoURL
+                   alt=$meta_title
+                   id="shop-logo"
+                   width=$Einstellungen.template.header.logo_width
+                   height=$Einstellungen.template.header.logo_height
                     alt=$Einstellungen.global.global_shopname
                     sizes="auto"
                     fetchpriority="high"

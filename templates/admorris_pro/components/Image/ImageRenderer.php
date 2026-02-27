@@ -10,38 +10,46 @@ use scc\renderers\BlockRenderer;
 
 class ImageRenderer extends BlockRenderer implements ComponentRendererInterface
 {
-    public function __construct(protected ComponentInterface $component) {}
+    public function __construct(protected ComponentInterface $component)
+    {
+    }
 
     /**
      * @inheritdoc
      */
     public function render(array $params, ...$args): string
     {
-        $tpl       = $args[0];
+        $tpl = $args[0];
 
         $params = $this->mergeParams($params);
 
         $Einstellungen = $tpl->getTemplateVars('Einstellungen');
-        $admPro = $tpl->getTemplateVars('admPro');;
-        $progessiveLoadingActive = isset($Einstellungen["template"]["general"]["progressive_loading"])  && $Einstellungen["template"]["general"]["progressive_loading"] === "Y";
+        $admPro = $tpl->getTemplateVars('admPro');
+        ;
+        $progessiveLoadingActive = isset($Einstellungen["template"]["general"]["progressive_loading"]) && $Einstellungen["template"]["general"]["progressive_loading"] === "Y";
 
-        $useWebP = $admPro->webpBrowserSupport() && $params['webp']->getValue() === true && \JTL\Media\Image::hasWebPSupport() && strpos($params['src']->getValue(), 'mediafiles/Bilder') === false;
+        $useWebP = $admPro->webpBrowserSupport() && $params['webp']->getValue() === true && \JTL\Media\Image::hasWebPSupport();
 
         if ($useWebP) {
-            /* If the image is located in the old shop4 mediafiles/Bilder folder, 
-            don't try to load the webp image,
-            because they are only generated in the new opc folder */
-            $disableWebP = in_array(true, array_map(fn($needle) => str_contains($params['src']->getValue(), $needle), ['OPC/Portlets', 'media/image/storage/videothumbs', 'jtl_paypal_commerce/paymentmethod']));
-
-
-
-            /* Fix for OPC slider problems cause by our webp prop defaulting to true. 
-            The slider images have a data-attribute 'desc' set. */
-            if (is_array($params['data']->getValue())) {
-                $dataValue = $params['data']->getValue();
-                $disableWebP = $disableWebP || isset($dataValue['desc']);
+            /* Some paths might not have webp versions (e.g. external plugins) */
+            $excludePaths = [
+                'OPC/Portlets',
+                'plugins',
+            ];
+            foreach ($excludePaths as $excludePath) {
+                if (strpos($params['src']->getValue(), $excludePath) !== false) {
+                    $useWebP = false;
+                    break;
+                }
             }
-            $useWebP = !$disableWebP;
+        }
+
+        if ($useWebP) {
+            /* If the image renderer is called with a data-desc attribute, we should not use webp */
+            $data = $params['data']->getValue();
+            if (isset($data) && is_array($data) && isset($data['desc'])) {
+                $useWebP = false;
+            }
         }
 
         $tpl->assign('useWebP', $useWebP);
@@ -80,12 +88,9 @@ class ImageRenderer extends BlockRenderer implements ComponentRendererInterface
             } catch (\Throwable $th) {
                 if (Shop::isAdmin()) {
                     return 'Image Error: ' . $th->getMessage();
-                    return $th->getMessage();
                 }
                 return '';
             }
-
-            
 
             // use largest src set image if no explicit width / height
             $biggestImage = end($opcSrcSet);
@@ -161,10 +166,8 @@ class ImageRenderer extends BlockRenderer implements ComponentRendererInterface
             ->assign('useProgressiveLoading', $useProgressiveLoading)
             ->assign('usePlaceholder', $usePlaceholder);
 
-
-
         $oldParams = $tpl->getTemplateVars('params');
-        $html      = $tpl->assign('params', $params)
+        $html = $tpl->assign('params', $params)
             ->assign('parentSmarty', $tpl->smarty)
             ->fetch($this->component->getTemplate());
         if ($oldParams !== null) {
