@@ -129,3 +129,19 @@ h6,
   /* z.B. 520px, aber nicht breiter als 95% vom Viewport */
   max-width: 95vw;
 }
+
+/* ========== PageSpeed Insights / Lighthouse Fixes ========== */
+
+/* Fix: "overflow: visible" warning for media elements rendering outside bounds */
+img,
+video,
+canvas {
+  overflow: clip;
+}
+
+/* Fix: Verzerrte Seitenverhältnisse für DHL/DPD Logos in der Seitenbox */
+/* Inline-Styles erzwingen 90x50, was zu Verzerrung führt. Object-fit korrigiert das. */
+.box-content-wrapper img[src*="DHL"],
+.box-content-wrapper img[src*="DPD"] {
+  object-fit: contain !important;
+}
